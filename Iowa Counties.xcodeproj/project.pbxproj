@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12224B7C17E20EE900DAC65D /* CatevgoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12224B7B17E20EE900DAC65D /* CatevgoryListController.m */; };
+		1290D2B217E7690800332D1A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1290D2B117E7690800332D1A /* MainMenuViewController.m */; };
+		1290D2B517E76A1C00332D1A /* MainMenuButtonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */; };
 		12AEC88617C3DC2E0001C5CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88517C3DC2E0001C5CD /* UIKit.framework */; };
 		12AEC88817C3DC2E0001C5CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88717C3DC2E0001C5CD /* Foundation.framework */; };
 		12AEC88A17C3DC2E0001C5CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88917C3DC2E0001C5CD /* CoreGraphics.framework */; };
@@ -17,7 +20,6 @@
 		12AEC89A17C3DC2E0001C5CD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89917C3DC2E0001C5CD /* Default@2x.png */; };
 		12AEC89C17C3DC2E0001C5CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89B17C3DC2E0001C5CD /* Default-568h@2x.png */; };
 		12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */; };
-		12AEC8A217C3DC2E0001C5CD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8A017C3DC2E0001C5CD /* MainStoryboard_iPad.storyboard */; };
 		12AEC8A517C3DC2E0001C5CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC8A417C3DC2E0001C5CD /* ViewController.m */; };
 		12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */; };
 		12AEC8BF17C3DCD10001C5CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8AE17C3DCD10001C5CD /* SystemConfiguration.framework */; };
@@ -47,9 +49,16 @@
 		12AEC8E717C3E1B50001C5CD /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E217C3E1B50001C5CD /* tours.png */; };
 		12CDDF9C17CBBC95007843A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CDDF9B17CBBC95007843A2 /* GoogleMaps.framework */; };
 		12CDDF9E17CBBCAB007843A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12CDDF9D17CBBCAB007843A2 /* GoogleMaps.bundle */; };
+		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12224B7A17E20EE900DAC65D /* CatevgoryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatevgoryListController.h; sourceTree = "<group>"; };
+		12224B7B17E20EE900DAC65D /* CatevgoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatevgoryListController.m; sourceTree = "<group>"; };
+		1290D2B017E7690800332D1A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		1290D2B117E7690800332D1A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		1290D2B317E76A1C00332D1A /* MainMenuButtonViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuButtonViewCell.h; sourceTree = "<group>"; };
+		1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuButtonViewCell.m; sourceTree = "<group>"; };
 		12AEC88217C3DC2E0001C5CD /* Iowa Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iowa Counties.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AEC88517C3DC2E0001C5CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12AEC88717C3DC2E0001C5CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,7 +73,6 @@
 		12AEC89917C3DC2E0001C5CD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		12AEC89B17C3DC2E0001C5CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		12AEC89E17C3DC2E0001C5CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		12AEC8A117C3DC2E0001C5CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		12AEC8A317C3DC2E0001C5CD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		12AEC8A417C3DC2E0001C5CD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -96,6 +104,8 @@
 		12AEC8E217C3E1B50001C5CD /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
 		12CDDF9B17CBBC95007843A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		12CDDF9D17CBBCAB007843A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
+		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,12 +192,19 @@
 				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
 				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
-				12AEC8A017C3DC2E0001C5CD /* MainStoryboard_iPad.storyboard */,
 				12AEC8A317C3DC2E0001C5CD /* ViewController.h */,
 				12AEC8A417C3DC2E0001C5CD /* ViewController.m */,
 				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
 				12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */,
 				12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */,
+				12224B7A17E20EE900DAC65D /* CatevgoryListController.h */,
+				12224B7B17E20EE900DAC65D /* CatevgoryListController.m */,
+				1290D2B017E7690800332D1A /* MainMenuViewController.h */,
+				1290D2B117E7690800332D1A /* MainMenuViewController.m */,
+				1290D2B317E76A1C00332D1A /* MainMenuButtonViewCell.h */,
+				1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */,
+				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
+				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
 			);
 			path = "Iowa Counties";
 			sourceTree = "<group>";
@@ -285,7 +302,6 @@
 				12AEC89A17C3DC2E0001C5CD /* Default@2x.png in Resources */,
 				12AEC89C17C3DC2E0001C5CD /* Default-568h@2x.png in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
-				12AEC8A217C3DC2E0001C5CD /* MainStoryboard_iPad.storyboard in Resources */,
 				12AEC8D917C3DEC50001C5CD /* barns.json in Resources */,
 				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
 				12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */,
@@ -308,8 +324,12 @@
 			files = (
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,
+				1290D2B517E76A1C00332D1A /* MainMenuButtonViewCell.m in Sources */,
 				12AEC8A517C3DC2E0001C5CD /* ViewController.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
+				1290D2B217E7690800332D1A /* MainMenuViewController.m in Sources */,
+				12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */,
+				12224B7C17E20EE900DAC65D /* CatevgoryListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,14 +350,6 @@
 				12AEC89E17C3DC2E0001C5CD /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		12AEC8A017C3DC2E0001C5CD /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12AEC8A117C3DC2E0001C5CD /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,7 +428,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -432,7 +446,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

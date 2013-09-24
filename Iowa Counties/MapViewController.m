@@ -11,6 +11,11 @@
 
 @interface MapViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet GMSMapView *map_view;
+@property (weak, nonatomic) IBOutlet UIView *detail_view;
+
 @end
 
 @implementation MapViewController {
@@ -24,20 +29,19 @@
                                                             longitude:-93.231
                                                                  zoom:4];
     
-    mapView_= [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    self.map_view.delegate = self;
+    self.map_view.settings.myLocationButton = YES;
+    self.map_view.settings.compassButton = YES;
     
-    mapView_.delegate = self;
-    mapView_.settings.myLocationButton = YES;
-    mapView_.settings.compassButton = YES;
 
-    self.view = mapView_;
     
+
+   
     
     [self loadBarns];
     [self performSelector:@selector(fitBounds)
                withObject:nil
                afterDelay:1]; //will zoom in after 5 seconds
-    
     
 }
 
@@ -85,6 +89,8 @@
 
 
 
+
+
 - (void) addMarkerForBarn: (NSDictionary*) barn {
     
     // Add a custom 'glow' marker around Sydney.
@@ -108,5 +114,49 @@
     
     
 }
+
+- (IBAction)button_show_pressed:(id)sender {
+    
+    
+    // Hide the panel and change the button's text
+    CGRect detail_rect_hidden = [[self detail_view] frame];
+    detail_rect_hidden.origin.y = 181;
+    
+    [UIView animateWithDuration:0.5
+                          delay: 0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [[self detail_view] setFrame:detail_rect_hidden];
+                     }
+                     completion: nil];
+    
+    
+    
+    
+}
+
+
+
+
+- (IBAction)button_hide_pressed:(id)sender {
+    
+    
+    // Hide the panel and change the button's text
+    CGRect detail_rect_hidden = [[self detail_view] frame];
+    detail_rect_hidden.origin.y = 600;
+    
+    [UIView animateWithDuration:.5
+                          delay: 0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [[self detail_view] setFrame:detail_rect_hidden];
+                     }
+                     completion: nil];
+    
+    
+    
+    
+}
+
 
 @end

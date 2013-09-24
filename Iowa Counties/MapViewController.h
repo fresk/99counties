@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <UIWebViewDelegate>
+
+
+- (IBAction)button_hide_pressed:(id)sender;
+- (IBAction)button_show_pressed:(id)sender;
 
 @end

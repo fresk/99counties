@@ -15,11 +15,13 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *map_view;
 @property (weak, nonatomic) IBOutlet UIView *detail_view;
 
+@property (weak, nonatomic) IBOutlet UILabel *detail_title;
+@property (weak, nonatomic) IBOutlet UITextView *detail_text;
 
 
 @end
 
-@implementation MapViewController {
+@implementation MapViewController  {
 
 }
 
@@ -27,18 +29,18 @@
     [super viewDidLoad];
     
 
-
+    self.map_view.delegate = self;
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
     
 
 
     
-    //[self loadBarns];
-    [self fitBounds];
-//    [self performSelector:@selector(fitBounds)
-//               withObject:nil
-//               afterDelay:1]; //will zoom in after 5 seconds
+    [self loadBarns];
+    //[self fitBounds];
+    [self performSelector:@selector(fitBounds)
+               withObject:nil
+               afterDelay:1]; //will zoom in after 5 seconds
     
 }
 
@@ -46,12 +48,26 @@
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker*)marker {
     
-    UIViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"Details"];
-    
-    [self.navigationController pushViewController:vc animated:YES];
+
     
     
 }
+
+
+
+
+- (BOOL) mapView: (GMSMapView *) mapView
+    didTapMarker: (GMSMarker *)  marker {
+
+    NSDictionary* barn = (NSDictionary*)marker.userData;
+    [self.detail_title setText:[barn objectForKey:@"Property Name"]] ;
+    [self.detail_text setText: @"Lorem Ipsum..."];
+    
+    [self button_show_pressed: self];
+    
+
+}
+
 
 
 
@@ -93,6 +109,7 @@
     // Add a custom 'glow' marker around Sydney.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.title = [barn objectForKey:@"Property Name"] ;
+    marker.userData = barn;
     //marker.icon = [UIImage imageNamed:@"glow-marker"];
     marker.position = [self loadGeoCoordinate: [barn objectForKey:@"geo"]];
     marker.map = self.map_view;
@@ -114,8 +131,8 @@
 
 - (IBAction)button_show_pressed:(id)sender {
     
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0.0, 475.0, 0.0);
-    self.map_view.padding = mapInsets;
+    //UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0.0, 475.0, 0.0);
+    //self.map_view.padding = mapInsets;
     
     
     // Hide the panel and change the button's text

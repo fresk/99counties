@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController : UIViewController <UIWebViewDelegate>
+@interface MapViewController : UIViewController <GMSMapViewDelegate>
 
 
 - (IBAction)button_hide_pressed:(id)sender;

@@ -47,8 +47,8 @@
 		12AEC8E517C3E1B50001C5CD /* justadded.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E017C3E1B50001C5CD /* justadded.png */; };
 		12AEC8E617C3E1B50001C5CD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E117C3E1B50001C5CD /* menu.png */; };
 		12AEC8E717C3E1B50001C5CD /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E217C3E1B50001C5CD /* tours.png */; };
-		12CDDF9C17CBBC95007843A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CDDF9B17CBBC95007843A2 /* GoogleMaps.framework */; };
-		12CDDF9E17CBBCAB007843A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12CDDF9D17CBBCAB007843A2 /* GoogleMaps.bundle */; };
+		12CFA7C717F46842002BBD91 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CFA7C617F46842002BBD91 /* GoogleMaps.framework */; };
+		12CFA7C917F46855002BBD91 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
 /* End PBXBuildFile section */
 
@@ -102,8 +102,8 @@
 		12AEC8E017C3E1B50001C5CD /* justadded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = justadded.png; sourceTree = "<group>"; };
 		12AEC8E117C3E1B50001C5CD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		12AEC8E217C3E1B50001C5CD /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
-		12CDDF9B17CBBC95007843A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		12CDDF9D17CBBCAB007843A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		12CFA7C617F46842002BBD91 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
+		12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +131,8 @@
 				12AEC8CB17C3DCD10001C5CD /* MapKit.framework in Frameworks */,
 				12AEC8CC17C3DCD10001C5CD /* UIKit.framework in Frameworks */,
 				12AEC8CD17C3DCD10001C5CD /* Foundation.framework in Frameworks */,
+				12CFA7C717F46842002BBD91 /* GoogleMaps.framework in Frameworks */,
 				12AEC8CE17C3DCD10001C5CD /* CoreGraphics.framework in Frameworks */,
-				12CDDF9C17CBBC95007843A2 /* GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,8 @@
 		12AEC88417C3DC2E0001C5CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				12CDDF9D17CBBCAB007843A2 /* GoogleMaps.bundle */,
+				12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */,
+				12CFA7C617F46842002BBD91 /* GoogleMaps.framework */,
 				12AEC8AE17C3DCD10001C5CD /* SystemConfiguration.framework */,
 				12AEC8AF17C3DCD10001C5CD /* QuartzCore.framework */,
 				12AEC8B017C3DCD10001C5CD /* OpenGLES.framework */,
@@ -178,7 +179,6 @@
 				12AEC8BB17C3DCD10001C5CD /* UIKit.framework */,
 				12AEC8BC17C3DCD10001C5CD /* Foundation.framework */,
 				12AEC8BD17C3DCD10001C5CD /* CoreGraphics.framework */,
-				12CDDF9B17CBBC95007843A2 /* GoogleMaps.framework */,
 				12AEC88517C3DC2E0001C5CD /* UIKit.framework */,
 				12AEC88717C3DC2E0001C5CD /* Foundation.framework */,
 				12AEC88917C3DC2E0001C5CD /* CoreGraphics.framework */,
@@ -306,12 +306,12 @@
 				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
 				12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */,
 				12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */,
+				12CFA7C917F46855002BBD91 /* GoogleMaps.bundle in Resources */,
 				12AEC8E317C3E1B50001C5CD /* details.png in Resources */,
 				12AEC8E417C3E1B50001C5CD /* details2.png in Resources */,
 				12AEC8E517C3E1B50001C5CD /* justadded.png in Resources */,
 				12AEC8E617C3E1B50001C5CD /* menu.png in Resources */,
 				12AEC8E717C3E1B50001C5CD /* tours.png in Resources */,
-				12CDDF9E17CBBCAB007843A2 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +422,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../code/dca/iOS/99 Counties\"",
-					"\"$(SRCROOT)\"",
+					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
+					"$(SRCROOT)",
+					"/Users/tehansen/code/99counties/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
@@ -440,8 +441,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../code/dca/iOS/99 Counties\"",
-					"\"$(SRCROOT)\"",
+					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
+					"$(SRCROOT)",
+					"/Users/tehansen/code/99counties/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";

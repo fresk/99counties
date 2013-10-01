@@ -11,37 +11,34 @@
 
 @interface MapViewController ()
 
-
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet GMSMapView *map_view;
 @property (weak, nonatomic) IBOutlet UIView *detail_view;
 
+
+
 @end
 
 @implementation MapViewController {
-    GMSMapView *mapView_;
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:41.577
-                                                            longitude:-93.231
-                                                                 zoom:4];
-    
-    self.map_view.delegate = self;
+
+
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
     
 
-    
 
-   
     
-    [self loadBarns];
-    [self performSelector:@selector(fitBounds)
-               withObject:nil
-               afterDelay:1]; //will zoom in after 5 seconds
+    //[self loadBarns];
+    [self fitBounds];
+//    [self performSelector:@selector(fitBounds)
+//               withObject:nil
+//               afterDelay:1]; //will zoom in after 5 seconds
     
 }
 
@@ -98,7 +95,7 @@
     marker.title = [barn objectForKey:@"Property Name"] ;
     //marker.icon = [UIImage imageNamed:@"glow-marker"];
     marker.position = [self loadGeoCoordinate: [barn objectForKey:@"geo"]];
-    marker.map = mapView_;
+    marker.map = self.map_view;
 }
 
 
@@ -110,17 +107,20 @@
                                                   coordinate:  SW];
     GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds
                                              withPadding:50.0];
-    [mapView_ animateWithCameraUpdate:update];
+    [self.map_view animateWithCameraUpdate:update];
     
     
 }
 
 - (IBAction)button_show_pressed:(id)sender {
     
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0.0, 475.0, 0.0);
+    self.map_view.padding = mapInsets;
+    
     
     // Hide the panel and change the button's text
     CGRect detail_rect_hidden = [[self detail_view] frame];
-    detail_rect_hidden.origin.y = 181;
+    detail_rect_hidden.origin.y = 181   ;
     
     [UIView animateWithDuration:0.5
                           delay: 0.0
@@ -139,6 +139,10 @@
 
 
 - (IBAction)button_hide_pressed:(id)sender {
+    
+    
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+    self.map_view.padding = mapInsets;
     
     
     // Hide the panel and change the button's text

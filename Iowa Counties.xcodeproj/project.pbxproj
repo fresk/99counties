@@ -47,9 +47,9 @@
 		12AEC8E517C3E1B50001C5CD /* justadded.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E017C3E1B50001C5CD /* justadded.png */; };
 		12AEC8E617C3E1B50001C5CD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E117C3E1B50001C5CD /* menu.png */; };
 		12AEC8E717C3E1B50001C5CD /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8E217C3E1B50001C5CD /* tours.png */; };
-		12CFA7C717F46842002BBD91 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CFA7C617F46842002BBD91 /* GoogleMaps.framework */; };
-		12CFA7C917F46855002BBD91 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
+		1E18D4EA17FC74D000E91D5B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E18D4E917FC74D000E91D5B /* GoogleMaps.framework */; };
+		1E18D4EC17FC74F400E91D5B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E18D4EB17FC74F400E91D5B /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,10 +102,10 @@
 		12AEC8E017C3E1B50001C5CD /* justadded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = justadded.png; sourceTree = "<group>"; };
 		12AEC8E117C3E1B50001C5CD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		12AEC8E217C3E1B50001C5CD /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
-		12CFA7C617F46842002BBD91 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
-		12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
+		1E18D4E917FC74D000E91D5B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
+		1E18D4EB17FC74F400E91D5B /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 				12AEC8CB17C3DCD10001C5CD /* MapKit.framework in Frameworks */,
 				12AEC8CC17C3DCD10001C5CD /* UIKit.framework in Frameworks */,
 				12AEC8CD17C3DCD10001C5CD /* Foundation.framework in Frameworks */,
-				12CFA7C717F46842002BBD91 /* GoogleMaps.framework in Frameworks */,
+				1E18D4EA17FC74D000E91D5B /* GoogleMaps.framework in Frameworks */,
 				12AEC8CE17C3DCD10001C5CD /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,13 +161,13 @@
 		12AEC88417C3DC2E0001C5CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				12CFA7C817F46855002BBD91 /* GoogleMaps.bundle */,
-				12CFA7C617F46842002BBD91 /* GoogleMaps.framework */,
+				1E18D4E917FC74D000E91D5B /* GoogleMaps.framework */,
 				12AEC8AE17C3DCD10001C5CD /* SystemConfiguration.framework */,
 				12AEC8AF17C3DCD10001C5CD /* QuartzCore.framework */,
 				12AEC8B017C3DCD10001C5CD /* OpenGLES.framework */,
 				12AEC8B117C3DCD10001C5CD /* libz.dylib */,
 				12AEC8B217C3DCD10001C5CD /* libicucore.dylib */,
+				1E18D4EB17FC74F400E91D5B /* GoogleMaps.bundle */,
 				12AEC8B317C3DCD10001C5CD /* libc++.dylib */,
 				12AEC8B417C3DCD10001C5CD /* GLKit.framework */,
 				12AEC8B517C3DCD10001C5CD /* ImageIO.framework */,
@@ -274,6 +274,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = fresk;
+				TargetAttributes = {
+					12AEC88117C3DC2E0001C5CD = {
+						DevelopmentTeam = Q7ET952695;
+					};
+				};
 			};
 			buildConfigurationList = 12AEC87D17C3DC2E0001C5CD /* Build configuration list for PBXProject "Iowa Counties" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -306,7 +311,7 @@
 				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
 				12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */,
 				12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */,
-				12CFA7C917F46855002BBD91 /* GoogleMaps.bundle in Resources */,
+				1E18D4EC17FC74F400E91D5B /* GoogleMaps.bundle in Resources */,
 				12AEC8E317C3E1B50001C5CD /* details.png in Resources */,
 				12AEC8E417C3E1B50001C5CD /* details2.png in Resources */,
 				12AEC8E517C3E1B50001C5CD /* justadded.png in Resources */,
@@ -420,17 +425,21 @@
 		12AEC8A917C3DC2E0001C5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
+					"\\\\\\\"$(SRCROOT)/../../code/dca/iOS/99\\\\\\ Counties\\\\\\\"",
 					"$(SRCROOT)",
 					"/Users/tehansen/code/99counties/Iowa\\ Counties",
+					"/Users/shansen/code/99counties/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -439,17 +448,21 @@
 		12AEC8AA17C3DC2E0001C5CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
+					"\\\\\\\"$(SRCROOT)/../../code/dca/iOS/99\\\\\\ Counties\\\\\\\"",
 					"$(SRCROOT)",
 					"/Users/tehansen/code/99counties/Iowa\\ Counties",
+					"/Users/shansen/code/99counties/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

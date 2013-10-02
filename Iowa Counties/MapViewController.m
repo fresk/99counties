@@ -107,11 +107,14 @@
 - (void) addMarkerForBarn: (NSDictionary*) barn {
     
     // Add a custom 'glow' marker around Sydney.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.title = [barn objectForKey:@"Property Name"] ;
+    CLLocationCoordinate2D position = [self loadGeoCoordinate: [barn objectForKey:@"geo"]];
+    GMSMarker *marker = [GMSMarker markerWithPosition: position];
     marker.userData = barn;
+    marker.title = [barn objectForKey:@"Property Name"] ;
+    
     //marker.icon = [UIImage imageNamed:@"glow-marker"];
-    marker.position = [self loadGeoCoordinate: [barn objectForKey:@"geo"]];
+       
+    marker.icon = [UIImage imageNamed: @"marker-barn"];
     marker.map = self.map_view;
 }
 
@@ -173,9 +176,6 @@
                          [[self detail_view] setFrame:detail_rect_hidden];
                      }
                      completion: nil];
-    
-    
-    
     
 }
 

@@ -237,6 +237,7 @@
 		12AEC8DD17C3E1B50001C5CD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				12FC5BB917FC6C98006D83BC /* markers */,
 				12AEC8DE17C3E1B50001C5CD /* details.png */,
 				12AEC8DF17C3E1B50001C5CD /* details2.png */,
 				12AEC8E017C3E1B50001C5CD /* justadded.png */,
@@ -244,6 +245,23 @@
 				12AEC8E217C3E1B50001C5CD /* tours.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		12FC5BB917FC6C98006D83BC /* markers */ = {
+			isa = PBXGroup;
+			children = (
+				12FC5BBA17FC6C98006D83BC /* marker-barn@2x.png */,
+				12FC5BBB17FC6C98006D83BC /* marker-botanical@2x.png */,
+				12FC5BBC17FC6C98006D83BC /* marker-historic-places@2x.png */,
+				12FC5BBD17FC6C98006D83BC /* marker-medal-of-honor@2x.png */,
+				12FC5BBE17FC6C98006D83BC /* marker-museum@2x.png */,
+				12FC5BBF17FC6C98006D83BC /* marker-national-landmark@2x.png */,
+				12FC5BC017FC6C98006D83BC /* marker-public-art@2x.png */,
+				12FC5BC117FC6C98006D83BC /* marker-science-center@2x.png */,
+				12FC5BC217FC6C98006D83BC /* marker-theater@2x.png */,
+				12FC5BC317FC6C98006D83BC /* marker-zoo@2x.png */,
+			);
+			path = markers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,17 +324,27 @@
 				12AEC89817C3DC2E0001C5CD /* Default.png in Resources */,
 				12AEC89A17C3DC2E0001C5CD /* Default@2x.png in Resources */,
 				12AEC89C17C3DC2E0001C5CD /* Default-568h@2x.png in Resources */,
+				12FC5BC617FC6C98006D83BC /* marker-historic-places@2x.png in Resources */,
+				12FC5BC917FC6C98006D83BC /* marker-national-landmark@2x.png in Resources */,
+				12FC5BC417FC6C98006D83BC /* marker-barn@2x.png in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
+				12FC5BC817FC6C98006D83BC /* marker-museum@2x.png in Resources */,
+				12FC5BCC17FC6C98006D83BC /* marker-theater@2x.png in Resources */,
 				12AEC8D917C3DEC50001C5CD /* barns.json in Resources */,
 				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
 				12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */,
 				12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */,
 				1E18D4EC17FC74F400E91D5B /* GoogleMaps.bundle in Resources */,
 				12AEC8E317C3E1B50001C5CD /* details.png in Resources */,
+				12FC5BC517FC6C98006D83BC /* marker-botanical@2x.png in Resources */,
 				12AEC8E417C3E1B50001C5CD /* details2.png in Resources */,
 				12AEC8E517C3E1B50001C5CD /* justadded.png in Resources */,
 				12AEC8E617C3E1B50001C5CD /* menu.png in Resources */,
+				12FC5BC717FC6C98006D83BC /* marker-medal-of-honor@2x.png in Resources */,
+				12FC5BCA17FC6C98006D83BC /* marker-public-art@2x.png in Resources */,
+				12FC5BCB17FC6C98006D83BC /* marker-science-center@2x.png in Resources */,
 				12AEC8E717C3E1B50001C5CD /* tours.png in Resources */,
+				12FC5BCD17FC6C98006D83BC /* marker-zoo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,7 +64,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MG-H6-IPy">
-                                        <rect key="frame" x="160" y="338.99999999999994" width="160" height="167"/>
+                                        <rect key="frame" x="160" y="339" width="160" height="166.99999999999997"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="YOUR PROFILE">
@@ -83,7 +83,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
-                                        <rect key="frame" x="0.0" y="338" width="160" height="168.99999999999994"/>
+                                        <rect key="frame" x="0.0" y="337.99999999999989" width="160" height="169"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="SAVED SPOTS">
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8m-dr-lVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="811"/>
+            <point key="canvasLocation" x="888" y="1181"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wTu-TG-H9y">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-iM-2CA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="50"/>
+            <point key="canvasLocation" x="431" y="1174"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="0Wt-Yu-FlZ">
@@ -196,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zql-kY-BR7" userLabel="DetailView">
+                                    <view hidden="YES" alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zql-kY-BR7" userLabel="DetailView">
                                         <rect key="frame" x="15" y="165" width="290" height="403"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>

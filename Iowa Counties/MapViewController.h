@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GoogleMaps/GoogleMaps.h>
+#import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <GMSMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 
 - (IBAction)button_hide_pressed:(id)sender;
 - (IBAction)button_show_pressed:(id)sender;
+
+@end
+
+
+
+@interface MyCustomAnnotationView : MKAnnotationView
+{
+    // Custom data members
+}
 
 @end

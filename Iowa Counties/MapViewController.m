@@ -45,6 +45,7 @@
     self.map_view.delegate = self;
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
+    self.detail_view.hidden = YES;
 
     [self loadBarns];
     [self fitBounds];

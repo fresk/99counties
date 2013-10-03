@@ -18,7 +18,8 @@
 @end
 
 @implementation MapViewController  {
-
+    CGFloat _prior_zoom_level;
+    GMSCameraPosition* _prior_camera_pos;
 }
 
 - (IBAction)button_show_pressed:(id)sender {
@@ -33,23 +34,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
+    self.map_view.mapType = kGMSTypeNormal;
     self.map_view.mapType = kGMSTypeTerrain;
+    self.map_view.mapType = kGMSTypeSatellite;
+    self.map_view.mapType = kGMSTypeHybrid;
+    
     
     self.map_view.delegate = self;
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
+    self.detail_view.hidden = YES;
 
-    self.detail_view.hidden = TRUE;
-    
-    
     [self loadBarns];
     [self fitBounds];
-    [self performSelector:@selector(hideDetailsOverlay)
-               withObject:nil
-               afterDelay:1]; //will zoom in after 5 seconds
-    
 }
+
 
 
 
@@ -105,8 +106,11 @@
 
 
 - (void) centerOnMarker:  (GMSMarker *)  marker{
-    GMSCameraUpdate *update = [GMSCameraUpdate setTarget:marker.position zoom:16];
-    [self.map_view animateWithCameraUpdate:update];
+    _prior_camera_pos = self.map_view.camera;
+    GMSCameraUpdate *update = [GMSCameraUpdate setTarget:marker.position zoom:18];
+    [self.map_view animateWithCameraUpdate: update];
+    
+    
 }
 
 
@@ -118,48 +122,63 @@
                                                   coordinate:  SW];
     GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds
                                              withPadding:50.0];
+    
     [self.map_view animateWithCameraUpdate:update];
+    
+    
+
 }
 
 - (void) showDetailsOverlay {
     self.detail_view.hidden = FALSE;
+    //make sure its in the correct hidden position before animating
+    CGRect detail_rect_hidden = [[self detail_view] frame];
+    detail_rect_hidden.origin.y = 600;
+    [[self detail_view] setFrame:detail_rect_hidden];
+    
+    CGRect detail_rect_visible = [[self detail_view] frame];
+    detail_rect_visible.origin.y = 181;
+    
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 390.0, 0.0);
+
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 390.0, 0.0);
-    CGRect detail_rect_hidden = [[self detail_view] frame];
-    detail_rect_hidden.origin.y = 181;
+
     [UIView animateWithDuration:0.5
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         self.detail_view.frame = detail_rect_hidden;
+                         self.detail_view.frame = detail_rect_visible;
                          self.map_view.padding = mapInsets;
-                         
+                         //self.map_view.mapType = kGMSTypeSatellite;
                      }
                      completion:^(BOOL finished){
-                         self.map_view.mapType = kGMSTypeSatellite;
+                         [self.map_view animateToViewingAngle:45];
+                         [self.map_view animateToBearing:45];
                      }];
 }
 
 
 - (void) hideDetailsOverlay {
     
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
-    
-    self.map_view.settings.myLocationButton = YES;
-    self.map_view.settings.compassButton = YES;
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
+    
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
+    self.map_view.settings.myLocationButton = YES;
+    self.map_view.settings.compassButton = YES;
+
     [UIView animateWithDuration:.5
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          [[self detail_view] setFrame:detail_rect_hidden];
                          self.map_view.padding = mapInsets;
-                         self.map_view.mapType = kGMSTypeTerrain;
-                         
+                         //self.map_view.mapType = kGMSTypeTerrain;
                      }
-                     completion: nil];
+                     completion:^(BOOL finished){
+                         [self.map_view animateToCameraPosition:_prior_camera_pos];
+                     }];
     
     
 }

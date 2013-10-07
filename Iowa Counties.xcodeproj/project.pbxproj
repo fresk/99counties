@@ -126,6 +126,7 @@
 		12FC5BC117FC6C98006D83BC /* marker-science-center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-science-center@2x.png"; sourceTree = "<group>"; };
 		12FC5BC217FC6C98006D83BC /* marker-theater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-theater@2x.png"; sourceTree = "<group>"; };
 		12FC5BC317FC6C98006D83BC /* marker-zoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo@2x.png"; sourceTree = "<group>"; };
+		54503293EDD942DFB40D425C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +203,7 @@
 				12AEC88517C3DC2E0001C5CD /* UIKit.framework */,
 				12AEC88717C3DC2E0001C5CD /* Foundation.framework */,
 				12AEC88917C3DC2E0001C5CD /* CoreGraphics.framework */,
+				54503293EDD942DFB40D425C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -312,6 +314,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = fresk;
+				TargetAttributes = {
+					12AEC88117C3DC2E0001C5CD = {
+						DevelopmentTeam = Q7ET952695;
+					};
+				};
 			};
 			buildConfigurationList = 12AEC87D17C3DC2E0001C5CD /* Build configuration list for PBXProject "Iowa Counties" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -432,6 +439,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "9AFA247D-740F-422E-8F53-5ACB0ACDF0A1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -459,6 +467,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "9AFA247D-740F-422E-8F53-5ACB0ACDF0A1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -468,6 +477,8 @@
 		12AEC8A917C3DC2E0001C5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
@@ -479,6 +490,7 @@
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -487,6 +499,8 @@
 		12AEC8AA17C3DC2E0001C5CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../code/dca/iOS/99\\ Counties\\\"",
@@ -498,6 +512,7 @@
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

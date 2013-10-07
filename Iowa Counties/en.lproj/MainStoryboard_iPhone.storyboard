@@ -520,18 +520,11 @@
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>
         <image name="btn-single-www.png" width="145" height="50"/>
         <image name="btn-tours.png" width="150" height="150"/>
         <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
         <image name="btnbgb.png" width="160" height="166"/>
         <image name="justadded.png" width="693" height="1169"/>
         <image name="tours.png" width="693" height="1169"/>

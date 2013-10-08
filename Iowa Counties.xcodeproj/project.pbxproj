@@ -139,6 +139,9 @@
 		1EF88BD618048B4400125D7E /* HelveticaNeueLTStd-Lt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */; };
 		1EF88BD718048B4400125D7E /* HelveticaNeueLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */; };
 		1EF88BD818048B4400125D7E /* HelveticaNeueLTStd-Th.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */; };
+		1EF88BDE1804928900125D7E /* UILabel+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */; };
+		1EF88BE11804966E00125D7E /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */; };
+		1EF88BE4180496A400125D7E /* UIButton+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -283,6 +286,12 @@
 		1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Lt.otf"; sourceTree = "<group>"; };
 		1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Roman.otf"; sourceTree = "<group>"; };
 		1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Th.otf"; sourceTree = "<group>"; };
+		1EF88BDC1804928900125D7E /* UILabel+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+TCCustomFont.h"; sourceTree = "<group>"; };
+		1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TCCustomFont.m"; sourceTree = "<group>"; };
+		1EF88BDF1804966E00125D7E /* UITextField+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TCCustomFont.h"; sourceTree = "<group>"; };
+		1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
+		1EF88BE2180496A400125D7E /* UIButton+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TCCustomFont.h"; sourceTree = "<group>"; };
+		1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TCCustomFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +377,8 @@
 		12AEC88B17C3DC2E0001C5CD /* Iowa Counties */ = {
 			isa = PBXGroup;
 			children = (
+				1EF88BDC1804928900125D7E /* UILabel+TCCustomFont.h */,
+				1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */,
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
 				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
 				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
@@ -382,6 +393,10 @@
 				1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */,
 				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
 				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
+				1EF88BDF1804966E00125D7E /* UITextField+TCCustomFont.h */,
+				1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */,
+				1EF88BE2180496A400125D7E /* UIButton+TCCustomFont.h */,
+				1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */,
 			);
 			path = "Iowa Counties";
 			sourceTree = "<group>";
@@ -732,7 +747,10 @@
 			files = (
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,
+				1EF88BE11804966E00125D7E /* UITextField+TCCustomFont.m in Sources */,
 				1290D2B517E76A1C00332D1A /* MainMenuButtonViewCell.m in Sources */,
+				1EF88BE4180496A400125D7E /* UIButton+TCCustomFont.m in Sources */,
+				1EF88BDE1804928900125D7E /* UILabel+TCCustomFont.m in Sources */,
 				12AEC8A517C3DC2E0001C5CD /* ViewController.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
 				1290D2B217E7690800332D1A /* MainMenuViewController.m in Sources */,
@@ -842,6 +860,10 @@
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -865,6 +887,10 @@
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
 				INFOPLIST_FILE = "Iowa Counties/Iowa Counties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

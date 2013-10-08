@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "UIButton+TCCustomFont.h"
+#import "UILabel+TCCustomFont.h"
+#import "UITextField+TCCustomFont.h"
 
 #import <GoogleMaps/GoogleMaps.h>
 

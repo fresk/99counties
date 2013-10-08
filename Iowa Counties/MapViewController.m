@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface MapViewController ()
 
@@ -38,9 +39,15 @@
 @implementation MapViewController
 
 {
+    
     CGFloat _prior_zoom_level;
     GMSCameraPosition* _prior_camera_pos;
+    CLLocationManager *locationManager;
+    
     NSMutableData *_response_data;
+    BOOL showingOnlyBackgroundImage;
+    
+    
 }
 
 
@@ -54,7 +61,7 @@
 
 - (IBAction)backgroundImageScrollViewTapped:(id)sender {
     NSLog(@"Image Tapped: %@", sender);
-    //[self toggleShowBackgroundImageOnly];
+    [self toggleShowBackgroundImageOnly];
 }
 
 
@@ -73,14 +80,39 @@
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
     
-
     self.detail_view.hidden = YES;
+    showingOnlyBackgroundImage = FALSE;
+
+
     //[self loadBarns];
     [self fitBounds];
     [self api_request];
     [self initImagePager];
     
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = 50.0f; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
+    [locationManager startUpdatingLocation];
+    
 }
+
+
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    
+    CLLocationCoordinate2D here =  newLocation.coordinate;
+    NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
+    
+    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
+    [self.map_view animateWithCameraUpdate:update];
+    
+    //[locationManager startUpdatingLocation];
+}
+
 
 
 
@@ -171,6 +203,17 @@
     //}
     
     NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
+    
+    self.background_layer.alpha = 0.0;
+    [UIView animateWithDuration: 1.0
+                          delay: 2.0
+                        options: UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.background_layer.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         showingOnlyBackgroundImage = FALSE;
+                     }];
     
     
     self.imageUrls = nil;
@@ -353,6 +396,13 @@
     [CATransaction commit];
     
     
+    //CLLocation *myLocation = self.mapView.myLocation;
+    //NSLog(@"%f %f",myLocation.coordinate.latitude, myLocation.coordinate.longitude);
+    //for (GMSMarker *marker in self.map_view.markers) {
+        
+    //}
+    
+    
 
     
     
@@ -365,24 +415,59 @@
     CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.36, -96.31);
     bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
                                                   coordinate:  SW];
-    GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds
-                                             withPadding:50.0];
+    //GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds
+    //                                         withPadding:50.0];
+    
+    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: self.map_view.myLocation.coordinate zoom:8];
     
     [self.map_view animateWithCameraUpdate:update];
+}
+
+
+
+- (void) toggleShowBackgroundImageOnly {
+
+    NSLog(@"TAPPED BG IMAGE");
+    if (!showingOnlyBackgroundImage){
+            NSLog(@"only BG");
+        self.detail_view.alpha = 1.0;
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.detail_view.alpha = 0.0;
+                         }
+                         completion:^(BOOL finished){
+                             showingOnlyBackgroundImage = TRUE;
+                         }];
+    }else {
+        NSLog(@"fadein overlay");
+
+        self.detail_view.alpha = 0.0;
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.detail_view.alpha = 1.0;
+                         }
+                         completion:^(BOOL finished){
+                             showingOnlyBackgroundImage = FALSE;
+                         }];
     
+    }
+
     
+   
+
 
 }
 
 
 
-
-
-
-
 - (void) showDetailsOverlay {
 
-
+    
+    //showingOnlyBackgroundImage = FALSE;
     self.detail_view.hidden = FALSE;
     //make sure its in the correct hidden position before animating
     CGRect detail_rect_hidden = [[self detail_view] frame];
@@ -414,7 +499,7 @@
 
 - (void) hideDetailsOverlay {
     
-    self.background_layer.hidden = TRUE;
+    
     
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
@@ -423,15 +508,17 @@
     self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = YES;
 
-    [UIView animateWithDuration:.5
+    [UIView animateWithDuration:1.0
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          [[self detail_view] setFrame:detail_rect_hidden];
                          self.map_view.padding = mapInsets;
+                         self.background_layer.alpha = 0.0;
                          //self.map_view.mapType = kGMSTypeTerrain;
                      }
                      completion:^(BOOL finished){
+                         self.background_layer.hidden = TRUE;
                          [CATransaction setValue:[NSNumber numberWithFloat: 2.0f] forKey:kCATransactionAnimationDuration];
                          [self.map_view animateToCameraPosition:_prior_camera_pos];
                          [CATransaction setCompletionBlock:^{}];

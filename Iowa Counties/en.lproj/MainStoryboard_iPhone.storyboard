@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoF-hP-c1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="-988"/>
+            <point key="canvasLocation" x="-269" y="-988"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JU2-dP-cyb">
@@ -590,7 +590,6 @@
                             <constraint firstItem="qNq-Wh-bTD" firstAttribute="leading" secondItem="fUZ-2m-DR6" secondAttribute="leading" id="uJl-4v-cgL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="p6g-EM-C3B"/>
                     <connections>
                         <outlet property="address_label" destination="xNV-C2-7lJ" id="1hY-aA-LwP"/>
                         <outlet property="background_layer" destination="ag6-LV-xvk" id="EzR-rw-XU3"/>
@@ -624,9 +623,6 @@
         <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>

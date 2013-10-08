@@ -103,6 +103,8 @@
 		1EF88AB418045B4F00125D7E /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7B18045B4E00125D7E /* btn-single-phone.png */; };
 		1EF88AB518045B4F00125D7E /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7C18045B4E00125D7E /* btn-single-www.png */; };
 		1EF88AB71804606500125D7E /* bg-menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88AB61804606500125D7E /* bg-menu.jpg */; };
+		1EF88AB9180465C100125D7E /* btn-mainmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88AB8180465C100125D7E /* btn-mainmenu.png */; };
+		1EF88ABB180477FB00125D7E /* btn-backtomap.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88ABA180477FB00125D7E /* btn-backtomap.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +213,8 @@
 		1EF88A7B18045B4E00125D7E /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
 		1EF88A7C18045B4E00125D7E /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
 		1EF88AB61804606500125D7E /* bg-menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu.jpg"; sourceTree = "<group>"; };
+		1EF88AB8180465C100125D7E /* btn-mainmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-mainmenu.png"; sourceTree = "<group>"; };
+		1EF88ABA180477FB00125D7E /* btn-backtomap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-backtomap.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,8 @@
 		1EF88A5218045B4E00125D7E /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				1EF88ABA180477FB00125D7E /* btn-backtomap.png */,
+				1EF88AB8180465C100125D7E /* btn-mainmenu.png */,
 				1EF88AB61804606500125D7E /* bg-menu.jpg */,
 				1EF88A5318045B4E00125D7E /* app-icons */,
 				1EF88A6118045B4E00125D7E /* btn-aroundme.png */,
@@ -540,6 +546,7 @@
 				1EF88A9D18045B4F00125D7E /* btn-explore.png in Resources */,
 				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
 				1EF88A9018045B4F00125D7E /* AppIcon29x29@2x.png in Resources */,
+				1EF88AB9180465C100125D7E /* btn-mainmenu.png in Resources */,
 				1EF88A7E18045B4E00125D7E /* details2.png in Resources */,
 				1EF88A9718045B4F00125D7E /* iTunesArtwork.png in Resources */,
 				1EF88A7F18045B4E00125D7E /* justadded.png in Resources */,
@@ -550,6 +557,7 @@
 				1EF88A9B18045B4F00125D7E /* btn-aroundme.png in Resources */,
 				1EF88A8418045B4E00125D7E /* marker-historic-places@2x.png in Resources */,
 				12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */,
+				1EF88ABB180477FB00125D7E /* btn-backtomap.png in Resources */,
 				1EF88AA818045B4F00125D7E /* btn-single-mail.png in Resources */,
 				1EF88AB118045B4F00125D7E /* btnbgb.png in Resources */,
 				1EF88AAB18045B4F00125D7E /* btn-single-phone@2x.png in Resources */,

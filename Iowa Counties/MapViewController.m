@@ -206,7 +206,7 @@
     
     self.background_layer.alpha = 0.0;
     [UIView animateWithDuration: 1.0
-                          delay: 2.0
+                          delay: 1.0
                         options: UIViewAnimationOptionCurveLinear
                      animations:^{
                          self.background_layer.alpha = 1.0;
@@ -365,6 +365,7 @@
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
     marker.icon = [UIImage imageNamed: @"marker-barn"];
+    [marker setAppearAnimation: kGMSMarkerAnimationPop];
     marker.map = self.map_view;
 }
 
@@ -430,25 +431,53 @@
     NSLog(@"TAPPED BG IMAGE");
     if (!showingOnlyBackgroundImage){
             NSLog(@"only BG");
-        self.detail_view.alpha = 1.0;
+
+        
+        CGRect detail_rect_hidden = [[self detail_view] frame];
+        CGRect pageFrame = [self.pageControl frame];
+        
+        pageFrame.origin.y = 530;
+        detail_rect_hidden.origin.y = 600;
+        
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
+        self.map_view.settings.myLocationButton = YES;
+        self.map_view.settings.compassButton = YES;
+        
         [UIView animateWithDuration:1.0
                               delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
+                            options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             self.detail_view.alpha = 0.0;
+                             [[self detail_view] setFrame:detail_rect_hidden];
+                             self.map_view.padding = mapInsets;
+                             self.pageControl.frame = pageFrame;
+                             //self.background_layer.alpha = 0.0;
+                             //self.map_view.mapType = kGMSTypeTerrain;
                          }
                          completion:^(BOOL finished){
                              showingOnlyBackgroundImage = TRUE;
                          }];
+        
     }else {
-        NSLog(@"fadein overlay");
 
-        self.detail_view.alpha = 0.0;
+        CGRect detail_rect_visible = [[self detail_view] frame];
+        CGRect pageFrame = [self.pageControl frame];
+        
+        pageFrame.origin.y = 220;
+        detail_rect_visible.origin.y = 250;
+        
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
+        
+        self.map_view.settings.myLocationButton = NO;
+        self.map_view.settings.compassButton = NO;
+        
         [UIView animateWithDuration:1.0
                               delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
+                            options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             self.detail_view.alpha = 1.0;
+                             self.detail_view.frame = detail_rect_visible;
+                             self.map_view.padding = mapInsets;
+                             self.pageControl.frame = pageFrame;
+                             //self.map_view.mapType = kGMSTypeSatellite;
                          }
                          completion:^(BOOL finished){
                              showingOnlyBackgroundImage = FALSE;

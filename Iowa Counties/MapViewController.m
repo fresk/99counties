@@ -8,15 +8,28 @@
 
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet GMSMapView *map_view;
+
+
 @property (weak, nonatomic) IBOutlet UIView *detail_view;
 @property (weak, nonatomic) IBOutlet UILabel *detail_title;
+@property (strong, nonatomic) IBOutlet UILabel *address_label;
 @property (weak, nonatomic) IBOutlet UITextView *detail_text;
+@property (strong, nonatomic) IBOutlet UILabel *phone_label;
+@property (strong, nonatomic) IBOutlet UILabel *www_label;
+@property (strong, nonatomic) IBOutlet UILabel *email_label;
 
+
+@property (strong, nonatomic) IBOutlet UIView *background_layer;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
+@property (strong, nonatomic) NSArray *imageUrls;
 
 @end
 
@@ -61,6 +74,7 @@
     //[self loadBarns];
     [self fitBounds];
     [self api_request];
+    [self initImagePager];
     
 }
 
@@ -124,27 +138,149 @@
     NSEnumerator *enumerator = [res objectEnumerator];
     NSDictionary* item;
     while (item = (NSDictionary*)[enumerator nextObject]) {
-        NSLog(@"adding: %@", item);
+        //NSLog(@"adding: %@", item);
         [self addLocation:item];
 
     }
+}
+
+
+
+- (void) initImagePager {
 
     
-    /*
-    // show all values
-    for(id key in res) {
-        
-        id value = [res objectForKey:key];
-        
-        NSString *keyAsString = (NSString *)key;
-        NSString *valueAsString = (NSString *)value;
-        
-        NSLog(@"key: %@", keyAsString);
-        NSLog(@"value: %@", valueAsString);
+    // a page is the width of the scroll view
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.scrollsToTop = NO;
+    self.scrollView.delegate = self;
+    
+    self.pageControl.currentPage = 0;
+}
+
+
+
+- (void) loadBackgroundImageList: (NSDictionary*) location {
+    for (UIView *view in [self.scrollView subviews]) {
+        [view removeFromSuperview];
     }
-    */
+    self.imageUrls = nil;
+    
+    NSString *image_list_str = [location objectForKey:@"image_list"];
+    self.imageUrls = [image_list_str componentsSeparatedByString:@","];
+    
+    int numberOfPages = [self.imageUrls count];
+    
+    self.scrollView.contentSize =
+    CGSizeMake(CGRectGetWidth(self.scrollView.frame) * numberOfPages,
+               CGRectGetHeight(self.scrollView.frame));
+    self.pageControl.numberOfPages = numberOfPages;
+    self.pageControl.currentPage = 0;
+    
+    self.viewControllers = nil;
+    self.viewControllers = [[NSMutableArray alloc] init];
+    for (NSUInteger i = 0; i < numberOfPages; i++)
+    {
+		[self.viewControllers addObject:[NSNull null]];
+    }
+    if (numberOfPages > 0){
+        [self loadScrollViewWithPage:0];
+    }
+    if (numberOfPages > 1){
+        [self loadScrollViewWithPage:1];
+    }
+}
+
+
+
+- (void)loadScrollViewWithPage:(NSUInteger)page
+{
+    if (page >= [self.imageUrls count])
+        return;
+    
+    if ([self.imageUrls count] == 0)
+        return;
+    
+    // replace the placeholder if necessary
+    UIViewController *controller = [self.viewControllers objectAtIndex:page];
+    if ((NSNull *)controller == [NSNull null])
+    {
+        controller = [[UIViewController alloc] init];
+        [self.viewControllers replaceObjectAtIndex:page withObject:controller];
+    }
+    
+    // add the controller's view to the scroll view
+    if (controller.view.superview == nil)
+    {
+        CGRect frame = self.scrollView.frame;
+        frame.origin.x = CGRectGetWidth(frame) * page;
+        frame.origin.y = 0;
+        controller.view.frame = frame;
+
+        
+        
+        CGRect img_frame = self.scrollView.frame;
+        img_frame.origin.x = 0;
+        img_frame.origin.y = 0;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:img_frame];
+        NSString *image_src = [self.imageUrls objectAtIndex:page];
+        [imageView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
+        [imageView setContentMode: UIViewContentModeScaleAspectFill];
+        [imageView setClipsToBounds:TRUE];
+        [controller.view addSubview:imageView];
     
 
+        NSLog(@"image view with frame: %f, %f", frame.size.width, frame.size.height);
+        
+        
+        [self addChildViewController:controller];
+        [self.scrollView addSubview:controller.view];
+        [controller didMoveToParentViewController:self];
+        
+
+  
+    }
+}
+
+// at the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    // switch the indicator when more than 50% of the previous/next page is visible
+    CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+    NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    if (page > 1){
+        [self loadScrollViewWithPage:page - 1];
+    }
+    
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    
+    // a possible optimization would be to unload the views+controllers which are no longer visible
+}
+
+- (void)gotoPage:(BOOL)animated
+{
+    NSInteger page = self.pageControl.currentPage;
+    
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    
+	// update the scroll view to the appropriate page
+    CGRect bounds = self.scrollView.bounds;
+    bounds.origin.x = CGRectGetWidth(bounds) * page;
+    bounds.origin.y = 0;
+    [self.scrollView scrollRectToVisible:bounds animated:animated];
+}
+
+- (IBAction)changePage:(id)sender
+{
+    [self gotoPage:YES];    // YES = animate
 }
 
 
@@ -168,13 +304,13 @@
 }
 
 
-- (void) addLocation: (NSDictionary*) barn {
+- (void) addLocation: (NSDictionary*) location {
     
     // Add a custom 'glow' marker around Sydney.
-    CLLocationCoordinate2D position = [self loadGeoCoordinate: [barn objectForKey:@"geo_location"]];
+    CLLocationCoordinate2D position = [self loadGeoCoordinate: [location objectForKey:@"geo_location"]];
     GMSMarker *marker = [GMSMarker markerWithPosition: position];
-    marker.userData = barn;
-    marker.title = [barn objectForKey:@"Property Name"] ;
+    marker.userData = location;
+    marker.title = [location objectForKey:@"name"] ;
     marker.icon = [UIImage imageNamed: @"marker-barn"];
     marker.map = self.map_view;
 }
@@ -184,10 +320,13 @@
 //}
 
 
+
+
 - (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
-    NSDictionary* barn = (NSDictionary*)marker.userData;
-    [self.detail_title setText:[barn objectForKey:@"name"]] ;
-    [self.detail_text setText: @"description"];
+    NSDictionary* location = (NSDictionary*)marker.userData;
+    [self.detail_title setText:[location objectForKey:@"name"]] ;
+    [self.detail_text setText: [location objectForKey:@"description"]];
+    [self loadBackgroundImageList: location];
     [self centerOnMarker: marker];
     [self showDetailsOverlay];
     return TRUE;
@@ -196,8 +335,15 @@
 
 - (void) centerOnMarker:  (GMSMarker *)  marker{
     _prior_camera_pos = self.map_view.camera;
-    GMSCameraUpdate *update = [GMSCameraUpdate setTarget:marker.position zoom:18];
-    [self.map_view animateWithCameraUpdate: update];
+    
+    [CATransaction setValue:[NSNumber numberWithFloat: 1.0f] forKey:kCATransactionAnimationDuration];
+    GMSCameraPosition *new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:45 viewingAngle:45];
+    [self.map_view animateToCameraPosition: new_cam];
+    [CATransaction setCompletionBlock:^{}];
+    [CATransaction commit];
+    
+    
+
     
     
 }
@@ -219,6 +365,8 @@
 }
 
 - (void) showDetailsOverlay {
+
+
     self.detail_view.hidden = FALSE;
     //make sure its in the correct hidden position before animating
     CGRect detail_rect_hidden = [[self detail_view] frame];
@@ -226,14 +374,14 @@
     [[self detail_view] setFrame:detail_rect_hidden];
     
     CGRect detail_rect_visible = [[self detail_view] frame];
-    detail_rect_visible.origin.y = 181;
+    detail_rect_visible.origin.y = 250;
     
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 390.0, 0.0);
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
 
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
 
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:1.0
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -242,13 +390,15 @@
                          //self.map_view.mapType = kGMSTypeSatellite;
                      }
                      completion:^(BOOL finished){
-                         [self.map_view animateToViewingAngle:45];
-                         [self.map_view animateToBearing:45];
+
+                          //   self.background_layer.hidden = FALSE;
                      }];
 }
 
 
 - (void) hideDetailsOverlay {
+    
+    self.background_layer.hidden = TRUE;
     
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
@@ -266,7 +416,10 @@
                          //self.map_view.mapType = kGMSTypeTerrain;
                      }
                      completion:^(BOOL finished){
+                         [CATransaction setValue:[NSNumber numberWithFloat: 2.0f] forKey:kCATransactionAnimationDuration];
                          [self.map_view animateToCameraPosition:_prior_camera_pos];
+                         [CATransaction setCompletionBlock:^{}];
+                         [CATransaction commit];
                      }];
     
     

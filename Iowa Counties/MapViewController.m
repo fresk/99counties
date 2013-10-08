@@ -52,6 +52,9 @@
     [self hideDetailsOverlay];
 }
 
+- (IBAction)backgroundImageScrollViewTapped:(id)sender {
+    NSLog(@"Image Tapped: %@", sender);
+}
 
 
 - (void)viewDidLoad {
@@ -391,7 +394,7 @@
                      }
                      completion:^(BOOL finished){
 
-                          //   self.background_layer.hidden = FALSE;
+                             self.background_layer.hidden = FALSE;
                      }];
 }
 

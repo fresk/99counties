@@ -470,9 +470,14 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFi-UF-EbV">
                                                 <rect key="frame" x="0.0" y="0.0" width="322" height="569"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="QpN-i5-N3V" id="tYQ-SW-llL"/>
+                                                    <outletCollection property="gestureRecognizers" destination="mBo-hI-D9l" appends="YES" id="PHF-SC-z5L"/>
+                                                </connections>
                                             </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-Xh-kAw">
-                                                <rect key="frame" x="141" y="216" width="39" height="37"/>
+                                                <rect key="frame" x="141" y="266" width="39" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -615,6 +620,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1O9-Jr-Z9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mBo-hI-D9l">
+                    <connections>
+                        <action selector="backgroundImageScrollViewTapped:" destination="QpN-i5-N3V" id="86k-Xb-gwA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1026" y="-643"/>
         </scene>
@@ -628,11 +638,18 @@
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>
         <image name="btn-single-www.png" width="145" height="50"/>
         <image name="btn-tours.png" width="150" height="150"/>
         <image name="btnbga.png" width="160" height="166"/>
+        <image name="btnbga.png" width="160" height="166"/>
+        <image name="btnbga.png" width="160" height="166"/>
+        <image name="btnbgb.png" width="160" height="166"/>
+        <image name="btnbgb.png" width="160" height="166"/>
         <image name="btnbgb.png" width="160" height="166"/>
         <image name="justadded.png" width="693" height="1169"/>
         <image name="tours.png" width="693" height="1169"/>

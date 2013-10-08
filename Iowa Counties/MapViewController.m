@@ -365,6 +365,7 @@
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
     marker.icon = [UIImage imageNamed: @"marker-barn"];
+    [marker setAppearAnimation: kGMSMarkerAnimationPop];
     marker.map = self.map_view;
 }
 

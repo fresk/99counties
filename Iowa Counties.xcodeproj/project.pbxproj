@@ -134,6 +134,11 @@
 		1EF88B61180483CC00125D7E /* marker-undergroundrailroad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B37180483CC00125D7E /* marker-undergroundrailroad@2x.png */; };
 		1EF88B62180483CC00125D7E /* marker-zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B38180483CC00125D7E /* marker-zoo.png */; };
 		1EF88B63180483CC00125D7E /* marker-zoo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B39180483CC00125D7E /* marker-zoo@2x.png */; };
+		1EF88BD418048B4400125D7E /* HelveticaNeueLTStd-Bd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */; };
+		1EF88BD518048B4400125D7E /* HelveticaNeueLTStd-Blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */; };
+		1EF88BD618048B4400125D7E /* HelveticaNeueLTStd-Lt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */; };
+		1EF88BD718048B4400125D7E /* HelveticaNeueLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */; };
+		1EF88BD818048B4400125D7E /* HelveticaNeueLTStd-Th.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,6 +278,11 @@
 		1EF88B37180483CC00125D7E /* marker-undergroundrailroad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-undergroundrailroad@2x.png"; sourceTree = "<group>"; };
 		1EF88B38180483CC00125D7E /* marker-zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo.png"; sourceTree = "<group>"; };
 		1EF88B39180483CC00125D7E /* marker-zoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo@2x.png"; sourceTree = "<group>"; };
+		1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Bd.otf"; sourceTree = "<group>"; };
+		1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Blk.otf"; sourceTree = "<group>"; };
+		1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Lt.otf"; sourceTree = "<group>"; };
+		1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Roman.otf"; sourceTree = "<group>"; };
+		1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Th.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +414,7 @@
 		1EF88A3E18045B4E00125D7E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1EF88B641804895600125D7E /* HelveticaNeue */,
 				1EF88A3F18045B4E00125D7E /* details.png */,
 				1EF88A4018045B4E00125D7E /* details2.png */,
 				1EF88A4118045B4E00125D7E /* justadded.png */,
@@ -537,6 +548,18 @@
 			path = half;
 			sourceTree = "<group>";
 		};
+		1EF88B641804895600125D7E /* HelveticaNeue */ = {
+			isa = PBXGroup;
+			children = (
+				1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */,
+				1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */,
+				1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */,
+				1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */,
+				1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */,
+			);
+			path = HelveticaNeue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,6 +616,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF88BD418048B4400125D7E /* HelveticaNeueLTStd-Bd.otf in Resources */,
+				1EF88BD518048B4400125D7E /* HelveticaNeueLTStd-Blk.otf in Resources */,
+				1EF88BD618048B4400125D7E /* HelveticaNeueLTStd-Lt.otf in Resources */,
+				1EF88BD718048B4400125D7E /* HelveticaNeueLTStd-Roman.otf in Resources */,
+				1EF88BD818048B4400125D7E /* HelveticaNeueLTStd-Th.otf in Resources */,
 				1EF88AAC18045B4F00125D7E /* btn-single-www.png in Resources */,
 				1EF88AA418045B4F00125D7E /* btn-savedspots@2x.png in Resources */,
 				12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */,

@@ -54,6 +54,7 @@
 
 - (IBAction)backgroundImageScrollViewTapped:(id)sender {
     NSLog(@"Image Tapped: %@", sender);
+    //[self toggleShowBackgroundImageOnly];
 }
 
 
@@ -372,6 +373,12 @@
     
 
 }
+
+
+
+
+
+
 
 - (void) showDetailsOverlay {
 

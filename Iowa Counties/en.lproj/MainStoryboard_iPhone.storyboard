@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cty-8v-OMU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3nL-DT-2ha">
     <dependencies>
         <deployment version="1792" defaultVersion="1536" identifier="iOS"/>
         <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="XIG-BH-HAX">
-            <objects>
-                <navigationController storyboardIdentifier="Root Navigation View" definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Cty-8v-OMU" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TG0-6x-Lkm">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="3nL-DT-2ha" kind="relationship" relationship="rootViewController" id="U7Z-97-szg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RpJ-XY-C5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="404" y="-1179"/>
-        </scene>
         <!--View Controller - Main Menu-->
         <scene sceneID="juT-RO-WV1">
             <objects>
@@ -49,7 +32,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" image="btn-explore.png"/>
                                         <connections>
-                                            <segue destination="Ahh-ly-VK1" kind="push" id="g2Q-af-fTS"/>
+                                            <segue destination="Ahh-ly-VK1" kind="modal" id="KEv-Ni-qlM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzX-WO-hLE">
@@ -60,7 +43,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8Q7-gu-I0s" kind="push" id="rkj-sv-sCe"/>
+                                            <segue destination="8Q7-gu-I0s" kind="modal" id="Zvl-D0-1j4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chg-wd-PO3">
@@ -71,7 +54,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="U48-U2-ZcZ" kind="push" id="ZfX-ZN-0aG"/>
+                                            <segue destination="U48-U2-ZcZ" kind="modal" id="vOv-QZ-8kr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MG-H6-IPy">
@@ -82,7 +65,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Q3M-lL-kBd" kind="push" id="QhO-Y1-8Ho"/>
+                                            <segue destination="Q3M-lL-kBd" kind="modal" id="wdN-cy-6Ih"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEp-kd-GoD">
@@ -93,7 +76,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="QpN-i5-N3V" kind="push" id="UdO-or-FTb"/>
+                                            <segue destination="QpN-i5-N3V" kind="modal" id="VKH-m3-mLl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
@@ -104,7 +87,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="n6S-DA-IEk" kind="push" id="kyx-0A-gyz"/>
+                                            <segue destination="n6S-DA-IEk" kind="modal" id="9UY-wN-Acv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -116,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoF-hP-c1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="-28"/>
+            <point key="canvasLocation" x="-301" y="-988"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JU2-dP-cyb">
@@ -163,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uC9-oB-q5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="62"/>
+            <point key="canvasLocation" x="1130" y="-902"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ibO-es-zXW">
@@ -190,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Eb-aH-z7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="819"/>
+            <point key="canvasLocation" x="1130" y="-53"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TAY-BR-1wl">
@@ -225,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8m-dr-lVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-133" y="73"/>
+            <point key="canvasLocation" x="455" y="-879"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oXl-T0-dlB">
@@ -347,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qD-xh-ban" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130" y="823"/>
+            <point key="canvasLocation" x="446" y="-13"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wTu-TG-H9y">
@@ -382,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-iM-2CA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1033" y="-1466"/>
+            <point key="canvasLocation" x="455" y="-1750"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hRK-G4-5C0">
@@ -440,7 +423,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJf-ya-mQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-982" y="-567"/>
+            <point key="canvasLocation" x="-1150" y="-2095"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="0Wt-Yu-FlZ">
@@ -629,7 +612,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1026" y="-643"/>
+            <point key="canvasLocation" x="1130" y="-1743"/>
         </scene>
     </scenes>
     <resources>
@@ -649,12 +632,6 @@
         <image name="btn-single-phone.png" width="145" height="50"/>
         <image name="btn-single-www.png" width="145" height="50"/>
         <image name="btn-tours.png" width="150" height="150"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
         <image name="justadded.png" width="693" height="1169"/>
         <image name="tours.png" width="693" height="1169"/>
     </resources>

@@ -11,7 +11,7 @@
             <objects>
                 <navigationController storyboardIdentifier="Root Navigation View" definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Cty-8v-OMU" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="TG0-6x-Lkm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TG0-6x-Lkm">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -39,11 +39,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-menu.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fcv-S9-toB">
+                                        <rect key="frame" x="0.0" y="-66" width="320" height="616"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-6E-dpI">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" image="btn-explore.png" backgroundImage="btnbga.png"/>
+                                        <state key="normal" image="btn-explore.png"/>
                                         <connections>
                                             <segue destination="Ahh-ly-VK1" kind="push" id="g2Q-af-fTS"/>
                                         </connections>
@@ -52,7 +56,7 @@
                                         <rect key="frame" x="160" y="166" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-planatrip.png" backgroundImage="btnbga.png">
+                                        <state key="normal" image="btn-planatrip.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -63,7 +67,7 @@
                                         <rect key="frame" x="0.0" y="166" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-tours.png" backgroundImage="btnbgb.png">
+                                        <state key="normal" image="btn-tours.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -74,7 +78,7 @@
                                         <rect key="frame" x="160" y="332" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-myprofile.png" backgroundImage="btnbgb.png">
+                                        <state key="normal" image="btn-myprofile.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -85,7 +89,7 @@
                                         <rect key="frame" x="160" y="0.0" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-aroundme.png" backgroundImage="btnbgb.png">
+                                        <state key="normal" image="btn-aroundme.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -96,7 +100,7 @@
                                         <rect key="frame" x="0.0" y="332" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-savedspots.png" backgroundImage="btnbga.png">
+                                        <state key="normal" image="btn-savedspots.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -104,7 +108,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -621,6 +624,7 @@
     </scenes>
     <resources>
         <image name="barns.png" width="36" height="51"/>
+        <image name="bg-menu.jpg" width="640" height="1136"/>
         <image name="btn-aroundme.png" width="150" height="150"/>
         <image name="btn-explore.png" width="150" height="150"/>
         <image name="btn-myprofile.png" width="150" height="150"/>
@@ -628,12 +632,13 @@
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>
         <image name="btn-single-www.png" width="145" height="50"/>
         <image name="btn-tours.png" width="150" height="150"/>
-        <image name="btnbga.png" width="160" height="166"/>
-        <image name="btnbgb.png" width="160" height="166"/>
         <image name="justadded.png" width="693" height="1169"/>
         <image name="tours.png" width="693" height="1169"/>
     </resources>

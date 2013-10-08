@@ -102,6 +102,7 @@
 		1EF88AB318045B4F00125D7E /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7A18045B4E00125D7E /* btn-single-mail.png */; };
 		1EF88AB418045B4F00125D7E /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7B18045B4E00125D7E /* btn-single-phone.png */; };
 		1EF88AB518045B4F00125D7E /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7C18045B4E00125D7E /* btn-single-www.png */; };
+		1EF88AB71804606500125D7E /* bg-menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88AB61804606500125D7E /* bg-menu.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		1EF88A7A18045B4E00125D7E /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
 		1EF88A7B18045B4E00125D7E /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
 		1EF88A7C18045B4E00125D7E /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
+		1EF88AB61804606500125D7E /* bg-menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 		1EF88A5218045B4E00125D7E /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				1EF88AB61804606500125D7E /* bg-menu.jpg */,
 				1EF88A5318045B4E00125D7E /* app-icons */,
 				1EF88A6118045B4E00125D7E /* btn-aroundme.png */,
 				1EF88A6218045B4E00125D7E /* btn-aroundme@2x.png */,
@@ -526,6 +529,7 @@
 				1EF88A8E18045B4F00125D7E /* tours.png in Resources */,
 				1EF88AA618045B4F00125D7E /* btn-single-address@2x.png in Resources */,
 				1EF88A8118045B4E00125D7E /* botanical@2x.png in Resources */,
+				1EF88AB71804606500125D7E /* bg-menu.jpg in Resources */,
 				1EF88AAE18045B4F00125D7E /* btn-tours.png in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
 				12AEC8D917C3DEC50001C5CD /* barns.json in Resources */,

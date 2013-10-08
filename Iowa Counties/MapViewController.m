@@ -165,9 +165,13 @@
 
 
 - (void) loadBackgroundImageList: (NSDictionary*) location {
-    for (UIView *view in [self.scrollView subviews]) {
-        [view removeFromSuperview];
-    }
+    //for (UIView *view in [self.scrollView subviews]) {
+    //    [view removeFromSuperview];
+    //}
+    
+    NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
+    
+    
     self.imageUrls = nil;
     
     NSString *image_list_str = [location objectForKey:@"image_list"];
@@ -199,6 +203,8 @@
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
+    
+    NSLog(@"loading image page: %d", page);
     if (page >= [self.imageUrls count])
         return;
     

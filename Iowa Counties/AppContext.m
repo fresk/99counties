@@ -9,24 +9,25 @@
 #import "AppContext.h"
 #import "Utils.h"
 
+static AppContext *ctx_instance = nil;
+static dispatch_once_t onceToken;
+
 @implementation AppContext
 
 
+
 + (id)instance {
-    static AppContext *ctx_instance = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ctx_instance = [[self alloc] init];
+        ctx_instance = [self alloc];
+        ctx_instance = [ctx_instance init];
+        [ctx_instance initializeContext];
     });
     return ctx_instance;
 }
 
-- (id)init {
-    if (self = [super init]) {
-        self.appName = @"Find Your Iowa";
-        self.locationCategories = [Utils loadJsonFile:@"categories"];
-    }
-    return self;
+- (void)initializeContext {
+    self.appName = @"Find Your Iowa";
+    self.locationCategories = [Utils loadJsonFile:@"data/categories"];
 }
 
 

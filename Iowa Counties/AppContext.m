@@ -28,6 +28,7 @@ static dispatch_once_t onceToken;
 - (void)initializeContext {
     self.appName = @"Find Your Iowa";
     self.locationCategories = [Utils loadJsonFile:@"data/categories"];
+    NSLog(@"APP Context initialized %d", [self.locationCategories count]);
 }
 
 

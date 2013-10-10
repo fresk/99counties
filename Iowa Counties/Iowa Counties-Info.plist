@@ -4,11 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>HelveticaNeueLTStd-Th.otf</string>
-		<string>HelveticaNeueLTStd-Roman.otf</string>
-		<string>HelveticaNeueLTStd-Lt.otf</string>
-		<string>HelveticaNeueLTStd-Bd.otf</string>
-		<string>HelveticaNeueLTStd-Blk.otf</string>
+		<string>fonts/HelveticaNeueLTStd-Th.otf</string>
+		<string>fonts/HelveticaNeueLTStd-Roman.otf</string>
+		<string>fonts/HelveticaNeueLTStd-Lt.otf</string>
+		<string>fonts/HelveticaNeueLTStd-Bd.otf</string>
+		<string>fonts/HelveticaNeueLTStd-Blk.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

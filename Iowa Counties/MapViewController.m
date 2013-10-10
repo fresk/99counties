@@ -11,6 +11,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "AppContext.h"
+
+
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -39,15 +42,12 @@
 @implementation MapViewController
 
 {
-    
     CGFloat _prior_zoom_level;
     GMSCameraPosition* _prior_camera_pos;
     CLLocationManager *locationManager;
     
     NSMutableData *_response_data;
     BOOL showingOnlyBackgroundImage;
-    
-    
 }
 
 
@@ -68,6 +68,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    AppContext* ctx = [AppContext instance];
+    NSLog(@"app name: %@", ctx.appName);
+    NSLog(@"app categories: %@", ctx.locationCategories);
+    
+    for(NSString *fontfamilyname in [UIFont familyNames])
+    {
+        NSLog(@"family:'%@'",fontfamilyname);
+        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+        {
+            NSLog(@"\tfont:'%@'",fontName);
+        }
+        NSLog(@"-------------");
+    }
+    
+    
     self.map_view.delegate = self;
     //self.map_view.mapType = kGMSTypeNormal;
     //self.map_view.mapType = kGMSTypeTerrain;
@@ -82,7 +97,6 @@
     
     self.detail_view.hidden = YES;
     showingOnlyBackgroundImage = FALSE;
-
 
     //[self loadBarns];
     [self fitBounds];
@@ -109,8 +123,7 @@
     
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
     [self.map_view animateWithCameraUpdate:update];
-    
-    //[locationManager startUpdatingLocation];
+
 }
 
 
@@ -183,8 +196,6 @@
 
 
 - (void) initImagePager {
-
-    
     // a page is the width of the scroll view
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -337,11 +348,6 @@
 }
 
 
-
-
-
-
-
 - (CLLocationCoordinate2D) loadGeoCoordinate: (NSString*) location_str {
     float lat;
     float lon;
@@ -370,10 +376,6 @@
 }
 
 
-//- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker*)marker {
-//}
-
-
 
 
 - (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
@@ -389,24 +391,11 @@
 
 - (void) centerOnMarker:  (GMSMarker *)  marker{
     _prior_camera_pos = self.map_view.camera;
-    
     [CATransaction setValue:[NSNumber numberWithFloat: 1.0f] forKey:kCATransactionAnimationDuration];
     GMSCameraPosition *new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:45 viewingAngle:45];
     [self.map_view animateToCameraPosition: new_cam];
     [CATransaction setCompletionBlock:^{}];
     [CATransaction commit];
-    
-    
-    //CLLocation *myLocation = self.mapView.myLocation;
-    //NSLog(@"%f %f",myLocation.coordinate.latitude, myLocation.coordinate.longitude);
-    //for (GMSMarker *marker in self.map_view.markers) {
-        
-    //}
-    
-    
-
-    
-    
 }
 
 
@@ -416,9 +405,6 @@
     CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.36, -96.31);
     bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
                                                   coordinate:  SW];
-    //GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds
-    //                                         withPadding:50.0];
-    
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: self.map_view.myLocation.coordinate zoom:8];
     
     [self.map_view animateWithCameraUpdate:update];
@@ -428,11 +414,7 @@
 
 - (void) toggleShowBackgroundImageOnly {
 
-    NSLog(@"TAPPED BG IMAGE");
     if (!showingOnlyBackgroundImage){
-            NSLog(@"only BG");
-
-        
         CGRect detail_rect_hidden = [[self detail_view] frame];
         CGRect pageFrame = [self.pageControl frame];
         
@@ -484,18 +466,11 @@
                          }];
     
     }
-
-    
-   
-
-
 }
 
 
 
 - (void) showDetailsOverlay {
-
-    
     //showingOnlyBackgroundImage = FALSE;
     self.detail_view.hidden = FALSE;
     //make sure its in the correct hidden position before animating
@@ -527,9 +502,6 @@
 
 
 - (void) hideDetailsOverlay {
-    
-    
-    
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
     
@@ -554,10 +526,6 @@
                          [CATransaction commit];
                      }];
     
-    
 }
-
-
-
 
 @end

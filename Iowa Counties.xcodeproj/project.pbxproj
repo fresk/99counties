@@ -10,19 +10,18 @@
 		121F92471803431700B47AD5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F92461803431700B47AD5 /* GoogleMaps.framework */; };
 		121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F92481803433400B47AD5 /* GoogleMaps.bundle */; };
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
-		1290D2B217E7690800332D1A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1290D2B117E7690800332D1A /* MainMenuViewController.m */; };
-		1290D2B517E76A1C00332D1A /* MainMenuButtonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */; };
+		126E7FF318060C0400E7BFE0 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF218060C0400E7BFE0 /* data */; };
+		126E7FF51806117E00E7BFE0 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF41806117E00E7BFE0 /* fonts */; };
+		126E7FF71806118800E7BFE0 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF61806118800E7BFE0 /* images */; };
+		126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FF91806146E00E7BFE0 /* AppContext.m */; };
+		126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FFC180632EA00E7BFE0 /* Utils.m */; };
 		12AEC88617C3DC2E0001C5CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88517C3DC2E0001C5CD /* UIKit.framework */; };
 		12AEC88817C3DC2E0001C5CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88717C3DC2E0001C5CD /* Foundation.framework */; };
 		12AEC88A17C3DC2E0001C5CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC88917C3DC2E0001C5CD /* CoreGraphics.framework */; };
 		12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC88E17C3DC2E0001C5CD /* InfoPlist.strings */; };
 		12AEC89217C3DC2E0001C5CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC89117C3DC2E0001C5CD /* main.m */; };
 		12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC89517C3DC2E0001C5CD /* AppDelegate.m */; };
-		12AEC89817C3DC2E0001C5CD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89717C3DC2E0001C5CD /* Default.png */; };
-		12AEC89A17C3DC2E0001C5CD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89917C3DC2E0001C5CD /* Default@2x.png */; };
-		12AEC89C17C3DC2E0001C5CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89B17C3DC2E0001C5CD /* Default-568h@2x.png */; };
 		12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */; };
-		12AEC8A517C3DC2E0001C5CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC8A417C3DC2E0001C5CD /* ViewController.m */; };
 		12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */; };
 		12AEC8BF17C3DCD10001C5CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8AE17C3DCD10001C5CD /* SystemConfiguration.framework */; };
 		12AEC8C017C3DCD10001C5CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8AF17C3DCD10001C5CD /* QuartzCore.framework */; };
@@ -40,118 +39,20 @@
 		12AEC8CC17C3DCD10001C5CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BB17C3DCD10001C5CD /* UIKit.framework */; };
 		12AEC8CD17C3DCD10001C5CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BC17C3DCD10001C5CD /* Foundation.framework */; };
 		12AEC8CE17C3DCD10001C5CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BD17C3DCD10001C5CD /* CoreGraphics.framework */; };
-		12AEC8D917C3DEC50001C5CD /* barns.json in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8D517C3DEC50001C5CD /* barns.json */; };
-		12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8D617C3DEC50001C5CD /* landmarks.json */; };
-		12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8D717C3DEC50001C5CD /* nrhp.json */; };
-		12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */ = {isa = PBXBuildFile; fileRef = 12AEC8D817C3DEC50001C5CD /* counties.json */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
-		1EF88A7D18045B4E00125D7E /* details.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A3F18045B4E00125D7E /* details.png */; };
-		1EF88A7E18045B4E00125D7E /* details2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A4018045B4E00125D7E /* details2.png */; };
-		1EF88A7F18045B4E00125D7E /* justadded.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A4118045B4E00125D7E /* justadded.png */; };
-		1EF88A8D18045B4F00125D7E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5018045B4E00125D7E /* menu.png */; };
-		1EF88A8E18045B4F00125D7E /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5118045B4E00125D7E /* tours.png */; };
-		1EF88A8F18045B4F00125D7E /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5418045B4E00125D7E /* AppIcon29x29.png */; };
-		1EF88A9018045B4F00125D7E /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5518045B4E00125D7E /* AppIcon29x29@2x.png */; };
-		1EF88A9118045B4F00125D7E /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5618045B4E00125D7E /* AppIcon40x40.png */; };
-		1EF88A9218045B4F00125D7E /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5718045B4E00125D7E /* AppIcon40x40@2x.png */; };
-		1EF88A9318045B4F00125D7E /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5818045B4E00125D7E /* AppIcon60x60.png */; };
-		1EF88A9418045B4F00125D7E /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5918045B4E00125D7E /* AppIcon60x60@2x.png */; };
-		1EF88A9518045B4F00125D7E /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5A18045B4E00125D7E /* AppIcon76x76.png */; };
-		1EF88A9618045B4F00125D7E /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5B18045B4E00125D7E /* AppIcon76x76@2x.png */; };
-		1EF88A9718045B4F00125D7E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5C18045B4E00125D7E /* iTunesArtwork.png */; };
-		1EF88A9818045B4F00125D7E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5D18045B4E00125D7E /* iTunesArtwork@2x.png */; };
-		1EF88A9918045B4F00125D7E /* retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A5F18045B4E00125D7E /* retina.png */; };
-		1EF88A9A18045B4F00125D7E /* retina4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6018045B4E00125D7E /* retina4inch.png */; };
-		1EF88A9B18045B4F00125D7E /* btn-aroundme.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6118045B4E00125D7E /* btn-aroundme.png */; };
-		1EF88A9C18045B4F00125D7E /* btn-aroundme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6218045B4E00125D7E /* btn-aroundme@2x.png */; };
-		1EF88A9D18045B4F00125D7E /* btn-explore.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6318045B4E00125D7E /* btn-explore.png */; };
-		1EF88A9E18045B4F00125D7E /* btn-explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6418045B4E00125D7E /* btn-explore@2x.png */; };
-		1EF88A9F18045B4F00125D7E /* btn-myprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6518045B4E00125D7E /* btn-myprofile.png */; };
-		1EF88AA018045B4F00125D7E /* btn-myprofile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6618045B4E00125D7E /* btn-myprofile@2x.png */; };
-		1EF88AA118045B4F00125D7E /* btn-planatrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6718045B4E00125D7E /* btn-planatrip.png */; };
-		1EF88AA218045B4F00125D7E /* btn-planatrip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6818045B4E00125D7E /* btn-planatrip@2x.png */; };
-		1EF88AA318045B4F00125D7E /* btn-savedspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6918045B4E00125D7E /* btn-savedspots.png */; };
-		1EF88AA418045B4F00125D7E /* btn-savedspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6A18045B4E00125D7E /* btn-savedspots@2x.png */; };
-		1EF88AA518045B4F00125D7E /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6B18045B4E00125D7E /* btn-single-address.png */; };
-		1EF88AA618045B4F00125D7E /* btn-single-address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6C18045B4E00125D7E /* btn-single-address@2x.png */; };
-		1EF88AA718045B4F00125D7E /* btn-single-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6D18045B4E00125D7E /* btn-single-bg.png */; };
-		1EF88AA818045B4F00125D7E /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6E18045B4E00125D7E /* btn-single-mail.png */; };
-		1EF88AA918045B4F00125D7E /* btn-single-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A6F18045B4E00125D7E /* btn-single-mail@2x.png */; };
-		1EF88AAA18045B4F00125D7E /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7018045B4E00125D7E /* btn-single-phone.png */; };
-		1EF88AAB18045B4F00125D7E /* btn-single-phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7118045B4E00125D7E /* btn-single-phone@2x.png */; };
-		1EF88AAC18045B4F00125D7E /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7218045B4E00125D7E /* btn-single-www.png */; };
-		1EF88AAD18045B4F00125D7E /* btn-single-www@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7318045B4E00125D7E /* btn-single-www@2x.png */; };
-		1EF88AAE18045B4F00125D7E /* btn-tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7418045B4E00125D7E /* btn-tours.png */; };
-		1EF88AAF18045B4F00125D7E /* btn-tours@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7518045B4E00125D7E /* btn-tours@2x.png */; };
-		1EF88AB018045B4F00125D7E /* btnbga.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7618045B4E00125D7E /* btnbga.png */; };
-		1EF88AB118045B4F00125D7E /* btnbgb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7718045B4E00125D7E /* btnbgb.png */; };
-		1EF88AB218045B4F00125D7E /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7918045B4E00125D7E /* btn-single-address.png */; };
-		1EF88AB318045B4F00125D7E /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7A18045B4E00125D7E /* btn-single-mail.png */; };
-		1EF88AB418045B4F00125D7E /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7B18045B4E00125D7E /* btn-single-phone.png */; };
-		1EF88AB518045B4F00125D7E /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88A7C18045B4E00125D7E /* btn-single-www.png */; };
-		1EF88AB71804606500125D7E /* bg-menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88AB61804606500125D7E /* bg-menu.jpg */; };
-		1EF88AB9180465C100125D7E /* btn-mainmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88AB8180465C100125D7E /* btn-mainmenu.png */; };
-		1EF88ABB180477FB00125D7E /* btn-backtomap.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88ABA180477FB00125D7E /* btn-backtomap.png */; };
-		1EF88B3A180483CC00125D7E /* marker-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B10180483CC00125D7E /* marker-art.png */; };
-		1EF88B3B180483CC00125D7E /* marker-art@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B11180483CC00125D7E /* marker-art@2x.png */; };
-		1EF88B3C180483CC00125D7E /* marker-arts.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B12180483CC00125D7E /* marker-arts.png */; };
-		1EF88B3D180483CC00125D7E /* marker-arts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B13180483CC00125D7E /* marker-arts@2x.png */; };
-		1EF88B3E180483CC00125D7E /* marker-barn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B14180483CC00125D7E /* marker-barn.png */; };
-		1EF88B3F180483CC00125D7E /* marker-barn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B15180483CC00125D7E /* marker-barn@2x.png */; };
-		1EF88B40180483CC00125D7E /* marker-botanical.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B16180483CC00125D7E /* marker-botanical.png */; };
-		1EF88B41180483CC00125D7E /* marker-botanical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B17180483CC00125D7E /* marker-botanical@2x.png */; };
-		1EF88B42180483CC00125D7E /* marker-college.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B18180483CC00125D7E /* marker-college.png */; };
-		1EF88B43180483CC00125D7E /* marker-college@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B19180483CC00125D7E /* marker-college@2x.png */; };
-		1EF88B44180483CC00125D7E /* marker-concert.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1A180483CC00125D7E /* marker-concert.png */; };
-		1EF88B45180483CC00125D7E /* marker-concert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1B180483CC00125D7E /* marker-concert@2x.png */; };
-		1EF88B46180483CC00125D7E /* marker-entertainment.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1C180483CC00125D7E /* marker-entertainment.png */; };
-		1EF88B47180483CC00125D7E /* marker-entertainment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1D180483CC00125D7E /* marker-entertainment@2x.png */; };
-		1EF88B48180483CC00125D7E /* marker-famousiowan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1E180483CC00125D7E /* marker-famousiowan.png */; };
-		1EF88B49180483CC00125D7E /* marker-famousiowan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B1F180483CC00125D7E /* marker-famousiowan@2x.png */; };
-		1EF88B4A180483CC00125D7E /* marker-historicsite.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B20180483CC00125D7E /* marker-historicsite.png */; };
-		1EF88B4B180483CC00125D7E /* marker-historicsite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B21180483CC00125D7E /* marker-historicsite@2x.png */; };
-		1EF88B4C180483CC00125D7E /* marker-iowaaward.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B22180483CC00125D7E /* marker-iowaaward.png */; };
-		1EF88B4D180483CC00125D7E /* marker-iowaaward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B23180483CC00125D7E /* marker-iowaaward@2x.png */; };
-		1EF88B4E180483CC00125D7E /* marker-iowagreatplace.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B24180483CC00125D7E /* marker-iowagreatplace.png */; };
-		1EF88B4F180483CC00125D7E /* marker-iowagreatplace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B25180483CC00125D7E /* marker-iowagreatplace@2x.png */; };
-		1EF88B50180483CC00125D7E /* marker-locallandmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B26180483CC00125D7E /* marker-locallandmark.png */; };
-		1EF88B51180483CC00125D7E /* marker-locallandmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B27180483CC00125D7E /* marker-locallandmark@2x.png */; };
-		1EF88B52180483CC00125D7E /* marker-medalofhonor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B28180483CC00125D7E /* marker-medalofhonor.png */; };
-		1EF88B53180483CC00125D7E /* marker-medalofhonor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B29180483CC00125D7E /* marker-medalofhonor@2x.png */; };
-		1EF88B54180483CC00125D7E /* marker-movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2A180483CC00125D7E /* marker-movie.png */; };
-		1EF88B55180483CC00125D7E /* marker-movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2B180483CC00125D7E /* marker-movie@2x.png */; };
-		1EF88B56180483CC00125D7E /* marker-museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2C180483CC00125D7E /* marker-museum.png */; };
-		1EF88B57180483CC00125D7E /* marker-museum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2D180483CC00125D7E /* marker-museum@2x.png */; };
-		1EF88B58180483CC00125D7E /* marker-nhregister.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2E180483CC00125D7E /* marker-nhregister.png */; };
-		1EF88B59180483CC00125D7E /* marker-nhregister@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B2F180483CC00125D7E /* marker-nhregister@2x.png */; };
-		1EF88B5A180483CC00125D7E /* marker-riverwalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B30180483CC00125D7E /* marker-riverwalk.png */; };
-		1EF88B5B180483CC00125D7E /* marker-riverwalk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B31180483CC00125D7E /* marker-riverwalk@2x.png */; };
-		1EF88B5C180483CC00125D7E /* marker-scenicbyway.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B32180483CC00125D7E /* marker-scenicbyway.png */; };
-		1EF88B5D180483CC00125D7E /* marker-scenicbyway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B33180483CC00125D7E /* marker-scenicbyway@2x.png */; };
-		1EF88B5E180483CC00125D7E /* marker-sciencecenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B34180483CC00125D7E /* marker-sciencecenter.png */; };
-		1EF88B5F180483CC00125D7E /* marker-sciencecenter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B35180483CC00125D7E /* marker-sciencecenter@2x.png */; };
-		1EF88B60180483CC00125D7E /* marker-undergroundrailroad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B36180483CC00125D7E /* marker-undergroundrailroad.png */; };
-		1EF88B61180483CC00125D7E /* marker-undergroundrailroad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B37180483CC00125D7E /* marker-undergroundrailroad@2x.png */; };
-		1EF88B62180483CC00125D7E /* marker-zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B38180483CC00125D7E /* marker-zoo.png */; };
-		1EF88B63180483CC00125D7E /* marker-zoo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88B39180483CC00125D7E /* marker-zoo@2x.png */; };
-		1EF88BD418048B4400125D7E /* HelveticaNeueLTStd-Bd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */; };
-		1EF88BD518048B4400125D7E /* HelveticaNeueLTStd-Blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */; };
-		1EF88BD618048B4400125D7E /* HelveticaNeueLTStd-Lt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */; };
-		1EF88BD718048B4400125D7E /* HelveticaNeueLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */; };
-		1EF88BD818048B4400125D7E /* HelveticaNeueLTStd-Th.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */; };
-		1EF88BDE1804928900125D7E /* UILabel+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */; };
-		1EF88BE11804966E00125D7E /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */; };
-		1EF88BE4180496A400125D7E /* UIButton+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		121F92461803431700B47AD5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
 		121F92481803433400B47AD5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		121F9258180370E100B47AD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Iowa Counties/SDWebImage.framework"; sourceTree = "<group>"; };
-		1290D2B017E7690800332D1A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		1290D2B117E7690800332D1A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		1290D2B317E76A1C00332D1A /* MainMenuButtonViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuButtonViewCell.h; sourceTree = "<group>"; };
-		1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuButtonViewCell.m; sourceTree = "<group>"; };
+		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		126E7FF41806117E00E7BFE0 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		126E7FF61806118800E7BFE0 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		126E7FF81806146E00E7BFE0 /* AppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppContext.h; sourceTree = "<group>"; };
+		126E7FF91806146E00E7BFE0 /* AppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppContext.m; sourceTree = "<group>"; };
+		126E7FFB180632EA00E7BFE0 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		126E7FFC180632EA00E7BFE0 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		12AEC88217C3DC2E0001C5CD /* Iowa Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iowa Counties.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AEC88517C3DC2E0001C5CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12AEC88717C3DC2E0001C5CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,12 +63,7 @@
 		12AEC89317C3DC2E0001C5CD /* Iowa Counties-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iowa Counties-Prefix.pch"; sourceTree = "<group>"; };
 		12AEC89417C3DC2E0001C5CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12AEC89517C3DC2E0001C5CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		12AEC89717C3DC2E0001C5CD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		12AEC89917C3DC2E0001C5CD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		12AEC89B17C3DC2E0001C5CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		12AEC89E17C3DC2E0001C5CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		12AEC8A317C3DC2E0001C5CD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		12AEC8A417C3DC2E0001C5CD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		12AEC8AE17C3DCD10001C5CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -186,112 +82,8 @@
 		12AEC8BB17C3DCD10001C5CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12AEC8BC17C3DCD10001C5CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		12AEC8BD17C3DCD10001C5CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		12AEC8D517C3DEC50001C5CD /* barns.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barns.json; sourceTree = "<group>"; };
-		12AEC8D617C3DEC50001C5CD /* landmarks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarks.json; sourceTree = "<group>"; };
-		12AEC8D717C3DEC50001C5CD /* nrhp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nrhp.json; sourceTree = "<group>"; };
-		12AEC8D817C3DEC50001C5CD /* counties.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = counties.json; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
-		1EF88A3F18045B4E00125D7E /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
-		1EF88A4018045B4E00125D7E /* details2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details2.png; sourceTree = "<group>"; };
-		1EF88A4118045B4E00125D7E /* justadded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = justadded.png; sourceTree = "<group>"; };
-		1EF88A5018045B4E00125D7E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
-		1EF88A5118045B4E00125D7E /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
-		1EF88A5418045B4E00125D7E /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
-		1EF88A5518045B4E00125D7E /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
-		1EF88A5618045B4E00125D7E /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
-		1EF88A5718045B4E00125D7E /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
-		1EF88A5818045B4E00125D7E /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
-		1EF88A5918045B4E00125D7E /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
-		1EF88A5A18045B4E00125D7E /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
-		1EF88A5B18045B4E00125D7E /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
-		1EF88A5C18045B4E00125D7E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		1EF88A5D18045B4E00125D7E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		1EF88A5F18045B4E00125D7E /* retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina.png; sourceTree = "<group>"; };
-		1EF88A6018045B4E00125D7E /* retina4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina4inch.png; sourceTree = "<group>"; };
-		1EF88A6118045B4E00125D7E /* btn-aroundme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme.png"; sourceTree = "<group>"; };
-		1EF88A6218045B4E00125D7E /* btn-aroundme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme@2x.png"; sourceTree = "<group>"; };
-		1EF88A6318045B4E00125D7E /* btn-explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore.png"; sourceTree = "<group>"; };
-		1EF88A6418045B4E00125D7E /* btn-explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore@2x.png"; sourceTree = "<group>"; };
-		1EF88A6518045B4E00125D7E /* btn-myprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile.png"; sourceTree = "<group>"; };
-		1EF88A6618045B4E00125D7E /* btn-myprofile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile@2x.png"; sourceTree = "<group>"; };
-		1EF88A6718045B4E00125D7E /* btn-planatrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip.png"; sourceTree = "<group>"; };
-		1EF88A6818045B4E00125D7E /* btn-planatrip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip@2x.png"; sourceTree = "<group>"; };
-		1EF88A6918045B4E00125D7E /* btn-savedspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots.png"; sourceTree = "<group>"; };
-		1EF88A6A18045B4E00125D7E /* btn-savedspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots@2x.png"; sourceTree = "<group>"; };
-		1EF88A6B18045B4E00125D7E /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
-		1EF88A6C18045B4E00125D7E /* btn-single-address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address@2x.png"; sourceTree = "<group>"; };
-		1EF88A6D18045B4E00125D7E /* btn-single-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-bg.png"; sourceTree = "<group>"; };
-		1EF88A6E18045B4E00125D7E /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
-		1EF88A6F18045B4E00125D7E /* btn-single-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail@2x.png"; sourceTree = "<group>"; };
-		1EF88A7018045B4E00125D7E /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
-		1EF88A7118045B4E00125D7E /* btn-single-phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone@2x.png"; sourceTree = "<group>"; };
-		1EF88A7218045B4E00125D7E /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
-		1EF88A7318045B4E00125D7E /* btn-single-www@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www@2x.png"; sourceTree = "<group>"; };
-		1EF88A7418045B4E00125D7E /* btn-tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours.png"; sourceTree = "<group>"; };
-		1EF88A7518045B4E00125D7E /* btn-tours@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours@2x.png"; sourceTree = "<group>"; };
-		1EF88A7618045B4E00125D7E /* btnbga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbga.png; sourceTree = "<group>"; };
-		1EF88A7718045B4E00125D7E /* btnbgb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbgb.png; sourceTree = "<group>"; };
-		1EF88A7918045B4E00125D7E /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
-		1EF88A7A18045B4E00125D7E /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
-		1EF88A7B18045B4E00125D7E /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
-		1EF88A7C18045B4E00125D7E /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
-		1EF88AB61804606500125D7E /* bg-menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu.jpg"; sourceTree = "<group>"; };
-		1EF88AB8180465C100125D7E /* btn-mainmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-mainmenu.png"; sourceTree = "<group>"; };
-		1EF88ABA180477FB00125D7E /* btn-backtomap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-backtomap.png"; sourceTree = "<group>"; };
-		1EF88B10180483CC00125D7E /* marker-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art.png"; sourceTree = "<group>"; };
-		1EF88B11180483CC00125D7E /* marker-art@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art@2x.png"; sourceTree = "<group>"; };
-		1EF88B12180483CC00125D7E /* marker-arts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts.png"; sourceTree = "<group>"; };
-		1EF88B13180483CC00125D7E /* marker-arts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts@2x.png"; sourceTree = "<group>"; };
-		1EF88B14180483CC00125D7E /* marker-barn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn.png"; sourceTree = "<group>"; };
-		1EF88B15180483CC00125D7E /* marker-barn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn@2x.png"; sourceTree = "<group>"; };
-		1EF88B16180483CC00125D7E /* marker-botanical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botanical.png"; sourceTree = "<group>"; };
-		1EF88B17180483CC00125D7E /* marker-botanical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botanical@2x.png"; sourceTree = "<group>"; };
-		1EF88B18180483CC00125D7E /* marker-college.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-college.png"; sourceTree = "<group>"; };
-		1EF88B19180483CC00125D7E /* marker-college@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-college@2x.png"; sourceTree = "<group>"; };
-		1EF88B1A180483CC00125D7E /* marker-concert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-concert.png"; sourceTree = "<group>"; };
-		1EF88B1B180483CC00125D7E /* marker-concert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-concert@2x.png"; sourceTree = "<group>"; };
-		1EF88B1C180483CC00125D7E /* marker-entertainment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-entertainment.png"; sourceTree = "<group>"; };
-		1EF88B1D180483CC00125D7E /* marker-entertainment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-entertainment@2x.png"; sourceTree = "<group>"; };
-		1EF88B1E180483CC00125D7E /* marker-famousiowan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famousiowan.png"; sourceTree = "<group>"; };
-		1EF88B1F180483CC00125D7E /* marker-famousiowan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famousiowan@2x.png"; sourceTree = "<group>"; };
-		1EF88B20180483CC00125D7E /* marker-historicsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historicsite.png"; sourceTree = "<group>"; };
-		1EF88B21180483CC00125D7E /* marker-historicsite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historicsite@2x.png"; sourceTree = "<group>"; };
-		1EF88B22180483CC00125D7E /* marker-iowaaward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowaaward.png"; sourceTree = "<group>"; };
-		1EF88B23180483CC00125D7E /* marker-iowaaward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowaaward@2x.png"; sourceTree = "<group>"; };
-		1EF88B24180483CC00125D7E /* marker-iowagreatplace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowagreatplace.png"; sourceTree = "<group>"; };
-		1EF88B25180483CC00125D7E /* marker-iowagreatplace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowagreatplace@2x.png"; sourceTree = "<group>"; };
-		1EF88B26180483CC00125D7E /* marker-locallandmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-locallandmark.png"; sourceTree = "<group>"; };
-		1EF88B27180483CC00125D7E /* marker-locallandmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-locallandmark@2x.png"; sourceTree = "<group>"; };
-		1EF88B28180483CC00125D7E /* marker-medalofhonor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medalofhonor.png"; sourceTree = "<group>"; };
-		1EF88B29180483CC00125D7E /* marker-medalofhonor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medalofhonor@2x.png"; sourceTree = "<group>"; };
-		1EF88B2A180483CC00125D7E /* marker-movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie.png"; sourceTree = "<group>"; };
-		1EF88B2B180483CC00125D7E /* marker-movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie@2x.png"; sourceTree = "<group>"; };
-		1EF88B2C180483CC00125D7E /* marker-museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum.png"; sourceTree = "<group>"; };
-		1EF88B2D180483CC00125D7E /* marker-museum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum@2x.png"; sourceTree = "<group>"; };
-		1EF88B2E180483CC00125D7E /* marker-nhregister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-nhregister.png"; sourceTree = "<group>"; };
-		1EF88B2F180483CC00125D7E /* marker-nhregister@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-nhregister@2x.png"; sourceTree = "<group>"; };
-		1EF88B30180483CC00125D7E /* marker-riverwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk.png"; sourceTree = "<group>"; };
-		1EF88B31180483CC00125D7E /* marker-riverwalk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk@2x.png"; sourceTree = "<group>"; };
-		1EF88B32180483CC00125D7E /* marker-scenicbyway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenicbyway.png"; sourceTree = "<group>"; };
-		1EF88B33180483CC00125D7E /* marker-scenicbyway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenicbyway@2x.png"; sourceTree = "<group>"; };
-		1EF88B34180483CC00125D7E /* marker-sciencecenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-sciencecenter.png"; sourceTree = "<group>"; };
-		1EF88B35180483CC00125D7E /* marker-sciencecenter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-sciencecenter@2x.png"; sourceTree = "<group>"; };
-		1EF88B36180483CC00125D7E /* marker-undergroundrailroad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-undergroundrailroad.png"; sourceTree = "<group>"; };
-		1EF88B37180483CC00125D7E /* marker-undergroundrailroad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-undergroundrailroad@2x.png"; sourceTree = "<group>"; };
-		1EF88B38180483CC00125D7E /* marker-zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo.png"; sourceTree = "<group>"; };
-		1EF88B39180483CC00125D7E /* marker-zoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo@2x.png"; sourceTree = "<group>"; };
-		1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Bd.otf"; sourceTree = "<group>"; };
-		1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Blk.otf"; sourceTree = "<group>"; };
-		1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Lt.otf"; sourceTree = "<group>"; };
-		1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Roman.otf"; sourceTree = "<group>"; };
-		1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTStd-Th.otf"; sourceTree = "<group>"; };
-		1EF88BDC1804928900125D7E /* UILabel+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+TCCustomFont.h"; sourceTree = "<group>"; };
-		1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TCCustomFont.m"; sourceTree = "<group>"; };
-		1EF88BDF1804966E00125D7E /* UITextField+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TCCustomFont.h"; sourceTree = "<group>"; };
-		1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
-		1EF88BE2180496A400125D7E /* UIButton+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TCCustomFont.h"; sourceTree = "<group>"; };
-		1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TCCustomFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,9 +121,11 @@
 		12AEC87917C3DC2E0001C5CD = {
 			isa = PBXGroup;
 			children = (
-				1EF88A3E18045B4E00125D7E /* images */,
-				12AEC8D417C3DEB30001C5CD /* data */,
+				126E7FF61806118800E7BFE0 /* images */,
+				126E7FF41806117E00E7BFE0 /* fonts */,
+				126E7FF218060C0400E7BFE0 /* data */,
 				12AEC88B17C3DC2E0001C5CD /* Iowa Counties */,
+				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
 				12AEC88417C3DC2E0001C5CD /* Frameworks */,
 				12AEC88317C3DC2E0001C5CD /* Products */,
 			);
@@ -377,26 +171,17 @@
 		12AEC88B17C3DC2E0001C5CD /* Iowa Counties */ = {
 			isa = PBXGroup;
 			children = (
-				1EF88BDC1804928900125D7E /* UILabel+TCCustomFont.h */,
-				1EF88BDD1804928900125D7E /* UILabel+TCCustomFont.m */,
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
 				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
 				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
 				12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */,
 				12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */,
-				12AEC8A317C3DC2E0001C5CD /* ViewController.h */,
-				12AEC8A417C3DC2E0001C5CD /* ViewController.m */,
-				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
-				1290D2B017E7690800332D1A /* MainMenuViewController.h */,
-				1290D2B117E7690800332D1A /* MainMenuViewController.m */,
-				1290D2B317E76A1C00332D1A /* MainMenuButtonViewCell.h */,
-				1290D2B417E76A1C00332D1A /* MainMenuButtonViewCell.m */,
 				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
 				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
-				1EF88BDF1804966E00125D7E /* UITextField+TCCustomFont.h */,
-				1EF88BE01804966E00125D7E /* UITextField+TCCustomFont.m */,
-				1EF88BE2180496A400125D7E /* UIButton+TCCustomFont.h */,
-				1EF88BE3180496A400125D7E /* UIButton+TCCustomFont.m */,
+				126E7FF81806146E00E7BFE0 /* AppContext.h */,
+				126E7FF91806146E00E7BFE0 /* AppContext.m */,
+				126E7FFB180632EA00E7BFE0 /* Utils.h */,
+				126E7FFC180632EA00E7BFE0 /* Utils.m */,
 			);
 			path = "Iowa Counties";
 			sourceTree = "<group>";
@@ -408,171 +193,9 @@
 				12AEC88E17C3DC2E0001C5CD /* InfoPlist.strings */,
 				12AEC89117C3DC2E0001C5CD /* main.m */,
 				12AEC89317C3DC2E0001C5CD /* Iowa Counties-Prefix.pch */,
-				12AEC89717C3DC2E0001C5CD /* Default.png */,
-				12AEC89917C3DC2E0001C5CD /* Default@2x.png */,
-				12AEC89B17C3DC2E0001C5CD /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		12AEC8D417C3DEB30001C5CD /* data */ = {
-			isa = PBXGroup;
-			children = (
-				12AEC8D517C3DEC50001C5CD /* barns.json */,
-				12AEC8D617C3DEC50001C5CD /* landmarks.json */,
-				12AEC8D717C3DEC50001C5CD /* nrhp.json */,
-				12AEC8D817C3DEC50001C5CD /* counties.json */,
-			);
-			name = data;
-			sourceTree = "<group>";
-		};
-		1EF88A3E18045B4E00125D7E /* images */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88B641804895600125D7E /* HelveticaNeue */,
-				1EF88A3F18045B4E00125D7E /* details.png */,
-				1EF88A4018045B4E00125D7E /* details2.png */,
-				1EF88A4118045B4E00125D7E /* justadded.png */,
-				1EF88A4218045B4E00125D7E /* markers */,
-				1EF88A5018045B4E00125D7E /* menu.png */,
-				1EF88A5118045B4E00125D7E /* tours.png */,
-				1EF88A5218045B4E00125D7E /* ui */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		1EF88A4218045B4E00125D7E /* markers */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88B10180483CC00125D7E /* marker-art.png */,
-				1EF88B11180483CC00125D7E /* marker-art@2x.png */,
-				1EF88B12180483CC00125D7E /* marker-arts.png */,
-				1EF88B13180483CC00125D7E /* marker-arts@2x.png */,
-				1EF88B14180483CC00125D7E /* marker-barn.png */,
-				1EF88B15180483CC00125D7E /* marker-barn@2x.png */,
-				1EF88B16180483CC00125D7E /* marker-botanical.png */,
-				1EF88B17180483CC00125D7E /* marker-botanical@2x.png */,
-				1EF88B18180483CC00125D7E /* marker-college.png */,
-				1EF88B19180483CC00125D7E /* marker-college@2x.png */,
-				1EF88B1A180483CC00125D7E /* marker-concert.png */,
-				1EF88B1B180483CC00125D7E /* marker-concert@2x.png */,
-				1EF88B1C180483CC00125D7E /* marker-entertainment.png */,
-				1EF88B1D180483CC00125D7E /* marker-entertainment@2x.png */,
-				1EF88B1E180483CC00125D7E /* marker-famousiowan.png */,
-				1EF88B1F180483CC00125D7E /* marker-famousiowan@2x.png */,
-				1EF88B20180483CC00125D7E /* marker-historicsite.png */,
-				1EF88B21180483CC00125D7E /* marker-historicsite@2x.png */,
-				1EF88B22180483CC00125D7E /* marker-iowaaward.png */,
-				1EF88B23180483CC00125D7E /* marker-iowaaward@2x.png */,
-				1EF88B24180483CC00125D7E /* marker-iowagreatplace.png */,
-				1EF88B25180483CC00125D7E /* marker-iowagreatplace@2x.png */,
-				1EF88B26180483CC00125D7E /* marker-locallandmark.png */,
-				1EF88B27180483CC00125D7E /* marker-locallandmark@2x.png */,
-				1EF88B28180483CC00125D7E /* marker-medalofhonor.png */,
-				1EF88B29180483CC00125D7E /* marker-medalofhonor@2x.png */,
-				1EF88B2A180483CC00125D7E /* marker-movie.png */,
-				1EF88B2B180483CC00125D7E /* marker-movie@2x.png */,
-				1EF88B2C180483CC00125D7E /* marker-museum.png */,
-				1EF88B2D180483CC00125D7E /* marker-museum@2x.png */,
-				1EF88B2E180483CC00125D7E /* marker-nhregister.png */,
-				1EF88B2F180483CC00125D7E /* marker-nhregister@2x.png */,
-				1EF88B30180483CC00125D7E /* marker-riverwalk.png */,
-				1EF88B31180483CC00125D7E /* marker-riverwalk@2x.png */,
-				1EF88B32180483CC00125D7E /* marker-scenicbyway.png */,
-				1EF88B33180483CC00125D7E /* marker-scenicbyway@2x.png */,
-				1EF88B34180483CC00125D7E /* marker-sciencecenter.png */,
-				1EF88B35180483CC00125D7E /* marker-sciencecenter@2x.png */,
-				1EF88B36180483CC00125D7E /* marker-undergroundrailroad.png */,
-				1EF88B37180483CC00125D7E /* marker-undergroundrailroad@2x.png */,
-				1EF88B38180483CC00125D7E /* marker-zoo.png */,
-				1EF88B39180483CC00125D7E /* marker-zoo@2x.png */,
-			);
-			path = markers;
-			sourceTree = "<group>";
-		};
-		1EF88A5218045B4E00125D7E /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88ABA180477FB00125D7E /* btn-backtomap.png */,
-				1EF88AB8180465C100125D7E /* btn-mainmenu.png */,
-				1EF88AB61804606500125D7E /* bg-menu.jpg */,
-				1EF88A5318045B4E00125D7E /* app-icons */,
-				1EF88A6118045B4E00125D7E /* btn-aroundme.png */,
-				1EF88A6218045B4E00125D7E /* btn-aroundme@2x.png */,
-				1EF88A6318045B4E00125D7E /* btn-explore.png */,
-				1EF88A6418045B4E00125D7E /* btn-explore@2x.png */,
-				1EF88A6518045B4E00125D7E /* btn-myprofile.png */,
-				1EF88A6618045B4E00125D7E /* btn-myprofile@2x.png */,
-				1EF88A6718045B4E00125D7E /* btn-planatrip.png */,
-				1EF88A6818045B4E00125D7E /* btn-planatrip@2x.png */,
-				1EF88A6918045B4E00125D7E /* btn-savedspots.png */,
-				1EF88A6A18045B4E00125D7E /* btn-savedspots@2x.png */,
-				1EF88A6B18045B4E00125D7E /* btn-single-address.png */,
-				1EF88A6C18045B4E00125D7E /* btn-single-address@2x.png */,
-				1EF88A6D18045B4E00125D7E /* btn-single-bg.png */,
-				1EF88A6E18045B4E00125D7E /* btn-single-mail.png */,
-				1EF88A6F18045B4E00125D7E /* btn-single-mail@2x.png */,
-				1EF88A7018045B4E00125D7E /* btn-single-phone.png */,
-				1EF88A7118045B4E00125D7E /* btn-single-phone@2x.png */,
-				1EF88A7218045B4E00125D7E /* btn-single-www.png */,
-				1EF88A7318045B4E00125D7E /* btn-single-www@2x.png */,
-				1EF88A7418045B4E00125D7E /* btn-tours.png */,
-				1EF88A7518045B4E00125D7E /* btn-tours@2x.png */,
-				1EF88A7618045B4E00125D7E /* btnbga.png */,
-				1EF88A7718045B4E00125D7E /* btnbgb.png */,
-				1EF88A7818045B4E00125D7E /* half */,
-			);
-			path = ui;
-			sourceTree = "<group>";
-		};
-		1EF88A5318045B4E00125D7E /* app-icons */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88A5418045B4E00125D7E /* AppIcon29x29.png */,
-				1EF88A5518045B4E00125D7E /* AppIcon29x29@2x.png */,
-				1EF88A5618045B4E00125D7E /* AppIcon40x40.png */,
-				1EF88A5718045B4E00125D7E /* AppIcon40x40@2x.png */,
-				1EF88A5818045B4E00125D7E /* AppIcon60x60.png */,
-				1EF88A5918045B4E00125D7E /* AppIcon60x60@2x.png */,
-				1EF88A5A18045B4E00125D7E /* AppIcon76x76.png */,
-				1EF88A5B18045B4E00125D7E /* AppIcon76x76@2x.png */,
-				1EF88A5C18045B4E00125D7E /* iTunesArtwork.png */,
-				1EF88A5D18045B4E00125D7E /* iTunesArtwork@2x.png */,
-				1EF88A5E18045B4E00125D7E /* launch-images */,
-			);
-			path = "app-icons";
-			sourceTree = "<group>";
-		};
-		1EF88A5E18045B4E00125D7E /* launch-images */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88A5F18045B4E00125D7E /* retina.png */,
-				1EF88A6018045B4E00125D7E /* retina4inch.png */,
-			);
-			path = "launch-images";
-			sourceTree = "<group>";
-		};
-		1EF88A7818045B4E00125D7E /* half */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88A7918045B4E00125D7E /* btn-single-address.png */,
-				1EF88A7A18045B4E00125D7E /* btn-single-mail.png */,
-				1EF88A7B18045B4E00125D7E /* btn-single-phone.png */,
-				1EF88A7C18045B4E00125D7E /* btn-single-www.png */,
-			);
-			path = half;
-			sourceTree = "<group>";
-		};
-		1EF88B641804895600125D7E /* HelveticaNeue */ = {
-			isa = PBXGroup;
-			children = (
-				1EF88BCF18048A6C00125D7E /* HelveticaNeueLTStd-Bd.otf */,
-				1EF88BD018048A6C00125D7E /* HelveticaNeueLTStd-Blk.otf */,
-				1EF88BD118048A6C00125D7E /* HelveticaNeueLTStd-Lt.otf */,
-				1EF88BD218048A6C00125D7E /* HelveticaNeueLTStd-Roman.otf */,
-				1EF88BD318048A6C00125D7E /* HelveticaNeueLTStd-Th.otf */,
-			);
-			path = HelveticaNeue;
+			path = "Iowa Counties";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,110 +254,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EF88BD418048B4400125D7E /* HelveticaNeueLTStd-Bd.otf in Resources */,
-				1EF88BD518048B4400125D7E /* HelveticaNeueLTStd-Blk.otf in Resources */,
-				1EF88BD618048B4400125D7E /* HelveticaNeueLTStd-Lt.otf in Resources */,
-				1EF88BD718048B4400125D7E /* HelveticaNeueLTStd-Roman.otf in Resources */,
-				1EF88BD818048B4400125D7E /* HelveticaNeueLTStd-Th.otf in Resources */,
-				1EF88AAC18045B4F00125D7E /* btn-single-www.png in Resources */,
-				1EF88AA418045B4F00125D7E /* btn-savedspots@2x.png in Resources */,
 				12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */,
-				1EF88AA518045B4F00125D7E /* btn-single-address.png in Resources */,
-				1EF88A9418045B4F00125D7E /* AppIcon60x60@2x.png in Resources */,
-				1EF88B49180483CC00125D7E /* marker-famousiowan@2x.png in Resources */,
-				1EF88B5B180483CC00125D7E /* marker-riverwalk@2x.png in Resources */,
-				1EF88A9F18045B4F00125D7E /* btn-myprofile.png in Resources */,
-				1EF88B44180483CC00125D7E /* marker-concert.png in Resources */,
-				1EF88A9118045B4F00125D7E /* AppIcon40x40.png in Resources */,
-				1EF88A8D18045B4F00125D7E /* menu.png in Resources */,
-				1EF88B58180483CC00125D7E /* marker-nhregister.png in Resources */,
-				1EF88B4F180483CC00125D7E /* marker-iowagreatplace@2x.png in Resources */,
-				1EF88B48180483CC00125D7E /* marker-famousiowan.png in Resources */,
-				1EF88AAA18045B4F00125D7E /* btn-single-phone.png in Resources */,
-				1EF88AAD18045B4F00125D7E /* btn-single-www@2x.png in Resources */,
-				1EF88B4E180483CC00125D7E /* marker-iowagreatplace.png in Resources */,
-				12AEC89817C3DC2E0001C5CD /* Default.png in Resources */,
-				12AEC89A17C3DC2E0001C5CD /* Default@2x.png in Resources */,
-				1EF88AB218045B4F00125D7E /* btn-single-address.png in Resources */,
-				1EF88A9518045B4F00125D7E /* AppIcon76x76.png in Resources */,
-				1EF88AA318045B4F00125D7E /* btn-savedspots.png in Resources */,
-				1EF88B5F180483CC00125D7E /* marker-sciencecenter@2x.png in Resources */,
-				1EF88B3C180483CC00125D7E /* marker-arts.png in Resources */,
-				1EF88B59180483CC00125D7E /* marker-nhregister@2x.png in Resources */,
-				12AEC89C17C3DC2E0001C5CD /* Default-568h@2x.png in Resources */,
-				1EF88AA918045B4F00125D7E /* btn-single-mail@2x.png in Resources */,
-				1EF88B60180483CC00125D7E /* marker-undergroundrailroad.png in Resources */,
-				1EF88B4B180483CC00125D7E /* marker-historicsite@2x.png in Resources */,
-				1EF88B63180483CC00125D7E /* marker-zoo@2x.png in Resources */,
-				1EF88A9318045B4F00125D7E /* AppIcon60x60.png in Resources */,
-				1EF88A9818045B4F00125D7E /* iTunesArtwork@2x.png in Resources */,
-				1EF88B55180483CC00125D7E /* marker-movie@2x.png in Resources */,
-				1EF88B5D180483CC00125D7E /* marker-scenicbyway@2x.png in Resources */,
-				1EF88B3F180483CC00125D7E /* marker-barn@2x.png in Resources */,
-				1EF88B3E180483CC00125D7E /* marker-barn.png in Resources */,
-				1EF88AB318045B4F00125D7E /* btn-single-mail.png in Resources */,
-				1EF88B3D180483CC00125D7E /* marker-arts@2x.png in Resources */,
-				1EF88AA018045B4F00125D7E /* btn-myprofile@2x.png in Resources */,
-				1EF88AB518045B4F00125D7E /* btn-single-www.png in Resources */,
-				1EF88A8E18045B4F00125D7E /* tours.png in Resources */,
-				1EF88AA618045B4F00125D7E /* btn-single-address@2x.png in Resources */,
-				1EF88AB71804606500125D7E /* bg-menu.jpg in Resources */,
-				1EF88AAE18045B4F00125D7E /* btn-tours.png in Resources */,
+				126E7FF71806118800E7BFE0 /* images in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
-				12AEC8D917C3DEC50001C5CD /* barns.json in Resources */,
-				1EF88AB418045B4F00125D7E /* btn-single-phone.png in Resources */,
-				1EF88B42180483CC00125D7E /* marker-college.png in Resources */,
-				1EF88B47180483CC00125D7E /* marker-entertainment@2x.png in Resources */,
-				1EF88B45180483CC00125D7E /* marker-concert@2x.png in Resources */,
-				1EF88B5A180483CC00125D7E /* marker-riverwalk.png in Resources */,
-				1EF88A8F18045B4F00125D7E /* AppIcon29x29.png in Resources */,
-				1EF88A9A18045B4F00125D7E /* retina4inch.png in Resources */,
-				1EF88B4A180483CC00125D7E /* marker-historicsite.png in Resources */,
-				1EF88B43180483CC00125D7E /* marker-college@2x.png in Resources */,
-				1EF88B54180483CC00125D7E /* marker-movie.png in Resources */,
-				1EF88B61180483CC00125D7E /* marker-undergroundrailroad@2x.png in Resources */,
-				1EF88B40180483CC00125D7E /* marker-botanical.png in Resources */,
-				1EF88B4C180483CC00125D7E /* marker-iowaaward.png in Resources */,
-				1EF88B53180483CC00125D7E /* marker-medalofhonor@2x.png in Resources */,
-				1EF88A9D18045B4F00125D7E /* btn-explore.png in Resources */,
-				12AEC8DA17C3DEC50001C5CD /* landmarks.json in Resources */,
-				1EF88B5C180483CC00125D7E /* marker-scenicbyway.png in Resources */,
-				1EF88A9018045B4F00125D7E /* AppIcon29x29@2x.png in Resources */,
-				1EF88AB9180465C100125D7E /* btn-mainmenu.png in Resources */,
-				1EF88A7E18045B4E00125D7E /* details2.png in Resources */,
-				1EF88B41180483CC00125D7E /* marker-botanical@2x.png in Resources */,
-				1EF88A9718045B4F00125D7E /* iTunesArtwork.png in Resources */,
-				1EF88B3B180483CC00125D7E /* marker-art@2x.png in Resources */,
-				1EF88A7F18045B4E00125D7E /* justadded.png in Resources */,
-				12AEC8DB17C3DEC50001C5CD /* nrhp.json in Resources */,
-				1EF88B5E180483CC00125D7E /* marker-sciencecenter.png in Resources */,
-				1EF88A9C18045B4F00125D7E /* btn-aroundme@2x.png in Resources */,
-				1EF88B62180483CC00125D7E /* marker-zoo.png in Resources */,
-				1EF88AB018045B4F00125D7E /* btnbga.png in Resources */,
-				1EF88B56180483CC00125D7E /* marker-museum.png in Resources */,
-				1EF88A9B18045B4F00125D7E /* btn-aroundme.png in Resources */,
-				1EF88B4D180483CC00125D7E /* marker-iowaaward@2x.png in Resources */,
-				12AEC8DC17C3DEC50001C5CD /* counties.json in Resources */,
-				1EF88B50180483CC00125D7E /* marker-locallandmark.png in Resources */,
-				1EF88ABB180477FB00125D7E /* btn-backtomap.png in Resources */,
-				1EF88AA818045B4F00125D7E /* btn-single-mail.png in Resources */,
-				1EF88AB118045B4F00125D7E /* btnbgb.png in Resources */,
-				1EF88AAB18045B4F00125D7E /* btn-single-phone@2x.png in Resources */,
-				1EF88A9918045B4F00125D7E /* retina.png in Resources */,
-				1EF88AA718045B4F00125D7E /* btn-single-bg.png in Resources */,
-				1EF88AAF18045B4F00125D7E /* btn-tours@2x.png in Resources */,
-				1EF88A9218045B4F00125D7E /* AppIcon40x40@2x.png in Resources */,
-				1EF88A7D18045B4E00125D7E /* details.png in Resources */,
-				1EF88A9618045B4F00125D7E /* AppIcon76x76@2x.png in Resources */,
-				1EF88B3A180483CC00125D7E /* marker-art.png in Resources */,
+				126E7FF51806117E00E7BFE0 /* fonts in Resources */,
+				126E7FF318060C0400E7BFE0 /* data in Resources */,
 				121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */,
-				1EF88B51180483CC00125D7E /* marker-locallandmark@2x.png in Resources */,
-				1EF88B46180483CC00125D7E /* marker-entertainment.png in Resources */,
-				1EF88AA118045B4F00125D7E /* btn-planatrip.png in Resources */,
-				1EF88B57180483CC00125D7E /* marker-museum@2x.png in Resources */,
-				1EF88B52180483CC00125D7E /* marker-medalofhonor.png in Resources */,
-				1EF88AA218045B4F00125D7E /* btn-planatrip@2x.png in Resources */,
-				1EF88A9E18045B4F00125D7E /* btn-explore@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,14 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
+				126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,
-				1EF88BE11804966E00125D7E /* UITextField+TCCustomFont.m in Sources */,
-				1290D2B517E76A1C00332D1A /* MainMenuButtonViewCell.m in Sources */,
-				1EF88BE4180496A400125D7E /* UIButton+TCCustomFont.m in Sources */,
-				1EF88BDE1804928900125D7E /* UILabel+TCCustomFont.m in Sources */,
-				12AEC8A517C3DC2E0001C5CD /* ViewController.m in Sources */,
+				126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
-				1290D2B217E7690800332D1A /* MainMenuViewController.m in Sources */,
 				12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

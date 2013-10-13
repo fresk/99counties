@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *map_view;
 
 
-@property (weak, nonatomic) IBOutlet UIView *detail_view;
+@property (weak, nonatomic) IBOutlet UIScrollView *detail_view;
 @property (weak, nonatomic) IBOutlet UILabel *detail_title;
 @property (strong, nonatomic) IBOutlet UILabel *address_label;
 @property (weak, nonatomic) IBOutlet UITextView *detail_text;
@@ -227,10 +227,8 @@
                      }];
     
     
-    self.imageUrls = nil;
-    
-    NSString *image_list_str = [location objectForKey:@"image_list"];
-    self.imageUrls = [image_list_str componentsSeparatedByString:@","];
+    NSArray* _default = [NSArray arrayWithObjects:@"transparent.png", nil];
+    self.imageUrls = [_default arrayByAddingObjectsFromArray:[location objectForKey:@"images"]];
     
     int numberOfPages = [self.imageUrls count];
     
@@ -366,7 +364,10 @@
 - (void) addLocation: (NSDictionary*) location {
     
     // Add a custom 'glow' marker around Sydney.
-    CLLocationCoordinate2D position = [self loadGeoCoordinate: [location objectForKey:@"geo_location"]];
+    NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
+    NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
+    NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lat, lng];
+    CLLocationCoordinate2D position = [self loadGeoCoordinate: geo_str];
     GMSMarker *marker = [GMSMarker markerWithPosition: position];
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
@@ -445,7 +446,10 @@
         CGRect pageFrame = [self.pageControl frame];
         
         pageFrame.origin.y = 220;
-        detail_rect_visible.origin.y = 250;
+        detail_rect_visible.origin.y = 0;
+        
+        
+        
         
         UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
         
@@ -479,7 +483,9 @@
     [[self detail_view] setFrame:detail_rect_hidden];
     
     CGRect detail_rect_visible = [[self detail_view] frame];
-    detail_rect_visible.origin.y = 250;
+    detail_rect_visible.origin.y = 0;
+    
+    [self.detail_view setContentSize: CGSizeMake(320, 900) ];
     
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
 

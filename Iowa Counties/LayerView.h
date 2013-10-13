@@ -11,3 +11,8 @@
 @interface LayerView : UIView
 
 @end
+
+
+@interface ScrollLayer : UIScrollView
+
+@end

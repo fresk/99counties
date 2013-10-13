@@ -8,7 +8,33 @@
 
 #import "LayerView.h"
 
+
 @implementation LayerView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    UIView *result = [super hitTest:point withEvent:event];
+    if (result ==  self){
+        return nil;
+    }
+    return result;
+    
+}
+
+@end
+
+
+
+@implementation ScrollLayer
 
 - (id)initWithFrame:(CGRect)frame
 {

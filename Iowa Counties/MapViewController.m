@@ -92,8 +92,10 @@
     self.map_view.indoorEnabled = YES;
     self.map_view.myLocationEnabled = YES;
     
-    self.map_view.settings.myLocationButton = YES;
-    self.map_view.settings.compassButton = YES;
+    self.detail_view.delegate = self;
+    
+    self.map_view.settings.myLocationButton = NO;
+    self.map_view.settings.compassButton = NO;
     
     self.detail_view.hidden = YES;
     showingOnlyBackgroundImage = FALSE;
@@ -254,6 +256,9 @@
 
 
 
+
+
+
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
     
@@ -305,9 +310,38 @@
     }
 }
 
+
+
+
+
+
+- (void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    if (scrollView == self.detail_view){
+        NSLog(@"detailView end scroll:  %f, %f", self.detail_view.contentOffset.x, self.detail_view.contentOffset.y);
+        NSLog(@"detailView end scroll:  %f, %f", targetContentOffset->x, targetContentOffset->y);
+        
+        if (self.detail_view.contentOffset.y < -50){
+            [self toggleShowBackgroundImageOnly];
+        }
+        
+    }
+    
+    
+}
+
+
+
+
 // at the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    
+    if (scrollView == self.detail_view){
+
+        return;
+        
+    }
+    
     // switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
     NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
@@ -423,8 +457,8 @@
         detail_rect_hidden.origin.y = 600;
         
         UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
-        self.map_view.settings.myLocationButton = YES;
-        self.map_view.settings.compassButton = YES;
+        self.map_view.settings.myLocationButton = NO;
+        self.map_view.settings.compassButton = NO;
         
         [UIView animateWithDuration:1.0
                               delay: 0.0
@@ -487,6 +521,7 @@
     
     [self.detail_view setContentSize: CGSizeMake(320, 900) ];
     
+    
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
 
     self.map_view.settings.myLocationButton = NO;
@@ -512,8 +547,8 @@
     detail_rect_hidden.origin.y = 600;
     
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
-    self.map_view.settings.myLocationButton = YES;
-    self.map_view.settings.compassButton = YES;
+    self.map_view.settings.myLocationButton = NO;
+    self.map_view.settings.compassButton = NO;
 
     [UIView animateWithDuration:1.0
                           delay: 0.0

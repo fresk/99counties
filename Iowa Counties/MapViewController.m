@@ -34,6 +34,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) NSMutableArray *viewControllers;
 @property (strong, nonatomic) NSArray *imageUrls;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *detailViewTapRecognizer;
 
 @end
 
@@ -232,6 +233,8 @@
     NSArray* _default = [NSArray arrayWithObjects:@"transparent.png", nil];
     self.imageUrls = [_default arrayByAddingObjectsFromArray:[location objectForKey:@"images"]];
     
+
+    
     int numberOfPages = [self.imageUrls count];
     
     self.scrollView.contentSize =
@@ -311,6 +314,11 @@
 }
 
 
+- (IBAction)detailViewTapped:(id)sender {
+    if (showingOnlyBackgroundImage){
+        [self toggleShowBackgroundImageOnly];
+    }
+}
 
 
 
@@ -320,7 +328,12 @@
         NSLog(@"detailView end scroll:  %f, %f", self.detail_view.contentOffset.x, self.detail_view.contentOffset.y);
         NSLog(@"detailView end scroll:  %f, %f", targetContentOffset->x, targetContentOffset->y);
         
-        if (self.detail_view.contentOffset.y < -50){
+        
+        if (showingOnlyBackgroundImage) {
+            [self toggleShowBackgroundImageOnly];
+        
+        }
+        else if (self.detail_view.contentOffset.y < -50){
             [self toggleShowBackgroundImageOnly];
         }
         
@@ -445,18 +458,26 @@
     [self.map_view animateWithCameraUpdate:update];
 }
 
+- (IBAction)swipeUpOnbackgroundView:(id)sender {
+    if(showingOnlyBackgroundImage){
+        [self toggleShowBackgroundImageOnly];
+    }
+    
+    
+}
 
 
 - (void) toggleShowBackgroundImageOnly {
 
     if (!showingOnlyBackgroundImage){
+        
         CGRect detail_rect_hidden = [[self detail_view] frame];
-        CGRect pageFrame = [self.pageControl frame];
+        //CGRect pageFrame = [self.pageControl frame];
         
-        pageFrame.origin.y = 530;
-        detail_rect_hidden.origin.y = 600;
+        //pageFrame.origin.y = 530;
+        detail_rect_hidden.origin.y = 275;
         
-        UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 55.0, 0.0);
         self.map_view.settings.myLocationButton = NO;
         self.map_view.settings.compassButton = NO;
         
@@ -466,26 +487,28 @@
                          animations:^{
                              [[self detail_view] setFrame:detail_rect_hidden];
                              self.map_view.padding = mapInsets;
-                             self.pageControl.frame = pageFrame;
+                             //self.pageControl.frame = pageFrame;
                              //self.background_layer.alpha = 0.0;
                              //self.map_view.mapType = kGMSTypeTerrain;
                          }
                          completion:^(BOOL finished){
                              showingOnlyBackgroundImage = TRUE;
+                             self.detailViewTapRecognizer.enabled = TRUE;
+                             
                          }];
         
     }else {
-
+        self.detailViewTapRecognizer.enabled = FALSE;
         CGRect detail_rect_visible = [[self detail_view] frame];
-        CGRect pageFrame = [self.pageControl frame];
+        //CGRect pageFrame = [self.pageControl frame];
         
-        pageFrame.origin.y = 220;
+        //pageFrame.origin.y = 220;
         detail_rect_visible.origin.y = 0;
         
         
         
         
-        UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 330.0, 0);
         
         self.map_view.settings.myLocationButton = NO;
         self.map_view.settings.compassButton = NO;
@@ -496,7 +519,7 @@
                          animations:^{
                              self.detail_view.frame = detail_rect_visible;
                              self.map_view.padding = mapInsets;
-                             self.pageControl.frame = pageFrame;
+                             //self.pageControl.frame = pageFrame;
                              //self.map_view.mapType = kGMSTypeSatellite;
                          }
                          completion:^(BOOL finished){
@@ -522,7 +545,7 @@
     [self.detail_view setContentSize: CGSizeMake(320, 900) ];
     
     
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 20.0, 330.0, 20.0);
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 330.0, 0);
 
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
@@ -546,7 +569,7 @@
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
     
-    UIEdgeInsets mapInsets = UIEdgeInsetsMake(70.0, 0.0, 0.0, 0.0);
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 0.0, 0);
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
 

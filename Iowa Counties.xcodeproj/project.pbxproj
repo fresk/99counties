@@ -178,14 +178,14 @@
 			isa = PBXGroup;
 			children = (
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
-				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
-				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
 				12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */,
 				12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */,
-				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
-				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
 				126E7FF81806146E00E7BFE0 /* AppContext.h */,
 				126E7FF91806146E00E7BFE0 /* AppContext.m */,
+				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
+				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
+				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
+				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
 				126E7FFB180632EA00E7BFE0 /* Utils.h */,
 				126E7FFC180632EA00E7BFE0 /* Utils.m */,
 				12F073AD1807131C00CDB785 /* CategoryListViewController.h */,

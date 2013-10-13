@@ -14,5 +14,6 @@
 @property(atomic, strong) NSDictionary* locationCategories;
 
 + (id)instance;
+- (UIImage*) markerForCategory: (NSString*) category;
 
 @end

@@ -49,6 +49,7 @@
     
     NSMutableData *_response_data;
     BOOL showingOnlyBackgroundImage;
+    AppContext* ctx;
 }
 
 
@@ -69,7 +70,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    AppContext* ctx = [AppContext instance];
+    ctx = [AppContext instance];
     NSLog(@"app name: %@", ctx.appName);
     NSLog(@"app categories: %@", ctx.locationCategories);
     
@@ -416,9 +417,9 @@
     NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lat, lng];
     CLLocationCoordinate2D position = [self loadGeoCoordinate: geo_str];
     GMSMarker *marker = [GMSMarker markerWithPosition: position];
+    marker.icon = [ctx markerForCategory:[location objectForKey:@"category"]];
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
-    marker.icon = [UIImage imageNamed: @"marker-barn"];
     [marker setAppearAnimation: kGMSMarkerAnimationPop];
     marker.map = self.map_view;
 }

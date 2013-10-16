@@ -32,7 +32,7 @@
 @property (strong, nonatomic) IBOutlet UIView *background_layer;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) NSMutableArray *viewControllers;
+@property (nonatomic, strong) NSMutableArray *backgroundImageViews;
 @property (strong, nonatomic) NSArray *imageUrls;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *detailViewTapRecognizer;
 
@@ -93,6 +93,8 @@
     self.map_view.buildingsEnabled = YES;
     self.map_view.indoorEnabled = YES;
     self.map_view.myLocationEnabled = YES;
+    self.map_view.settings.tiltGestures = NO;
+    self.map_view.settings.rotateGestures = NO;
     
     self.detail_view.delegate = self;
     
@@ -121,19 +123,21 @@
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
-    
     CLLocationCoordinate2D here =  newLocation.coordinate;
-    NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
+    //NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
     
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
     [self.map_view animateWithCameraUpdate:update];
+    [manager stopUpdatingLocation];
+    
 
 }
 
 
 
 
-- (void) api_request {
+- (void) api_request
+{
     
     NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://findyouriowa.com/api/locations/"]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -142,9 +146,9 @@
     if (theConnection) {
         _response_data = [NSMutableData data];
 
-    }else {
+    }
+    else {
         _response_data  = nil;
-        
     }
 }
 
@@ -206,17 +210,38 @@
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.scrollsToTop = NO;
     self.scrollView.delegate = self;
-    
     self.pageControl.currentPage = 0;
 }
 
 
+- (IBAction)changePage:(id)sender
+{
+    [self gotoPage:YES];    // YES = animate
+}
+
+
+- (void)gotoPage:(BOOL)animated
+{
+    NSInteger page = self.pageControl.currentPage;
+    
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    
+	// update the scroll view to the appropriate page
+    CGRect bounds = self.scrollView.bounds;
+    bounds.origin.x = CGRectGetWidth(bounds) * page;
+    bounds.origin.y = 0;
+    [self.scrollView scrollRectToVisible:bounds animated:animated];
+}
+
 
 - (void) loadBackgroundImageList: (NSDictionary*) location {
-    //for (UIView *view in [self.scrollView subviews]) {
-    //    [view removeFromSuperview];
-    //}
-    
+    for (UIView *view in [self.scrollView subviews]) {
+        [view removeFromSuperview];
+    }
+
     NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
     
     self.background_layer.alpha = 0.0;
@@ -234,126 +259,59 @@
     NSArray* _default = [NSArray arrayWithObjects:@"transparent.png", nil];
     self.imageUrls = [_default arrayByAddingObjectsFromArray:[location objectForKey:@"images"]];
     
-
-    
     int numberOfPages = [self.imageUrls count];
     
-    self.scrollView.contentSize =
-    CGSizeMake(CGRectGetWidth(self.scrollView.frame) * numberOfPages,
-               CGRectGetHeight(self.scrollView.frame));
+    CGSize frame_size = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(frame_size.width*numberOfPages, frame_size.height);
     self.pageControl.numberOfPages = numberOfPages;
     self.pageControl.currentPage = 0;
+    [self gotoPage:FALSE];
     
-    self.viewControllers = nil;
-    self.viewControllers = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < numberOfPages; i++)
-    {
-		[self.viewControllers addObject:[NSNull null]];
+    self.backgroundImageViews = nil;
+    self.backgroundImageViews = [[NSMutableArray alloc] init];
+    for (NSUInteger i = 0; i < numberOfPages; i++){
+    	[self.backgroundImageViews addObject:[NSNull null]];
     }
-    if (numberOfPages > 0){
-        [self loadScrollViewWithPage:0];
-    }
-    if (numberOfPages > 1){
-        [self loadScrollViewWithPage:1];
-    }
+    
+    [self loadScrollViewWithPage:0];
+    [self loadScrollViewWithPage:1];
 }
-
-
-
-
 
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
-    
-    NSLog(@"loading image page: %d", page);
-    if (page >= [self.imageUrls count])
+    if (page >= [self.imageUrls count]){
         return;
+    }
     
-    if ([self.imageUrls count] == 0)
-        return;
+    NSString *image_src = [self.imageUrls objectAtIndex:page];
+    NSLog(@"loading image page: %d (%@)", page, image_src);
     
     // replace the placeholder if necessary
-    UIViewController *controller = [self.viewControllers objectAtIndex:page];
-    if ((NSNull *)controller == [NSNull null])
-    {
-        controller = [[UIViewController alloc] init];
-        [self.viewControllers replaceObjectAtIndex:page withObject:controller];
+    UIImageView *bgView = [self.backgroundImageViews objectAtIndex:page];
+    if ((NSNull *)bgView == [NSNull null]){
+        
+        CGRect img_frame = self.scrollView.frame;
+        img_frame.origin.x = img_frame.size.width * page;
+        img_frame.origin.y = 0;
+        bgView = [[UIImageView alloc] initWithFrame:img_frame];
+        [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
+        [bgView setContentMode: UIViewContentModeScaleAspectFill];
+        [bgView setClipsToBounds:TRUE];
     }
     
     // add the controller's view to the scroll view
-    if (controller.view.superview == nil)
-    {
-        CGRect frame = self.scrollView.frame;
-        frame.origin.x = CGRectGetWidth(frame) * page;
-        frame.origin.y = 0;
-        controller.view.frame = frame;
-
-        
-        
-        CGRect img_frame = self.scrollView.frame;
-        img_frame.origin.x = 0;
-        img_frame.origin.y = 0;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:img_frame];
-        NSString *image_src = [self.imageUrls objectAtIndex:page];
-        [imageView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
-        [imageView setContentMode: UIViewContentModeScaleAspectFill];
-        [imageView setClipsToBounds:TRUE];
-        [controller.view addSubview:imageView];
-    
-
-        NSLog(@"image view with frame: %f, %f", frame.size.width, frame.size.height);
-        
-        
-        [self addChildViewController:controller];
-        [self.scrollView addSubview:controller.view];
-        [controller didMoveToParentViewController:self];
-        
-
-  
+    if (bgView.superview == nil){
+        [self.scrollView addSubview:bgView];
     }
 }
-
-
-- (IBAction)detailViewTapped:(id)sender {
-    if (showingOnlyBackgroundImage){
-        [self toggleShowBackgroundImageOnly];
-    }
-}
-
-
-
-
-- (void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    if (scrollView == self.detail_view){
-        NSLog(@"detailView end scroll:  %f, %f", self.detail_view.contentOffset.x, self.detail_view.contentOffset.y);
-        NSLog(@"detailView end scroll:  %f, %f", targetContentOffset->x, targetContentOffset->y);
-        
-        
-        if (showingOnlyBackgroundImage) {
-            [self toggleShowBackgroundImageOnly];
-        
-        }
-        else if (self.detail_view.contentOffset.y < -50){
-            [self toggleShowBackgroundImageOnly];
-        }
-        
-    }
-    
-    
-}
-
-
 
 
 // at the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    
     if (scrollView == self.detail_view){
-
         return;
-        
     }
     
     // switch the indicator when more than 50% of the previous/next page is visible
@@ -372,46 +330,87 @@
     // a possible optimization would be to unload the views+controllers which are no longer visible
 }
 
-- (void)gotoPage:(BOOL)animated
-{
-    NSInteger page = self.pageControl.currentPage;
+
+
+//DETAIL VIEW SCROLLVIEW
+- (void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    if (scrollView == self.detail_view){
+        if (showingOnlyBackgroundImage) {
+            [self toggleShowBackgroundImageOnly];
+        }
+        else if (self.detail_view.contentOffset.y < -50){
+            [self toggleShowBackgroundImageOnly];
+        }
+    }
+}
+
+
+- (IBAction)detailViewTapped:(id)sender {
+    if (showingOnlyBackgroundImage){
+        [self toggleShowBackgroundImageOnly];
+    }
+}
+
+
+
+- (IBAction)swipeUpOnbackgroundView:(id)sender {
+    if(showingOnlyBackgroundImage){
+        [self toggleShowBackgroundImageOnly];
+    }
+}
+
+
+- (void) toggleShowBackgroundImageOnly {
     
-    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-    [self loadScrollViewWithPage:page - 1];
-    [self loadScrollViewWithPage:page];
-    [self loadScrollViewWithPage:page + 1];
-    
-	// update the scroll view to the appropriate page
-    CGRect bounds = self.scrollView.bounds;
-    bounds.origin.x = CGRectGetWidth(bounds) * page;
-    bounds.origin.y = 0;
-    [self.scrollView scrollRectToVisible:bounds animated:animated];
+    if (!showingOnlyBackgroundImage){
+        CGRect detail_rect_hidden = [[self detail_view] frame];
+        detail_rect_hidden.origin.y = 275;
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 55.0, 0.0);
+        self.map_view.settings.myLocationButton = NO;
+        self.map_view.settings.compassButton = NO;
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             [[self detail_view] setFrame:detail_rect_hidden];
+                             self.map_view.padding = mapInsets;
+                             //self.pageControl.frame = pageFrame;
+                             //self.background_layer.alpha = 0.0;
+                             //self.map_view.mapType = kGMSTypeTerrain;
+                         }
+                         completion:^(BOOL finished){
+                             showingOnlyBackgroundImage = TRUE;
+                             self.detailViewTapRecognizer.enabled = TRUE;
+                         }];
+    }else {
+        self.detailViewTapRecognizer.enabled = FALSE;
+        CGRect detail_rect_visible = [[self detail_view] frame];
+        detail_rect_visible.origin.y = 0;
+        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 330.0, 0);
+        
+        self.map_view.settings.myLocationButton = NO;
+        self.map_view.settings.compassButton = NO;
+        
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.detail_view.frame = detail_rect_visible;
+                             self.map_view.padding = mapInsets;
+                             //self.pageControl.frame = pageFrame;
+                             //self.map_view.mapType = kGMSTypeSatellite;
+                         }
+                         completion:^(BOOL finished){
+                             showingOnlyBackgroundImage = FALSE;
+                         }];
+    }
 }
 
-- (IBAction)changePage:(id)sender
-{
-    [self gotoPage:YES];    // YES = animate
-}
 
 
-- (CLLocationCoordinate2D) loadGeoCoordinate: (NSString*) location_str {
-    float lat;
-    float lon;
-    NSLog(@"LOCATION STR %@", location_str);
-    NSScanner* scan = [NSScanner scannerWithString:location_str];
-    [scan scanString:@"(" intoString:NULL];
-    [scan scanFloat: &lat];
-    [scan scanString:@"," intoString:NULL];
-    [scan scanFloat: &lon];
-    [scan scanString:@")" intoString:NULL];
-    NSLog(@"LAT: %f  LON: %f", lat, lon);
-    return CLLocationCoordinate2DMake(lat, lon);
-}
 
 
 - (void) addLocation: (NSDictionary*) location {
-    
-    // Add a custom 'glow' marker around Sydney.
     NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
     NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
     NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lat, lng];
@@ -424,7 +423,17 @@
     marker.map = self.map_view;
 }
 
-
+- (CLLocationCoordinate2D) loadGeoCoordinate: (NSString*) location_str {
+    float lat;
+    float lon;
+    NSScanner* scan = [NSScanner scannerWithString:location_str];
+    [scan scanString:@"(" intoString:NULL];
+    [scan scanFloat: &lat];
+    [scan scanString:@"," intoString:NULL];
+    [scan scanFloat: &lon];
+    [scan scanString:@")" intoString:NULL];
+    return CLLocationCoordinate2DMake(lat, lon);
+}
 
 
 - (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
@@ -459,108 +468,31 @@
     [self.map_view animateWithCameraUpdate:update];
 }
 
-- (IBAction)swipeUpOnbackgroundView:(id)sender {
-    if(showingOnlyBackgroundImage){
-        [self toggleShowBackgroundImageOnly];
-    }
-    
-    
-}
 
-
-- (void) toggleShowBackgroundImageOnly {
-
-    if (!showingOnlyBackgroundImage){
-        
-        CGRect detail_rect_hidden = [[self detail_view] frame];
-        //CGRect pageFrame = [self.pageControl frame];
-        
-        //pageFrame.origin.y = 530;
-        detail_rect_hidden.origin.y = 275;
-        
-        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 55.0, 0.0);
-        self.map_view.settings.myLocationButton = NO;
-        self.map_view.settings.compassButton = NO;
-        
-        [UIView animateWithDuration:1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             [[self detail_view] setFrame:detail_rect_hidden];
-                             self.map_view.padding = mapInsets;
-                             //self.pageControl.frame = pageFrame;
-                             //self.background_layer.alpha = 0.0;
-                             //self.map_view.mapType = kGMSTypeTerrain;
-                         }
-                         completion:^(BOOL finished){
-                             showingOnlyBackgroundImage = TRUE;
-                             self.detailViewTapRecognizer.enabled = TRUE;
-                             
-                         }];
-        
-    }else {
-        self.detailViewTapRecognizer.enabled = FALSE;
-        CGRect detail_rect_visible = [[self detail_view] frame];
-        //CGRect pageFrame = [self.pageControl frame];
-        
-        //pageFrame.origin.y = 220;
-        detail_rect_visible.origin.y = 0;
-        
-        
-        
-        
-        UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 330.0, 0);
-        
-        self.map_view.settings.myLocationButton = NO;
-        self.map_view.settings.compassButton = NO;
-        
-        [UIView animateWithDuration:1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             self.detail_view.frame = detail_rect_visible;
-                             self.map_view.padding = mapInsets;
-                             //self.pageControl.frame = pageFrame;
-                             //self.map_view.mapType = kGMSTypeSatellite;
-                         }
-                         completion:^(BOOL finished){
-                             showingOnlyBackgroundImage = FALSE;
-                         }];
-    
-    }
-}
 
 
 
 - (void) showDetailsOverlay {
-    //showingOnlyBackgroundImage = FALSE;
-    self.detail_view.hidden = FALSE;
     //make sure its in the correct hidden position before animating
+    self.detail_view.hidden = FALSE;
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
-    [[self detail_view] setFrame:detail_rect_hidden];
+    [self.detail_view setFrame:detail_rect_hidden];
+    [self.detail_view setContentSize: CGSizeMake(320, 900) ];
     
     CGRect detail_rect_visible = [[self detail_view] frame];
     detail_rect_visible.origin.y = 0;
-    
-    [self.detail_view setContentSize: CGSizeMake(320, 900) ];
-    
-    
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 330.0, 0);
-
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
-
     [UIView animateWithDuration:1.0
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.detail_view.frame = detail_rect_visible;
                          self.map_view.padding = mapInsets;
-                         //self.map_view.mapType = kGMSTypeSatellite;
                      }
                      completion:^(BOOL finished){
-
                              self.background_layer.hidden = FALSE;
                      }];
 }
@@ -581,7 +513,6 @@
                          [[self detail_view] setFrame:detail_rect_hidden];
                          self.map_view.padding = mapInsets;
                          self.background_layer.alpha = 0.0;
-                         //self.map_view.mapType = kGMSTypeTerrain;
                      }
                      completion:^(BOOL finished){
                          self.background_layer.hidden = TRUE;
@@ -590,7 +521,7 @@
                          [CATransaction setCompletionBlock:^{}];
                          [CATransaction commit];
                      }];
-    
 }
+
 
 @end

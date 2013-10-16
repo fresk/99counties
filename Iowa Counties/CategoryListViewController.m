@@ -9,6 +9,7 @@
 #import "CategoryListViewController.h"
 #import "AppContext.h"
 #import "CategoryListViewCell.h"
+#import <UIKit/UIKit.h>
 
 @interface CategoryListViewController ()
 
@@ -17,7 +18,9 @@
 
 @end
 
-@implementation CategoryListViewController
+@implementation CategoryListViewController{
+    AppContext* ctx;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,7 +37,7 @@
     
 
     
-    AppContext* ctx = [AppContext instance];
+    ctx = [AppContext instance];
 
     self.category_ids =   [ctx.locationCategories allKeys];
     self.category_names = [ctx.locationCategories objectsForKeys:self.category_ids notFoundMarker:[NSNull null]];
@@ -78,10 +81,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"category_cell_id";
-    CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSLog(@"making cell for:  %d --> %@", [indexPath row], [self.category_names objectAtIndex:[indexPath row]]);
+    NSInteger idx = [indexPath row];
     
-    cell.titleField.text = [self.category_names objectAtIndex:[indexPath row]];
+    NSString* cat_id = [self.category_ids objectAtIndex:idx];
+    NSString* cat_name = [self.category_names objectAtIndex:idx];
+    
+    CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSLog(@"making cell for:  %d --> %@", idx, cat_id);
+    
+    cell.titleField.text = cat_name;
+    cell.markerImage.image = [ctx markerForCategoryID:cat_id];
     
     // Configure the cell...
     

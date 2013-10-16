@@ -33,6 +33,13 @@ static dispatch_once_t onceToken;
     return img;
 }
 
+- (UIImage*) markerForCategoryID: (NSString*) category {
+    NSString* fname = [NSString stringWithFormat:@"marker-%@.png", category];
+    UIImage* img =  [UIImage imageNamed: fname];
+    NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
+    return img;
+}
+
 
 - (void)initializeContext {
     self.appName = @"Find Your Iowa";

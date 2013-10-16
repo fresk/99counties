@@ -144,6 +144,7 @@
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
 		12F073AF1807131C00CDB785 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073AE1807131C00CDB785 /* CategoryListViewController.m */; };
 		12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073B118071ADE00CDB785 /* CategoryListViewCell.m */; };
+		12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA8BAD180F06FF003166FA /* ExploreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,8 @@
 		12F073AE1807131C00CDB785 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
 		12F073B018071ADE00CDB785 /* CategoryListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewCell.h; sourceTree = "<group>"; };
 		12F073B118071ADE00CDB785 /* CategoryListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewCell.m; sourceTree = "<group>"; };
+		12FA8BAC180F06FF003166FA /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		12FA8BAD180F06FF003166FA /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +395,8 @@
 				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
 				126E7FFB180632EA00E7BFE0 /* Utils.h */,
 				126E7FFC180632EA00E7BFE0 /* Utils.m */,
+				12FA8BAC180F06FF003166FA /* ExploreViewController.h */,
+				12FA8BAD180F06FF003166FA /* ExploreViewController.m */,
 				12F073AD1807131C00CDB785 /* CategoryListViewController.h */,
 				12F073AE1807131C00CDB785 /* CategoryListViewController.m */,
 				12F073B018071ADE00CDB785 /* CategoryListViewCell.h */,
@@ -743,6 +748,7 @@
 				126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
 				12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */,
+				12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */,
 				12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

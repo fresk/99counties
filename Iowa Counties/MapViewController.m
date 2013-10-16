@@ -71,8 +71,8 @@
     [super viewDidLoad];
     
     ctx = [AppContext instance];
-    NSLog(@"app name: %@", ctx.appName);
-    NSLog(@"app categories: %@", ctx.locationCategories);
+    //NSLog(@"app name: %@", ctx.appName);
+    //NSLog(@"app categories: %@", ctx.locationCategories);
     
     for(NSString *fontfamilyname in [UIFont familyNames])
     {

@@ -10,9 +10,12 @@
 
 @implementation Utils
 + (NSDictionary*) loadJsonFile: (NSString*)filename {
+    NSError *err;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
-    NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:NULL];
+    NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
+    NSLog(@"read Error: %@", err ) ;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&err];
+    NSLog(@"json Error: %@", err ) ;
     return json;
 }
 @end

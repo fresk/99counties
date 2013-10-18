@@ -1,24 +1,24 @@
 //
-//  CategoryListViewController.m
+//  CategoryListController.m
 //  Iowa Counties
 //
 //  Created by Thomas Hansen on 10/10/13.
 //  Copyright (c) 2013 fresk. All rights reserved.
 //
 
-#import "CategoryListViewController.h"
+#import "CategoryListController.h"
 #import "AppContext.h"
 #import "CategoryListViewCell.h"
 #import <UIKit/UIKit.h>
 
-@interface CategoryListViewController ()
+@interface CategoryListController ()
 
 @property(strong, nonatomic) NSArray* category_ids;
 @property(strong, nonatomic) NSArray* category_names;
 
 @end
 
-@implementation CategoryListViewController{
+@implementation CategoryListController{
     AppContext* ctx;
 }
 
@@ -39,7 +39,8 @@
     
     ctx = [AppContext instance];
 
-    self.category_ids =   [ctx.locationCategories allKeys];
+
+    self.category_ids =  [[ctx.locationCategories allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     self.category_names = [ctx.locationCategories objectsForKeys:self.category_ids notFoundMarker:[NSNull null]];
     
     NSLog(@"category_ids: %d", [self.category_ids count]);

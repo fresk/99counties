@@ -142,7 +142,9 @@
 		12BD0B0F180E9710000EAA52 /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0AA8180E9710000EAA52 /* btn-single-phone.png */; };
 		12BD0B10180E9710000EAA52 /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0AA9180E9710000EAA52 /* btn-single-www.png */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
-		12F073AF1807131C00CDB785 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073AE1807131C00CDB785 /* CategoryListViewController.m */; };
+		12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8C918117CB400FC4CD3 /* CountyListController.m */; };
+		12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8CC18118E5A00FC4CD3 /* FilterResultsController.m */; };
+		12F073AF1807131C00CDB785 /* CategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073AE1807131C00CDB785 /* CategoryListController.m */; };
 		12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073B118071ADE00CDB785 /* CategoryListViewCell.m */; };
 		12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA8BAD180F06FF003166FA /* ExploreViewController.m */; };
 /* End PBXBuildFile section */
@@ -291,8 +293,12 @@
 		12BD0AA9180E9710000EAA52 /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
-		12F073AD1807131C00CDB785 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
-		12F073AE1807131C00CDB785 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
+		12D7F8C818117CB400FC4CD3 /* CountyListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountyListController.h; sourceTree = "<group>"; };
+		12D7F8C918117CB400FC4CD3 /* CountyListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountyListController.m; sourceTree = "<group>"; };
+		12D7F8CB18118E5A00FC4CD3 /* FilterResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterResultsController.h; sourceTree = "<group>"; };
+		12D7F8CC18118E5A00FC4CD3 /* FilterResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterResultsController.m; sourceTree = "<group>"; };
+		12F073AD1807131C00CDB785 /* CategoryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListController.h; sourceTree = "<group>"; };
+		12F073AE1807131C00CDB785 /* CategoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListController.m; sourceTree = "<group>"; };
 		12F073B018071ADE00CDB785 /* CategoryListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewCell.h; sourceTree = "<group>"; };
 		12F073B118071ADE00CDB785 /* CategoryListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewCell.m; sourceTree = "<group>"; };
 		12FA8BAC180F06FF003166FA /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
@@ -385,22 +391,17 @@
 			isa = PBXGroup;
 			children = (
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
-				12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */,
-				12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */,
 				126E7FF81806146E00E7BFE0 /* AppContext.h */,
 				126E7FF91806146E00E7BFE0 /* AppContext.m */,
-				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
-				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
+				12AEC8AB17C3DC8C0001C5CD /* MapViewController.h */,
+				12AEC8AC17C3DC8C0001C5CD /* MapViewController.m */,
+				12FA8BAC180F06FF003166FA /* ExploreViewController.h */,
+				12FA8BAD180F06FF003166FA /* ExploreViewController.m */,
+				12D7F8C718117C2800FC4CD3 /* FilterListControllers */,
 				12D571E217F1F4AA00E4DD2D /* LayerView.h */,
 				12D571E317F1F4AA00E4DD2D /* LayerView.m */,
 				126E7FFB180632EA00E7BFE0 /* Utils.h */,
 				126E7FFC180632EA00E7BFE0 /* Utils.m */,
-				12FA8BAC180F06FF003166FA /* ExploreViewController.h */,
-				12FA8BAD180F06FF003166FA /* ExploreViewController.m */,
-				12F073AD1807131C00CDB785 /* CategoryListViewController.h */,
-				12F073AE1807131C00CDB785 /* CategoryListViewController.m */,
-				12F073B018071ADE00CDB785 /* CategoryListViewCell.h */,
-				12F073B118071ADE00CDB785 /* CategoryListViewCell.m */,
 			);
 			path = "Iowa Counties";
 			sourceTree = "<group>";
@@ -408,6 +409,8 @@
 		12AEC88C17C3DC2E0001C5CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12AEC89417C3DC2E0001C5CD /* AppDelegate.h */,
+				12AEC89517C3DC2E0001C5CD /* AppDelegate.m */,
 				12AEC88D17C3DC2E0001C5CD /* Iowa Counties-Info.plist */,
 				12AEC88E17C3DC2E0001C5CD /* InfoPlist.strings */,
 				12AEC89117C3DC2E0001C5CD /* main.m */,
@@ -565,6 +568,21 @@
 				12BD0AA9180E9710000EAA52 /* btn-single-www.png */,
 			);
 			path = half;
+			sourceTree = "<group>";
+		};
+		12D7F8C718117C2800FC4CD3 /* FilterListControllers */ = {
+			isa = PBXGroup;
+			children = (
+				12F073B018071ADE00CDB785 /* CategoryListViewCell.h */,
+				12F073B118071ADE00CDB785 /* CategoryListViewCell.m */,
+				12F073AD1807131C00CDB785 /* CategoryListController.h */,
+				12F073AE1807131C00CDB785 /* CategoryListController.m */,
+				12D7F8C818117CB400FC4CD3 /* CountyListController.h */,
+				12D7F8C918117CB400FC4CD3 /* CountyListController.m */,
+				12D7F8CB18118E5A00FC4CD3 /* FilterResultsController.h */,
+				12D7F8CC18118E5A00FC4CD3 /* FilterResultsController.m */,
+			);
+			name = FilterListControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,11 +759,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12F073AF1807131C00CDB785 /* CategoryListViewController.m in Sources */,
+				12F073AF1807131C00CDB785 /* CategoryListController.m in Sources */,
+				12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */,
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,
 				126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */,
+				12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
 				12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */,
 				12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */,

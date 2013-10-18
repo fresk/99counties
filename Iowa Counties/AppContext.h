@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FilterResultsController.h"
 
 @interface AppContext : NSObject 
 
 @property(atomic, strong) NSString* appName;
 @property(atomic, strong) NSDictionary* locationCategories;
+@property(atomic, strong) NSDictionary* counties;
 
 + (id)instance;
 - (UIImage*) markerForCategory: (NSArray*) category;
 - (UIImage*) markerForCategoryID: (NSString*) category;
+
+- (void) loadLocationsByCounty: (NSString*) county intoTable: (FilterResultsController*) target;
 
 @end

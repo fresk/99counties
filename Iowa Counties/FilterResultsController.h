@@ -10,6 +10,8 @@
 
 @interface FilterResultsController : UITableViewController
 @property(atomic, strong) NSString* result_category;
+@property (strong, nonatomic) IBOutlet UIView *loadingIndicator;
+
 
 - (void) setResults: (NSArray*) results;
 @end

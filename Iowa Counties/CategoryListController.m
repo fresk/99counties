@@ -61,6 +61,7 @@
     NSString* cat_id = [self.category_ids objectAtIndex:idx];
     NSString* cat_name = [self.category_names objectAtIndex:idx];
     
+    
     CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.titleField.text = cat_name;
     cell.markerImage.image = [ctx markerForCategoryID:cat_id];
@@ -81,7 +82,11 @@
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
     NSString* cat_id = [self.category_ids objectAtIndex:idx];
     NSLog(@"request data by category: %@", cat_id);
-    [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+    
+    
+    FilterResultsController* target = [segue destinationViewController];
+    target.loadingIndicator.hidden = FALSE;
+    [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
 
     
 }

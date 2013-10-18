@@ -66,7 +66,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CountyCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSInteger idx = [indexPath row];
@@ -86,7 +86,9 @@
      NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
      NSString* county_id = county_ids[idx];
      NSLog(@"request data by county: %@", county_id);
-     [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+     FilterResultsController* target = [segue destinationViewController];
+     target.loadingIndicator.hidden = FALSE;
+     [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
     //[ctx loadLocationsWhere:@"county" Matches:county_id intoTable:[segue destinationViewController]];
 
  }

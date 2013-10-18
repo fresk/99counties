@@ -9,6 +9,7 @@
 #import "FilterResultsController.h"
 #import "CategoryListViewCell.h"
 #import "AppContext.h"
+#import "MapViewController.h"
 
 @interface FilterResultsController ()
 
@@ -37,29 +38,37 @@
     [super viewDidLoad];
     
     ctx = [AppContext instance];
-
-    //location_list = [[NSArray alloc] init];
-    NSLog(@"init: %d", [location_list count]);
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    if ([location_list count] > 0){
-        [self.tableView reloadData ];
-    }
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //if ([location_list count] > 0){
+    //    [self.tableView reloadData ];
+    //    //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: UITableViewRowAnimationRight];
+   // }
 }
+
+
+
+
 
 
 - (void) setResults: (NSArray*) results
 {
-    NSLog(@"setting results: %d", [results count]);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        location_list = [results copy];
+        [self.tableView reloadData];
+        NSLog(@"HIDING loading indicator!!!");
+        self.loadingIndicator.hidden = TRUE;
+    });
 
-    location_list = [results copy];
-    [self.tableView reloadData];
+    //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: UITableViewRowAnimationRight];
 }
+
+
+
+
+
 
 
 
@@ -80,9 +89,7 @@
 {
     
     NSLog(@"number of rows: %d", [location_list count]);
-    if ([location_list count] == 0){
-        return 1;
-    }
+
     return [location_list count];
 }
 
@@ -93,15 +100,10 @@
     
     NSLog(@"cell #: %d", [location_list count]);
     
-    if ([location_list count] == 0){
-        static NSString *CellIdentifier = @"Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        cell.textLabel.text = @"Loading...";
-        return cell;
-    }
+
     
     NSDictionary* location = [location_list objectAtIndex:idx];
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ResultCell";
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = [location objectForKey:@"name"];
@@ -110,6 +112,28 @@
     return cell;
 }
 
+
+
+
+
+
+
+
+
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"GOTO PLACE ON MAP");
+    MapViewController* map = (MapViewController*) [segue destinationViewController];    
+    NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
+    NSDictionary* location = [location_list objectAtIndex:idx];
+    //[map gotoDetailsForLocationWithID: [location objectForKey:@"id"]];
+    map.selectedLocation = location;
+    map.selectedLocationID = [location objectForKey:@"id"];
+
+}
 
 
 
@@ -156,14 +180,6 @@
 */
 
 /*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 
  */
 

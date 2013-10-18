@@ -36,6 +36,8 @@
 @property (strong, nonatomic) NSArray *imageUrls;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *detailViewTapRecognizer;
 
+
+
 @end
 
 
@@ -50,6 +52,8 @@
     NSMutableData *_response_data;
     BOOL showingOnlyBackgroundImage;
     AppContext* ctx;
+    
+    NSDictionary* markersByLocationID;
 }
 
 
@@ -73,7 +77,7 @@
     ctx = [AppContext instance];
     //NSLog(@"app name: %@", ctx.appName);
     //NSLog(@"app categories: %@", ctx.locationCategories);
-    
+    /*
     for(NSString *fontfamilyname in [UIFont familyNames])
     {
         NSLog(@"family:'%@'",fontfamilyname);
@@ -83,7 +87,9 @@
         }
         NSLog(@"-------------");
     }
+    */
     
+    NSLog(@"MAP VIEW LOADED");
     
     self.map_view.delegate = self;
     //self.map_view.mapType = kGMSTypeNormal;
@@ -103,11 +109,9 @@
     
     self.detail_view.hidden = YES;
     showingOnlyBackgroundImage = FALSE;
-
-    //[self loadBarns];
-    [self fitBounds];
-    [self api_request];
+    
     [self initImagePager];
+
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -118,6 +122,54 @@
 }
 
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.map_view clear];
+    [self fitBounds];
+
+}
+
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    self.selectedLocationID = nil;
+
+}
+
+
+- (void) viewDidAppear:(BOOL)animated
+{
+
+
+
+    if (self.selectedLocationID == nil){
+        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.distanceFilter = 50.0f; // whenever we move
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
+        [locationManager startUpdatingLocation];
+        
+    }
+    else {
+        double delayInSeconds = 0.5;
+        GMSMarker* marker = [self addLocation:self.selectedLocation];
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //code to be executed on the main queue after delay
+            [self gotoDetailsForMarker: marker];
+        });
+        
+        
+        
+        
+    }
+    
+    NSLog(@"markers: %@", self.map_view.markers);
+    NSLog(@"SELECTED ID: %@", self.selectedLocationID);
+
+
+}
 
 -(void)locationManager:(CLLocationManager *)manager
    didUpdateToLocation:(CLLocation *)newLocation
@@ -136,70 +188,22 @@
 
 
 
-- (void) api_request
-{
-    
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://findyouriowa.com/api/locations/"]
-                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                          timeoutInterval:60.0];
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    if (theConnection) {
-        _response_data = [NSMutableData data];
 
-    }
-    else {
-        _response_data  = nil;
-    }
-}
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    // This method is called when the server has determined that it
-    // has enough information to create the NSURLResponse.
-    // It can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    NSLog(@"received response %@", [response URL]);
-    [_response_data setLength:0];
-}
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+-(void)setResults: (NSArray*) results
 {
-    // Append the new data to receivedData.
-    // receivedData is an instance variable declared elsewhere.
-    NSLog(@"received %d bytes of data",[data length]);
-    [_response_data appendData:data];
-    
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [_response_data setLength:0];
-    
-    // inform the user
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    // do something with the data
-    // receivedData is declared as a property elsewhere
-    NSLog(@"Succeeded! Received %d bytes of data",[_response_data length]);
-    
-    // convert to JSON
-    NSError *myError = nil;
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData: _response_data
-                                                        options: 0
-                                                          error: &myError];
-    NSEnumerator *enumerator = [res objectEnumerator];
     NSDictionary* item;
-    while (item = (NSDictionary*)[enumerator nextObject]) {
-        //NSLog(@"adding: %@", item);
-        [self addLocation:item];
-
+    for (item in results){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addLocation: item];
+        });
     }
+    
+
 }
+
 
 
 
@@ -353,6 +357,8 @@
 
 
 
+
+
 - (IBAction)swipeUpOnbackgroundView:(id)sender {
     if(showingOnlyBackgroundImage){
         [self toggleShowBackgroundImageOnly];
@@ -408,9 +414,14 @@
 
 
 
+- (GMSMarker*) getMarkerForLocationWithID: (NSString*) mid
+{
+    return [markersByLocationID objectForKey:mid];
+}
 
 
-- (void) addLocation: (NSDictionary*) location {
+
+- (GMSMarker*) addLocation: (NSDictionary*) location {
     NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
     NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
     NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lat, lng];
@@ -421,6 +432,9 @@
     marker.title = [location objectForKey:@"name"] ;
     [marker setAppearAnimation: kGMSMarkerAnimationPop];
     marker.map = self.map_view;
+    return marker;
+        //[markersByLocationID setValue:marker forKey: location_id];
+    
 }
 
 - (CLLocationCoordinate2D) loadGeoCoordinate: (NSString*) location_str {
@@ -436,16 +450,32 @@
 }
 
 
-- (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
+
+
+- (void) gotoDetailsForMarker: (GMSMarker*) marker
+{
+    NSLog(@"GOING TO MARKER");
     NSDictionary* location = (NSDictionary*)marker.userData;
     [self.detail_title setText:[location objectForKey:@"name"]] ;
     [self.detail_text setText: [location objectForKey:@"description"]];
     [self loadBackgroundImageList: location];
     [self centerOnMarker: marker];
     [self showDetailsOverlay];
-    return TRUE;
 }
 
+
+- (void) gotoDetailsForLocationWithID: (NSString*) lid
+{
+    GMSMarker* marker = [self getMarkerForLocationWithID:lid];
+    [self gotoDetailsForMarker:marker];
+}
+
+
+
+- (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
+    [self gotoDetailsForMarker:marker];
+    return TRUE;
+}
 
 - (void) centerOnMarker:  (GMSMarker *)  marker{
     _prior_camera_pos = self.map_view.camera;
@@ -463,9 +493,12 @@
     CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.36, -96.31);
     bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
                                                   coordinate:  SW];
-    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: self.map_view.myLocation.coordinate zoom:8];
+    //[GMSCameraPosition cameraFor]
+    //GMSCameraUpdate *update = [GMSCameraUpdate setTarget: self.map_view.myLocation.coordinate zoom:8];
     
-    [self.map_view animateWithCameraUpdate:update];
+    GMSCameraPosition* cam = [self.map_view cameraForBounds:bounds insets:UIEdgeInsetsZero];
+    self.map_view.camera = cam;
+    
 }
 
 

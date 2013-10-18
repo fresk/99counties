@@ -64,20 +64,23 @@
 
     if ([segue.identifier isEqualToString:@"showRecentlyAdded"]){
         //[ctx fetchResources:@"/recent" withParams:nil setResultOn:target];
-        NSLog(@"inside %@: %@", @"showRecentlyAdded", [segue destinationViewController]);
-        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: [segue destinationViewController]];
+        FilterResultsController* target = [segue destinationViewController];
+        target.loadingIndicator.hidden = FALSE;
+        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: target];
         
     }
     
     else if ([segue.identifier isEqualToString:@"showPopular"]){
         //[ctx fetchResources:@"/popular" withParams:nil setResultOn:target];
-        NSLog(@"inside %@: %@", @"showPopular", [segue destinationViewController]);
-        [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+        FilterResultsController* target = [segue destinationViewController];
+        target.loadingIndicator.hidden = FALSE;
+        [ctx fetchResources:@"/locations?dont=cachethis" withParams:nil setResultOn: target];
     }
     
     else if ([segue.identifier isEqualToString:@"showProximity"]){
-        NSLog(@"inside %@: %@", @"showProximity", [segue destinationViewController]);
-        [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+        FilterResultsController* target = [segue destinationViewController];
+        target.loadingIndicator.hidden = FALSE;
+        [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
         /*
          [ctx fetchResources: @"distance"
                  withParams: @{

@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    ctx = [AppContext instance];
     
     self.tableView.delegate = self;
     
@@ -58,10 +58,44 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UITableViewCell* cell = (UITableViewCell*) sender;
-    NSLog(@"navigate: %@", cell.textLabel.text);
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
+    NSLog(@"navigate: %@", segue.identifier);
+    
+
+    if ([segue.identifier isEqualToString:@"showRecentlyAdded"]){
+        //[ctx fetchResources:@"/recent" withParams:nil setResultOn:target];
+        NSLog(@"inside %@: %@", @"showRecentlyAdded", [segue destinationViewController]);
+        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: [segue destinationViewController]];
+        
+    }
+    
+    else if ([segue.identifier isEqualToString:@"showPopular"]){
+        //[ctx fetchResources:@"/popular" withParams:nil setResultOn:target];
+        NSLog(@"inside %@: %@", @"showPopular", [segue destinationViewController]);
+        [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+    }
+    
+    else if ([segue.identifier isEqualToString:@"showProximity"]){
+        NSLog(@"inside %@: %@", @"showProximity", [segue destinationViewController]);
+        [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+        /*
+         [ctx fetchResources: @"distance"
+                 withParams: @{
+                               @"from" : @"(45.23532,-97.2344343)",
+                               @"max" : @"50"
+                               }
+                setResultOn:target];
+         */
+    }
+    
+    else {
+        return;
+    }
+    
+    
+    
+
+    
 }
 
 

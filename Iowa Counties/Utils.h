@@ -27,3 +27,11 @@
 @property (nonatomic, copy) NSString* fontName;
 @end
 
+@interface NSDictionary (NSURL)
+- (NSString*) getAsQueryParams;
++ (NSDictionary *)URLQueryParameters:(NSURL *)URL;
+@end
+
+@interface NSURL (QueryParams)
++ (NSURL*) URLWithPath: (NSString*) path andParams: (NSDictionary*) params;
+@end

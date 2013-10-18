@@ -19,6 +19,7 @@
 - (UIImage*) markerForCategory: (NSArray*) category;
 - (UIImage*) markerForCategoryID: (NSString*) category;
 
-- (void) loadLocationsByCounty: (NSString*) county intoTable: (FilterResultsController*) target;
+
+- (void) fetchResources:(NSString*) path withParams: (NSDictionary*) params setResultOn:(id)target;
 
 @end

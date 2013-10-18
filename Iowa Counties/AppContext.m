@@ -54,37 +54,36 @@ static dispatch_once_t onceToken;
 }
 
 
-- (void) loadLocationsByCounty: (NSString*) county intoTable: (FilterResultsController*) target
+
+
+- (void) fetchResources:(NSString*) path withParams: (NSDictionary*) params setResultOn:(id)target
 {
-
-
+    if ([path hasPrefix:@"/"]){
+        path = [path substringFromIndex:1];
+    }
     
-    NSURL *URL = [NSURL URLWithString:@"http://findyouriowa.com/api/locations"];
+    NSLog(@"making request to: %@\/   params: %@\/  target: %@\n\n", path, params, target);
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
+    NSString *endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
     NSURLSession *session = [NSURLSession sharedSession];
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithPath:endpoint andParams:params]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       NSError *err;
                                       if (err != nil)
-                                          NSLog(@"URLRequest callback error (loadLocationsByCounty): %@", err);
-                                      
-                                      
+                                          NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
                                       NSArray *results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
                                       if (err != nil)
-                                          NSLog(@"Json parsing error (loadLocationsByCounty): %@", err);
-
+                                          NSLog(@"Json parsing error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
+                                      
+                                      NSLog(@"GOT RESPONSE: %d", [results count]);
                                       [target setResults: results];
                                   }];
-    
     [task resume];
-    
-
-    
-
 }
+
+
 
 
 

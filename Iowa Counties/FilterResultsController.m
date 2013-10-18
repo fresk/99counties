@@ -17,6 +17,7 @@
 @implementation FilterResultsController {
 
     AppContext* ctx;
+  
     NSArray* location_list;
 
 
@@ -37,7 +38,12 @@
     
     ctx = [AppContext instance];
 
-    location_list = [[NSArray alloc] init];
+    //location_list = [[NSArray alloc] init];
+    NSLog(@"init: %d", [location_list count]);
+    
+    if ([location_list count] > 0){
+        [self.tableView reloadData ];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -49,6 +55,8 @@
 
 - (void) setResults: (NSArray*) results
 {
+    NSLog(@"setting results: %d", [results count]);
+
     location_list = [results copy];
     [self.tableView reloadData];
 }
@@ -70,6 +78,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
+    NSLog(@"number of rows: %d", [location_list count]);
     if ([location_list count] == 0){
         return 1;
     }
@@ -80,6 +90,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger idx = [indexPath row];
+    
+    NSLog(@"cell #: %d", [location_list count]);
     
     if ([location_list count] == 0){
         static NSString *CellIdentifier = @"Cell";
@@ -92,10 +104,8 @@
     static NSString *CellIdentifier = @"Cell";
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
     cell.textLabel.text = [location objectForKey:@"name"];
-    //cell.markerImage.image = [ctx markerForCategory:[location objectForKey:@"category"]];
+    cell.imageView.image = [ctx markerForCategory:[location objectForKey:@"category"]];
     
     return cell;
 }

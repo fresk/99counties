@@ -77,8 +77,6 @@
 }
 
 
-
-
  #pragma mark - Navigation
  
  // In a story board-based application, you will often want to do a little preparation before navigation
@@ -88,7 +86,8 @@
      NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
      NSString* county_id = county_ids[idx];
      NSLog(@"request data by county: %@", county_id);
-     [ctx loadLocationsByCounty:county_id intoTable: [segue destinationViewController]];
+     [ctx fetchResources:@"/locations" withParams:nil setResultOn: [segue destinationViewController]];
+    //[ctx loadLocationsWhere:@"county" Matches:county_id intoTable:[segue destinationViewController]];
 
  }
  

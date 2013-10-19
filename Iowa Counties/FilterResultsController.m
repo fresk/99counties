@@ -56,10 +56,12 @@
 {
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        if ([results count] > 0 ){
         location_list = [results copy];
         [self.tableView reloadData];
         NSLog(@"HIDING loading indicator!!!");
         self.loadingIndicator.hidden = TRUE;
+        }
     });
 
     //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: UITableViewRowAnimationRight];

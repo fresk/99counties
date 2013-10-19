@@ -10,5 +10,6 @@
 
 @interface CategoryListViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *titleField;
+@property (strong, nonatomic) IBOutlet UILabel *countLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *markerImage;
 @end

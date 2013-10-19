@@ -124,7 +124,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self.map_view clear];
+    //[self.map_view clear];
     [self fitBounds];
 
 }
@@ -196,6 +196,7 @@
     for (item in results){
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"ADDING MARKER: %@", item);
             [self addLocation: item];
         });
     }
@@ -423,7 +424,7 @@
 - (GMSMarker*) addLocation: (NSDictionary*) location {
     NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
     NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
-    NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lat, lng];
+    NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lng, lat];
     CLLocationCoordinate2D position = [self loadGeoCoordinate: geo_str];
     GMSMarker *marker = [GMSMarker markerWithPosition: position];
     marker.icon = [ctx markerForCategory:[location objectForKey:@"category"]];
@@ -445,6 +446,7 @@
     [scan scanString:@"," intoString:NULL];
     [scan scanFloat: &lon];
     [scan scanString:@")" intoString:NULL];
+    NSLog(@"LOCATION  >%@<", location_str);
     return CLLocationCoordinate2DMake(lat, lon);
 }
 

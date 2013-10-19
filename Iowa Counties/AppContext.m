@@ -14,7 +14,6 @@ static AppContext *ctx_instance = nil;
 static dispatch_once_t onceToken;
 
 @implementation AppContext {
-
     CLLocationCoordinate2D _currentLocation;
 }
 
@@ -30,14 +29,72 @@ static dispatch_once_t onceToken;
 
 - (void)initializeContext {
     self.appName = @"Find Your Iowa";
-    self.locationCategories = [Utils loadJsonFile:@"data/categories"];
-    self.counties = [Utils loadJsonFile:@"data/counties"];
-    
+
     _currentLocation.latitude = 0.0;
     _currentLocation.longitude = 0.0;
     [self updateUserLocation];
     
+    [self initCategories];
+    [self initCities];
+
+    //self.locationCategories = [Utils loadJsonFile:@"data/categories"];
+    self.counties = [Utils loadJsonFile:@"data/counties"];
+    
 }
+
+
+
+
+-(void) initCategories
+{
+    NSDictionary* categoryNames = [Utils loadJsonFile:@"data/categories"];
+    [self fetchResource:@"/categories/" withParams: nil onComplete:^(NSDictionary *data) {
+        NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+        NSDictionary* cat;
+        for (NSDictionary* cat in [data objectForKey:@"result"] ){
+            NSString* category_id = [cat objectForKey:@"id"];
+            [dict setObject: @{@"id": category_id,
+                               @"num_entries": [cat objectForKey:@"num_entries"],
+                               @"name": [categoryNames objectForKey:category_id]}
+                     forKey:category_id];
+        }
+        self.categories = [NSDictionary dictionaryWithDictionary:dict];
+    }];
+}
+
+
+-(void) initCities
+{
+    [self fetchResource:@"/cities/" withParams: nil onComplete:^(NSDictionary *data) {
+        self.cities = [data objectForKey:@"result"];
+    }];
+}
+
+
+
+
+-(CLLocationCoordinate2D) getCurrentLocation
+{
+    return _currentLocation;
+}
+
+- (void) updateUserLocation {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    [self.locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    _currentLocation =  newLocation.coordinate;
+    [self.locationManager stopUpdatingLocation];
+    
+}
+
 
 
 - (UIImage*) markerForCategory: (NSArray*) category {
@@ -55,57 +112,43 @@ static dispatch_once_t onceToken;
 }
 
 
-- (void) updateUserLocation {
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    [self.locationManager startUpdatingLocation];
-}
 
 
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation
+- (void) fetchResource:(NSString*) path withParams: (NSDictionary*) params onComplete: (fetchComplete) blockComplete;
 {
-    _currentLocation =  newLocation.coordinate;
-    [self.locationManager stopUpdatingLocation];
+    NSString* endpoint;
+    if ([path hasPrefix:@"/"]){
+        endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", [path substringFromIndex:1]];
+    } else {
+        endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
+    }
     
+    httpResponseHandler responseHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
+        //NSLog(@"GOT RESPONSE: %d", data count);
+        NSError *err;
+        if (err != nil)
+            NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
+        if (err != nil){
+            //NSString* json_str = [NSString stringWithUTF8String:data.bytes];
+            //NSLog(@"\n\nData: %@\n\n Json parsing error: %@", json_str, err);
+        }
+        blockComplete(result);
+    };
+    
+    NSURLSession* session = [NSURLSession sharedSession];
+    NSURL* requestURL = [NSURL URLWithPath:endpoint andParams:params];
+    NSURLRequest *request = [NSURLRequest requestWithURL: requestURL];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest: request completionHandler: responseHandler ];
+    [task resume];
 }
-
-
--(CLLocationCoordinate2D) getCurrentLocation
-{
-    return _currentLocation;
-}
-
 
 
 - (void) fetchResources:(NSString*) path withParams: (NSDictionary*) params setResultOn:(id)target
 {
-    if ([path hasPrefix:@"/"]){
-        path = [path substringFromIndex:1];
-    }
-    
-    NSLog(@"making request to: %@\/   params: %@\/  target: %@\n\n", path, params, target);
-    
-    NSString *endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithPath:endpoint andParams:params]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                            completionHandler:
-                                  ^(NSData *data, NSURLResponse *response, NSError *error) {
-                                      NSError *err;
-                                      if (err != nil)
-                                          NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
-                                      NSArray *results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
-                                      if (err != nil)
-                                          NSLog(@"Json parsing error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
-                                      
-                                      NSLog(@"GOT RESPONSE: %d", [results count]);
-                                      [target setResults: results];
-                                  }];
-    [task resume];
+    [self fetchResource:path withParams:params onComplete:^(NSDictionary* data){
+        [target setResults: [data objectForKey:@"result"]];
+    }];
 }
 
 

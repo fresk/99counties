@@ -13,16 +13,26 @@
 @interface AppContext : NSObject <CLLocationManagerDelegate>
 
 @property(atomic, strong) NSString* appName;
-@property(atomic, strong) NSDictionary* locationCategories;
-@property(atomic, strong) NSDictionary* counties;
 @property(atomic, strong) CLLocationManager* locationManager;
+@property(atomic, strong) NSDictionary* categories;
+@property(atomic, strong) NSArray* cities;
+@property(atomic, strong) NSDictionary* counties;
+
 
 + (id)instance;
+
+
 - (UIImage*) markerForCategory: (NSArray*) category;
 - (UIImage*) markerForCategoryID: (NSString*) category;
+
+
 -(CLLocationCoordinate2D) getCurrentLocation;
+- (void) updateUserLocation;
 
 
+typedef void (^fetchComplete)(NSDictionary* data);
+typedef void (^httpResponseHandler)(NSData* data, NSURLResponse* response, NSError* error);
+- (void) fetchResource:(NSString*) path withParams: (NSDictionary*) params onComplete: (fetchComplete) blockComplete;
 - (void) fetchResources:(NSString*) path withParams: (NSDictionary*) params setResultOn:(id)target;
 
 @end

@@ -1,23 +1,23 @@
 //
-//  CategoryListController.m
+//  CityListController.m
 //  Iowa Counties
 //
 //  Created by Thomas Hansen on 10/10/13.
 //  Copyright (c) 2013 fresk. All rights reserved.
 //
 
-#import "CategoryListController.h"
+#import "CityListController.h"
 #import "AppContext.h"
 #import "CategoryListViewCell.h"
 #import <UIKit/UIKit.h>
 
-@interface CategoryListController ()
+@interface CityListController ()
 
-@property(strong, nonatomic) NSArray* categories;
+@property(strong, nonatomic) NSArray* cities;
 
 @end
 
-@implementation CategoryListController{
+@implementation CityListController{
     AppContext* ctx;
 }
 
@@ -26,23 +26,17 @@
 {
     [super viewDidLoad];
     ctx = [AppContext instance];
-
-    self.categories = [[ctx.categories allValues]
-       sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
-           NSString* key1 = [item1 objectForKey:@"name"];
-           NSString* key2 = [item2 objectForKey:@"name"];
-           return [key1 compare:key2];
-       }];
     
+    self.cities = [ctx.cities sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
+        NSString* key1 = [item1 objectForKey:@"name"];
+        NSString* key2 = [item2 objectForKey:@"name"];
+        return [key1 compare:key2];
+    }];
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 #pragma mark - Table view data source
 
@@ -53,21 +47,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.categories count];
+    return [self.cities count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"category_cell_id";
+    static NSString *CellIdentifier = @"CityCell";
     NSInteger idx = [indexPath row];
     
-    NSDictionary* cat = [self.categories objectAtIndex:idx];
+    NSDictionary* city = [self.cities objectAtIndex:idx];
     
     
     CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.titleField.text = [cat objectForKey:@"name"];
-    cell.markerImage.image = [ctx markerForCategoryID:[cat objectForKey:@"id"]];
-    cell.countLabel.text = [NSString stringWithFormat:@"(%@)", [cat objectForKey:@"num_entries"]];
+    cell.titleField.text = [city objectForKey:@"name"];
+    cell.markerImage.image = [ctx markerForCategoryID:[city objectForKey:@"id"]];
+    cell.countLabel.text = [NSString stringWithFormat:@"(%@)", [city objectForKey:@"num_entries"]];
     
     // Configure the cell...
     
@@ -83,7 +77,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
-    NSDictionary* cat = [self.categories objectAtIndex:idx];
+    NSDictionary* cat = [self.cities objectAtIndex:idx];
     
     NSString* cat_id = [cat objectForKey:@"id"];
     NSLog(@"request data by category: %@", cat_id);
@@ -92,7 +86,7 @@
     FilterResultsController* target = [segue destinationViewController];
     target.loadingIndicator.hidden = FALSE;
     [ctx fetchResources:@"/locations" withParams:@{@"category":cat_id} setResultOn: target];
-
+    
     
 }
 

@@ -82,13 +82,13 @@
  // In a story board-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
  {
- // Get the new view controller using [segue destinationViewController].
-     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
-     NSString* county_id = county_ids[idx];
-     NSLog(@"request data by county: %@", county_id);
-     FilterResultsController* target = [segue destinationViewController];
-     target.loadingIndicator.hidden = FALSE;
-     [ctx fetchResources:@"/locations" withParams: @{@"county": county_id} setResultOn: target];
+// // Get the new view controller using [segue destinationViewController].
+//     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
+//     NSString* county_id = county_ids[idx];
+//     NSLog(@"request data by county: %@", county_id);
+//     FilterResultsController* target = [segue destinationViewController];
+//     target.loadingIndicator.hidden = FALSE;
+//     [ctx fetchResources:@"/locations" withParams: @{@"county": county_id} setResultOn: target];
     //[ctx loadLocationsWhere:@"county" Matches:county_id intoTable:[segue destinationViewController]];
 
  }

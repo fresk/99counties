@@ -88,7 +88,7 @@
      NSLog(@"request data by county: %@", county_id);
      FilterResultsController* target = [segue destinationViewController];
      target.loadingIndicator.hidden = FALSE;
-     [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
+     [ctx fetchResources:@"/locations" withParams: @{@"county": county_id} setResultOn: target];
     //[ctx loadLocationsWhere:@"county" Matches:county_id intoTable:[segue destinationViewController]];
 
  }

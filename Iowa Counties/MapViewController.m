@@ -181,7 +181,6 @@
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
     [self.map_view animateWithCameraUpdate:update];
     [manager stopUpdatingLocation];
-    
 
 }
 

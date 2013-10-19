@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AppCOntext.h"
 
 
 #import <GoogleMaps/GoogleMaps.h>
@@ -18,6 +18,9 @@
 {
     [GMSServices provideAPIKey: @"AIzaSyC3OjecBumM_5NWF8ps9IJ3650Ps1U30n4"];
     return YES;
+    
+    AppContext* ctx = [AppContext instance];
+    NSLog(@"Initialized App Context: %@", ctx);
 }
 
 							

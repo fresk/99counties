@@ -894,23 +894,10 @@
         <image name="btn-backtomap.png" width="256" height="256"/>
         <image name="btn-explore.png" width="150" height="150"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-myprofile.png" width="150" height="150"/>
         <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>

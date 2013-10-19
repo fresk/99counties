@@ -15,10 +15,8 @@ static dispatch_once_t onceToken;
 
 @implementation AppContext {
 
-
+    CLLocationCoordinate2D _currentLocation;
 }
-
-
 
 + (id)instance {
     dispatch_once(&onceToken, ^{
@@ -27,6 +25,18 @@ static dispatch_once_t onceToken;
         [ctx_instance initializeContext];
     });
     return ctx_instance;
+}
+
+
+- (void)initializeContext {
+    self.appName = @"Find Your Iowa";
+    self.locationCategories = [Utils loadJsonFile:@"data/categories"];
+    self.counties = [Utils loadJsonFile:@"data/counties"];
+    
+    _currentLocation.latitude = 0.0;
+    _currentLocation.longitude = 0.0;
+    [self updateUserLocation];
+    
 }
 
 
@@ -45,14 +55,29 @@ static dispatch_once_t onceToken;
 }
 
 
-- (void)initializeContext {
-    self.appName = @"Find Your Iowa";
-    self.locationCategories = [Utils loadJsonFile:@"data/categories"];
-    self.counties = [Utils loadJsonFile:@"data/counties"];
-    
-    NSLog(@"COUNTIES %@", [self.counties allKeys]);
+- (void) updateUserLocation {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    [self.locationManager startUpdatingLocation];
 }
 
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    _currentLocation =  newLocation.coordinate;
+    [self.locationManager stopUpdatingLocation];
+    
+}
+
+
+-(CLLocationCoordinate2D) getCurrentLocation
+{
+    return _currentLocation;
+}
 
 
 

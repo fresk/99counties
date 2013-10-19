@@ -86,7 +86,7 @@
     
     FilterResultsController* target = [segue destinationViewController];
     target.loadingIndicator.hidden = FALSE;
-    [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
+    [ctx fetchResources:@"/locations" withParams:@{@"category":cat_id} setResultOn: target];
 
     
 }

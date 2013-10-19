@@ -66,7 +66,7 @@
         //[ctx fetchResources:@"/recent" withParams:nil setResultOn:target];
         FilterResultsController* target = [segue destinationViewController];
         target.loadingIndicator.hidden = FALSE;
-        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: target];
+        [ctx fetchResources:@"/recent/" withParams:nil setResultOn: target];
         
     }
     
@@ -74,21 +74,19 @@
         //[ctx fetchResources:@"/popular" withParams:nil setResultOn:target];
         FilterResultsController* target = [segue destinationViewController];
         target.loadingIndicator.hidden = FALSE;
-        [ctx fetchResources:@"/locations?dont=cachethis" withParams:nil setResultOn: target];
+        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: target];
     }
     
     else if ([segue.identifier isEqualToString:@"showProximity"]){
         FilterResultsController* target = [segue destinationViewController];
         target.loadingIndicator.hidden = FALSE;
-        [ctx fetchResources:@"/locations" withParams:nil setResultOn: target];
-        /*
-         [ctx fetchResources: @"distance"
-                 withParams: @{
-                               @"from" : @"(45.23532,-97.2344343)",
-                               @"max" : @"50"
-                               }
-                setResultOn:target];
-         */
+        CLLocationCoordinate2D cloc = [ctx getCurrentLocation];
+        [ctx fetchResources:@"/nearby"
+                  withParams:@{
+                              @"lat": [NSNumber numberWithDouble: cloc.latitude],
+                              @"lng": [NSNumber numberWithDouble: cloc.longitude]
+                              }
+                setResultOn: target];
     }
     
     else {

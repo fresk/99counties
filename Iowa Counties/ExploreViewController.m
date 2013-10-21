@@ -58,6 +58,10 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    if ([segue.identifier isEqualToString:@"to_main_menu"]){return;}
+    
+    
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
     NSLog(@"navigate: %@", segue.identifier);
     

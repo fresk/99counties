@@ -113,21 +113,12 @@
     showingOnlyBackgroundImage = FALSE;
     
     [self initImagePager];
-
-    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = 50.0f; // whenever we move
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
-    [locationManager startUpdatingLocation];
     
 }
 
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    //[self.map_view clear];
-    [self fitBounds];
 
 }
 
@@ -141,9 +132,6 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-
-
-
     if (self.selectedLocationID == nil){
         [ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
         locationManager = [[CLLocationManager alloc] init];
@@ -151,26 +139,7 @@
         locationManager.distanceFilter = 50.0f; // whenever we move
         locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
         [locationManager startUpdatingLocation];
-        
     }
-    else {
-        double delayInSeconds = 0.5;
-        GMSMarker* marker = [self addLocation:self.selectedLocation];
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            //code to be executed on the main queue after delay
-            [self gotoDetailsForMarker: marker];
-        });
-        
-        
-        
-        
-    }
-    
-    NSLog(@"markers: %@", self.map_view.markers);
-    NSLog(@"SELECTED ID: %@", self.selectedLocationID);
-
-
 }
 
 -(void)locationManager:(CLLocationManager *)manager
@@ -404,11 +373,14 @@
          [self hideDetailsOverlay];
     }
     
-    
-    
-    
-    
 }
+
+
+- (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
+    [self gotoDetailsForMarker:marker animated: TRUE];
+    return TRUE;
+}
+
 
 - (void) toggleShowBackgroundImageOnly {
     
@@ -465,6 +437,10 @@
 
 
 
+
+
+
+
 - (GMSMarker*) addLocation: (NSDictionary*) location {
     NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
     NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
@@ -497,39 +473,43 @@
 
 
 
-- (void) gotoDetailsForMarker: (GMSMarker*) marker
+
+
+- (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated
 {
     NSLog(@"GOING TO MARKER");
     NSDictionary* location = (NSDictionary*)marker.userData;
     [self.detail_title setText:[location objectForKey:@"name"]] ;
     [self.detail_text setText: [location objectForKey:@"description"]];
     [self loadBackgroundImageList: location];
-    [self centerOnMarker: marker];
+    [self centerOnMarker: marker animated: animated];
     [self showDetailsOverlay];
 }
 
 
-- (void) gotoDetailsForLocationWithID: (NSString*) lid
-{
-    GMSMarker* marker = [self getMarkerForLocationWithID:lid];
-    [self gotoDetailsForMarker:marker];
-}
 
 
 
-- (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
-    [self gotoDetailsForMarker:marker];
-    return TRUE;
-}
-
-- (void) centerOnMarker:  (GMSMarker *)  marker{
-    _prior_camera_pos = self.map_view.camera;
-    [CATransaction setValue:[NSNumber numberWithFloat: 1.0f] forKey:kCATransactionAnimationDuration];
+- (void) centerOnMarker:  (GMSMarker *)  marker animated: (BOOL) animated{
     GMSCameraPosition *new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:45 viewingAngle:45];
-    [self.map_view animateToCameraPosition: new_cam];
-    [CATransaction setCompletionBlock:^{}];
-    [CATransaction commit];
+    _prior_camera_pos = self.map_view.camera;
+    
+    if (animated){
+        [CATransaction setValue:[NSNumber numberWithFloat: 1.0f] forKey:kCATransactionAnimationDuration];
+        GMSCameraPosition *new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:45 viewingAngle:45];
+        [self.map_view animateToCameraPosition: new_cam];
+        [CATransaction setCompletionBlock:^{}];
+        [CATransaction commit];
+    }else {
+        [self.map_view setCamera:new_cam];
+    }
 }
+- (void) centerOnMarker:  (GMSMarker *)  marker{
+    [self centerOnMarker:marker animated:TRUE];
+}
+
+
+
 
 
 - (void)fitBounds {

@@ -146,7 +146,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="flipHorizontal" id="24e-sP-kHk"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="24e-sP-kHk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +217,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="flipHorizontal" id="aAu-zz-nCd"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="aAu-zz-nCd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -265,40 +265,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qD-xh-ban" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-252" y="917"/>
-        </scene>
-        <!--View Controller - Explore View-->
-        <scene sceneID="wTu-TG-H9y">
-            <objects>
-                <viewController storyboardIdentifier="list" title="Explore View" id="Ahh-ly-VK1" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia5-VV-cQZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="8lI-Mr-Ce8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="L69-kV-3Y6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="justadded.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDq-at-Z57">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qae-Zj-W9C">
-                                <rect key="frame" x="270" y="30" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-mainmenu.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="flipHorizontal" id="wNa-pb-CyJ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="XIx-zd-gvA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-iM-2CA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2759" y="-1500"/>
         </scene>
         <!--Explore View Controller - Explore-->
         <scene sceneID="So8-fg-VcY">
@@ -444,12 +410,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" id="1sd-J2-cfH"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="1sd-J2-cfH"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="3nL-DT-2ha" kind="modal" id="tAM-0U-a0t"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -518,7 +481,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" id="0qX-Fe-CI0"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="0qX-Fe-CI0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -592,7 +555,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" id="BFb-ci-Co0"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="BFb-ci-Co0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -611,7 +574,7 @@
                 <navigationController definesPresentationContext="YES" id="Woe-Cd-8bf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fAP-6g-zgs">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="BdL-j0-kcV">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rhy-hf-ySh">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rhy-hf-ySh" userLabel="Button -">
                                 <rect key="frame" x="264" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -619,7 +582,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" id="0M2-PR-Bbm"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="whs-HC-0U8"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -909,7 +872,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" id="S9e-I0-gJv"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="S9e-I0-gJv"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -978,6 +941,9 @@
                                 <state key="normal" title=" " image="btn-mainmenu.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="y7l-G5-beW"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -1009,7 +975,6 @@
         <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-myprofile.png" width="150" height="150"/>
         <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-savedspots.png" width="150" height="150"/>
@@ -1022,7 +987,6 @@
         <image name="btn-single-phone.png" width="145" height="50"/>
         <image name="btn-single-www.png" width="145" height="50"/>
         <image name="btn-tours.png" width="150" height="150"/>
-        <image name="justadded.png" width="693" height="1169"/>
         <image name="marker-barn.png" width="64" height="64"/>
         <image name="tours.png" width="693" height="1169"/>
     </resources>
@@ -1033,7 +997,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="SrS-Cb-LV7"/>
-        <segue reference="VKH-m3-mLl"/>
-        <segue reference="dvm-g7-HYe"/>
+        <segue reference="lga-ga-0Wu"/>
+        <segue reference="Bxe-qc-Udo"/>
     </inferredMetricsTieBreakers>
 </document>

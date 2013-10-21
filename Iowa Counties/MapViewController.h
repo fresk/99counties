@@ -12,10 +12,11 @@
 @interface MapViewController : UIViewController <GMSMapViewDelegate, UIScrollViewDelegate, CLLocationManagerDelegate>
 
 @property(strong, atomic) NSString* selectedLocationID;
-@property(strong, atomic) NSDictionary* selectedLocation;
+
 
 - (IBAction)button_hide_pressed:(id)sender;
 - (IBAction)button_show_pressed:(id)sender;
-- (void) gotoDetailsForLocationWithID: (NSString*) lid;
-
+//- (void) gotoDetailsForLocationWithID: (NSString*) lid;
+- (GMSMarker*) addLocation: (NSDictionary*) location;
+- (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated;
 @end

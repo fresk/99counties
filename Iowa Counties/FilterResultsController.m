@@ -127,13 +127,23 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"to_main_menu"]){return;}
+    
+    
     NSLog(@"GOTO PLACE ON MAP");
     MapViewController* map = (MapViewController*) [segue destinationViewController];    
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
     NSDictionary* location = [location_list objectAtIndex:idx];
     //[map gotoDetailsForLocationWithID: [location objectForKey:@"id"]];
-    map.selectedLocation = location;
-    map.selectedLocationID = [location objectForKey:@"id"];
+    //map.selectedLocation = location;
+    //map.selectedLocationID = [location objectForKey:@"id"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        map.selectedLocationID = [location objectForKey:@"id"];
+        GMSMarker* marker = [map addLocation:location];
+        [map gotoDetailsForMarker:marker animated:FALSE];
+
+    });
+
 
 }
 

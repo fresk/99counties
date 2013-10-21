@@ -279,6 +279,17 @@
     
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
+    
+    
+    //append background image at the end
+    CGRect img_frame = self.scrollView.frame;
+    img_frame.origin.x = frame_size.width * (numberOfPages);
+    img_frame.origin.y = 0;
+    UIImageView* bgView = [[UIImageView alloc] initWithFrame:img_frame];
+    [bgView setImage:[UIImage imageNamed: @"Default.png"] ];
+    [bgView setContentMode: UIViewContentModeScaleAspectFill];
+    [bgView setClipsToBounds:TRUE];
+    [self.scrollView addSubview:bgView];
 }
 
 
@@ -299,7 +310,10 @@
         img_frame.origin.x = img_frame.size.width * page;
         img_frame.origin.y = 0;
         bgView = [[UIImageView alloc] initWithFrame:img_frame];
-        [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
+        if ([image_src hasPrefix:@"http"])
+            [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
+        else
+            [bgView setImage:[UIImage imageNamed:image_src] ];
         [bgView setContentMode: UIViewContentModeScaleAspectFill];
         [bgView setClipsToBounds:TRUE];
     }
@@ -308,6 +322,15 @@
     if (bgView.superview == nil){
         [self.scrollView addSubview:bgView];
     }
+}
+
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    
+
+
 }
 
 

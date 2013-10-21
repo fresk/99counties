@@ -7,8 +7,13 @@
 //
 
 #import "Utils.h"
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
 
 @implementation Utils
+
+
 + (NSDictionary*) loadJsonFile: (NSString*)filename {
     NSError *err;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
@@ -18,11 +23,26 @@
     NSLog(@"json Error: %@", err ) ;
     return json;
 }
+
+
+
+
+
+
++ (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+
+
 @end
-
-
-
-
 
 @implementation UIButton (CustomFont)
 

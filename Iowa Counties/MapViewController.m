@@ -35,6 +35,8 @@
 @property (nonatomic, strong) NSMutableArray *backgroundImageViews;
 @property (strong, nonatomic) NSArray *imageUrls;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *detailViewTapRecognizer;
+@property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *backgroundViewPinchRecognizer;
+
 
 
 
@@ -379,15 +381,34 @@
 }
 
 
-
-
-
 - (IBAction)swipeUpOnbackgroundView:(id)sender {
     if(showingOnlyBackgroundImage){
         [self toggleShowBackgroundImageOnly];
     }
 }
 
+- (IBAction)pinchOnBackgroundView:(UIPinchGestureRecognizer*)recognizer {
+    if(recognizer.state != UIGestureRecognizerStateEnded){
+        return;
+    }
+    
+    
+    
+    if ((recognizer.scale > 1.0) && (showingOnlyBackgroundImage == FALSE)){ //zoom in from detail to images
+        [self toggleShowBackgroundImageOnly];
+    }
+    if ((recognizer.scale) < 1.0 && (showingOnlyBackgroundImage == TRUE)){ //zoom out of from images to detail
+        [self toggleShowBackgroundImageOnly];
+    }
+    if ((recognizer.scale < 1.0) && (showingOnlyBackgroundImage == FALSE)){ //zoom out of from detail to map
+         [self hideDetailsOverlay];
+    }
+    
+    
+    
+    
+    
+}
 
 - (void) toggleShowBackgroundImageOnly {
     

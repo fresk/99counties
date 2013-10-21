@@ -686,6 +686,7 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cXw-5l-pGw" appends="YES" id="J4t-aJ-GRv"/>
+                                            <outletCollection property="gestureRecognizers" destination="ygH-gw-gGp" appends="YES" id="dBg-Uj-xJt"/>
                                         </connections>
                                     </view>
                                     <scrollView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="top" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X11-1E-kEG" customClass="ScrollLayer">
@@ -813,6 +814,7 @@
                     <navigationItem key="navigationItem" id="tQP-Lr-QZ6"/>
                     <connections>
                         <outlet property="address_label" destination="xNV-C2-7lJ" id="1hY-aA-LwP"/>
+                        <outlet property="backgroundViewPinchRecognizer" destination="ygH-gw-gGp" id="zxJ-ck-AMz"/>
                         <outlet property="background_layer" destination="ag6-LV-xvk" id="EzR-rw-XU3"/>
                         <outlet property="detailViewTapRecognizer" destination="Iho-1y-urs" id="DME-l0-XBl"/>
                         <outlet property="detail_text" destination="4Re-Wh-xgM" id="QRH-Dn-mz6"/>
@@ -842,6 +844,11 @@
                         <action selector="swipeUpOnbackgroundView:" destination="QpN-i5-N3V" id="wbh-SU-N4T"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pinchGestureRecognizer id="ygH-gw-gGp">
+                    <connections>
+                        <action selector="pinchOnBackgroundView:" destination="QpN-i5-N3V" id="P0P-1F-OCi"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1790" y="-2417"/>
         </scene>
@@ -986,15 +993,30 @@
     </scenes>
     <resources>
         <image name="AppIcon29x29.png" width="29" height="29"/>
+        <image name="AppIcon29x29.png" width="29" height="29"/>
         <image name="bg-menu.jpg" width="640" height="1136"/>
         <image name="btn-aroundme.png" width="150" height="150"/>
         <image name="btn-backtomap.png" width="256" height="256"/>
         <image name="btn-explore.png" width="150" height="150"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-myprofile.png" width="150" height="150"/>
         <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
+        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>
@@ -1010,8 +1032,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tAM-0U-a0t"/>
-        <segue reference="dvm-g7-HYe"/>
+        <segue reference="SrS-Cb-LV7"/>
         <segue reference="VKH-m3-mLl"/>
+        <segue reference="dvm-g7-HYe"/>
     </inferredMetricsTieBreakers>
 </document>

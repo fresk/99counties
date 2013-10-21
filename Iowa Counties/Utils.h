@@ -12,7 +12,7 @@
 
 @interface Utils : NSObject
 + (NSDictionary*) loadJsonFile: (NSString*)filename ;
-+ (UIImage *) imageWithView:(UIView *)view
++ (UIImage *) imageWithView:(UIView *)view;
 @end
 
 

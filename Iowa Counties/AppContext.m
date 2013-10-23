@@ -51,11 +51,19 @@ static dispatch_once_t onceToken;
     [self fetchResource:@"/categories/" withParams: nil onComplete:^(NSDictionary *data) {
         NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
         NSDictionary* cat;
-        for (NSDictionary* cat in [data objectForKey:@"result"] ){
+        for (cat in [data objectForKey:@"result"] ){
             NSString* category_id = [cat objectForKey:@"id"];
+            
+            
+            
+            NSString* category_name = [categoryNames objectForKey:category_id];
+            if(category_name == nil){
+                category_name = category_id;
+                NSLog(@"UNKNOWN CATEGORY ID: %@", category_id);
+            }
             [dict setObject: @{@"id": category_id,
                                @"num_entries": [cat objectForKey:@"num_entries"],
-                               @"name": [categoryNames objectForKey:category_id]}
+                               @"name": category_name}
                      forKey:category_id];
         }
         self.categories = [NSDictionary dictionaryWithDictionary:dict];

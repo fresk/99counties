@@ -60,7 +60,7 @@
     
     CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.titleField.text = [city objectForKey:@"name"];
-    cell.markerImage.image = [ctx markerForCategoryID:[city objectForKey:@"id"]];
+    //cell.markerImage.image = [ctx markerForCategoryID:[city objectForKey:@"id"]];
     cell.countLabel.text = [NSString stringWithFormat:@"(%@)", [city objectForKey:@"num_entries"]];
     
     // Configure the cell...
@@ -81,15 +81,13 @@
     
     // Get the new view controller using [segue destinationViewController].
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
-    NSDictionary* cat = [self.cities objectAtIndex:idx];
-    
-    NSString* cat_id = [cat objectForKey:@"id"];
-    NSLog(@"request data by category: %@", cat_id);
-    
+    NSDictionary* city = [self.cities objectAtIndex:idx];
+
     
     FilterResultsController* target = [segue destinationViewController];
     target.loadingIndicator.hidden = FALSE;
-    [ctx fetchResources:@"/locations" withParams:@{@"category":cat_id} setResultOn: target];
+    
+    [ctx fetchResources:@"/locations" withParams:@{@"city":[city objectForKey:@"name"]} setResultOn: target];
     
     
 }

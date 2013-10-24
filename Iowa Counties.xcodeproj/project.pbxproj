@@ -36,9 +36,6 @@
 		12AEC8C917C3DCD10001C5CD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8B817C3DCD10001C5CD /* CoreText.framework */; };
 		12AEC8CA17C3DCD10001C5CD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8B917C3DCD10001C5CD /* AVFoundation.framework */; };
 		12AEC8CB17C3DCD10001C5CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BA17C3DCD10001C5CD /* MapKit.framework */; };
-		12AEC8CC17C3DCD10001C5CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BB17C3DCD10001C5CD /* UIKit.framework */; };
-		12AEC8CD17C3DCD10001C5CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BC17C3DCD10001C5CD /* Foundation.framework */; };
-		12AEC8CE17C3DCD10001C5CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AEC8BD17C3DCD10001C5CD /* CoreGraphics.framework */; };
 		12BD0AAA180E9710000EAA52 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0A3E180E970F000EAA52 /* Default-568h@2x.png */; };
 		12BD0AAB180E9710000EAA52 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0A3F180E970F000EAA52 /* Default.png */; };
 		12BD0AAC180E9710000EAA52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0A40180E970F000EAA52 /* Default@2x.png */; };
@@ -331,9 +328,6 @@
 				12AEC8C917C3DCD10001C5CD /* CoreText.framework in Frameworks */,
 				12AEC8CA17C3DCD10001C5CD /* AVFoundation.framework in Frameworks */,
 				12AEC8CB17C3DCD10001C5CD /* MapKit.framework in Frameworks */,
-				12AEC8CC17C3DCD10001C5CD /* UIKit.framework in Frameworks */,
-				12AEC8CD17C3DCD10001C5CD /* Foundation.framework in Frameworks */,
-				12AEC8CE17C3DCD10001C5CD /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +610,7 @@
 		12AEC87A17C3DC2E0001C5CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = fresk;
 				TargetAttributes = {
 					12AEC88117C3DC2E0001C5CD = {
@@ -805,7 +799,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -840,7 +833,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -872,10 +864,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../code/dca/iOS/99\\\\\\ Counties\\\\\\\"",
 					"$(SRCROOT)",
-					"/Users/tehansen/code/99counties/Iowa\\ Counties",
-					"/Users/shansen/code/99counties/Iowa\\ Counties",
+					"$(SRCROOT)/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";
@@ -899,10 +889,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../code/dca/iOS/99\\\\\\ Counties\\\\\\\"",
 					"$(SRCROOT)",
-					"/Users/tehansen/code/99counties/Iowa\\ Counties",
-					"/Users/shansen/code/99counties/Iowa\\ Counties",
+					"$(SRCROOT)/Iowa\\ Counties",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Iowa Counties/Iowa Counties-Prefix.pch";

@@ -7,6 +7,7 @@
 //
 
 #import "CountyListController.h"
+#import "CategoryListViewCell.h"
 #import "FilterResultsController.h"
 #import "AppContext.h"
 #import <UIKit/UIKit.h>
@@ -67,12 +68,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CountyCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CategoryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSInteger idx = [indexPath row];
     NSString* county_id = [county_ids objectAtIndex:idx];
     
-    cell.textLabel.text = [[ctx.counties objectForKey:county_id] objectForKey:@"name"];
+    cell.titleField.text  = [[ctx.counties objectForKey:county_id] objectForKey:@"name"];
+    cell.countLabel.text = [NSString stringWithFormat:@""];
     return cell;
 }
 
@@ -85,15 +87,14 @@
     if ([segue.identifier isEqualToString:@"to_main_menu"]){return;}
      
      
-// // Get the new view controller using [segue destinationViewController].
-//     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
-//     NSString* county_id = county_ids[idx];
-//     NSLog(@"request data by county: %@", county_id);
-//     FilterResultsController* target = [segue destinationViewController];
-//     target.loadingIndicator.hidden = FALSE;
-//     [ctx fetchResources:@"/locations" withParams: @{@"county": county_id} setResultOn: target];
-    //[ctx loadLocationsWhere:@"county" Matches:county_id intoTable:[segue destinationViewController]];
-
+//  Get the new view controller using [segue destinationViewController].
+     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
+     NSString* county_id = county_ids[idx];
+     NSLog(@"request data by county: %@", county_id);
+     FilterResultsController* target = [segue destinationViewController];
+     target.loadingIndicator.hidden = FALSE;
+     NSString* county_name = [[ctx.counties objectForKey:county_id] objectForKey:@"name"];
+     [ctx fetchResources:@"/locations" withParams: @{@"county": county_name } setResultOn: target];
 }
  
 

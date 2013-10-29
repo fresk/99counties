@@ -768,7 +768,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="flipHorizontal" id="SrS-Cb-LV7"/>
+                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="flipHorizontal" id="SrS-Cb-LV7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -926,6 +926,7 @@
                                     <outlet property="countLabel" destination="AuZ-of-KNg" id="gJH-Cd-Dmy"/>
                                     <outlet property="markerImage" destination="8De-jU-9Ja" id="pjH-y2-Hxt"/>
                                     <outlet property="titleField" destination="6Yh-Gd-7fq" id="oU8-hP-f6V"/>
+                                    <segue destination="4zI-gA-eC7" kind="push" id="Ek3-T3-KmD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -959,29 +960,15 @@
     </scenes>
     <resources>
         <image name="AppIcon29x29.png" width="29" height="29"/>
-        <image name="AppIcon29x29.png" width="29" height="29"/>
         <image name="bg-menu.jpg" width="640" height="1136"/>
         <image name="btn-aroundme.png" width="150" height="150"/>
         <image name="btn-backtomap.png" width="256" height="256"/>
         <image name="btn-explore.png" width="150" height="150"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-mainmenu.png" width="128" height="128"/>
         <image name="btn-myprofile.png" width="150" height="150"/>
         <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-single-address.png" width="145" height="50"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
-        <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-bg.png" width="290" height="100"/>
         <image name="btn-single-mail.png" width="145" height="50"/>
         <image name="btn-single-phone.png" width="145" height="50"/>
@@ -996,8 +983,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SrS-Cb-LV7"/>
-        <segue reference="lga-ga-0Wu"/>
+        <segue reference="S9e-I0-gJv"/>
         <segue reference="Bxe-qc-Udo"/>
+        <segue reference="lga-ga-0Wu"/>
     </inferredMetricsTieBreakers>
 </document>

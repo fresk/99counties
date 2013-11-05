@@ -59,7 +59,7 @@
         if ([results count] > 0 ){
         location_list = [results copy];
         [self.tableView reloadData];
-        NSLog(@"HIDING loading indicator!!!");
+        //NSLog(@"HIDING loading indicator!!!");
         self.loadingIndicator.hidden = TRUE;
         }
     });
@@ -90,7 +90,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    NSLog(@"number of rows: %d", [location_list count]);
+    //NSLog(@"number of rows: %d", [location_list count]);
 
     return [location_list count];
 }
@@ -100,7 +100,7 @@
 {
     NSInteger idx = [indexPath row];
     
-    NSLog(@"cell #: %d", [location_list count]);
+    //NSLog(@"cell #: %d", [location_list count]);
     
 
     
@@ -130,7 +130,7 @@
     if ([segue.identifier isEqualToString:@"to_main_menu"]){return;}
     
     
-    NSLog(@"GOTO PLACE ON MAP");
+    //NSLog(@"GOTO PLACE ON MAP");
     MapViewController* map = (MapViewController*) [segue destinationViewController];    
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
     NSDictionary* location = [location_list objectAtIndex:idx];

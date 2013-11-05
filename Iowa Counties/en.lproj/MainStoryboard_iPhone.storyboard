@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3nL-DT-2ha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3nL-DT-2ha">
     <dependencies>
         <deployment version="1792" defaultVersion="1536" identifier="iOS"/>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Controller - Main Menu-->
@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-269" y="-988"/>
         </scene>
-        <!--View Controller - Trip Planner-->
+        <!--Trip Planer View Controller - Trip Planner-->
         <scene sceneID="JU2-dP-cyb">
             <objects>
-                <viewController title="Trip Planner" id="8Q7-gu-I0s" sceneMemberID="viewController">
+                <viewController title="Trip Planner" id="8Q7-gu-I0s" customClass="TripPlanerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3R0-xb-jSw"/>
                         <viewControllerLayoutGuide type="bottom" id="KIw-Sp-gfD"/>
@@ -138,6 +138,10 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startRoutingTrip:" destination="8Q7-gu-I0s" eventType="touchUpInside" id="POL-Ha-6jG"/>
+                                    <segue destination="QpN-i5-N3V" kind="modal" identifier="plan_a_trip" id="SdS-3f-o6S"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtV-fo-wPO">
                                 <rect key="frame" x="270" y="30" width="40" height="40"/>
@@ -153,6 +157,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="uNX-Do-lHm"/>
+                    <connections>
+                        <outlet property="textfield_from" destination="CXt-Zu-RvP" id="3ep-fm-etZ"/>
+                        <outlet property="textfield_to" destination="YXi-Ff-tYt" id="aeW-rL-MTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uC9-oB-q5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -983,8 +991,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="S9e-I0-gJv"/>
         <segue reference="Bxe-qc-Udo"/>
-        <segue reference="lga-ga-0Wu"/>
+        <segue reference="24e-sP-kHk"/>
+        <segue reference="SdS-3f-o6S"/>
     </inferredMetricsTieBreakers>
 </document>

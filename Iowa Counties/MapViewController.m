@@ -125,7 +125,7 @@
                                                   coordinate:  SW];
 
     
-    [self.detail_view addObserver:self forKeyPath:@"frame" options:0 context:nil];
+
     
     
     [self fitBounds];
@@ -161,13 +161,14 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-
+    [self.detail_view addObserver:self forKeyPath:@"frame" options:0 context:nil];
 }
 
 
 - (void) viewWillDisappear:(BOOL)animated
 {
     self.selectedLocationID = nil;
+    [self.detail_view removeObserver:self forKeyPath:@"frame"];
 
 }
 

@@ -10,6 +10,7 @@
 		121F92471803431700B47AD5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F92461803431700B47AD5 /* GoogleMaps.framework */; };
 		121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F92481803433400B47AD5 /* GoogleMaps.bundle */; };
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
+		125DD00718299B63003B6758 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 125DD00618299B63003B6758 /* loading.png */; };
 		126E7FF318060C0400E7BFE0 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF218060C0400E7BFE0 /* data */; };
 		126E7FF51806117E00E7BFE0 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF41806117E00E7BFE0 /* fonts */; };
 		126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FF91806146E00E7BFE0 /* AppContext.m */; };
@@ -156,6 +157,7 @@
 		121F92461803431700B47AD5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
 		121F92481803433400B47AD5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		121F9258180370E100B47AD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Iowa Counties/SDWebImage.framework"; sourceTree = "<group>"; };
+		125DD00618299B63003B6758 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		126E7FF41806117E00E7BFE0 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		126E7FF81806146E00E7BFE0 /* AppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppContext.h; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		12BD0A3D180E970F000EAA52 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				125DD00618299B63003B6758 /* loading.png */,
 				12BD0A3E180E970F000EAA52 /* Default-568h@2x.png */,
 				12BD0A3F180E970F000EAA52 /* Default.png */,
 				12BD0A40180E970F000EAA52 /* Default@2x.png */,
@@ -703,6 +706,7 @@
 				12BD0ACC180E9710000EAA52 /* marker-movie.png in Resources */,
 				12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
+				125DD00718299B63003B6758 /* loading.png in Resources */,
 				126E7FF51806117E00E7BFE0 /* fonts in Resources */,
 				12BD0AC9180E9710000EAA52 /* marker-local_landmark@2x.png in Resources */,
 				12BD0AFC180E9710000EAA52 /* btn-planatrip.png in Resources */,

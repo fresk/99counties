@@ -89,7 +89,7 @@
     NSDictionary* cat = [self.categories objectAtIndex:idx];
     
     NSString* cat_id = [cat objectForKey:@"id"];
-    NSLog(@"request data by category: %@", cat_id);
+    //NSLog(@"request data by category: %@", cat_id);
     
     
     FilterResultsController* target = [segue destinationViewController];

@@ -20,7 +20,7 @@
     return YES;
     
     AppContext* ctx = [AppContext instance];
-    NSLog(@"Initialized App Context: %@", ctx);
+    //NSLog(@"Initialized App Context: %@", ctx);
 }
 
 							

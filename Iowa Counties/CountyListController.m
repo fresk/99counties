@@ -61,7 +61,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"number of items in table:  %d", [ctx.counties count]);
+    //NSLog(@"number of items in table:  %d", [ctx.counties count]);
     return [ctx.counties count];
 }
 
@@ -90,7 +90,7 @@
 //  Get the new view controller using [segue destinationViewController].
      NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
      NSString* county_id = county_ids[idx];
-     NSLog(@"request data by county: %@", county_id);
+     //NSLog(@"request data by county: %@", county_id);
      FilterResultsController* target = [segue destinationViewController];
      target.loadingIndicator.hidden = FALSE;
      NSString* county_name = [[ctx.counties objectForKey:county_id] objectForKey:@"name"];

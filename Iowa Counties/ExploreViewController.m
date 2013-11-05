@@ -63,7 +63,7 @@
     
     
     NSInteger idx = [[self.tableView indexPathForSelectedRow] row];
-    NSLog(@"navigate: %@", segue.identifier);
+    //NSLog(@"navigate: %@", segue.identifier);
     
 
     if ([segue.identifier isEqualToString:@"showRecentlyAdded"]){

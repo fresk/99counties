@@ -13,6 +13,8 @@
 static AppContext *ctx_instance = nil;
 static dispatch_once_t onceToken;
 
+static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/directions/json?";
+
 @implementation AppContext {
     CLLocationCoordinate2D _currentLocation;
 }
@@ -45,6 +47,10 @@ static dispatch_once_t onceToken;
 
 
 
+
+
+
+
 -(void) initCategories
 {
     NSDictionary* categoryNames = [Utils loadJsonFile:@"data/categories"];
@@ -59,7 +65,7 @@ static dispatch_once_t onceToken;
             NSString* category_name = [categoryNames objectForKey:category_id];
             if(category_name == nil){
                 category_name = category_id;
-                NSLog(@"UNKNOWN CATEGORY ID: %@", category_id);
+                //NSLog(@"UNKNOWN CATEGORY ID: %@", category_id);
             }
             [dict setObject: @{@"id": category_id,
                                @"num_entries": [cat objectForKey:@"num_entries"],
@@ -108,14 +114,14 @@ static dispatch_once_t onceToken;
 - (UIImage*) markerForCategory: (NSArray*) category {
     NSString* fname = [NSString stringWithFormat:@"marker-%@.png", category[0]];
     UIImage* img =  [UIImage imageNamed: fname];
-    NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
+    //NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
     return img;
 }
 
 - (UIImage*) markerForCategoryID: (NSString*) category {
     NSString* fname = [NSString stringWithFormat:@"marker-%@.png", category];
     UIImage* img =  [UIImage imageNamed: fname];
-    NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
+    //NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
     return img;
 }
 
@@ -125,7 +131,9 @@ static dispatch_once_t onceToken;
 - (void) fetchResource:(NSString*) path withParams: (NSDictionary*) params onComplete: (fetchComplete) blockComplete;
 {
     NSString* endpoint;
-    if ([path hasPrefix:@"/"]){
+    if ([path hasPrefix:@"http:"]) {
+        endpoint = path;
+    }else if ([path hasPrefix:@"/"]){
         endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", [path substringFromIndex:1]];
     } else {
         endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
@@ -134,7 +142,7 @@ static dispatch_once_t onceToken;
     httpResponseHandler responseHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
         //NSLog(@"GOT RESPONSE: %d", data count);
         NSError *err;
-        if (err != nil)
+        if (err != nil) 
             NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
         if (err != nil){
@@ -157,6 +165,24 @@ static dispatch_once_t onceToken;
     [self fetchResource:path withParams:params onComplete:^(NSDictionary* data){
         [target setResults: [data objectForKey:@"result"]];
     }];
+}
+
+
+
+
+
+- (void) fetchDirectionsFrom: (NSString*) origin To: (NSString*) destination {
+    [self fetchResource:@"http://maps.googleapis.com/maps/api/directions/json"
+             withParams: @{
+                           @"sensor":@"false",
+                           @"origin": origin,
+                           @"destination": destination
+                           }
+             onComplete:^(NSDictionary *data) {
+                 
+             }
+     ];
+    
 }
 
 

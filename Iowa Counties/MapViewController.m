@@ -47,15 +47,20 @@
 @implementation MapViewController
 
 {
-    CGFloat _prior_zoom_level;
-    GMSCameraPosition* _prior_camera_pos;
+    AppContext* ctx;
     CLLocationManager *locationManager;
     
-    NSMutableData *_response_data;
-    BOOL showingOnlyBackgroundImage;
-    AppContext* ctx;
+    CGFloat _prior_zoom_level;
+    GMSCameraPosition* _prior_camera_pos;
+
+    GMSCoordinateBounds * _valid_bounds;
+    CLLocationCoordinate2D _last_valid_center;
     
+    NSMutableData *_response_data;
     NSDictionary* markersByLocationID;
+    
+    BOOL showingOnlyBackgroundImage;
+    
 }
 
 
@@ -68,7 +73,7 @@
 }
 
 - (IBAction)backgroundImageScrollViewTapped:(id)sender {
-    NSLog(@"Image Tapped: %@", sender);
+    //NSLog(@"Image Tapped: %@", sender);
     [self toggleShowBackgroundImageOnly];
 }
 
@@ -112,6 +117,13 @@
     self.detail_view.hidden = YES;
     showingOnlyBackgroundImage = FALSE;
     
+    CLLocationCoordinate2D NE = CLLocationCoordinate2DMake(43.33, -90.5);
+    CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.20, -96.39);
+    _valid_bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
+                                                  coordinate:  SW];
+
+    
+    [self fitBounds];
     [self initImagePager];
     
 }
@@ -147,10 +159,10 @@
           fromLocation:(CLLocation *)oldLocation
 {
     CLLocationCoordinate2D here =  newLocation.coordinate;
-    //NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
+    NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
     
-    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
-    [self.map_view animateWithCameraUpdate:update];
+    //GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
+    //[self.map_view animateWithCameraUpdate:update];
     [manager stopUpdatingLocation];
 
 }
@@ -167,12 +179,24 @@
     for (item in results){
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"ADDING MARKER: %@", item);
+            //NSLog(@"ADDING MARKER: %@", item);
             [self addLocation: item];
         });
     }
     
 
+}
+
+
+- (void)addDirections:(NSDictionary *)json {
+    
+    NSDictionary *routes = [json objectForKey:@"routes"][0];
+    
+    NSDictionary *route = [routes objectForKey:@"overview_polyline"];
+    NSString *overview_route = [route objectForKey:@"points"];
+    GMSPath *path = [GMSPath pathFromEncodedPath:overview_route];
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+    polyline.map = self.map_view;
 }
 
 
@@ -217,7 +241,7 @@
         [view removeFromSuperview];
     }
 
-    NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
+    //NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
     
     self.background_layer.alpha = 0.0;
     [UIView animateWithDuration: 1.0
@@ -271,7 +295,7 @@
     }
     
     NSString *image_src = [self.imageUrls objectAtIndex:page];
-    NSLog(@"loading image page: %d (%@)", page, image_src);
+    //NSLog(@"loading image page: %d (%@)", page, image_src);
     
     // replace the placeholder if necessary
     UIImageView *bgView = [self.backgroundImageViews objectAtIndex:page];
@@ -382,6 +406,35 @@
 }
 
 
+- (void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition *)position {
+    
+    
+    CGFloat zoom = position.zoom;
+    CLLocationCoordinate2D t = position.target;
+    BOOL is_center_on_screen = [_valid_bounds containsCoordinate:t];
+    
+
+    if (is_center_on_screen && position.zoom >= 5.3){
+        _last_valid_center = self.map_view.camera.target;
+        return;
+    }
+    
+    if (zoom < 5.3)
+        zoom = 5.3;
+    
+    if (!is_center_on_screen)
+        t = _last_valid_center;
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:t zoom: zoom];
+    [mapView setCamera:camera];
+    
+    
+    
+    
+}
+
+
+
 - (void) toggleShowBackgroundImageOnly {
     
     if (!showingOnlyBackgroundImage){
@@ -466,7 +519,7 @@
     [scan scanString:@"," intoString:NULL];
     [scan scanFloat: &lon];
     [scan scanString:@")" intoString:NULL];
-    NSLog(@"LOCATION  >%@<", location_str);
+    //NSLog(@"LOCATION  >%@<", location_str);
     return CLLocationCoordinate2DMake(lat, lon);
 }
 
@@ -477,7 +530,7 @@
 
 - (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated
 {
-    NSLog(@"GOING TO MARKER");
+    //NSLog(@"GOING TO MARKER");
     NSDictionary* location = (NSDictionary*)marker.userData;
     [self.detail_title setText:[location objectForKey:@"name"]] ;
     [self.detail_text setText: [location objectForKey:@"description"]];
@@ -513,15 +566,11 @@
 
 
 - (void)fitBounds {
-    GMSCoordinateBounds *bounds;
-    CLLocationCoordinate2D NE = CLLocationCoordinate2DMake(43.30, -90.5);
-    CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.36, -96.31);
-    bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
-                                                  coordinate:  SW];
-    //[GMSCameraPosition cameraFor]
-    //GMSCameraUpdate *update = [GMSCameraUpdate setTarget: self.map_view.myLocation.coordinate zoom:8];
     
-    GMSCameraPosition* cam = [self.map_view cameraForBounds:bounds insets:UIEdgeInsetsZero];
+    GMSCameraPosition* cam = [self.map_view cameraForBounds:_valid_bounds
+                                                     insets: UIEdgeInsetsMake(20, 20, 20, 20)
+                              ];
+    _last_valid_center = cam.target;
     self.map_view.camera = cam;
     
 }

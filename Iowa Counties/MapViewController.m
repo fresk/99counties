@@ -61,6 +61,8 @@
     
     BOOL showingOnlyBackgroundImage;
     
+    UIImage* _placehodler_image;
+    
 }
 
 
@@ -123,10 +125,38 @@
                                                   coordinate:  SW];
 
     
+    [self.detail_view addObserver:self forKeyPath:@"frame" options:0 context:nil];
+    
+    
     [self fitBounds];
     [self initImagePager];
     
 }
+
+
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (object == self.detail_view && [keyPath isEqualToString:@"frame"]) {
+       
+        // do your stuff, or better schedule to run later using performSelector:withObject:afterDuration:
+        CGFloat h = 240 + self.detail_view.frame.origin.y;
+        CGRect bgimageframe = self.scrollView.frame;
+        bgimageframe.size.height = h;
+        self.scrollView.frame = bgimageframe;
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,h);
+        
+        for (UIView *view in [self.scrollView subviews]) {
+            CGRect f = view.frame;
+            f.size = self.scrollView.frame.size;
+            view.frame =  f;
+        }
+        
+    }
+}
+
+
 
 
 - (void) viewWillAppear:(BOOL)animated
@@ -161,8 +191,8 @@
     CLLocationCoordinate2D here =  newLocation.coordinate;
     NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
     
-    //GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
-    //[self.map_view animateWithCameraUpdate:update];
+    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
+    [self.map_view animateWithCameraUpdate:update];
     [manager stopUpdatingLocation];
 
 }
@@ -204,6 +234,9 @@
 
 - (void) initImagePager {
     // a page is the width of the scroll view
+    
+    _placehodler_image = [UIImage imageNamed:@"loading.png"];
+    
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
@@ -272,8 +305,10 @@
     	[self.backgroundImageViews addObject:[NSNull null]];
     }
     
-    [self loadScrollViewWithPage:0];
-    [self loadScrollViewWithPage:1];
+
+    
+    if (numberOfPages > 1)
+        [self loadScrollViewWithPage:1];
     
     
     //append background image at the end
@@ -306,7 +341,7 @@
         img_frame.origin.y = 0;
         bgView = [[UIImageView alloc] initWithFrame:img_frame];
         if ([image_src hasPrefix:@"http"])
-            [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] ];
+            [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] placeholderImage:_placehodler_image];
         else
             [bgView setImage:[UIImage imageNamed:image_src] ];
         [bgView setContentMode: UIViewContentModeScaleAspectFill];
@@ -385,13 +420,12 @@
         return;
     }
     
-    
-    
     if ((recognizer.scale > 1.0) && (showingOnlyBackgroundImage == FALSE)){ //zoom in from detail to images
         [self toggleShowBackgroundImageOnly];
     }
     if ((recognizer.scale) < 1.0 && (showingOnlyBackgroundImage == TRUE)){ //zoom out of from images to detail
-        [self toggleShowBackgroundImageOnly];
+        //[self toggleShowBackgroundImageOnly];
+        [self hideDetailsOverlay];
     }
     if ((recognizer.scale < 1.0) && (showingOnlyBackgroundImage == FALSE)){ //zoom out of from detail to map
          [self hideDetailsOverlay];
@@ -608,6 +642,8 @@
 - (void) hideDetailsOverlay {
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
+    
+    
     
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 0.0, 0);
     self.map_view.settings.myLocationButton = NO;

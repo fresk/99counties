@@ -660,7 +660,7 @@
                                             <outletCollection property="gestureRecognizers" destination="ygH-gw-gGp" appends="YES" id="dBg-Uj-xJt"/>
                                         </connections>
                                     </view>
-                                    <scrollView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="top" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X11-1E-kEG" customClass="ScrollLayer">
+                                    <scrollView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="top" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X11-1E-kEG" customClass="ScrollLayer">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>

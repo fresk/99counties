@@ -10,6 +10,9 @@
 		121F92471803431700B47AD5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F92461803431700B47AD5 /* GoogleMaps.framework */; };
 		121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F92481803433400B47AD5 /* GoogleMaps.bundle */; };
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
+		122C45AF1829CCED006750AE /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C45AE1829CCED006750AE /* TitleScreenViewController.m */; };
+		122C45B31829D138006750AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122C45B21829D138006750AE /* MediaPlayer.framework */; };
+		122C45BF1829F365006750AE /* intro_bg.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 122C45BE1829F365006750AE /* intro_bg.m4v */; };
 		125DD00718299B63003B6758 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 125DD00618299B63003B6758 /* loading.png */; };
 		126E7FF318060C0400E7BFE0 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF218060C0400E7BFE0 /* data */; };
 		126E7FF51806117E00E7BFE0 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF41806117E00E7BFE0 /* fonts */; };
@@ -157,6 +160,10 @@
 		121F92461803431700B47AD5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
 		121F92481803433400B47AD5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		121F9258180370E100B47AD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Iowa Counties/SDWebImage.framework"; sourceTree = "<group>"; };
+		122C45AD1829CCED006750AE /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
+		122C45AE1829CCED006750AE /* TitleScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScreenViewController.m; sourceTree = "<group>"; };
+		122C45B21829D138006750AE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		122C45BE1829F365006750AE /* intro_bg.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = intro_bg.m4v; path = img/intro_bg.m4v; sourceTree = "<group>"; };
 		125DD00618299B63003B6758 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		126E7FF41806117E00E7BFE0 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
@@ -321,6 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122C45B31829D138006750AE /* MediaPlayer.framework in Frameworks */,
 				121F92471803431700B47AD5 /* GoogleMaps.framework in Frameworks */,
 				12AEC88617C3DC2E0001C5CD /* UIKit.framework in Frameworks */,
 				12AEC88817C3DC2E0001C5CD /* Foundation.framework in Frameworks */,
@@ -351,6 +359,7 @@
 		12AEC87917C3DC2E0001C5CD = {
 			isa = PBXGroup;
 			children = (
+				122C45BE1829F365006750AE /* intro_bg.m4v */,
 				12BD0A3D180E970F000EAA52 /* img */,
 				126E7FF41806117E00E7BFE0 /* fonts */,
 				126E7FF218060C0400E7BFE0 /* data */,
@@ -372,6 +381,7 @@
 		12AEC88417C3DC2E0001C5CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				122C45B21829D138006750AE /* MediaPlayer.framework */,
 				121F9258180370E100B47AD5 /* SDWebImage.framework */,
 				121F92481803433400B47AD5 /* GoogleMaps.bundle */,
 				121F92461803431700B47AD5 /* GoogleMaps.framework */,
@@ -417,6 +427,8 @@
 				127042B0182046790049FEC5 /* MDDirectionService.m */,
 				127042B218204C0A0049FEC5 /* TripPlanerViewController.h */,
 				127042B318204C0A0049FEC5 /* TripPlanerViewController.m */,
+				122C45AD1829CCED006750AE /* TitleScreenViewController.h */,
+				122C45AE1829CCED006750AE /* TitleScreenViewController.m */,
 			);
 			path = "Iowa Counties";
 			sourceTree = "<group>";
@@ -736,6 +748,7 @@
 				12BD0AE9180E9710000EAA52 /* AppIcon40x40.png in Resources */,
 				12BD0AB7180E9710000EAA52 /* marker-barn@2x.png in Resources */,
 				12BD0AD0180E9710000EAA52 /* marker-national_historic_landmark.png in Resources */,
+				122C45BF1829F365006750AE /* intro_bg.m4v in Resources */,
 				12BD0AB3180E9710000EAA52 /* marker-art@2x.png in Resources */,
 				12BD0ADB180E9710000EAA52 /* marker-science@2x.png in Resources */,
 				121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */,
@@ -788,6 +801,7 @@
 				127042B418204C0A0049FEC5 /* TripPlanerViewController.m in Sources */,
 				12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */,
 				12AEC8AD17C3DC8C0001C5CD /* MapViewController.m in Sources */,
+				122C45AF1829CCED006750AE /* TitleScreenViewController.m in Sources */,
 				12A7C1D8181347BF00D3DE53 /* CityListController.m in Sources */,
 				12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */,
 				12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */,

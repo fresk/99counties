@@ -32,6 +32,20 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
 - (void)initializeContext {
     self.appName = @"Find Your Iowa";
 
+    
+    
+    NSString *docs_path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.favorites_fname = [docs_path stringByAppendingPathComponent:@"favorites.plist"];
+    
+    
+    self.favorites = [NSMutableDictionary dictionaryWithContentsOfFile:self.favorites_fname];
+    if (self.favorites == nil){
+        //first start
+        NSLog(@"creating blank favorites list");
+        self.favorites = [[NSMutableDictionary alloc] init];
+        [self saveFavorites];
+    }
+    
     _currentLocation.latitude = 0.0;
     _currentLocation.longitude = 0.0;
     [self updateUserLocation];
@@ -46,7 +60,9 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
 
 
 
-
+- (BOOL) saveFavorites {
+    return[self.favorites writeToFile:self.favorites_fname atomically:TRUE];
+}
 
 
 
@@ -59,13 +75,9 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
         NSDictionary* cat;
         for (cat in [data objectForKey:@"result"] ){
             NSString* category_id = [cat objectForKey:@"id"];
-            
-            
-            
             NSString* category_name = [categoryNames objectForKey:category_id];
             if(category_name == nil){
                 category_name = category_id;
-                //NSLog(@"UNKNOWN CATEGORY ID: %@", category_id);
             }
             [dict setObject: @{@"id": category_id,
                                @"num_entries": [cat objectForKey:@"num_entries"],

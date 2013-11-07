@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *phone_label;
 @property (strong, nonatomic) IBOutlet UILabel *www_label;
 @property (strong, nonatomic) IBOutlet UILabel *email_label;
+@property (strong, nonatomic) IBOutlet UIButton *favoriteButton;
 
 
 @property (strong, nonatomic) IBOutlet UIView *background_layer;
@@ -62,6 +63,8 @@
     BOOL showingOnlyBackgroundImage;
     
     UIImage* _placehodler_image;
+    
+    NSDictionary* _selected_location;
     
 }
 
@@ -112,6 +115,7 @@
     self.map_view.settings.rotateGestures = NO;
     
     self.detail_view.delegate = self;
+
     
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
@@ -267,6 +271,9 @@
     bounds.origin.x = CGRectGetWidth(bounds) * page;
     bounds.origin.y = 0;
     [self.scrollView scrollRectToVisible:bounds animated:animated];
+    
+
+    
 }
 
 
@@ -345,14 +352,21 @@
             [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] placeholderImage:_placehodler_image];
         else
             [bgView setImage:[UIImage imageNamed:image_src] ];
-        [bgView setContentMode: UIViewContentModeScaleAspectFill];
+        [bgView setContentMode: UIViewContentModeScaleAspectFit];
         [bgView setClipsToBounds:TRUE];
+        
+
     }
     
     // add the controller's view to the scroll view
     if (bgView.superview == nil){
         [self.scrollView addSubview:bgView];
     }
+    
+    self.scrollView.scrollEnabled = TRUE;
+    self.scrollView.minimumZoomScale = 1.0;
+    self.scrollView.maximumZoomScale = 2.0;
+    self.scrollView.multipleTouchEnabled = TRUE;
 }
 
 
@@ -362,6 +376,19 @@
     
 
 
+}
+- (IBAction)toggleMapType:(id)sender {
+    if (self.map_view.mapType == kGMSTypeNormal)
+        self.map_view.mapType = kGMSTypeSatellite;
+    
+    else if (self.map_view.mapType == kGMSTypeSatellite)
+        self.map_view.mapType = kGMSTypeTerrain;
+    
+    else if (self.map_view.mapType == kGMSTypeTerrain)
+        self.map_view.mapType = kGMSTypeHybrid;
+    
+    else if (self.map_view.mapType == kGMSTypeHybrid)
+        self.map_view.mapType = kGMSTypeNormal;
 }
 
 
@@ -375,7 +402,29 @@
     // switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
     NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    NSUInteger old_page = self.pageControl.currentPage;
     self.pageControl.currentPage = page;
+    
+    if (page == 0){
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                                self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
+                         }
+                         completion:nil];
+    }
+
+    if ( old_page == 0 ){
+        [UIView animateWithDuration:1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+                         }
+                         completion:nil];
+    }
+        
     
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 1){
@@ -436,7 +485,7 @@
 
 
 - (BOOL) mapView: (GMSMapView *) mapView didTapMarker: (GMSMarker *)  marker {
-    [self gotoDetailsForMarker:marker animated: TRUE];
+    [self gotoDetailsForMarker:marker animated: FALSE];
     return TRUE;
 }
 
@@ -478,12 +527,14 @@
         UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 55.0, 0.0);
         self.map_view.settings.myLocationButton = NO;
         self.map_view.settings.compassButton = NO;
+        
         [UIView animateWithDuration:1.0
                               delay: 0.0
                             options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              [[self detail_view] setFrame:detail_rect_hidden];
                              self.map_view.padding = mapInsets;
+                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
                              //self.pageControl.frame = pageFrame;
                              //self.background_layer.alpha = 0.0;
                              //self.map_view.mapType = kGMSTypeTerrain;
@@ -497,6 +548,7 @@
         CGRect detail_rect_visible = [[self detail_view] frame];
         detail_rect_visible.origin.y = 0;
         UIEdgeInsets mapInsets = UIEdgeInsetsMake(0.0, 0, 330.0, 0);
+        //[self.scrollView setBackgroundColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0]];
         
         self.map_view.settings.myLocationButton = NO;
         self.map_view.settings.compassButton = NO;
@@ -506,6 +558,7 @@
                             options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              self.detail_view.frame = detail_rect_visible;
+                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
                              self.map_view.padding = mapInsets;
                              //self.pageControl.frame = pageFrame;
                              //self.map_view.mapType = kGMSTypeSatellite;
@@ -567,14 +620,47 @@
 {
     //NSLog(@"GOING TO MARKER");
     NSDictionary* location = (NSDictionary*)marker.userData;
+    _selected_location = location;
+    
+    NSString* location_id = [_selected_location objectForKey:@"id"];
+    NSDictionary* favorite = [ctx.favorites objectForKey:location_id];
+    if (favorite == nil){
+        [self.favoriteButton setTitle:@"add-star" forState:UIControlStateNormal];
+
+    }
+    else {
+        [self.favoriteButton setTitle:@"un-star" forState:UIControlStateNormal];
+
+    }
+    
+    
+    
     [self.detail_title setText:[location objectForKey:@"name"]] ;
     [self.detail_text setText: [location objectForKey:@"description"]];
     [self loadBackgroundImageList: location];
-    [self centerOnMarker: marker animated: animated];
+    [self centerOnMarker: marker animated: FALSE];
     [self showDetailsOverlay];
 }
 
 
+- (IBAction)toggleFavoriteStatus:(id)sender {
+    
+    NSString* location_id = [_selected_location objectForKey:@"id"];
+    NSDictionary* favorite = [ctx.favorites objectForKey:location_id];
+    if (favorite == nil){
+        [ctx.favorites setObject: [NSDictionary dictionaryWithDictionary:_selected_location]
+                          forKey: location_id];
+        [self.favoriteButton setTitle:@"un-star" forState:UIControlStateNormal];
+    }
+    else {
+        [ctx.favorites removeObjectForKey:location_id];
+        [self.favoriteButton setTitle:@"add-star" forState:UIControlStateNormal];
+    }
+    [ctx saveFavorites];
+    
+    NSLog(@"%@",ctx.favorites);
+    
+}
 
 
 
@@ -593,7 +679,7 @@
     }
 }
 - (void) centerOnMarker:  (GMSMarker *)  marker{
-    [self centerOnMarker:marker animated:TRUE];
+    [self centerOnMarker:marker animated:FALSE];
 }
 
 
@@ -625,6 +711,7 @@
     CGRect detail_rect_visible = [[self detail_view] frame];
     detail_rect_visible.origin.y = 0;
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 330.0, 0);
+    self.map_view.padding = mapInsets;
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
     [UIView animateWithDuration:1.0
@@ -632,7 +719,7 @@
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.detail_view.frame = detail_rect_visible;
-                         self.map_view.padding = mapInsets;
+                         
                      }
                      completion:^(BOOL finished){
                              self.background_layer.hidden = FALSE;

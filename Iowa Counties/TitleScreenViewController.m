@@ -36,7 +36,7 @@
 	NSBundle *bundle = [NSBundle mainBundle];
 	if (bundle)
 	{
-		NSString *moviePath = [bundle pathForResource:@"intro_bg" ofType:@"m4v"];
+		NSString *moviePath = [bundle pathForResource:@"intro_bg" ofType:@"mov"];
 		if (moviePath)
 		{
 			theMovieURL = [NSURL fileURLWithPath:moviePath];
@@ -56,6 +56,12 @@
     
     
 }
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self.player stop];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

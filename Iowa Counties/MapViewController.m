@@ -10,7 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "Utils.h"
 #import "AppContext.h"
 
 
@@ -89,7 +89,7 @@
     ctx = [AppContext instance];
     //NSLog(@"app name: %@", ctx.appName);
     //NSLog(@"app categories: %@", ctx.locationCategories);
-    /*
+    
     for(NSString *fontfamilyname in [UIFont familyNames])
     {
         NSLog(@"family:'%@'",fontfamilyname);
@@ -99,9 +99,13 @@
         }
         NSLog(@"-------------");
     }
-    */
+    
     
     NSLog(@"MAP VIEW LOADED");
+    
+    
+    
+    
     
     self.map_view.delegate = self;
     //self.map_view.mapType = kGMSTypeNormal;
@@ -152,8 +156,14 @@
         self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,h);
         
         for (UIView *view in [self.scrollView subviews]) {
+            if (view == [self.backgroundImageViews objectAtIndex:0]){
+            
+            }
             CGRect f = view.frame;
             f.size = self.scrollView.frame.size;
+            if (view == [self.backgroundImageViews objectAtIndex:0]){
+                f.size = self.map_view.frame.size;
+            }
             view.frame =  f;
         }
         
@@ -268,6 +278,7 @@
     
 	// update the scroll view to the appropriate page
     CGRect bounds = self.scrollView.bounds;
+    NSLog(@"scrolling to:  %f, %f, %f, %f", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
     bounds.origin.x = CGRectGetWidth(bounds) * page;
     bounds.origin.y = 0;
     [self.scrollView scrollRectToVisible:bounds animated:animated];
@@ -337,8 +348,11 @@
         return;
     }
     
+    
+
+    
     NSString *image_src = [self.imageUrls objectAtIndex:page];
-    //NSLog(@"loading image page: %d (%@)", page, image_src);
+    NSLog(@"loading image page: %d (%@)", page, image_src);
     
     // replace the placeholder if necessary
     UIImageView *bgView = [self.backgroundImageViews objectAtIndex:page];
@@ -348,11 +362,17 @@
         img_frame.origin.x = img_frame.size.width * page;
         img_frame.origin.y = 0;
         bgView = [[UIImageView alloc] initWithFrame:img_frame];
-        if ([image_src hasPrefix:@"http"])
+        [bgView setContentMode: UIViewContentModeScaleAspectFit];
+        if ([image_src isEqualToString:@"transparent.png" ]){
+         [bgView setImage: [Utils imageWithView:self.map_view] ];
+         [bgView setContentMode: UIViewContentModeTop ];
+          
+        }
+        else if ([image_src hasPrefix:@"http"])
             [bgView setImageWithURL: [[NSURL alloc] initWithString:image_src] placeholderImage:_placehodler_image];
         else
             [bgView setImage:[UIImage imageNamed:image_src] ];
-        [bgView setContentMode: UIViewContentModeScaleAspectFit];
+        
         [bgView setClipsToBounds:TRUE];
         
 
@@ -405,7 +425,7 @@
     NSUInteger old_page = self.pageControl.currentPage;
     self.pageControl.currentPage = page;
     
-    if (page == 0){
+
         [UIView animateWithDuration:1.0
                               delay: 0.0
                             options: UIViewAnimationOptionCurveEaseInOut
@@ -413,18 +433,7 @@
                                 self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
                          }
                          completion:nil];
-    }
-
-    if ( old_page == 0 ){
-        [UIView animateWithDuration:1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-                         }
-                         completion:nil];
-    }
-        
+    
     
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 1){
@@ -534,7 +543,7 @@
                          animations:^{
                              [[self detail_view] setFrame:detail_rect_hidden];
                              self.map_view.padding = mapInsets;
-                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
                              //self.pageControl.frame = pageFrame;
                              //self.background_layer.alpha = 0.0;
                              //self.map_view.mapType = kGMSTypeTerrain;
@@ -636,7 +645,11 @@
     
     
     [self.detail_title setText:[location objectForKey:@"name"]] ;
+    [self.detail_title setFont:[UIFont fontWithName:@"GillSans-Light" size:26.0]];
+    
     [self.detail_text setText: [location objectForKey:@"description"]];
+    [self.detail_text setFont:[UIFont fontWithName:@"HelveticaNeue" size:15.0]];
+    
     [self loadBackgroundImageList: location];
     [self centerOnMarker: marker animated: FALSE];
     [self showDetailsOverlay];
@@ -714,15 +727,31 @@
     self.map_view.padding = mapInsets;
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
+    
+    
+
+    
     [UIView animateWithDuration:1.0
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.detail_view.frame = detail_rect_visible;
-                         
+                         self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8];
                      }
                      completion:^(BOOL finished){
                              self.background_layer.hidden = FALSE;
+                            NSLog(@"REPLACING TRANSPARENT WITH SNAPSHOT");
+                            //UIImageView* bg_img = [[UIImageView alloc] initWithFrame:self.scrollView.frame];
+                    
+                            //UIImageView* bg_img = [self.scrollView.subviews objectAtIndex:0];
+                            //[bg_img setImage:[Utils imageWithView:self.map_view]];
+                         [self loadScrollViewWithPage:0];
+                         [self loadScrollViewWithPage:1];
+                         UIImageView* bg_img = [self.scrollView.subviews objectAtIndex:0];
+                         bg_img.frame = self.map_view.frame;
+                         self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8];
+                         
+
                      }];
 }
 
@@ -743,7 +772,7 @@
                      animations:^{
                          [[self detail_view] setFrame:detail_rect_hidden];
                          self.map_view.padding = mapInsets;
-                         self.background_layer.alpha = 0.0;
+                         self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
                      }
                      completion:^(BOOL finished){
                          self.background_layer.hidden = TRUE;

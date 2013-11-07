@@ -103,6 +103,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="gotoCardScreen:" destination="3nL-DT-2ha" eventType="touchUpInside" id="MuW-Qv-01x"/>
                                             <segue destination="Q3M-lL-kBd" kind="modal" id="wdN-cy-6Ih"/>
                                         </connections>
                                     </button>
@@ -1093,7 +1094,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ci4-lV-4L8"/>
-        <segue reference="cho-QA-f1K"/>
+        <segue reference="VKH-m3-mLl"/>
         <segue reference="dvm-g7-HYe"/>
     </inferredMetricsTieBreakers>
 </document>

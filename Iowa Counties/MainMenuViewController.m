@@ -42,7 +42,14 @@
 }
 
 
+- (IBAction)gotoCardScreen:(id)sender {
 
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Cards" bundle:nil];
+    
+    UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+    
+    [self.view.window setRootViewController:initViewController];
+}
 
 
 

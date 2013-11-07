@@ -150,6 +150,7 @@
 		12BD0B10180E9710000EAA52 /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0AA9180E9710000EAA52 /* btn-single-www.png */; };
 		12BEC66C182AD6290037AC66 /* intro_bg.mov in Resources */ = {isa = PBXBuildFile; fileRef = 12BEC66B182AD6280037AC66 /* intro_bg.mov */; };
 		12C12E6A182B643600CF5ABE /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C12E69182B643600CF5ABE /* Cards.storyboard */; };
+		12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C12E6C182B755600CF5ABE /* CardScreen.m */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
 		12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8C918117CB400FC4CD3 /* CountyListController.m */; };
 		12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8CC18118E5A00FC4CD3 /* FilterResultsController.m */; };
@@ -318,6 +319,8 @@
 		12BD0AA9180E9710000EAA52 /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
 		12BEC66B182AD6280037AC66 /* intro_bg.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = intro_bg.mov; path = img/intro_bg.mov; sourceTree = "<group>"; };
 		12C12E69182B643600CF5ABE /* Cards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
+		12C12E6B182B755600CF5ABE /* CardScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardScreen.h; sourceTree = "<group>"; };
+		12C12E6C182B755600CF5ABE /* CardScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardScreen.m; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
 		12D7F8C818117CB400FC4CD3 /* CountyListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountyListController.h; sourceTree = "<group>"; };
@@ -650,6 +653,8 @@
 				122C45AE1829CCED006750AE /* TitleScreenViewController.m */,
 				12F1B6DC182AD882006A221C /* MainMenuViewController.h */,
 				12F1B6DD182AD882006A221C /* MainMenuViewController.m */,
+				12C12E6B182B755600CF5ABE /* CardScreen.h */,
+				12C12E6C182B755600CF5ABE /* CardScreen.m */,
 			);
 			name = screens;
 			sourceTree = "<group>";
@@ -836,6 +841,7 @@
 				12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */,
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				12F1B6E1182AE4D9006A221C /* FavoritesTableViewController.m in Sources */,
+				12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */,
 				126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */,
 				127042B1182046790049FEC5 /* MDDirectionService.m in Sources */,
 				12F1B6DE182AD882006A221C /* MainMenuViewController.m in Sources */,

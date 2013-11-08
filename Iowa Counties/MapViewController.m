@@ -63,6 +63,7 @@
     NSDictionary* markersByLocationID;
     
     BOOL showingOnlyBackgroundImage;
+    BOOL comingFromListView;
     
     UIImage* _placehodler_image;
     
@@ -111,8 +112,6 @@
     
     [self fitBounds];
     [self initImagePager];
-    
-    
 }
 
 
@@ -122,6 +121,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     if (self.selectedLocationID == nil){
+        comingFromListView = FALSE;
         [ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
@@ -129,10 +129,14 @@
         locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
         [locationManager startUpdatingLocation];
     }
+    else {
+        comingFromListView = TRUE;
+        self.map_view.padding = UIEdgeInsetsMake(100, 0, 330.0, 0);
+        
+        [self navigationController].navigationBarHidden = TRUE;
+        
+    }
     
-    //[self navigationController].navigationBarHidden = TRUE;
-    [self navigationController].navigationBar.barTintColor = [UIColor clearColor];
-    [self navigationController].navigationBar.backgroundColor = [UIColor clearColor];
 }
 
 
@@ -150,6 +154,26 @@
 //
 //####################################################################################
 
+- (IBAction)button_back_pressed:(id)sender {
+    
+    if (comingFromListView){
+        [[self navigationController] popViewControllerAnimated:TRUE];
+        [self navigationController].navigationBarHidden = FALSE;
+        return;
+    }
+    
+    if(self.background_layer.hidden == TRUE){
+        UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+        UIViewController *mainMenuViewController = [storyBoard instantiateViewControllerWithIdentifier:@"main_menu"];
+        [self presentModalViewController: mainMenuViewController animated:YES];
+        
+    }
+    else {
+        [self hideDetailsOverlay];
+    
+    }
+    
+}
 
 
 - (IBAction)button_show_pressed:(id)sender {
@@ -551,7 +575,7 @@
 - (void) ZommInOnMarker:  (GMSMarker *)  marker animated: (BOOL) animated{
     GMSCameraPosition *new_cam;
 
-    new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:45 viewingAngle:45];
+    new_cam = [GMSCameraPosition cameraWithTarget:marker.position zoom:18 bearing:0 viewingAngle:0];
     if (animated)
         return [self animateToNewCameraPosition:new_cam];
     return [self.map_view setCamera:new_cam];
@@ -559,7 +583,7 @@
 
 
 -(void) flyBackToMap {
-    [CATransaction setValue:[NSNumber numberWithFloat: 2.0f] forKey:kCATransactionAnimationDuration];
+    [CATransaction setValue:[NSNumber numberWithFloat: 1.0f] forKey:kCATransactionAnimationDuration];
     [self.map_view animateToCameraPosition:_prior_camera_pos];
     [CATransaction setCompletionBlock:^{}];
     [CATransaction commit];

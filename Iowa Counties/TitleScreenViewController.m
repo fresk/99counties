@@ -58,15 +58,30 @@
 }
 
 
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    self.logo.alpha = 0.0;
+}
+
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    self.logo.alpha = 0.0;
+    [UIView animateWithDuration:2.0 delay:3.0 options: UIViewAnimationOptionCurveLinear animations:^{
+        self.logo.alpha = 1.0;
+    } completion:^(BOOL finished) {
+
+    }];
+    
+    
+}
+
+
 - (void) viewDidDisappear:(BOOL)animated {
     [self.player stop];
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

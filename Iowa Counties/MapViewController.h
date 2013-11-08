@@ -19,4 +19,5 @@
 //- (void) gotoDetailsForLocationWithID: (NSString*) lid;
 - (GMSMarker*) addLocation: (NSDictionary*) location;
 - (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated;
+- (void) fitBounds;
 @end

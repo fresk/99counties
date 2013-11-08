@@ -265,19 +265,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="tours.png" translatesAutoresizingMaskIntoConstraints="NO" id="tT0-ZP-miX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4I-mC-bLu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zS5-bp-z7d">
-                                <rect key="frame" x="270" y="30" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-mainmenu.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="crossDissolve" id="aAu-zz-nCd"/>
-                                </connections>
-                            </button>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="guidedtours-placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-T8-7fk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="742"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zS5-bp-z7d">
+                                        <rect key="frame" x="260" y="13" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="btn-back.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="crossDissolve" id="aAu-zz-nCd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -493,19 +500,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="By Category" id="Tg5-sh-ZUX">
                         <barButtonItem key="backBarButtonItem" title="Back" id="gtS-nJ-J3l"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="1cj-bI-r8U">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oki-9p-K1K">
-                                <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title=" " image="btn-back.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="crossDissolve" id="0qX-Fe-CI0"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -566,21 +560,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Results" id="Med-HA-M21">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="iOM-jf-YyF">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EiR-6Z-npy">
-                                <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title=" " image="btn-back.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="crossDissolve" id="BFb-ci-Co0"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Results" id="Med-HA-M21"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="3Kp-0Q-DAM" id="JNy-Cm-twN"/>
                     </connections>
@@ -774,6 +754,12 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sD6-Wb-xns">
+                                                <rect key="frame" x="0.0" y="105" width="290" height="192"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                            </webView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-RL-0Pd">
                                                 <rect key="frame" x="243" y="19" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -787,14 +773,6 @@
                                                     <action selector="toggleFavoriteStatus:" destination="QpN-i5-N3V" eventType="touchUpInside" id="wH0-fR-lzj"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="IXE-w0-sr3">
-                                                <rect key="frame" x="20" y="96" width="250" height="144"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-Xh-kAw">
                                                 <rect key="frame" x="126" y="0.0" width="39" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -827,7 +805,7 @@
                         <outlet property="backgroundViewPinchRecognizer" destination="ygH-gw-gGp" id="zxJ-ck-AMz"/>
                         <outlet property="background_layer" destination="ag6-LV-xvk" id="EzR-rw-XU3"/>
                         <outlet property="detailViewTapRecognizer" destination="Iho-1y-urs" id="DME-l0-XBl"/>
-                        <outlet property="detail_text" destination="IXE-w0-sr3" id="3ZC-Pe-xst"/>
+                        <outlet property="detail_text" destination="sD6-Wb-xns" id="22r-Dm-HcU"/>
                         <outlet property="detail_title" destination="2wk-On-vNH" id="UGI-RX-VXR"/>
                         <outlet property="detail_view" destination="X11-1E-kEG" id="Vma-Ph-NY7"/>
                         <outlet property="favoriteButton" destination="sKo-RL-0Pd" id="xKr-Yg-dYK"/>
@@ -908,19 +886,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="By County" id="wnL-AP-BwQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bsm-Wi-F2u"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="VO7-or-tYg">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X6m-2h-YjK">
-                                <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title=" " image="btn-back.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3nL-DT-2ha" kind="modal" identifier="to_main_menu" modalTransitionStyle="crossDissolve" id="S9e-I0-gJv"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1018,9 +983,9 @@
         <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-singleview-savespot.png" width="100" height="100"/>
         <image name="btn-tours.png" width="150" height="150"/>
+        <image name="guidedtours-placeholder.png" width="640" height="1484"/>
         <image name="logo.png" width="640" height="400"/>
         <image name="marker-barn.png" width="64" height="64"/>
-        <image name="tours.png" width="693" height="1169"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1028,8 +993,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BFb-ci-Co0"/>
-        <segue reference="dvm-g7-HYe"/>
-        <segue reference="lga-ga-0Wu"/>
+        <segue reference="24e-sP-kHk"/>
+        <segue reference="SdS-3f-o6S"/>
+        <segue reference="0he-SZ-SFh"/>
     </inferredMetricsTieBreakers>
 </document>

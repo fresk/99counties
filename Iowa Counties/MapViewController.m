@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *detail_view;
 @property (weak, nonatomic) IBOutlet UILabel *detail_title;
 @property (strong, nonatomic) IBOutlet UILabel *address_label;
-@property (strong, nonatomic) IBOutlet UILabel *detail_text;
+@property (strong, nonatomic) IBOutlet UIWebView *detail_text;
 //@property (weak, nonatomic) IBOutlet UITextView *detail_text;
 @property (strong, nonatomic) IBOutlet UILabel *phone_label;
 @property (strong, nonatomic) IBOutlet UILabel *www_label;
@@ -642,7 +642,7 @@
         [self alignPhotosCenter];
         [UIView animateWithDuration:1.0 delay: 0.0 options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             self.detail_view.frame = CGRectOffset(self.view.frame, 0, 275);
+                             self.detail_view.frame = CGRectOffset(self.view.frame, 0, 250);
                              self.map_view.padding = UIEdgeInsetsMake(100, 0, 55, 0);
                          }
                          completion:^(BOOL finished){
@@ -705,10 +705,15 @@
     
     // DETAIL TEXT LABEL --------------------------------------------------------------------------
     NSString* dtText = [location objectForKey:@"description"];
+    if ([dtText length] < 5) {
+        dtText = @"Not much here - yet! Have a comment about this spot? (Tap Link Here)";
+    }
+    
     NSMutableParagraphStyle* detailStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     [detailStyle setLineHeightMultiple:1.0] ;
     detailStyle.minimumLineHeight = 0.1;
     detailStyle.maximumLineHeight = 150;
+    /*
     self.detail_text.attributedText  = [[NSAttributedString alloc] initWithString:dtText attributes:@{
         NSFontAttributeName: [UIFont fontWithName:@"Avenir-Book" size:14.0],
         NSParagraphStyleAttributeName: detailStyle
@@ -717,12 +722,47 @@
     CGRect tf = self.detail_title.frame;
     CGRect f = self.detail_text.frame;
     self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
-
     
     // DETAIL VIEW CONTENT SIZE
     CGFloat content_height = f.origin.y + f.size.height;
     CGSize content_size = CGSizeMake(320.0, content_height);
     self.detail_view.contentSize = content_size;
+    */
+    
+    
+
+    /*NSString* embedHTML = @"<html><head></head><body><h4>Description:</h4><p>%@</p><h4>website:</h4><p><a href='%@'>%@</a></p></body></html>";
+    
+    embedHTML = [NSString stringWithFormat:embedHTML, dtText, [location objectForKey:@"website"], [location objectForKey:@"website"]];
+    */
+    
+
+    //NSString* urlString = [NSString stringWithFormat:@"http://findyouriowa.com/render/location/%@", [location objectForKey:@"id"]];
+    NSString* urlString = [NSString stringWithFormat:@"http://localhost:8000/render/location/%@", [location objectForKey:@"id"]];
+    [self.detail_text loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    self.detail_text.userInteractionEnabled = NO;
+    self.detail_text.opaque = NO;
+    self.detail_text.backgroundColor = [UIColor clearColor];
+    //[self.detail_text loadHTMLString: embedHTML baseURL: nil];
+    NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
+                         @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight)"] integerValue];
+    
+    CGRect tf = self.detail_title.frame;
+    CGRect f = self.detail_text.frame;
+    self.detail_text.frame = CGRectMake(f.origin.x, f.origin.y + tf.size.height -50, f.size.width, height+200);
+    
+    //[self.detail_text sizeToFit];
+    /*
+    CGRect tf = self.detail_title.frame;
+    CGRect f = self.detail_text.frame;
+    self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
+    */
+    // DETAIL VIEW CONTENT SIZE
+    CGFloat content_height = f.origin.y + f.size.height;
+    CGSize content_size = CGSizeMake(320.0, content_height);
+    self.detail_view.contentSize = content_size;
+     
+    
 
 }
 

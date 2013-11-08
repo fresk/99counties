@@ -23,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *detail_view;
 @property (weak, nonatomic) IBOutlet UILabel *detail_title;
 @property (strong, nonatomic) IBOutlet UILabel *address_label;
-@property (weak, nonatomic) IBOutlet UITextView *detail_text;
+@property (strong, nonatomic) IBOutlet UILabel *detail_text;
+//@property (weak, nonatomic) IBOutlet UITextView *detail_text;
 @property (strong, nonatomic) IBOutlet UILabel *phone_label;
 @property (strong, nonatomic) IBOutlet UILabel *www_label;
 @property (strong, nonatomic) IBOutlet UILabel *email_label;
@@ -37,6 +38,7 @@
 @property (strong, nonatomic) NSArray *imageUrls;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *detailViewTapRecognizer;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *backgroundViewPinchRecognizer;
+@property (strong, nonatomic) UIImageView* snapshot;
 
 
 
@@ -88,24 +90,7 @@
     
     ctx = [AppContext instance];
     //NSLog(@"app name: %@", ctx.appName);
-    //NSLog(@"app categories: %@", ctx.locationCategories);
-    
-    for(NSString *fontfamilyname in [UIFont familyNames])
-    {
-        NSLog(@"family:'%@'",fontfamilyname);
-        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
-        {
-            NSLog(@"\tfont:'%@'",fontName);
-        }
-        NSLog(@"-------------");
-    }
-    
-    
-    NSLog(@"MAP VIEW LOADED");
-    
-    
-    
-    
+    //NSLog(@"app categories: %@", ctx.locationCategories)
     
     self.map_view.delegate = self;
     //self.map_view.mapType = kGMSTypeNormal;
@@ -146,26 +131,17 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    //return;
     if (object == self.detail_view && [keyPath isEqualToString:@"frame"]) {
        
         // do your stuff, or better schedule to run later using performSelector:withObject:afterDuration:
-        CGFloat h = 240 + self.detail_view.frame.origin.y;
-        CGRect bgimageframe = self.scrollView.frame;
-        bgimageframe.size.height = h;
-        self.scrollView.frame = bgimageframe;
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,h);
+        //CGFloat h = 240 + self.detail_view.frame.origin.y;
+        //CGRect bgimageframe = self.scrollView.frame;
+        //bgimageframe.size.height = h;
+        //self.scrollView.frame = bgimageframe;
+        //self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,h);
+        [self refreshMapSnapshot];
         
-        for (UIView *view in [self.scrollView subviews]) {
-            if (view == [self.backgroundImageViews objectAtIndex:0]){
-            
-            }
-            CGRect f = view.frame;
-            f.size = self.scrollView.frame.size;
-            if (view == [self.backgroundImageViews objectAtIndex:0]){
-                f.size = self.map_view.frame.size;
-            }
-            view.frame =  f;
-        }
         
     }
 }
@@ -197,6 +173,12 @@
         locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
         [locationManager startUpdatingLocation];
     }
+    
+    //[self navigationController].navigationBarHidden = TRUE;
+    [self navigationController].navigationBar.barTintColor = [UIColor clearColor];
+    [self navigationController].navigationBar.backgroundColor = [UIColor clearColor];
+    
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager
@@ -204,7 +186,7 @@
           fromLocation:(CLLocation *)oldLocation
 {
     CLLocationCoordinate2D here =  newLocation.coordinate;
-    NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
+    //NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
     
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
     [self.map_view animateWithCameraUpdate:update];
@@ -278,7 +260,7 @@
     
 	// update the scroll view to the appropriate page
     CGRect bounds = self.scrollView.bounds;
-    NSLog(@"scrolling to:  %f, %f, %f, %f", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
+    //NSLog(@"scrolling to:  %f, %f, %f, %f", bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height);
     bounds.origin.x = CGRectGetWidth(bounds) * page;
     bounds.origin.y = 0;
     [self.scrollView scrollRectToVisible:bounds animated:animated];
@@ -292,8 +274,6 @@
     for (UIView *view in [self.scrollView subviews]) {
         [view removeFromSuperview];
     }
-
-    //NSLog(@"loading image list: %@", [location objectForKey:@"image_list"]);
     
     self.background_layer.alpha = 0.0;
     [UIView animateWithDuration: 1.0
@@ -331,16 +311,18 @@
     
     
     //append background image at the end
-    CGRect img_frame = self.scrollView.frame;
-    img_frame.origin.x = frame_size.width * (numberOfPages);
-    img_frame.origin.y = 0;
-    UIImageView* bgView = [[UIImageView alloc] initWithFrame:img_frame];
-    [bgView setImage:[UIImage imageNamed: @"Default.png"] ];
-    [bgView setContentMode: UIViewContentModeScaleAspectFill];
-    [bgView setClipsToBounds:TRUE];
-    [self.scrollView addSubview:bgView];
+//    CGRect img_frame = self.scrollView.frame;
+//    img_frame.origin.x = frame_size.width * (numberOfPages);
+//    img_frame.origin.y = 0;
+//    UIImageView* bgView = [[UIImageView alloc] initWithFrame:img_frame];
+//    [bgView setImage:[UIImage imageNamed: @"Default.png"] ];
+//    [bgView setContentMode: UIViewContentModeScaleAspectFill];
+//    [bgView setClipsToBounds:TRUE];
+//    [self.scrollView addSubview:bgView];
 }
 
+
+static NSInteger kMapSnapshotTag = 1;
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
@@ -352,7 +334,7 @@
 
     
     NSString *image_src = [self.imageUrls objectAtIndex:page];
-    NSLog(@"loading image page: %d (%@)", page, image_src);
+    //NSLog(@"loading image page: %d (%@)", page, image_src);
     
     // replace the placeholder if necessary
     UIImageView *bgView = [self.backgroundImageViews objectAtIndex:page];
@@ -363,9 +345,11 @@
         img_frame.origin.y = 0;
         bgView = [[UIImageView alloc] initWithFrame:img_frame];
         [bgView setContentMode: UIViewContentModeScaleAspectFit];
+        
         if ([image_src isEqualToString:@"transparent.png" ]){
          [bgView setImage: [Utils imageWithView:self.map_view] ];
          [bgView setContentMode: UIViewContentModeTop ];
+          bgView.tag = kMapSnapshotTag;
           
         }
         else if ([image_src hasPrefix:@"http"])
@@ -424,17 +408,7 @@
     NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     NSUInteger old_page = self.pageControl.currentPage;
     self.pageControl.currentPage = page;
-    
 
-        [UIView animateWithDuration:1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                                self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
-                         }
-                         completion:nil];
-    
-    
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 1){
         [self loadScrollViewWithPage:page - 1];
@@ -447,6 +421,7 @@
 }
 
 
+/*
 
 //DETAIL VIEW SCROLLVIEW
 - (void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
@@ -460,6 +435,7 @@
     }
 }
 
+ */
 
 - (IBAction)detailViewTapped:(id)sender {
     if (showingOnlyBackgroundImage){
@@ -543,13 +519,15 @@
                          animations:^{
                              [[self detail_view] setFrame:detail_rect_hidden];
                              self.map_view.padding = mapInsets;
-                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
+                             [self refreshMapSnapshot];
+ 
                              //self.pageControl.frame = pageFrame;
                              //self.background_layer.alpha = 0.0;
                              //self.map_view.mapType = kGMSTypeTerrain;
                          }
                          completion:^(BOOL finished){
                              showingOnlyBackgroundImage = TRUE;
+                             [self refreshMapSnapshot];
                              self.detailViewTapRecognizer.enabled = TRUE;
                          }];
     }else {
@@ -567,12 +545,14 @@
                             options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              self.detail_view.frame = detail_rect_visible;
-                             self.scrollView.backgroundColor =[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
+
                              self.map_view.padding = mapInsets;
+                             
                              //self.pageControl.frame = pageFrame;
                              //self.map_view.mapType = kGMSTypeSatellite;
                          }
                          completion:^(BOOL finished){
+                             [self refreshMapSnapshot];
                              showingOnlyBackgroundImage = FALSE;
                          }];
     }
@@ -584,11 +564,6 @@
 {
     return [markersByLocationID objectForKey:mid];
 }
-
-
-
-
-
 
 
 - (GMSMarker*) addLocation: (NSDictionary*) location {
@@ -635,20 +610,67 @@
     NSDictionary* favorite = [ctx.favorites objectForKey:location_id];
     if (favorite == nil){
         [self.favoriteButton setTitle:@"add-star" forState:UIControlStateNormal];
+        [self.favoriteButton setImage: [UIImage imageNamed:@"btn-singleview-savespot.png"] forState:UIControlStateNormal];
 
     }
     else {
         [self.favoriteButton setTitle:@"un-star" forState:UIControlStateNormal];
+        [self.favoriteButton setImage: [UIImage imageNamed:@"btn-singleview-savespot-active.png"] forState:UIControlStateNormal];
 
     }
+
+    
+    // TITLE LABEL ------------------------------------------------------------------------------
+    //self.detail_title.font = [UIFont fontWithName:@"Avenir-Heavy" size:28.0];
+    
+    NSString* tText = [NSString stringWithFormat:@"\n%@", [location objectForKey:@"name"]];
+    self.detail_title.numberOfLines = 0;
+    self.detail_title.backgroundColor = [UIColor clearColor];
+    self.detail_title.clipsToBounds = FALSE;
+    
+    NSMutableParagraphStyle *titleStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    [titleStyle setLineHeightMultiple:0.7] ;
+    self.detail_title.attributedText  = [[NSAttributedString alloc] initWithString:tText attributes:@{
+                NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:26.0],
+                NSParagraphStyleAttributeName: titleStyle
+    }];
+
+
+    [self.detail_title sizeToFit];
+
+    //tf.size.height = tf.size.height + 100;
+    //self.detail_text.frame = title_frame;
     
     
     
-    [self.detail_title setText:[location objectForKey:@"name"]] ;
-    [self.detail_title setFont:[UIFont fontWithName:@"GillSans-Light" size:26.0]];
     
-    [self.detail_text setText: [location objectForKey:@"description"]];
-    [self.detail_text setFont:[UIFont fontWithName:@"HelveticaNeue" size:15.0]];
+    // DETAIL TEXT LABEL --------------------------------------------------------------------------
+    
+    NSString* dtText = [location objectForKey:@"description"];
+    
+    NSMutableParagraphStyle* detailStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    [detailStyle setLineHeightMultiple:1.0] ;
+    detailStyle.minimumLineHeight = 0.1;
+    detailStyle.maximumLineHeight = 150;
+
+    self.detail_text.attributedText  = [[NSAttributedString alloc] initWithString:dtText attributes:@{
+        NSFontAttributeName: [UIFont fontWithName:@"Avenir-Book" size:14.0],
+        NSParagraphStyleAttributeName: detailStyle
+    }];
+    //[self.detail_text sizeToFit];
+
+    //NSLog(@"details height before: %f ", self.detail_text.frame.size.height );
+    [self.detail_text sizeToFit];
+
+    CGRect tf = self.detail_title.frame;
+    CGRect f = self.detail_text.frame;
+    self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
+    
+    CGFloat content_height = f.origin.y + f.size.height;
+    CGSize content_size = CGSizeMake(320.0, content_height);
+    self.detail_view.contentSize = content_size;
+
+    
     
     [self loadBackgroundImageList: location];
     [self centerOnMarker: marker animated: FALSE];
@@ -664,14 +686,16 @@
         [ctx.favorites setObject: [NSDictionary dictionaryWithDictionary:_selected_location]
                           forKey: location_id];
         [self.favoriteButton setTitle:@"un-star" forState:UIControlStateNormal];
+        [self.favoriteButton setImage: [UIImage imageNamed:@"btn-singleview-savespot-active.png"] forState:UIControlStateNormal];
     }
     else {
         [ctx.favorites removeObjectForKey:location_id];
         [self.favoriteButton setTitle:@"add-star" forState:UIControlStateNormal];
+        [self.favoriteButton setImage: [UIImage imageNamed:@"btn-singleview-savespot.png"] forState:UIControlStateNormal];
     }
     [ctx saveFavorites];
     
-    NSLog(@"%@",ctx.favorites);
+    //NSLog(@"%@",ctx.favorites);
     
 }
 
@@ -710,7 +734,21 @@
 }
 
 
+- (void) refreshMapSnapshot{
+    
+    UIImageView* new_bgview = [[UIImageView alloc] initWithFrame:self.scrollView.frame];
+    [new_bgview setImage: [Utils imageWithView:self.map_view] ];
+    [new_bgview setContentMode: UIViewContentModeTop ];
+     new_bgview.tag = kMapSnapshotTag;
+    
+    
+    UIImageView* old_bgview = [self.scrollView.subviews objectAtIndex:0];
+    [self.scrollView insertSubview:new_bgview aboveSubview: old_bgview];
+    //NSLog(@"ANIMATING.  ITS THE SNAPSHOT! %d", (old_bgview.tag == kMapSnapshotTag));
 
+    [old_bgview removeFromSuperview];
+
+}
 
 
 - (void) showDetailsOverlay {
@@ -719,7 +757,7 @@
     CGRect detail_rect_hidden = [[self detail_view] frame];
     detail_rect_hidden.origin.y = 600;
     [self.detail_view setFrame:detail_rect_hidden];
-    [self.detail_view setContentSize: CGSizeMake(320, 900) ];
+    // [self.detail_view setContentSize: CGSizeMake(290, 500 + self.detail_text.frame.size.height) ];
     
     CGRect detail_rect_visible = [[self detail_view] frame];
     detail_rect_visible.origin.y = 0;
@@ -735,21 +773,19 @@
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
+                         
                          self.detail_view.frame = detail_rect_visible;
                          self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8];
                      }
                      completion:^(BOOL finished){
                              self.background_layer.hidden = FALSE;
-                            NSLog(@"REPLACING TRANSPARENT WITH SNAPSHOT");
-                            //UIImageView* bg_img = [[UIImageView alloc] initWithFrame:self.scrollView.frame];
-                    
-                            //UIImageView* bg_img = [self.scrollView.subviews objectAtIndex:0];
-                            //[bg_img setImage:[Utils imageWithView:self.map_view]];
-                         [self loadScrollViewWithPage:0];
-                         [self loadScrollViewWithPage:1];
-                         UIImageView* bg_img = [self.scrollView.subviews objectAtIndex:0];
-                         bg_img.frame = self.map_view.frame;
-                         self.scrollView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8];
+                         
+                         CGRect tf = self.detail_title.frame;
+                         CGRect f = self.detail_text.frame;
+                         
+                         CGFloat content_height = f.origin.y + f.size.height + 300.0;
+                         CGSize content_size = CGSizeMake(320.0, content_height);
+                         self.detail_view.contentSize = content_size;
                          
 
                      }];

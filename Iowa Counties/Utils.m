@@ -48,6 +48,9 @@
 
 @end
 
+
+
+/*
 @implementation UIButton (CustomFont)
 
 - (NSString *)fontName {
@@ -56,6 +59,14 @@
 
 - (void)setFontName:(NSString *)fontName {
     self.titleLabel.font = [UIFont fontWithName:fontName size:self.titleLabel.font.pointSize];
+}
+
+- (NSInteger)fontSize {
+    return self.titleLabel.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.titleLabel.font = [UIFont fontWithName: self.fontName size: fontSize];
 }
 
 @end
@@ -72,6 +83,15 @@
     self.font = [UIFont fontWithName:fontName size:self.font.pointSize];
 }
 
+- (NSInteger)fontSize {
+    return self.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.font = [UIFont fontWithName: self.fontName size: fontSize];
+}
+
+
 @end
 
 
@@ -86,9 +106,18 @@
     self.font = [UIFont fontWithName:fontName size:self.font.pointSize];
 }
 
+- (NSInteger)fontSize {
+    return self.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.font = [UIFont fontWithName:[self fontName] size:self.fontSize];
+}
 @end
 
 
+
+*/
 
 @implementation NSDictionary (NSURL)
 

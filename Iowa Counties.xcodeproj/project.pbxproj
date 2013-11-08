@@ -12,10 +12,7 @@
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
 		122C45AF1829CCED006750AE /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C45AE1829CCED006750AE /* TitleScreenViewController.m */; };
 		122C45B31829D138006750AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122C45B21829D138006750AE /* MediaPlayer.framework */; };
-		122C45BF1829F365006750AE /* intro_bg.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 122C45BE1829F365006750AE /* intro_bg.m4v */; };
 		125DD00718299B63003B6758 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 125DD00618299B63003B6758 /* loading.png */; };
-		126E7FF318060C0400E7BFE0 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF218060C0400E7BFE0 /* data */; };
-		126E7FF51806117E00E7BFE0 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 126E7FF41806117E00E7BFE0 /* fonts */; };
 		126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FF91806146E00E7BFE0 /* AppContext.m */; };
 		126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FFC180632EA00E7BFE0 /* Utils.m */; };
 		127042B1182046790049FEC5 /* MDDirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 127042B0182046790049FEC5 /* MDDirectionService.m */; };
@@ -152,6 +149,26 @@
 		12C12E6A182B643600CF5ABE /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C12E69182B643600CF5ABE /* Cards.storyboard */; };
 		12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C12E6C182B755600CF5ABE /* CardScreen.m */; };
 		12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D571E317F1F4AA00E4DD2D /* LayerView.m */; };
+		12D78616182C22BF00C0FD09 /* Gotham-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D7860D182C22BF00C0FD09 /* Gotham-Black.ttf */; };
+		12D78617182C22BF00C0FD09 /* Gotham-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D7860E182C22BF00C0FD09 /* Gotham-BlackItalic.ttf */; };
+		12D78618182C22BF00C0FD09 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D7860F182C22BF00C0FD09 /* Gotham-Bold.ttf */; };
+		12D78619182C22BF00C0FD09 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78610182C22BF00C0FD09 /* Gotham-BoldItalic.ttf */; };
+		12D7861A182C22BF00C0FD09 /* Gotham-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78611182C22BF00C0FD09 /* Gotham-Book.ttf */; };
+		12D7861B182C22BF00C0FD09 /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78612182C22BF00C0FD09 /* Gotham-BookItalic.ttf */; };
+		12D7861C182C22BF00C0FD09 /* Gotham-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78613182C22BF00C0FD09 /* Gotham-Light.ttf */; };
+		12D7861D182C22BF00C0FD09 /* Gotham-XLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78614182C22BF00C0FD09 /* Gotham-XLight.ttf */; };
+		12D7861E182C22BF00C0FD09 /* Gotham-XLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D78615182C22BF00C0FD09 /* Gotham-XLightItalic.ttf */; };
+		12D78621182C265100C0FD09 /* MSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D78620182C265100C0FD09 /* MSLabel.m */; };
+		12D78670182C318300C0FD09 /* btn-singleview-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866A182C318300C0FD09 /* btn-singleview-address.png */; };
+		12D78671182C318300C0FD09 /* btn-singleview-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866B182C318300C0FD09 /* btn-singleview-email.png */; };
+		12D78672182C318300C0FD09 /* btn-singleview-fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866C182C318300C0FD09 /* btn-singleview-fb.png */; };
+		12D78673182C318300C0FD09 /* btn-singleview-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866D182C318300C0FD09 /* btn-singleview-phone.png */; };
+		12D78674182C318300C0FD09 /* btn-singleview-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866E182C318300C0FD09 /* btn-singleview-twitter.png */; };
+		12D78675182C318300C0FD09 /* btn-singleview-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D7866F182C318300C0FD09 /* btn-singleview-www.png */; };
+		12D7867A182C31F700C0FD09 /* btn-singleview-savespot-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D78676182C31F700C0FD09 /* btn-singleview-savespot-active.png */; };
+		12D7867B182C31F700C0FD09 /* btn-singleview-savespot-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D78677182C31F700C0FD09 /* btn-singleview-savespot-active@2x.png */; };
+		12D7867C182C31F700C0FD09 /* btn-singleview-savespot.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D78678182C31F700C0FD09 /* btn-singleview-savespot.png */; };
+		12D7867D182C31F700C0FD09 /* btn-singleview-savespot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D78679182C31F700C0FD09 /* btn-singleview-savespot@2x.png */; };
 		12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8C918117CB400FC4CD3 /* CountyListController.m */; };
 		12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F8CC18118E5A00FC4CD3 /* FilterResultsController.m */; };
 		12DAA2661829FE850063F023 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DAA2611829FE850063F023 /* ImageScrollView.m */; };
@@ -174,7 +191,6 @@
 		122C45BE1829F365006750AE /* intro_bg.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = intro_bg.m4v; path = img/intro_bg.m4v; sourceTree = "<group>"; };
 		125DD00618299B63003B6758 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
-		126E7FF41806117E00E7BFE0 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		126E7FF81806146E00E7BFE0 /* AppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppContext.h; sourceTree = "<group>"; };
 		126E7FF91806146E00E7BFE0 /* AppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppContext.m; sourceTree = "<group>"; };
 		126E7FFB180632EA00E7BFE0 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -323,6 +339,27 @@
 		12C12E6C182B755600CF5ABE /* CardScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardScreen.m; sourceTree = "<group>"; };
 		12D571E217F1F4AA00E4DD2D /* LayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerView.h; sourceTree = "<group>"; };
 		12D571E317F1F4AA00E4DD2D /* LayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerView.m; sourceTree = "<group>"; };
+		12D7860D182C22BF00C0FD09 /* Gotham-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.ttf"; sourceTree = "<group>"; };
+		12D7860E182C22BF00C0FD09 /* Gotham-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BlackItalic.ttf"; sourceTree = "<group>"; };
+		12D7860F182C22BF00C0FD09 /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		12D78610182C22BF00C0FD09 /* Gotham-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.ttf"; sourceTree = "<group>"; };
+		12D78611182C22BF00C0FD09 /* Gotham-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.ttf"; sourceTree = "<group>"; };
+		12D78612182C22BF00C0FD09 /* Gotham-BookItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.ttf"; sourceTree = "<group>"; };
+		12D78613182C22BF00C0FD09 /* Gotham-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.ttf"; sourceTree = "<group>"; };
+		12D78614182C22BF00C0FD09 /* Gotham-XLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.ttf"; sourceTree = "<group>"; };
+		12D78615182C22BF00C0FD09 /* Gotham-XLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLightItalic.ttf"; sourceTree = "<group>"; };
+		12D7861F182C265100C0FD09 /* MSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLabel.h; sourceTree = "<group>"; };
+		12D78620182C265100C0FD09 /* MSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLabel.m; sourceTree = "<group>"; };
+		12D7866A182C318300C0FD09 /* btn-singleview-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-address.png"; sourceTree = "<group>"; };
+		12D7866B182C318300C0FD09 /* btn-singleview-email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-email.png"; sourceTree = "<group>"; };
+		12D7866C182C318300C0FD09 /* btn-singleview-fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-fb.png"; sourceTree = "<group>"; };
+		12D7866D182C318300C0FD09 /* btn-singleview-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-phone.png"; sourceTree = "<group>"; };
+		12D7866E182C318300C0FD09 /* btn-singleview-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-twitter.png"; sourceTree = "<group>"; };
+		12D7866F182C318300C0FD09 /* btn-singleview-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-www.png"; sourceTree = "<group>"; };
+		12D78676182C31F700C0FD09 /* btn-singleview-savespot-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active.png"; sourceTree = "<group>"; };
+		12D78677182C31F700C0FD09 /* btn-singleview-savespot-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active@2x.png"; sourceTree = "<group>"; };
+		12D78678182C31F700C0FD09 /* btn-singleview-savespot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot.png"; sourceTree = "<group>"; };
+		12D78679182C31F700C0FD09 /* btn-singleview-savespot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot@2x.png"; sourceTree = "<group>"; };
 		12D7F8C818117CB400FC4CD3 /* CountyListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountyListController.h; sourceTree = "<group>"; };
 		12D7F8C918117CB400FC4CD3 /* CountyListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountyListController.m; sourceTree = "<group>"; };
 		12D7F8CB18118E5A00FC4CD3 /* FilterResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterResultsController.h; sourceTree = "<group>"; };
@@ -381,10 +418,10 @@
 		12AEC87917C3DC2E0001C5CD = {
 			isa = PBXGroup;
 			children = (
+				12D7860C182C22BF00C0FD09 /* fonts */,
 				122C45BE1829F365006750AE /* intro_bg.m4v */,
 				12BEC66B182AD6280037AC66 /* intro_bg.mov */,
 				12BD0A3D180E970F000EAA52 /* img */,
-				126E7FF41806117E00E7BFE0 /* fonts */,
 				126E7FF218060C0400E7BFE0 /* data */,
 				12AEC88B17C3DC2E0001C5CD /* Iowa Counties */,
 				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
@@ -464,6 +501,8 @@
 				12AEC88E17C3DC2E0001C5CD /* InfoPlist.strings */,
 				12AEC89117C3DC2E0001C5CD /* main.m */,
 				12AEC89317C3DC2E0001C5CD /* Iowa Counties-Prefix.pch */,
+				12D7861F182C265100C0FD09 /* MSLabel.h */,
+				12D78620182C265100C0FD09 /* MSLabel.m */,
 			);
 			name = "Supporting Files";
 			path = "Iowa Counties";
@@ -472,6 +511,7 @@
 		12BD0A3D180E970F000EAA52 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				12D78669182C318300C0FD09 /* btns-singleview */,
 				125DD00618299B63003B6758 /* loading.png */,
 				12BD0A3E180E970F000EAA52 /* Default-568h@2x.png */,
 				12BD0A3F180E970F000EAA52 /* Default.png */,
@@ -620,6 +660,40 @@
 			path = half;
 			sourceTree = "<group>";
 		};
+		12D7860C182C22BF00C0FD09 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				12D7860D182C22BF00C0FD09 /* Gotham-Black.ttf */,
+				12D7860E182C22BF00C0FD09 /* Gotham-BlackItalic.ttf */,
+				12D7860F182C22BF00C0FD09 /* Gotham-Bold.ttf */,
+				12D78610182C22BF00C0FD09 /* Gotham-BoldItalic.ttf */,
+				12D78611182C22BF00C0FD09 /* Gotham-Book.ttf */,
+				12D78612182C22BF00C0FD09 /* Gotham-BookItalic.ttf */,
+				12D78613182C22BF00C0FD09 /* Gotham-Light.ttf */,
+				12D78614182C22BF00C0FD09 /* Gotham-XLight.ttf */,
+				12D78615182C22BF00C0FD09 /* Gotham-XLightItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		12D78669182C318300C0FD09 /* btns-singleview */ = {
+			isa = PBXGroup;
+			children = (
+				12D78676182C31F700C0FD09 /* btn-singleview-savespot-active.png */,
+				12D78677182C31F700C0FD09 /* btn-singleview-savespot-active@2x.png */,
+				12D78678182C31F700C0FD09 /* btn-singleview-savespot.png */,
+				12D78679182C31F700C0FD09 /* btn-singleview-savespot@2x.png */,
+				12D7866A182C318300C0FD09 /* btn-singleview-address.png */,
+				12D7866B182C318300C0FD09 /* btn-singleview-email.png */,
+				12D7866C182C318300C0FD09 /* btn-singleview-fb.png */,
+				12D7866D182C318300C0FD09 /* btn-singleview-phone.png */,
+				12D7866E182C318300C0FD09 /* btn-singleview-twitter.png */,
+				12D7866F182C318300C0FD09 /* btn-singleview-www.png */,
+			);
+			name = "btns-singleview";
+			path = "ui/btns-singleview";
+			sourceTree = "<group>";
+		};
 		12D7F8C718117C2800FC4CD3 /* FilterListControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,12 +808,14 @@
 				12BD0AC4180E9710000EAA52 /* marker-iowa_great_place.png in Resources */,
 				12BD0AAD180E9710000EAA52 /* details.png in Resources */,
 				12BD0AB0180E9710000EAA52 /* marker-amphitheater.png in Resources */,
+				12D78619182C22BF00C0FD09 /* Gotham-BoldItalic.ttf in Resources */,
 				12BD0B01180E9710000EAA52 /* btn-single-address@2x.png in Resources */,
 				12C12E6A182B643600CF5ABE /* Cards.storyboard in Resources */,
 				12BD0AAF180E9710000EAA52 /* justadded.png in Resources */,
 				12BD0AEA180E9710000EAA52 /* AppIcon40x40@2x.png in Resources */,
 				12BD0AC8180E9710000EAA52 /* marker-local_landmark.png in Resources */,
 				12BD0ACE180E9710000EAA52 /* marker-museum.png in Resources */,
+				12D7867C182C31F700C0FD09 /* btn-singleview-savespot.png in Resources */,
 				12BD0AAE180E9710000EAA52 /* details2.png in Resources */,
 				12BD0ACA180E9710000EAA52 /* marker-medal_of_honor.png in Resources */,
 				12BD0AAC180E9710000EAA52 /* Default@2x.png in Resources */,
@@ -756,15 +832,17 @@
 				12BD0AB2180E9710000EAA52 /* marker-art.png in Resources */,
 				12BD0AE2180E9710000EAA52 /* marker-zoo.png in Resources */,
 				12BD0B0D180E9710000EAA52 /* btn-single-address.png in Resources */,
+				12D78618182C22BF00C0FD09 /* Gotham-Bold.ttf in Resources */,
 				12BD0AFF180E9710000EAA52 /* btn-savedspots@2x.png in Resources */,
+				12D7867A182C31F700C0FD09 /* btn-singleview-savespot-active.png in Resources */,
 				12BD0AC5180E9710000EAA52 /* marker-iowa_great_place@2x.png in Resources */,
 				12BD0AC6180E9710000EAA52 /* marker-local_government.png in Resources */,
 				12BD0AEB180E9710000EAA52 /* AppIcon60x60.png in Resources */,
 				12BD0ACC180E9710000EAA52 /* marker-movie.png in Resources */,
+				12D7861E182C22BF00C0FD09 /* Gotham-XLightItalic.ttf in Resources */,
 				12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
 				125DD00718299B63003B6758 /* loading.png in Resources */,
-				126E7FF51806117E00E7BFE0 /* fonts in Resources */,
 				12BD0AC9180E9710000EAA52 /* marker-local_landmark@2x.png in Resources */,
 				12BD0AFC180E9710000EAA52 /* btn-planatrip.png in Resources */,
 				12BD0AE7180E9710000EAA52 /* AppIcon29x29.png in Resources */,
@@ -777,25 +855,33 @@
 				12BD0B0A180E9710000EAA52 /* btn-tours@2x.png in Resources */,
 				12BD0ADC180E9710000EAA52 /* marker-theater.png in Resources */,
 				12BD0AE3180E9710000EAA52 /* marker-zoo@2x.png in Resources */,
-				126E7FF318060C0400E7BFE0 /* data in Resources */,
 				12BD0AC0180E9710000EAA52 /* marker-historical_society.png in Resources */,
 				12BD0B04180E9710000EAA52 /* btn-single-mail@2x.png in Resources */,
 				12BD0AFE180E9710000EAA52 /* btn-savedspots.png in Resources */,
 				12BD0AF4180E9710000EAA52 /* btn-aroundme.png in Resources */,
 				12BD0AEC180E9710000EAA52 /* AppIcon60x60@2x.png in Resources */,
 				12BD0AF6180E9710000EAA52 /* btn-backtomap.png in Resources */,
+				12D7861D182C22BF00C0FD09 /* Gotham-XLight.ttf in Resources */,
 				12BD0AEF180E9710000EAA52 /* iTunesArtwork.png in Resources */,
+				12D78672182C318300C0FD09 /* btn-singleview-fb.png in Resources */,
+				12D7867D182C31F700C0FD09 /* btn-singleview-savespot@2x.png in Resources */,
+				12D78617182C22BF00C0FD09 /* Gotham-BlackItalic.ttf in Resources */,
 				12BD0AB1180E9710000EAA52 /* marker-amphitheater@2x.png in Resources */,
 				12BD0AAB180E9710000EAA52 /* Default.png in Resources */,
 				12BD0AF0180E9710000EAA52 /* iTunesArtwork@2x.png in Resources */,
 				12BD0AF7180E9710000EAA52 /* btn-explore.png in Resources */,
+				12D7861B182C22BF00C0FD09 /* Gotham-BookItalic.ttf in Resources */,
+				12D78671182C318300C0FD09 /* btn-singleview-email.png in Resources */,
+				12D78670182C318300C0FD09 /* btn-singleview-address.png in Resources */,
+				12D7861A182C22BF00C0FD09 /* Gotham-Book.ttf in Resources */,
 				12BD0AFD180E9710000EAA52 /* btn-planatrip@2x.png in Resources */,
 				12BD0AE9180E9710000EAA52 /* AppIcon40x40.png in Resources */,
 				12BD0AB7180E9710000EAA52 /* marker-barn@2x.png in Resources */,
 				12BD0AD0180E9710000EAA52 /* marker-national_historic_landmark.png in Resources */,
-				122C45BF1829F365006750AE /* intro_bg.m4v in Resources */,
 				12BD0AB3180E9710000EAA52 /* marker-art@2x.png in Resources */,
 				12BEC66C182AD6290037AC66 /* intro_bg.mov in Resources */,
+				12D78616182C22BF00C0FD09 /* Gotham-Black.ttf in Resources */,
+				12D78674182C318300C0FD09 /* btn-singleview-twitter.png in Resources */,
 				12BD0ADB180E9710000EAA52 /* marker-science@2x.png in Resources */,
 				121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */,
 				12BD0AE4180E9710000EAA52 /* menu.png in Resources */,
@@ -805,14 +891,18 @@
 				12BD0B00180E9710000EAA52 /* btn-single-address.png in Resources */,
 				12BD0AD1180E9710000EAA52 /* marker-national_historic_landmark@2x.png in Resources */,
 				12BD0ABB180E9710000EAA52 /* marker-cultural_district@2x.png in Resources */,
+				12D7861C182C22BF00C0FD09 /* Gotham-Light.ttf in Resources */,
 				12BD0B0C180E9710000EAA52 /* btnbgb.png in Resources */,
 				12BD0AE6180E9710000EAA52 /* transparent.png in Resources */,
 				12BD0ADD180E9710000EAA52 /* marker-theater@2x.png in Resources */,
 				12BD0AF2180E9710000EAA52 /* retina4inch.png in Resources */,
 				12BD0AB6180E9710000EAA52 /* marker-barn.png in Resources */,
+				12D78673182C318300C0FD09 /* btn-singleview-phone.png in Resources */,
+				12D7867B182C31F700C0FD09 /* btn-singleview-savespot-active@2x.png in Resources */,
 				12BD0AFA180E9710000EAA52 /* btn-myprofile.png in Resources */,
 				12BD0AF9180E9710000EAA52 /* btn-mainmenu.png in Resources */,
 				12BD0AF1180E9710000EAA52 /* retina.png in Resources */,
+				12D78675182C318300C0FD09 /* btn-singleview-www.png in Resources */,
 				12BD0ABD180E9710000EAA52 /* marker-famous_iowan@2x.png in Resources */,
 				12BD0AB4180E9710000EAA52 /* marker-arts_council.png in Resources */,
 				12BD0ACD180E9710000EAA52 /* marker-movie@2x.png in Resources */,
@@ -843,6 +933,7 @@
 				12F1B6E1182AE4D9006A221C /* FavoritesTableViewController.m in Sources */,
 				12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */,
 				126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */,
+				12D78621182C265100C0FD09 /* MSLabel.m in Sources */,
 				127042B1182046790049FEC5 /* MDDirectionService.m in Sources */,
 				12F1B6DE182AD882006A221C /* MainMenuViewController.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,

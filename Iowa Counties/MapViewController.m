@@ -175,13 +175,21 @@
 
 
 -(void) show_context_list {
-    
-    
+    NSMutableArray* visible_locations = [[NSMutableArray alloc] init];
+    GMSProjection* projection = self.map_view.projection;
+    for(int i=0; i<[self.map_view.markers count]; i++){
+        GMSMarker* m = [self.map_view.markers objectAtIndex:i];
+        if ([projection containsCoordinate: m.position]){
+            [visible_locations addObject: m.userData];
+        }
+    }
+    [self.context_list setResults: visible_locations];
+
     
     
     [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab.frame = CGRectMake(40,40,40,40);
-        self.context_list.view.frame = CGRectOffset(self.view.frame, 80, 0);
+        self.context_tab.frame = CGRectMake(0,40,40,40);
+        self.context_list.view.frame = CGRectOffset(self.view.frame, 40, 0);
     }];
 }
 
@@ -751,7 +759,7 @@
         
     }
 
-    
+    /*
     // TITLE LABEL ------------------------------------------------------------------------------
     NSString* tText = [NSString stringWithFormat:@"\n%@", [location objectForKey:@"name"]];
     self.detail_title.numberOfLines = 0;
@@ -777,7 +785,7 @@
     [detailStyle setLineHeightMultiple:1.0] ;
     detailStyle.minimumLineHeight = 0.1;
     detailStyle.maximumLineHeight = 150;
-    /*
+    
     self.detail_text.attributedText  = [[NSAttributedString alloc] initWithString:dtText attributes:@{
         NSFontAttributeName: [UIFont fontWithName:@"Avenir-Book" size:14.0],
         NSParagraphStyleAttributeName: detailStyle
@@ -811,17 +819,18 @@
     NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
                          @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.height, document.body.clientHeight)"] integerValue];
     
-    CGRect tf = self.detail_title.frame;
-    CGRect f = self.detail_text.frame;
-    self.detail_text.frame = CGRectMake(f.origin.x, f.origin.y + tf.size.height -50, f.size.width, height+200);
+    //CGRect tf = self.detail_title.frame;
+    //CGRect f = self.detail_text.frame;
+    //self.detail_text.frame = CGRectMake(f.origin.x, f.origin.y + tf.size.height -50, f.size.width, height+200);
     
-    //[self.detail_text sizeToFit];
+    [self.detail_text sizeToFit];
     /*
     CGRect tf = self.detail_title.frame;
     CGRect f = self.detail_text.frame;
     self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
     */
     // DETAIL VIEW CONTENT SIZE
+    CGRect f = self.detail_text.frame;
     CGFloat content_height = f.origin.y + f.size.height;
     CGSize content_size = CGSizeMake(320.0, content_height);
     self.detail_view.contentSize = content_size;

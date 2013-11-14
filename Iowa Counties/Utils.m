@@ -23,8 +23,12 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
     NSLog(@"read Error: %@", err ) ;
+    if (err)
+        return nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&err];
     NSLog(@"json Error: %@", err ) ;
+    if (err)
+        return nil;
     return json;
 }
 

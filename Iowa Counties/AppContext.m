@@ -43,7 +43,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
         //first start
         NSLog(@"creating blank favorites list");
         self.favorites = [[NSMutableDictionary alloc] init];
-        [self saveFavorites];
+        //[self saveFavorites];
     }
     
     _currentLocation.latitude = 0.0;

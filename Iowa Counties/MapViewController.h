@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "ContextList.h"
 
 @interface MapViewController : UIViewController <GMSMapViewDelegate, UIScrollViewDelegate, CLLocationManagerDelegate>
 
 @property(strong, atomic) NSString* selectedLocationID;
 
+@property (strong, nonatomic) IBOutlet UIButton *context_tab;
+@property (strong, atomic) ContextList* context_list;
 
 - (IBAction)button_hide_pressed:(id)sender;
 - (IBAction)button_show_pressed:(id)sender;

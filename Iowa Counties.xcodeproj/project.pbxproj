@@ -12,6 +12,11 @@
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
 		122C45AF1829CCED006750AE /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C45AE1829CCED006750AE /* TitleScreenViewController.m */; };
 		122C45B31829D138006750AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122C45B21829D138006750AE /* MediaPlayer.framework */; };
+		123DA01018347794006A1D73 /* FYIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DA00F18347794006A1D73 /* FYIScreen.m */; };
+		123DA01C18347DBA006A1D73 /* ContextList.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DA01A18347DBA006A1D73 /* ContextList.m */; };
+		123DA01D18347DBA006A1D73 /* ContextList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123DA01B18347DBA006A1D73 /* ContextList.xib */; };
+		123DA02118348CDE006A1D73 /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DA01F18348CDE006A1D73 /* DetailView.m */; };
+		123DA02218348CDE006A1D73 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123DA02018348CDE006A1D73 /* DetailView.xib */; };
 		126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FF91806146E00E7BFE0 /* AppContext.m */; };
 		126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FFC180632EA00E7BFE0 /* Utils.m */; };
 		127042B1182046790049FEC5 /* MDDirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 127042B0182046790049FEC5 /* MDDirectionService.m */; };
@@ -199,6 +204,14 @@
 		122C45AD1829CCED006750AE /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
 		122C45AE1829CCED006750AE /* TitleScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScreenViewController.m; sourceTree = "<group>"; };
 		122C45B21829D138006750AE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		123DA00E18347794006A1D73 /* FYIScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYIScreen.h; sourceTree = "<group>"; };
+		123DA00F18347794006A1D73 /* FYIScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYIScreen.m; sourceTree = "<group>"; };
+		123DA01918347DBA006A1D73 /* ContextList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextList.h; sourceTree = "<group>"; };
+		123DA01A18347DBA006A1D73 /* ContextList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextList.m; sourceTree = "<group>"; };
+		123DA01B18347DBA006A1D73 /* ContextList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContextList.xib; sourceTree = "<group>"; };
+		123DA01E18348CDE006A1D73 /* DetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
+		123DA01F18348CDE006A1D73 /* DetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
+		123DA02018348CDE006A1D73 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		126E7FF81806146E00E7BFE0 /* AppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppContext.h; sourceTree = "<group>"; };
 		126E7FF91806146E00E7BFE0 /* AppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppContext.m; sourceTree = "<group>"; };
@@ -436,6 +449,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123DA01118347D17006A1D73 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		12AEC87917C3DC2E0001C5CD = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +511,7 @@
 		12AEC88B17C3DC2E0001C5CD /* Iowa Counties */ = {
 			isa = PBXGroup;
 			children = (
+				123DA01118347D17006A1D73 /* views */,
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
 				12E2E656182B26960087F06A /* screens */,
 				126E7FF81806146E00E7BFE0 /* AppContext.h */,
@@ -579,6 +600,14 @@
 				12F1B6DD182AD882006A221C /* MainMenuViewController.m */,
 				12C12E6B182B755600CF5ABE /* CardScreen.h */,
 				12C12E6C182B755600CF5ABE /* CardScreen.m */,
+				123DA00E18347794006A1D73 /* FYIScreen.h */,
+				123DA00F18347794006A1D73 /* FYIScreen.m */,
+				123DA01918347DBA006A1D73 /* ContextList.h */,
+				123DA01A18347DBA006A1D73 /* ContextList.m */,
+				123DA01B18347DBA006A1D73 /* ContextList.xib */,
+				123DA01E18348CDE006A1D73 /* DetailView.h */,
+				123DA02018348CDE006A1D73 /* DetailView.xib */,
+				123DA01F18348CDE006A1D73 /* DetailView.m */,
 			);
 			name = screens;
 			sourceTree = "<group>";
@@ -858,6 +887,7 @@
 				12F884F3182D758A0082C4AA /* marker-historic_site.png in Resources */,
 				12F88545182D758A0082C4AA /* btnbgb.png in Resources */,
 				12F88516182D758A0082C4AA /* marker-university@2x.png in Resources */,
+				123DA02218348CDE006A1D73 /* DetailView.xib in Resources */,
 				12F8850E182D758A0082C4AA /* marker-scenic_byway@2x.png in Resources */,
 				12F88503182D758A0082C4AA /* marker-museum.png in Resources */,
 				12F884F4182D758A0082C4AA /* marker-historic_site@2x.png in Resources */,
@@ -948,6 +978,7 @@
 				12D78616182C22BF00C0FD09 /* Gotham-Black.ttf in Resources */,
 				12F884DD182D758A0082C4AA /* Default-568h@2x.png in Resources */,
 				12F8850D182D758A0082C4AA /* marker-scenic_byway.png in Resources */,
+				123DA01D18347DBA006A1D73 /* ContextList.xib in Resources */,
 				12F8851F182D758A0082C4AA /* AppIcon40x40@2x.png in Resources */,
 				12F884E8182D758A0082C4AA /* marker-art@2x.png in Resources */,
 				12F8851B182D758A0082C4AA /* transparent.png in Resources */,
@@ -970,6 +1001,7 @@
 			files = (
 				12F073AF1807131C00CDB785 /* CategoryListController.m in Sources */,
 				12D7F8CA18117CB400FC4CD3 /* CountyListController.m in Sources */,
+				123DA02118348CDE006A1D73 /* DetailView.m in Sources */,
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				12F1B6E1182AE4D9006A221C /* FavoritesTableViewController.m in Sources */,
 				12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */,
@@ -977,7 +1009,9 @@
 				12D78621182C265100C0FD09 /* MSLabel.m in Sources */,
 				127042B1182046790049FEC5 /* MDDirectionService.m in Sources */,
 				12F1B6DE182AD882006A221C /* MainMenuViewController.m in Sources */,
+				123DA01C18347DBA006A1D73 /* ContextList.m in Sources */,
 				12AEC89617C3DC2E0001C5CD /* AppDelegate.m in Sources */,
+				123DA01018347794006A1D73 /* FYIScreen.m in Sources */,
 				126E7FFD180632EA00E7BFE0 /* Utils.m in Sources */,
 				127042B418204C0A0049FEC5 /* TripPlanerViewController.m in Sources */,
 				12D7F8CD18118E5A00FC4CD3 /* FilterResultsController.m in Sources */,

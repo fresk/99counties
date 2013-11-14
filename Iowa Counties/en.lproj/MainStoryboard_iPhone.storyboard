@@ -34,7 +34,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="crossDissolve" id="2Ic-gQ-Zxf"/>
+                                            <segue destination="3nL-DT-2ha" kind="modal" id="Pca-AS-CO3"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-tg-aip">
@@ -107,7 +107,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MG-H6-IPy">
-                                        <rect key="frame" x="160" y="332" width="160" height="166"/>
+                                        <rect key="frame" x="160" y="332.00000017881393" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="btn-myprofile.png">
@@ -548,9 +548,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="QpN-i5-N3V" kind="push" id="lga-ga-0Wu"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -568,6 +565,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOO-GQ-0Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="-3835"/>
+        </scene>
+        <!--Screen-->
+        <scene sceneID="F3E-Bf-VD3">
+            <objects>
+                <viewController id="ZF3-d7-Uhd" customClass="FYIScreen" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="daA-YH-UMD"/>
+                        <viewControllerLayoutGuide type="bottom" id="W7U-1I-MCn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uJK-yy-H6G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GkY-xt-qGy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Kh-FkH" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mL-D5-txQ">
+                                <rect key="frame" x="280" y="40" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="btn-mainmenu.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="show_context_list_btn:" destination="ZF3-d7-Uhd" eventType="touchUpInside" id="9d6-Kg-pm1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m64-0a-qjp"/>
+                    <connections>
+                        <outlet property="context_tab" destination="2mL-D5-txQ" id="W2A-NH-bBB"/>
+                        <outlet property="map_view" destination="mj4-Kh-FkH" id="iMg-Zl-lky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ct-Mb-dnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="-3572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9KW-bQ-tz1">
@@ -729,7 +774,6 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cXw-5l-pGw" appends="YES" id="J4t-aJ-GRv"/>
-                                            <outletCollection property="gestureRecognizers" destination="ygH-gw-gGp" appends="YES" id="dBg-Uj-xJt"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -797,13 +841,23 @@
                                     <action selector="button_back_pressed:" destination="QpN-i5-N3V" eventType="touchUpInside" id="dzd-TU-LZx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nop-Iy-Bic">
+                                <rect key="frame" x="280" y="40" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="btn-mainmenu.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="show_context_list_btn:" destination="QpN-i5-N3V" eventType="touchUpInside" id="ybn-ZZ-TAS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="tQP-Lr-QZ6"/>
                     <connections>
-                        <outlet property="backgroundViewPinchRecognizer" destination="ygH-gw-gGp" id="zxJ-ck-AMz"/>
                         <outlet property="background_layer" destination="ag6-LV-xvk" id="EzR-rw-XU3"/>
+                        <outlet property="context_tab" destination="nop-Iy-Bic" id="DBp-dk-kYG"/>
                         <outlet property="detailViewTapRecognizer" destination="Iho-1y-urs" id="DME-l0-XBl"/>
                         <outlet property="detail_text" destination="sD6-Wb-xns" id="22r-Dm-HcU"/>
                         <outlet property="detail_title" destination="2wk-On-vNH" id="UGI-RX-VXR"/>
@@ -830,11 +884,6 @@
                         <action selector="swipeUpOnbackgroundView:" destination="QpN-i5-N3V" id="wbh-SU-N4T"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pinchGestureRecognizer id="ygH-gw-gGp">
-                    <connections>
-                        <action selector="pinchOnBackgroundView:" destination="QpN-i5-N3V" id="P0P-1F-OCi"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1790" y="-2417"/>
         </scene>
@@ -906,7 +955,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="CityCell" textLabel="6Yh-Gd-7fq" imageView="8De-jU-9Ja" style="IBUITableViewCellStyleDefault" id="isX-VE-WvK" customClass="CategoryListViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="isX-VE-WvK" id="vK5-eZ-rFK">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
@@ -993,8 +1042,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="24e-sP-kHk"/>
         <segue reference="SdS-3f-o6S"/>
+        <segue reference="Pca-AS-CO3"/>
         <segue reference="0he-SZ-SFh"/>
     </inferredMetricsTieBreakers>
 </document>

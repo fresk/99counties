@@ -112,17 +112,14 @@
     
     [self fitBounds];
     [self initImagePager];
+    [self init_context_list];
 }
-
-
-
-
 
 
 - (void) viewDidAppear:(BOOL)animated {
     if (self.selectedLocationID == nil){
         comingFromListView = FALSE;
-        [ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
+        //[ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
         locationManager.distanceFilter = 50.0f; // whenever we move
@@ -144,6 +141,59 @@
 - (void) viewWillDisappear:(BOOL)animated {
     self.selectedLocationID = nil;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+-(void) init_context_list {
+    self.context_list = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
+    self.context_tab.frame = CGRectMake(280,40,40,40);
+    self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
+    [self.view addSubview:self.context_list.view];
+}
+
+
+
+
+- (IBAction)show_context_list_btn:(id)sender {
+    if (self.context_list.view.frame.origin.x > 310){
+        [self show_context_list];
+    }
+    else {
+        [self hide_context_list];
+    }
+}
+
+
+-(void) show_context_list {
+    
+    
+    
+    
+    [UIView animateWithDuration:1.0 animations:^(void){
+        self.context_tab.frame = CGRectMake(40,40,40,40);
+        self.context_list.view.frame = CGRectOffset(self.view.frame, 80, 0);
+    }];
+}
+
+
+-(void) hide_context_list {
+    [UIView animateWithDuration:1.0 animations:^(void){
+        self.context_tab.frame = CGRectMake(280,40,40,40);
+        self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
+    }];
+}
+
+
 
 
 
@@ -245,6 +295,11 @@
 
 -(void)setResults: (NSArray*) results
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.context_list setResults: results];
+    
+    });
+    
     NSDictionary* item;
     for (item in results){
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -350,6 +405,15 @@
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
     [self.map_view animateWithCameraUpdate:update];
     [manager stopUpdatingLocation];
+    
+    CLLocationCoordinate2D cloc = newLocation.coordinate;
+    [ctx fetchResources:@"/nearby"
+             withParams:@{
+                          @"lat": [NSNumber numberWithDouble: cloc.latitude],
+                          @"lng": [NSNumber numberWithDouble: cloc.longitude]
+                          }
+            setResultOn: self];
+
     
 }
 
@@ -745,7 +809,7 @@
     self.detail_text.backgroundColor = [UIColor clearColor];
     //[self.detail_text loadHTMLString: embedHTML baseURL: nil];
     NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
-                         @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight)"] integerValue];
+                         @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.height, document.body.clientHeight)"] integerValue];
     
     CGRect tf = self.detail_title.frame;
     CGRect f = self.detail_text.frame;
@@ -761,10 +825,12 @@
     CGFloat content_height = f.origin.y + f.size.height;
     CGSize content_size = CGSizeMake(320.0, content_height);
     self.detail_view.contentSize = content_size;
-     
     
 
 }
+
+
+
 
 
 

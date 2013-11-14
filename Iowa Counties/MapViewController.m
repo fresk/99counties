@@ -153,7 +153,7 @@
     self.context_list = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
     self.context_tab.frame = CGRectMake(280,40,40,40);
     self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-
+    
     [self addChildViewController:self.context_list];
     [self.view addSubview:self.context_list.view];
 }

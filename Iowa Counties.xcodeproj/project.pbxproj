@@ -69,142 +69,162 @@
 		12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F073B118071ADE00CDB785 /* CategoryListViewCell.m */; };
 		12F1B6DE182AD882006A221C /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F1B6DD182AD882006A221C /* MainMenuViewController.m */; };
 		12F1B6E1182AE4D9006A221C /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F1B6E0182AE4D9006A221C /* FavoritesTableViewController.m */; };
-		12F1D1E01834D63C005D1D9B /* btn-intro-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1531834D63C005D1D9B /* btn-intro-go.png */; };
-		12F1D1E11834D63C005D1D9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1541834D63C005D1D9B /* Default-568h@2x.png */; };
-		12F1D1E21834D63C005D1D9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1551834D63C005D1D9B /* Default.png */; };
-		12F1D1E31834D63C005D1D9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1561834D63C005D1D9B /* Default@2x.png */; };
-		12F1D1E41834D63C005D1D9B /* details.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1571834D63C005D1D9B /* details.png */; };
-		12F1D1E51834D63C005D1D9B /* details2.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1581834D63C005D1D9B /* details2.png */; };
-		12F1D1E61834D63C005D1D9B /* intro_bg.mov in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1591834D63C005D1D9B /* intro_bg.mov */; };
-		12F1D1E71834D63C005D1D9B /* justadded.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D15A1834D63C005D1D9B /* justadded.png */; };
-		12F1D1E81834D63C005D1D9B /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D15B1834D63C005D1D9B /* loading.png */; };
-		12F1D1E91834D63C005D1D9B /* marker-amphitheater.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D15D1834D63C005D1D9B /* marker-amphitheater.png */; };
-		12F1D1EA1834D63C005D1D9B /* marker-amphitheater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D15E1834D63C005D1D9B /* marker-amphitheater@2x.png */; };
-		12F1D1EB1834D63C005D1D9B /* marker-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D15F1834D63C005D1D9B /* marker-art.png */; };
-		12F1D1EC1834D63C005D1D9B /* marker-art@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1601834D63C005D1D9B /* marker-art@2x.png */; };
-		12F1D1ED1834D63C005D1D9B /* marker-arts_council.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1611834D63C005D1D9B /* marker-arts_council.png */; };
-		12F1D1EE1834D63C005D1D9B /* marker-arts_council@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1621834D63C005D1D9B /* marker-arts_council@2x.png */; };
-		12F1D1EF1834D63C005D1D9B /* marker-barn.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1631834D63C005D1D9B /* marker-barn.png */; };
-		12F1D1F01834D63C005D1D9B /* marker-barn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1641834D63C005D1D9B /* marker-barn@2x.png */; };
-		12F1D1F11834D63C005D1D9B /* marker-botany.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1651834D63C005D1D9B /* marker-botany.png */; };
-		12F1D1F21834D63C005D1D9B /* marker-botany@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1661834D63C005D1D9B /* marker-botany@2x.png */; };
-		12F1D1F31834D63C005D1D9B /* marker-cultural_district.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1671834D63C005D1D9B /* marker-cultural_district.png */; };
-		12F1D1F41834D63C005D1D9B /* marker-cultural_district@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1681834D63C005D1D9B /* marker-cultural_district@2x.png */; };
-		12F1D1F51834D63C005D1D9B /* marker-famous_iowan.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1691834D63C005D1D9B /* marker-famous_iowan.png */; };
-		12F1D1F61834D63C005D1D9B /* marker-famous_iowan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16A1834D63C005D1D9B /* marker-famous_iowan@2x.png */; };
-		12F1D1F71834D63C005D1D9B /* marker-historic_site.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16B1834D63C005D1D9B /* marker-historic_site.png */; };
-		12F1D1F81834D63C005D1D9B /* marker-historic_site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16C1834D63C005D1D9B /* marker-historic_site@2x.png */; };
-		12F1D1F91834D63C005D1D9B /* marker-historical_society.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16D1834D63C005D1D9B /* marker-historical_society.png */; };
-		12F1D1FA1834D63C005D1D9B /* marker-historical_society@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16E1834D63C005D1D9B /* marker-historical_society@2x.png */; };
-		12F1D1FB1834D63C005D1D9B /* marker-iowa_award.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D16F1834D63C005D1D9B /* marker-iowa_award.png */; };
-		12F1D1FC1834D63C005D1D9B /* marker-iowa_award@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1701834D63C005D1D9B /* marker-iowa_award@2x.png */; };
-		12F1D1FD1834D63C005D1D9B /* marker-iowa_great_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1711834D63C005D1D9B /* marker-iowa_great_place.png */; };
-		12F1D1FE1834D63C005D1D9B /* marker-iowa_great_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1721834D63C005D1D9B /* marker-iowa_great_place@2x.png */; };
-		12F1D1FF1834D63C005D1D9B /* marker-local_government.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1731834D63C005D1D9B /* marker-local_government.png */; };
-		12F1D2001834D63C005D1D9B /* marker-local_government@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1741834D63C005D1D9B /* marker-local_government@2x.png */; };
-		12F1D2011834D63C005D1D9B /* marker-local_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1751834D63C005D1D9B /* marker-local_landmark.png */; };
-		12F1D2021834D63C005D1D9B /* marker-local_landmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1761834D63C005D1D9B /* marker-local_landmark@2x.png */; };
-		12F1D2031834D63C005D1D9B /* marker-medal_of_honor.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1771834D63C005D1D9B /* marker-medal_of_honor.png */; };
-		12F1D2041834D63C005D1D9B /* marker-medal_of_honor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1781834D63C005D1D9B /* marker-medal_of_honor@2x.png */; };
-		12F1D2051834D63C005D1D9B /* marker-movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1791834D63C005D1D9B /* marker-movie.png */; };
-		12F1D2061834D63C005D1D9B /* marker-movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17A1834D63C005D1D9B /* marker-movie@2x.png */; };
-		12F1D2071834D63C005D1D9B /* marker-museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17B1834D63C005D1D9B /* marker-museum.png */; };
-		12F1D2081834D63C005D1D9B /* marker-museum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17C1834D63C005D1D9B /* marker-museum@2x.png */; };
-		12F1D2091834D63C005D1D9B /* marker-national_historic_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17D1834D63C005D1D9B /* marker-national_historic_landmark.png */; };
-		12F1D20A1834D63C005D1D9B /* marker-national_historic_landmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17E1834D63C005D1D9B /* marker-national_historic_landmark@2x.png */; };
-		12F1D20B1834D63C005D1D9B /* marker-national_historical_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D17F1834D63C005D1D9B /* marker-national_historical_register.png */; };
-		12F1D20C1834D63C005D1D9B /* marker-national_historical_register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1801834D63C005D1D9B /* marker-national_historical_register@2x.png */; };
-		12F1D20D1834D63C005D1D9B /* marker-performance.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1811834D63C005D1D9B /* marker-performance.png */; };
-		12F1D20E1834D63C005D1D9B /* marker-performance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1821834D63C005D1D9B /* marker-performance@2x.png */; };
-		12F1D20F1834D63C005D1D9B /* marker-riverwalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1831834D63C005D1D9B /* marker-riverwalk.png */; };
-		12F1D2101834D63C005D1D9B /* marker-riverwalk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1841834D63C005D1D9B /* marker-riverwalk@2x.png */; };
-		12F1D2111834D63C005D1D9B /* marker-scenic_byway.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1851834D63C005D1D9B /* marker-scenic_byway.png */; };
-		12F1D2121834D63C005D1D9B /* marker-scenic_byway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1861834D63C005D1D9B /* marker-scenic_byway@2x.png */; };
-		12F1D2131834D63C005D1D9B /* marker-science.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1871834D63C005D1D9B /* marker-science.png */; };
-		12F1D2141834D63C005D1D9B /* marker-science@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1881834D63C005D1D9B /* marker-science@2x.png */; };
-		12F1D2151834D63C005D1D9B /* marker-theater.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1891834D63C005D1D9B /* marker-theater.png */; };
-		12F1D2161834D63C005D1D9B /* marker-theater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18A1834D63C005D1D9B /* marker-theater@2x.png */; };
-		12F1D2171834D63C005D1D9B /* marker-underground_railroad.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18B1834D63C005D1D9B /* marker-underground_railroad.png */; };
-		12F1D2181834D63C005D1D9B /* marker-underground_railroad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18C1834D63C005D1D9B /* marker-underground_railroad@2x.png */; };
-		12F1D2191834D63C005D1D9B /* marker-university.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18D1834D63C005D1D9B /* marker-university.png */; };
-		12F1D21A1834D63C005D1D9B /* marker-university@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18E1834D63C005D1D9B /* marker-university@2x.png */; };
-		12F1D21B1834D63C005D1D9B /* marker-zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D18F1834D63C005D1D9B /* marker-zoo.png */; };
-		12F1D21C1834D63C005D1D9B /* marker-zoo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1901834D63C005D1D9B /* marker-zoo@2x.png */; };
-		12F1D21D1834D63C005D1D9B /* menu-findspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1911834D63C005D1D9B /* menu-findspots.png */; };
-		12F1D21E1834D63C005D1D9B /* menu-findspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1921834D63C005D1D9B /* menu-findspots@2x.png */; };
-		12F1D21F1834D63C005D1D9B /* menu-savedspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1931834D63C005D1D9B /* menu-savedspots.png */; };
-		12F1D2201834D63C005D1D9B /* menu-savedspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1941834D63C005D1D9B /* menu-savedspots@2x.png */; };
-		12F1D2211834D63C005D1D9B /* menu-top-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1951834D63C005D1D9B /* menu-top-img.png */; };
-		12F1D2221834D63C005D1D9B /* menu-top-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1961834D63C005D1D9B /* menu-top-img@2x.png */; };
-		12F1D2231834D63C005D1D9B /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1971834D63C005D1D9B /* menu.png */; };
-		12F1D2241834D63C005D1D9B /* topbar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1981834D63C005D1D9B /* topbar-bg.png */; };
-		12F1D2251834D63C005D1D9B /* topbar-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1991834D63C005D1D9B /* topbar-bg@2x.png */; };
-		12F1D2261834D63C005D1D9B /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D19A1834D63C005D1D9B /* tours.png */; };
-		12F1D2271834D63C005D1D9B /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D19B1834D63C005D1D9B /* transparent.png */; };
-		12F1D2281834D63C005D1D9B /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D19E1834D63C005D1D9B /* AppIcon29x29.png */; };
-		12F1D2291834D63C005D1D9B /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D19F1834D63C005D1D9B /* AppIcon29x29@2x.png */; };
-		12F1D22A1834D63C005D1D9B /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A01834D63C005D1D9B /* AppIcon40x40.png */; };
-		12F1D22B1834D63C005D1D9B /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A11834D63C005D1D9B /* AppIcon40x40@2x.png */; };
-		12F1D22C1834D63C005D1D9B /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A21834D63C005D1D9B /* AppIcon60x60.png */; };
-		12F1D22D1834D63C005D1D9B /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A31834D63C005D1D9B /* AppIcon60x60@2x.png */; };
-		12F1D22E1834D63C005D1D9B /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A41834D63C005D1D9B /* AppIcon76x76.png */; };
-		12F1D22F1834D63C005D1D9B /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A51834D63C005D1D9B /* AppIcon76x76@2x.png */; };
-		12F1D2301834D63C005D1D9B /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A61834D63C005D1D9B /* iTunesArtwork.png */; };
-		12F1D2311834D63C005D1D9B /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A71834D63C005D1D9B /* iTunesArtwork@2x.png */; };
-		12F1D2321834D63C005D1D9B /* retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1A91834D63C005D1D9B /* retina.png */; };
-		12F1D2331834D63C005D1D9B /* retina4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AA1834D63C005D1D9B /* retina4inch.png */; };
-		12F1D2341834D63C005D1D9B /* bg-mainmenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AB1834D63C005D1D9B /* bg-mainmenu.jpg */; };
-		12F1D2351834D63C005D1D9B /* bg-menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AC1834D63C005D1D9B /* bg-menu.jpg */; };
-		12F1D2361834D63C005D1D9B /* bg-menu@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AD1834D63C005D1D9B /* bg-menu@2x.jpg */; };
-		12F1D2371834D63C005D1D9B /* btn-aroundme.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AE1834D63C005D1D9B /* btn-aroundme.png */; };
-		12F1D2381834D63C005D1D9B /* btn-aroundme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1AF1834D63C005D1D9B /* btn-aroundme@2x.png */; };
-		12F1D2391834D63C005D1D9B /* btn-back-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B01834D63C005D1D9B /* btn-back-map.png */; };
-		12F1D23A1834D63C005D1D9B /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B11834D63C005D1D9B /* btn-back.png */; };
-		12F1D23B1834D63C005D1D9B /* btn-backtomap.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B21834D63C005D1D9B /* btn-backtomap.png */; };
-		12F1D23C1834D63C005D1D9B /* btn-cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B31834D63C005D1D9B /* btn-cards.png */; };
-		12F1D23D1834D63C005D1D9B /* btn-explore.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B41834D63C005D1D9B /* btn-explore.png */; };
-		12F1D23E1834D63C005D1D9B /* btn-explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B51834D63C005D1D9B /* btn-explore@2x.png */; };
-		12F1D23F1834D63C005D1D9B /* btn-intro-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B61834D63C005D1D9B /* btn-intro-go.png */; };
-		12F1D2401834D63C005D1D9B /* btn-mainmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B71834D63C005D1D9B /* btn-mainmenu.png */; };
-		12F1D2411834D63C005D1D9B /* btn-myprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B81834D63C005D1D9B /* btn-myprofile.png */; };
-		12F1D2421834D63C005D1D9B /* btn-myprofile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1B91834D63C005D1D9B /* btn-myprofile@2x.png */; };
-		12F1D2431834D63C005D1D9B /* btn-planatrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BA1834D63C005D1D9B /* btn-planatrip.png */; };
-		12F1D2441834D63C005D1D9B /* btn-planatrip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BB1834D63C005D1D9B /* btn-planatrip@2x.png */; };
-		12F1D2451834D63C005D1D9B /* btn-savedspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BC1834D63C005D1D9B /* btn-savedspots.png */; };
-		12F1D2461834D63C005D1D9B /* btn-savedspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BD1834D63C005D1D9B /* btn-savedspots@2x.png */; };
-		12F1D2471834D63C005D1D9B /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BE1834D63C005D1D9B /* btn-single-address.png */; };
-		12F1D2481834D63C005D1D9B /* btn-single-address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1BF1834D63C005D1D9B /* btn-single-address@2x.png */; };
-		12F1D2491834D63C005D1D9B /* btn-single-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C01834D63C005D1D9B /* btn-single-bg.png */; };
-		12F1D24A1834D63C005D1D9B /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C11834D63C005D1D9B /* btn-single-mail.png */; };
-		12F1D24B1834D63C005D1D9B /* btn-single-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C21834D63C005D1D9B /* btn-single-mail@2x.png */; };
-		12F1D24C1834D63C005D1D9B /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C31834D63C005D1D9B /* btn-single-phone.png */; };
-		12F1D24D1834D63C005D1D9B /* btn-single-phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C41834D63C005D1D9B /* btn-single-phone@2x.png */; };
-		12F1D24E1834D63C005D1D9B /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C51834D63C005D1D9B /* btn-single-www.png */; };
-		12F1D24F1834D63C005D1D9B /* btn-single-www@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C61834D63C005D1D9B /* btn-single-www@2x.png */; };
-		12F1D2501834D63C005D1D9B /* btn-tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C71834D63C005D1D9B /* btn-tours.png */; };
-		12F1D2511834D63C005D1D9B /* btn-tours@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C81834D63C005D1D9B /* btn-tours@2x.png */; };
-		12F1D2521834D63C005D1D9B /* btnbga.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1C91834D63C005D1D9B /* btnbga.png */; };
-		12F1D2531834D63C005D1D9B /* btnbgb.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1CA1834D63C005D1D9B /* btnbgb.png */; };
-		12F1D2541834D63C005D1D9B /* btn-singleview-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1CC1834D63C005D1D9B /* btn-singleview-address.png */; };
-		12F1D2551834D63C005D1D9B /* btn-singleview-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1CD1834D63C005D1D9B /* btn-singleview-email.png */; };
-		12F1D2561834D63C005D1D9B /* btn-singleview-fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1CE1834D63C005D1D9B /* btn-singleview-fb.png */; };
-		12F1D2571834D63C005D1D9B /* btn-singleview-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1CF1834D63C005D1D9B /* btn-singleview-phone.png */; };
-		12F1D2581834D63C005D1D9B /* btn-singleview-savespot-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D01834D63C005D1D9B /* btn-singleview-savespot-active.png */; };
-		12F1D2591834D63C005D1D9B /* btn-singleview-savespot-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D11834D63C005D1D9B /* btn-singleview-savespot-active@2x.png */; };
-		12F1D25A1834D63C005D1D9B /* btn-singleview-savespot.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D21834D63C005D1D9B /* btn-singleview-savespot.png */; };
-		12F1D25B1834D63C005D1D9B /* btn-singleview-savespot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D31834D63C005D1D9B /* btn-singleview-savespot@2x.png */; };
-		12F1D25C1834D63C005D1D9B /* btn-singleview-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D41834D63C005D1D9B /* btn-singleview-twitter.png */; };
-		12F1D25D1834D63C005D1D9B /* btn-singleview-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D51834D63C005D1D9B /* btn-singleview-www.png */; };
-		12F1D25E1834D63C005D1D9B /* feedback-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D61834D63C005D1D9B /* feedback-placeholder.png */; };
-		12F1D25F1834D63C005D1D9B /* guidedtours-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D71834D63C005D1D9B /* guidedtours-placeholder.png */; };
-		12F1D2601834D63C005D1D9B /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1D91834D63C005D1D9B /* btn-single-address.png */; };
-		12F1D2611834D63C005D1D9B /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DA1834D63C005D1D9B /* btn-single-mail.png */; };
-		12F1D2621834D63C005D1D9B /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DB1834D63C005D1D9B /* btn-single-phone.png */; };
-		12F1D2631834D63C005D1D9B /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DC1834D63C005D1D9B /* btn-single-www.png */; };
-		12F1D2641834D63C005D1D9B /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DD1834D63C005D1D9B /* loading.png */; };
-		12F1D2651834D63C005D1D9B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DE1834D63C005D1D9B /* logo.png */; };
-		12F1D2661834D63C005D1D9B /* planatrip-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F1D1DF1834D63C005D1D9B /* planatrip-placeholder.png */; };
 		12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA8BAD180F06FF003166FA /* ExploreViewController.m */; };
+		1E1CE4801835623100398962 /* btn-intro-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3DE1835623100398962 /* btn-intro-go.png */; };
+		1E1CE4811835623100398962 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3DF1835623100398962 /* Default-568h@2x.png */; };
+		1E1CE4821835623100398962 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E01835623100398962 /* Default.png */; };
+		1E1CE4831835623100398962 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E11835623100398962 /* Default@2x.png */; };
+		1E1CE4841835623100398962 /* details.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E21835623100398962 /* details.png */; };
+		1E1CE4851835623100398962 /* details2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E31835623100398962 /* details2.png */; };
+		1E1CE4861835623100398962 /* filter-bycity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E41835623100398962 /* filter-bycity.png */; };
+		1E1CE4871835623100398962 /* filter-bycounty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E51835623100398962 /* filter-bycounty.png */; };
+		1E1CE4881835623100398962 /* filter-bypopularity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E61835623100398962 /* filter-bypopularity.png */; };
+		1E1CE4891835623100398962 /* filter-byproximity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E71835623100398962 /* filter-byproximity.png */; };
+		1E1CE48A1835623100398962 /* filter-byrecent.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E81835623100398962 /* filter-byrecent.png */; };
+		1E1CE48B1835623100398962 /* filter-bytype.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3E91835623100398962 /* filter-bytype.png */; };
+		1E1CE48C1835623100398962 /* filterbtn-bycity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3EA1835623100398962 /* filterbtn-bycity.png */; };
+		1E1CE48D1835623100398962 /* filterbtn-bycounty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3EB1835623100398962 /* filterbtn-bycounty.png */; };
+		1E1CE48E1835623100398962 /* filterbtn-bypopularity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3EC1835623100398962 /* filterbtn-bypopularity.png */; };
+		1E1CE48F1835623100398962 /* filterbtn-byproximity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3ED1835623100398962 /* filterbtn-byproximity.png */; };
+		1E1CE4901835623100398962 /* filterbtn-byrecent.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3EE1835623100398962 /* filterbtn-byrecent.png */; };
+		1E1CE4911835623100398962 /* filterbtn-bytype.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3EF1835623100398962 /* filterbtn-bytype.png */; };
+		1E1CE4921835623100398962 /* intro_bg.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F01835623100398962 /* intro_bg.mov */; };
+		1E1CE4931835623100398962 /* justadded.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F11835623100398962 /* justadded.png */; };
+		1E1CE4941835623100398962 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F21835623100398962 /* loading.png */; };
+		1E1CE4951835623100398962 /* marker-amphitheater.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F41835623100398962 /* marker-amphitheater.png */; };
+		1E1CE4961835623100398962 /* marker-amphitheater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F51835623100398962 /* marker-amphitheater@2x.png */; };
+		1E1CE4971835623100398962 /* marker-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F61835623100398962 /* marker-art.png */; };
+		1E1CE4981835623100398962 /* marker-art@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F71835623100398962 /* marker-art@2x.png */; };
+		1E1CE4991835623100398962 /* marker-arts_council.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F81835623100398962 /* marker-arts_council.png */; };
+		1E1CE49A1835623100398962 /* marker-arts_council@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3F91835623100398962 /* marker-arts_council@2x.png */; };
+		1E1CE49B1835623100398962 /* marker-barn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FA1835623100398962 /* marker-barn.png */; };
+		1E1CE49C1835623100398962 /* marker-barn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FB1835623100398962 /* marker-barn@2x.png */; };
+		1E1CE49D1835623100398962 /* marker-botany.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FC1835623100398962 /* marker-botany.png */; };
+		1E1CE49E1835623100398962 /* marker-botany@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FD1835623100398962 /* marker-botany@2x.png */; };
+		1E1CE49F1835623100398962 /* marker-cultural_district.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FE1835623100398962 /* marker-cultural_district.png */; };
+		1E1CE4A01835623100398962 /* marker-cultural_district@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE3FF1835623100398962 /* marker-cultural_district@2x.png */; };
+		1E1CE4A11835623100398962 /* marker-famous_iowan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4001835623100398962 /* marker-famous_iowan.png */; };
+		1E1CE4A21835623100398962 /* marker-famous_iowan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4011835623100398962 /* marker-famous_iowan@2x.png */; };
+		1E1CE4A31835623100398962 /* marker-historic_site.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4021835623100398962 /* marker-historic_site.png */; };
+		1E1CE4A41835623100398962 /* marker-historic_site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4031835623100398962 /* marker-historic_site@2x.png */; };
+		1E1CE4A51835623100398962 /* marker-historical_society.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4041835623100398962 /* marker-historical_society.png */; };
+		1E1CE4A61835623100398962 /* marker-historical_society@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4051835623100398962 /* marker-historical_society@2x.png */; };
+		1E1CE4A71835623100398962 /* marker-iowa_award.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4061835623100398962 /* marker-iowa_award.png */; };
+		1E1CE4A81835623100398962 /* marker-iowa_award@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4071835623100398962 /* marker-iowa_award@2x.png */; };
+		1E1CE4A91835623100398962 /* marker-iowa_great_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4081835623100398962 /* marker-iowa_great_place.png */; };
+		1E1CE4AA1835623100398962 /* marker-iowa_great_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4091835623100398962 /* marker-iowa_great_place@2x.png */; };
+		1E1CE4AB1835623100398962 /* marker-local_government.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40A1835623100398962 /* marker-local_government.png */; };
+		1E1CE4AC1835623100398962 /* marker-local_government@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40B1835623100398962 /* marker-local_government@2x.png */; };
+		1E1CE4AD1835623100398962 /* marker-local_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40C1835623100398962 /* marker-local_landmark.png */; };
+		1E1CE4AE1835623100398962 /* marker-local_landmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40D1835623100398962 /* marker-local_landmark@2x.png */; };
+		1E1CE4AF1835623100398962 /* marker-medal_of_honor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40E1835623100398962 /* marker-medal_of_honor.png */; };
+		1E1CE4B01835623100398962 /* marker-medal_of_honor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE40F1835623100398962 /* marker-medal_of_honor@2x.png */; };
+		1E1CE4B11835623100398962 /* marker-movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4101835623100398962 /* marker-movie.png */; };
+		1E1CE4B21835623100398962 /* marker-movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4111835623100398962 /* marker-movie@2x.png */; };
+		1E1CE4B31835623100398962 /* marker-museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4121835623100398962 /* marker-museum.png */; };
+		1E1CE4B41835623100398962 /* marker-museum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4131835623100398962 /* marker-museum@2x.png */; };
+		1E1CE4B51835623100398962 /* marker-national_historic_landmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4141835623100398962 /* marker-national_historic_landmark.png */; };
+		1E1CE4B61835623100398962 /* marker-national_historic_landmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4151835623100398962 /* marker-national_historic_landmark@2x.png */; };
+		1E1CE4B71835623100398962 /* marker-national_historical_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4161835623100398962 /* marker-national_historical_register.png */; };
+		1E1CE4B81835623100398962 /* marker-national_historical_register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4171835623100398962 /* marker-national_historical_register@2x.png */; };
+		1E1CE4B91835623100398962 /* marker-performance.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4181835623100398962 /* marker-performance.png */; };
+		1E1CE4BA1835623100398962 /* marker-performance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4191835623100398962 /* marker-performance@2x.png */; };
+		1E1CE4BB1835623100398962 /* marker-riverwalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41A1835623100398962 /* marker-riverwalk.png */; };
+		1E1CE4BC1835623100398962 /* marker-riverwalk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41B1835623100398962 /* marker-riverwalk@2x.png */; };
+		1E1CE4BD1835623100398962 /* marker-scenic_byway.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41C1835623100398962 /* marker-scenic_byway.png */; };
+		1E1CE4BE1835623100398962 /* marker-scenic_byway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41D1835623100398962 /* marker-scenic_byway@2x.png */; };
+		1E1CE4BF1835623100398962 /* marker-science.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41E1835623100398962 /* marker-science.png */; };
+		1E1CE4C01835623100398962 /* marker-science@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE41F1835623100398962 /* marker-science@2x.png */; };
+		1E1CE4C11835623100398962 /* marker-theater.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4201835623100398962 /* marker-theater.png */; };
+		1E1CE4C21835623100398962 /* marker-theater@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4211835623100398962 /* marker-theater@2x.png */; };
+		1E1CE4C31835623100398962 /* marker-underground_railroad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4221835623100398962 /* marker-underground_railroad.png */; };
+		1E1CE4C41835623100398962 /* marker-underground_railroad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4231835623100398962 /* marker-underground_railroad@2x.png */; };
+		1E1CE4C51835623100398962 /* marker-university.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4241835623100398962 /* marker-university.png */; };
+		1E1CE4C61835623100398962 /* marker-university@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4251835623100398962 /* marker-university@2x.png */; };
+		1E1CE4C71835623100398962 /* marker-zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4261835623100398962 /* marker-zoo.png */; };
+		1E1CE4C81835623100398962 /* marker-zoo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4271835623100398962 /* marker-zoo@2x.png */; };
+		1E1CE4C91835623100398962 /* menu-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4281835623100398962 /* menu-bg.png */; };
+		1E1CE4CA1835623100398962 /* menu-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4291835623100398962 /* menu-bg@2x.png */; };
+		1E1CE4CB1835623100398962 /* menu-findspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42A1835623100398962 /* menu-findspots.png */; };
+		1E1CE4CC1835623100398962 /* menu-findspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42B1835623100398962 /* menu-findspots@2x.png */; };
+		1E1CE4CD1835623100398962 /* menu-savedspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42C1835623100398962 /* menu-savedspots.png */; };
+		1E1CE4CE1835623100398962 /* menu-savedspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42D1835623100398962 /* menu-savedspots@2x.png */; };
+		1E1CE4CF1835623100398962 /* menu-top-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42E1835623100398962 /* menu-top-img.png */; };
+		1E1CE4D01835623100398962 /* menu-top-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE42F1835623100398962 /* menu-top-img@2x.png */; };
+		1E1CE4D11835623100398962 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4301835623100398962 /* menu.png */; };
+		1E1CE4D21835623100398962 /* topbar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4311835623100398962 /* topbar-bg.png */; };
+		1E1CE4D31835623100398962 /* topbar-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4321835623100398962 /* topbar-bg@2x.png */; };
+		1E1CE4D41835623100398962 /* tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4331835623100398962 /* tours.png */; };
+		1E1CE4D51835623100398962 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4341835623100398962 /* transparent.png */; };
+		1E1CE4D61835623100398962 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4371835623100398962 /* AppIcon29x29.png */; };
+		1E1CE4D71835623100398962 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4381835623100398962 /* AppIcon29x29@2x.png */; };
+		1E1CE4D81835623100398962 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4391835623100398962 /* AppIcon40x40.png */; };
+		1E1CE4D91835623100398962 /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43A1835623100398962 /* AppIcon40x40@2x.png */; };
+		1E1CE4DA1835623100398962 /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43B1835623100398962 /* AppIcon60x60.png */; };
+		1E1CE4DB1835623100398962 /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43C1835623100398962 /* AppIcon60x60@2x.png */; };
+		1E1CE4DC1835623100398962 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43D1835623100398962 /* AppIcon76x76.png */; };
+		1E1CE4DD1835623100398962 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43E1835623100398962 /* AppIcon76x76@2x.png */; };
+		1E1CE4DE1835623100398962 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE43F1835623100398962 /* iTunesArtwork.png */; };
+		1E1CE4DF1835623100398962 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4401835623100398962 /* iTunesArtwork@2x.png */; };
+		1E1CE4E01835623100398962 /* retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4421835623100398962 /* retina.png */; };
+		1E1CE4E11835623100398962 /* retina4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4431835623100398962 /* retina4inch.png */; };
+		1E1CE4E21835623100398962 /* bg-mainmenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4441835623100398962 /* bg-mainmenu.jpg */; };
+		1E1CE4E31835623100398962 /* bg-menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4451835623100398962 /* bg-menu.jpg */; };
+		1E1CE4E41835623100398962 /* bg-menu@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4461835623100398962 /* bg-menu@2x.jpg */; };
+		1E1CE4E51835623100398962 /* btn-aroundme.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4471835623100398962 /* btn-aroundme.png */; };
+		1E1CE4E61835623100398962 /* btn-aroundme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4481835623100398962 /* btn-aroundme@2x.png */; };
+		1E1CE4E71835623100398962 /* btn-back-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4491835623100398962 /* btn-back-map.png */; };
+		1E1CE4E81835623100398962 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44A1835623100398962 /* btn-back.png */; };
+		1E1CE4E91835623100398962 /* btn-backtomap.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44B1835623100398962 /* btn-backtomap.png */; };
+		1E1CE4EA1835623100398962 /* btn-cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44C1835623100398962 /* btn-cards.png */; };
+		1E1CE4EB1835623100398962 /* btn-explore.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44D1835623100398962 /* btn-explore.png */; };
+		1E1CE4EC1835623100398962 /* btn-explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44E1835623100398962 /* btn-explore@2x.png */; };
+		1E1CE4ED1835623100398962 /* btn-intro-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE44F1835623100398962 /* btn-intro-go.png */; };
+		1E1CE4EE1835623100398962 /* btn-mainmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4501835623100398962 /* btn-mainmenu.png */; };
+		1E1CE4EF1835623100398962 /* btn-myprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4511835623100398962 /* btn-myprofile.png */; };
+		1E1CE4F01835623100398962 /* btn-myprofile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4521835623100398962 /* btn-myprofile@2x.png */; };
+		1E1CE4F11835623100398962 /* btn-planatrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4531835623100398962 /* btn-planatrip.png */; };
+		1E1CE4F21835623100398962 /* btn-planatrip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4541835623100398962 /* btn-planatrip@2x.png */; };
+		1E1CE4F31835623100398962 /* btn-savedspots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4551835623100398962 /* btn-savedspots.png */; };
+		1E1CE4F41835623100398962 /* btn-savedspots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4561835623100398962 /* btn-savedspots@2x.png */; };
+		1E1CE4F51835623100398962 /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4571835623100398962 /* btn-single-address.png */; };
+		1E1CE4F61835623100398962 /* btn-single-address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4581835623100398962 /* btn-single-address@2x.png */; };
+		1E1CE4F71835623100398962 /* btn-single-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4591835623100398962 /* btn-single-bg.png */; };
+		1E1CE4F81835623100398962 /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45A1835623100398962 /* btn-single-mail.png */; };
+		1E1CE4F91835623100398962 /* btn-single-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45B1835623100398962 /* btn-single-mail@2x.png */; };
+		1E1CE4FA1835623100398962 /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45C1835623100398962 /* btn-single-phone.png */; };
+		1E1CE4FB1835623100398962 /* btn-single-phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45D1835623100398962 /* btn-single-phone@2x.png */; };
+		1E1CE4FC1835623100398962 /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45E1835623100398962 /* btn-single-www.png */; };
+		1E1CE4FD1835623100398962 /* btn-single-www@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE45F1835623100398962 /* btn-single-www@2x.png */; };
+		1E1CE4FE1835623100398962 /* btn-tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4601835623100398962 /* btn-tours.png */; };
+		1E1CE4FF1835623100398962 /* btn-tours@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4611835623100398962 /* btn-tours@2x.png */; };
+		1E1CE5001835623100398962 /* btnbga.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4621835623100398962 /* btnbga.png */; };
+		1E1CE5011835623100398962 /* btnbgb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4631835623100398962 /* btnbgb.png */; };
+		1E1CE5021835623100398962 /* btn-singleview-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4651835623100398962 /* btn-singleview-address.png */; };
+		1E1CE5031835623100398962 /* btn-singleview-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4661835623100398962 /* btn-singleview-email.png */; };
+		1E1CE5041835623100398962 /* btn-singleview-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4671835623100398962 /* btn-singleview-facebook.png */; };
+		1E1CE5051835623100398962 /* btn-singleview-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4681835623100398962 /* btn-singleview-phone.png */; };
+		1E1CE5061835623100398962 /* btn-singleview-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4691835623100398962 /* btn-singleview-twitter.png */; };
+		1E1CE5071835623100398962 /* btn-singleview-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE46A1835623100398962 /* btn-singleview-www.png */; };
+		1E1CE5081835623100398962 /* btn-singleview-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE46C1835623100398962 /* btn-singleview-address.png */; };
+		1E1CE5091835623100398962 /* btn-singleview-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE46D1835623100398962 /* btn-singleview-email.png */; };
+		1E1CE50A1835623100398962 /* btn-singleview-fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE46E1835623100398962 /* btn-singleview-fb.png */; };
+		1E1CE50B1835623100398962 /* btn-singleview-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE46F1835623100398962 /* btn-singleview-phone.png */; };
+		1E1CE50C1835623100398962 /* btn-singleview-savespot-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4701835623100398962 /* btn-singleview-savespot-active.png */; };
+		1E1CE50D1835623100398962 /* btn-singleview-savespot-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4711835623100398962 /* btn-singleview-savespot-active@2x.png */; };
+		1E1CE50E1835623100398962 /* btn-singleview-savespot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4721835623100398962 /* btn-singleview-savespot.png */; };
+		1E1CE50F1835623100398962 /* btn-singleview-savespot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4731835623100398962 /* btn-singleview-savespot@2x.png */; };
+		1E1CE5101835623100398962 /* btn-singleview-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4741835623100398962 /* btn-singleview-twitter.png */; };
+		1E1CE5111835623100398962 /* btn-singleview-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4751835623100398962 /* btn-singleview-www.png */; };
+		1E1CE5121835623100398962 /* feedback-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4761835623100398962 /* feedback-placeholder.png */; };
+		1E1CE5131835623100398962 /* guidedtours-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4771835623100398962 /* guidedtours-placeholder.png */; };
+		1E1CE5141835623100398962 /* btn-single-address.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE4791835623100398962 /* btn-single-address.png */; };
+		1E1CE5151835623100398962 /* btn-single-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47A1835623100398962 /* btn-single-mail.png */; };
+		1E1CE5161835623100398962 /* btn-single-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47B1835623100398962 /* btn-single-phone.png */; };
+		1E1CE5171835623100398962 /* btn-single-www.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47C1835623100398962 /* btn-single-www.png */; };
+		1E1CE5181835623100398962 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47D1835623100398962 /* loading.png */; };
+		1E1CE5191835623100398962 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47E1835623100398962 /* logo.png */; };
+		1E1CE51A1835623100398962 /* planatrip-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CE47F1835623100398962 /* planatrip-placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -297,143 +317,163 @@
 		12F1B6DD182AD882006A221C /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		12F1B6DF182AE4D9006A221C /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		12F1B6E0182AE4D9006A221C /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
-		12F1D1531834D63C005D1D9B /* btn-intro-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-intro-go.png"; sourceTree = "<group>"; };
-		12F1D1541834D63C005D1D9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		12F1D1551834D63C005D1D9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		12F1D1561834D63C005D1D9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		12F1D1571834D63C005D1D9B /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
-		12F1D1581834D63C005D1D9B /* details2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details2.png; sourceTree = "<group>"; };
-		12F1D1591834D63C005D1D9B /* intro_bg.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = intro_bg.mov; sourceTree = "<group>"; };
-		12F1D15A1834D63C005D1D9B /* justadded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = justadded.png; sourceTree = "<group>"; };
-		12F1D15B1834D63C005D1D9B /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
-		12F1D15D1834D63C005D1D9B /* marker-amphitheater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-amphitheater.png"; sourceTree = "<group>"; };
-		12F1D15E1834D63C005D1D9B /* marker-amphitheater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-amphitheater@2x.png"; sourceTree = "<group>"; };
-		12F1D15F1834D63C005D1D9B /* marker-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art.png"; sourceTree = "<group>"; };
-		12F1D1601834D63C005D1D9B /* marker-art@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art@2x.png"; sourceTree = "<group>"; };
-		12F1D1611834D63C005D1D9B /* marker-arts_council.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts_council.png"; sourceTree = "<group>"; };
-		12F1D1621834D63C005D1D9B /* marker-arts_council@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts_council@2x.png"; sourceTree = "<group>"; };
-		12F1D1631834D63C005D1D9B /* marker-barn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn.png"; sourceTree = "<group>"; };
-		12F1D1641834D63C005D1D9B /* marker-barn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn@2x.png"; sourceTree = "<group>"; };
-		12F1D1651834D63C005D1D9B /* marker-botany.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botany.png"; sourceTree = "<group>"; };
-		12F1D1661834D63C005D1D9B /* marker-botany@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botany@2x.png"; sourceTree = "<group>"; };
-		12F1D1671834D63C005D1D9B /* marker-cultural_district.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-cultural_district.png"; sourceTree = "<group>"; };
-		12F1D1681834D63C005D1D9B /* marker-cultural_district@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-cultural_district@2x.png"; sourceTree = "<group>"; };
-		12F1D1691834D63C005D1D9B /* marker-famous_iowan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famous_iowan.png"; sourceTree = "<group>"; };
-		12F1D16A1834D63C005D1D9B /* marker-famous_iowan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famous_iowan@2x.png"; sourceTree = "<group>"; };
-		12F1D16B1834D63C005D1D9B /* marker-historic_site.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historic_site.png"; sourceTree = "<group>"; };
-		12F1D16C1834D63C005D1D9B /* marker-historic_site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historic_site@2x.png"; sourceTree = "<group>"; };
-		12F1D16D1834D63C005D1D9B /* marker-historical_society.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historical_society.png"; sourceTree = "<group>"; };
-		12F1D16E1834D63C005D1D9B /* marker-historical_society@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historical_society@2x.png"; sourceTree = "<group>"; };
-		12F1D16F1834D63C005D1D9B /* marker-iowa_award.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_award.png"; sourceTree = "<group>"; };
-		12F1D1701834D63C005D1D9B /* marker-iowa_award@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_award@2x.png"; sourceTree = "<group>"; };
-		12F1D1711834D63C005D1D9B /* marker-iowa_great_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_great_place.png"; sourceTree = "<group>"; };
-		12F1D1721834D63C005D1D9B /* marker-iowa_great_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_great_place@2x.png"; sourceTree = "<group>"; };
-		12F1D1731834D63C005D1D9B /* marker-local_government.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_government.png"; sourceTree = "<group>"; };
-		12F1D1741834D63C005D1D9B /* marker-local_government@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_government@2x.png"; sourceTree = "<group>"; };
-		12F1D1751834D63C005D1D9B /* marker-local_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_landmark.png"; sourceTree = "<group>"; };
-		12F1D1761834D63C005D1D9B /* marker-local_landmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_landmark@2x.png"; sourceTree = "<group>"; };
-		12F1D1771834D63C005D1D9B /* marker-medal_of_honor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medal_of_honor.png"; sourceTree = "<group>"; };
-		12F1D1781834D63C005D1D9B /* marker-medal_of_honor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medal_of_honor@2x.png"; sourceTree = "<group>"; };
-		12F1D1791834D63C005D1D9B /* marker-movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie.png"; sourceTree = "<group>"; };
-		12F1D17A1834D63C005D1D9B /* marker-movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie@2x.png"; sourceTree = "<group>"; };
-		12F1D17B1834D63C005D1D9B /* marker-museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum.png"; sourceTree = "<group>"; };
-		12F1D17C1834D63C005D1D9B /* marker-museum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum@2x.png"; sourceTree = "<group>"; };
-		12F1D17D1834D63C005D1D9B /* marker-national_historic_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historic_landmark.png"; sourceTree = "<group>"; };
-		12F1D17E1834D63C005D1D9B /* marker-national_historic_landmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historic_landmark@2x.png"; sourceTree = "<group>"; };
-		12F1D17F1834D63C005D1D9B /* marker-national_historical_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historical_register.png"; sourceTree = "<group>"; };
-		12F1D1801834D63C005D1D9B /* marker-national_historical_register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historical_register@2x.png"; sourceTree = "<group>"; };
-		12F1D1811834D63C005D1D9B /* marker-performance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-performance.png"; sourceTree = "<group>"; };
-		12F1D1821834D63C005D1D9B /* marker-performance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-performance@2x.png"; sourceTree = "<group>"; };
-		12F1D1831834D63C005D1D9B /* marker-riverwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk.png"; sourceTree = "<group>"; };
-		12F1D1841834D63C005D1D9B /* marker-riverwalk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk@2x.png"; sourceTree = "<group>"; };
-		12F1D1851834D63C005D1D9B /* marker-scenic_byway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenic_byway.png"; sourceTree = "<group>"; };
-		12F1D1861834D63C005D1D9B /* marker-scenic_byway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenic_byway@2x.png"; sourceTree = "<group>"; };
-		12F1D1871834D63C005D1D9B /* marker-science.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-science.png"; sourceTree = "<group>"; };
-		12F1D1881834D63C005D1D9B /* marker-science@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-science@2x.png"; sourceTree = "<group>"; };
-		12F1D1891834D63C005D1D9B /* marker-theater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-theater.png"; sourceTree = "<group>"; };
-		12F1D18A1834D63C005D1D9B /* marker-theater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-theater@2x.png"; sourceTree = "<group>"; };
-		12F1D18B1834D63C005D1D9B /* marker-underground_railroad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-underground_railroad.png"; sourceTree = "<group>"; };
-		12F1D18C1834D63C005D1D9B /* marker-underground_railroad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-underground_railroad@2x.png"; sourceTree = "<group>"; };
-		12F1D18D1834D63C005D1D9B /* marker-university.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-university.png"; sourceTree = "<group>"; };
-		12F1D18E1834D63C005D1D9B /* marker-university@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-university@2x.png"; sourceTree = "<group>"; };
-		12F1D18F1834D63C005D1D9B /* marker-zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo.png"; sourceTree = "<group>"; };
-		12F1D1901834D63C005D1D9B /* marker-zoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo@2x.png"; sourceTree = "<group>"; };
-		12F1D1911834D63C005D1D9B /* menu-findspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-findspots.png"; sourceTree = "<group>"; };
-		12F1D1921834D63C005D1D9B /* menu-findspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-findspots@2x.png"; sourceTree = "<group>"; };
-		12F1D1931834D63C005D1D9B /* menu-savedspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-savedspots.png"; sourceTree = "<group>"; };
-		12F1D1941834D63C005D1D9B /* menu-savedspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-savedspots@2x.png"; sourceTree = "<group>"; };
-		12F1D1951834D63C005D1D9B /* menu-top-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-top-img.png"; sourceTree = "<group>"; };
-		12F1D1961834D63C005D1D9B /* menu-top-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-top-img@2x.png"; sourceTree = "<group>"; };
-		12F1D1971834D63C005D1D9B /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
-		12F1D1981834D63C005D1D9B /* topbar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-bg.png"; sourceTree = "<group>"; };
-		12F1D1991834D63C005D1D9B /* topbar-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-bg@2x.png"; sourceTree = "<group>"; };
-		12F1D19A1834D63C005D1D9B /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
-		12F1D19B1834D63C005D1D9B /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
-		12F1D19E1834D63C005D1D9B /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
-		12F1D19F1834D63C005D1D9B /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
-		12F1D1A01834D63C005D1D9B /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
-		12F1D1A11834D63C005D1D9B /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
-		12F1D1A21834D63C005D1D9B /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
-		12F1D1A31834D63C005D1D9B /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
-		12F1D1A41834D63C005D1D9B /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
-		12F1D1A51834D63C005D1D9B /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
-		12F1D1A61834D63C005D1D9B /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		12F1D1A71834D63C005D1D9B /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		12F1D1A91834D63C005D1D9B /* retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina.png; sourceTree = "<group>"; };
-		12F1D1AA1834D63C005D1D9B /* retina4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina4inch.png; sourceTree = "<group>"; };
-		12F1D1AB1834D63C005D1D9B /* bg-mainmenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-mainmenu.jpg"; sourceTree = "<group>"; };
-		12F1D1AC1834D63C005D1D9B /* bg-menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu.jpg"; sourceTree = "<group>"; };
-		12F1D1AD1834D63C005D1D9B /* bg-menu@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu@2x.jpg"; sourceTree = "<group>"; };
-		12F1D1AE1834D63C005D1D9B /* btn-aroundme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme.png"; sourceTree = "<group>"; };
-		12F1D1AF1834D63C005D1D9B /* btn-aroundme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme@2x.png"; sourceTree = "<group>"; };
-		12F1D1B01834D63C005D1D9B /* btn-back-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back-map.png"; sourceTree = "<group>"; };
-		12F1D1B11834D63C005D1D9B /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back.png"; sourceTree = "<group>"; };
-		12F1D1B21834D63C005D1D9B /* btn-backtomap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-backtomap.png"; sourceTree = "<group>"; };
-		12F1D1B31834D63C005D1D9B /* btn-cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-cards.png"; sourceTree = "<group>"; };
-		12F1D1B41834D63C005D1D9B /* btn-explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore.png"; sourceTree = "<group>"; };
-		12F1D1B51834D63C005D1D9B /* btn-explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore@2x.png"; sourceTree = "<group>"; };
-		12F1D1B61834D63C005D1D9B /* btn-intro-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-intro-go.png"; sourceTree = "<group>"; };
-		12F1D1B71834D63C005D1D9B /* btn-mainmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-mainmenu.png"; sourceTree = "<group>"; };
-		12F1D1B81834D63C005D1D9B /* btn-myprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile.png"; sourceTree = "<group>"; };
-		12F1D1B91834D63C005D1D9B /* btn-myprofile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile@2x.png"; sourceTree = "<group>"; };
-		12F1D1BA1834D63C005D1D9B /* btn-planatrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip.png"; sourceTree = "<group>"; };
-		12F1D1BB1834D63C005D1D9B /* btn-planatrip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip@2x.png"; sourceTree = "<group>"; };
-		12F1D1BC1834D63C005D1D9B /* btn-savedspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots.png"; sourceTree = "<group>"; };
-		12F1D1BD1834D63C005D1D9B /* btn-savedspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots@2x.png"; sourceTree = "<group>"; };
-		12F1D1BE1834D63C005D1D9B /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
-		12F1D1BF1834D63C005D1D9B /* btn-single-address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address@2x.png"; sourceTree = "<group>"; };
-		12F1D1C01834D63C005D1D9B /* btn-single-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-bg.png"; sourceTree = "<group>"; };
-		12F1D1C11834D63C005D1D9B /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
-		12F1D1C21834D63C005D1D9B /* btn-single-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail@2x.png"; sourceTree = "<group>"; };
-		12F1D1C31834D63C005D1D9B /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
-		12F1D1C41834D63C005D1D9B /* btn-single-phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone@2x.png"; sourceTree = "<group>"; };
-		12F1D1C51834D63C005D1D9B /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
-		12F1D1C61834D63C005D1D9B /* btn-single-www@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www@2x.png"; sourceTree = "<group>"; };
-		12F1D1C71834D63C005D1D9B /* btn-tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours.png"; sourceTree = "<group>"; };
-		12F1D1C81834D63C005D1D9B /* btn-tours@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours@2x.png"; sourceTree = "<group>"; };
-		12F1D1C91834D63C005D1D9B /* btnbga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbga.png; sourceTree = "<group>"; };
-		12F1D1CA1834D63C005D1D9B /* btnbgb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbgb.png; sourceTree = "<group>"; };
-		12F1D1CC1834D63C005D1D9B /* btn-singleview-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-address.png"; sourceTree = "<group>"; };
-		12F1D1CD1834D63C005D1D9B /* btn-singleview-email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-email.png"; sourceTree = "<group>"; };
-		12F1D1CE1834D63C005D1D9B /* btn-singleview-fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-fb.png"; sourceTree = "<group>"; };
-		12F1D1CF1834D63C005D1D9B /* btn-singleview-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-phone.png"; sourceTree = "<group>"; };
-		12F1D1D01834D63C005D1D9B /* btn-singleview-savespot-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active.png"; sourceTree = "<group>"; };
-		12F1D1D11834D63C005D1D9B /* btn-singleview-savespot-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active@2x.png"; sourceTree = "<group>"; };
-		12F1D1D21834D63C005D1D9B /* btn-singleview-savespot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot.png"; sourceTree = "<group>"; };
-		12F1D1D31834D63C005D1D9B /* btn-singleview-savespot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot@2x.png"; sourceTree = "<group>"; };
-		12F1D1D41834D63C005D1D9B /* btn-singleview-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-twitter.png"; sourceTree = "<group>"; };
-		12F1D1D51834D63C005D1D9B /* btn-singleview-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-www.png"; sourceTree = "<group>"; };
-		12F1D1D61834D63C005D1D9B /* feedback-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback-placeholder.png"; sourceTree = "<group>"; };
-		12F1D1D71834D63C005D1D9B /* guidedtours-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guidedtours-placeholder.png"; sourceTree = "<group>"; };
-		12F1D1D91834D63C005D1D9B /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
-		12F1D1DA1834D63C005D1D9B /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
-		12F1D1DB1834D63C005D1D9B /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
-		12F1D1DC1834D63C005D1D9B /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
-		12F1D1DD1834D63C005D1D9B /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
-		12F1D1DE1834D63C005D1D9B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		12F1D1DF1834D63C005D1D9B /* planatrip-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planatrip-placeholder.png"; sourceTree = "<group>"; };
 		12FA8BAC180F06FF003166FA /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		12FA8BAD180F06FF003166FA /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
+		1E1CE3DE1835623100398962 /* btn-intro-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-intro-go.png"; sourceTree = "<group>"; };
+		1E1CE3DF1835623100398962 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1E1CE3E01835623100398962 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1E1CE3E11835623100398962 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1E1CE3E21835623100398962 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
+		1E1CE3E31835623100398962 /* details2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details2.png; sourceTree = "<group>"; };
+		1E1CE3E41835623100398962 /* filter-bycity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-bycity.png"; sourceTree = "<group>"; };
+		1E1CE3E51835623100398962 /* filter-bycounty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-bycounty.png"; sourceTree = "<group>"; };
+		1E1CE3E61835623100398962 /* filter-bypopularity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-bypopularity.png"; sourceTree = "<group>"; };
+		1E1CE3E71835623100398962 /* filter-byproximity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-byproximity.png"; sourceTree = "<group>"; };
+		1E1CE3E81835623100398962 /* filter-byrecent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-byrecent.png"; sourceTree = "<group>"; };
+		1E1CE3E91835623100398962 /* filter-bytype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-bytype.png"; sourceTree = "<group>"; };
+		1E1CE3EA1835623100398962 /* filterbtn-bycity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-bycity.png"; sourceTree = "<group>"; };
+		1E1CE3EB1835623100398962 /* filterbtn-bycounty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-bycounty.png"; sourceTree = "<group>"; };
+		1E1CE3EC1835623100398962 /* filterbtn-bypopularity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-bypopularity.png"; sourceTree = "<group>"; };
+		1E1CE3ED1835623100398962 /* filterbtn-byproximity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-byproximity.png"; sourceTree = "<group>"; };
+		1E1CE3EE1835623100398962 /* filterbtn-byrecent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-byrecent.png"; sourceTree = "<group>"; };
+		1E1CE3EF1835623100398962 /* filterbtn-bytype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filterbtn-bytype.png"; sourceTree = "<group>"; };
+		1E1CE3F01835623100398962 /* intro_bg.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = intro_bg.mov; sourceTree = "<group>"; };
+		1E1CE3F11835623100398962 /* justadded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = justadded.png; sourceTree = "<group>"; };
+		1E1CE3F21835623100398962 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		1E1CE3F41835623100398962 /* marker-amphitheater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-amphitheater.png"; sourceTree = "<group>"; };
+		1E1CE3F51835623100398962 /* marker-amphitheater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-amphitheater@2x.png"; sourceTree = "<group>"; };
+		1E1CE3F61835623100398962 /* marker-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art.png"; sourceTree = "<group>"; };
+		1E1CE3F71835623100398962 /* marker-art@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-art@2x.png"; sourceTree = "<group>"; };
+		1E1CE3F81835623100398962 /* marker-arts_council.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts_council.png"; sourceTree = "<group>"; };
+		1E1CE3F91835623100398962 /* marker-arts_council@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-arts_council@2x.png"; sourceTree = "<group>"; };
+		1E1CE3FA1835623100398962 /* marker-barn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn.png"; sourceTree = "<group>"; };
+		1E1CE3FB1835623100398962 /* marker-barn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-barn@2x.png"; sourceTree = "<group>"; };
+		1E1CE3FC1835623100398962 /* marker-botany.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botany.png"; sourceTree = "<group>"; };
+		1E1CE3FD1835623100398962 /* marker-botany@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-botany@2x.png"; sourceTree = "<group>"; };
+		1E1CE3FE1835623100398962 /* marker-cultural_district.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-cultural_district.png"; sourceTree = "<group>"; };
+		1E1CE3FF1835623100398962 /* marker-cultural_district@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-cultural_district@2x.png"; sourceTree = "<group>"; };
+		1E1CE4001835623100398962 /* marker-famous_iowan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famous_iowan.png"; sourceTree = "<group>"; };
+		1E1CE4011835623100398962 /* marker-famous_iowan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-famous_iowan@2x.png"; sourceTree = "<group>"; };
+		1E1CE4021835623100398962 /* marker-historic_site.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historic_site.png"; sourceTree = "<group>"; };
+		1E1CE4031835623100398962 /* marker-historic_site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historic_site@2x.png"; sourceTree = "<group>"; };
+		1E1CE4041835623100398962 /* marker-historical_society.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historical_society.png"; sourceTree = "<group>"; };
+		1E1CE4051835623100398962 /* marker-historical_society@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-historical_society@2x.png"; sourceTree = "<group>"; };
+		1E1CE4061835623100398962 /* marker-iowa_award.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_award.png"; sourceTree = "<group>"; };
+		1E1CE4071835623100398962 /* marker-iowa_award@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_award@2x.png"; sourceTree = "<group>"; };
+		1E1CE4081835623100398962 /* marker-iowa_great_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_great_place.png"; sourceTree = "<group>"; };
+		1E1CE4091835623100398962 /* marker-iowa_great_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-iowa_great_place@2x.png"; sourceTree = "<group>"; };
+		1E1CE40A1835623100398962 /* marker-local_government.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_government.png"; sourceTree = "<group>"; };
+		1E1CE40B1835623100398962 /* marker-local_government@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_government@2x.png"; sourceTree = "<group>"; };
+		1E1CE40C1835623100398962 /* marker-local_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_landmark.png"; sourceTree = "<group>"; };
+		1E1CE40D1835623100398962 /* marker-local_landmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-local_landmark@2x.png"; sourceTree = "<group>"; };
+		1E1CE40E1835623100398962 /* marker-medal_of_honor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medal_of_honor.png"; sourceTree = "<group>"; };
+		1E1CE40F1835623100398962 /* marker-medal_of_honor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-medal_of_honor@2x.png"; sourceTree = "<group>"; };
+		1E1CE4101835623100398962 /* marker-movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie.png"; sourceTree = "<group>"; };
+		1E1CE4111835623100398962 /* marker-movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-movie@2x.png"; sourceTree = "<group>"; };
+		1E1CE4121835623100398962 /* marker-museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum.png"; sourceTree = "<group>"; };
+		1E1CE4131835623100398962 /* marker-museum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-museum@2x.png"; sourceTree = "<group>"; };
+		1E1CE4141835623100398962 /* marker-national_historic_landmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historic_landmark.png"; sourceTree = "<group>"; };
+		1E1CE4151835623100398962 /* marker-national_historic_landmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historic_landmark@2x.png"; sourceTree = "<group>"; };
+		1E1CE4161835623100398962 /* marker-national_historical_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historical_register.png"; sourceTree = "<group>"; };
+		1E1CE4171835623100398962 /* marker-national_historical_register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-national_historical_register@2x.png"; sourceTree = "<group>"; };
+		1E1CE4181835623100398962 /* marker-performance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-performance.png"; sourceTree = "<group>"; };
+		1E1CE4191835623100398962 /* marker-performance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-performance@2x.png"; sourceTree = "<group>"; };
+		1E1CE41A1835623100398962 /* marker-riverwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk.png"; sourceTree = "<group>"; };
+		1E1CE41B1835623100398962 /* marker-riverwalk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-riverwalk@2x.png"; sourceTree = "<group>"; };
+		1E1CE41C1835623100398962 /* marker-scenic_byway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenic_byway.png"; sourceTree = "<group>"; };
+		1E1CE41D1835623100398962 /* marker-scenic_byway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-scenic_byway@2x.png"; sourceTree = "<group>"; };
+		1E1CE41E1835623100398962 /* marker-science.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-science.png"; sourceTree = "<group>"; };
+		1E1CE41F1835623100398962 /* marker-science@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-science@2x.png"; sourceTree = "<group>"; };
+		1E1CE4201835623100398962 /* marker-theater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-theater.png"; sourceTree = "<group>"; };
+		1E1CE4211835623100398962 /* marker-theater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-theater@2x.png"; sourceTree = "<group>"; };
+		1E1CE4221835623100398962 /* marker-underground_railroad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-underground_railroad.png"; sourceTree = "<group>"; };
+		1E1CE4231835623100398962 /* marker-underground_railroad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-underground_railroad@2x.png"; sourceTree = "<group>"; };
+		1E1CE4241835623100398962 /* marker-university.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-university.png"; sourceTree = "<group>"; };
+		1E1CE4251835623100398962 /* marker-university@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-university@2x.png"; sourceTree = "<group>"; };
+		1E1CE4261835623100398962 /* marker-zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo.png"; sourceTree = "<group>"; };
+		1E1CE4271835623100398962 /* marker-zoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-zoo@2x.png"; sourceTree = "<group>"; };
+		1E1CE4281835623100398962 /* menu-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bg.png"; sourceTree = "<group>"; };
+		1E1CE4291835623100398962 /* menu-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bg@2x.png"; sourceTree = "<group>"; };
+		1E1CE42A1835623100398962 /* menu-findspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-findspots.png"; sourceTree = "<group>"; };
+		1E1CE42B1835623100398962 /* menu-findspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-findspots@2x.png"; sourceTree = "<group>"; };
+		1E1CE42C1835623100398962 /* menu-savedspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-savedspots.png"; sourceTree = "<group>"; };
+		1E1CE42D1835623100398962 /* menu-savedspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-savedspots@2x.png"; sourceTree = "<group>"; };
+		1E1CE42E1835623100398962 /* menu-top-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-top-img.png"; sourceTree = "<group>"; };
+		1E1CE42F1835623100398962 /* menu-top-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-top-img@2x.png"; sourceTree = "<group>"; };
+		1E1CE4301835623100398962 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		1E1CE4311835623100398962 /* topbar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-bg.png"; sourceTree = "<group>"; };
+		1E1CE4321835623100398962 /* topbar-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-bg@2x.png"; sourceTree = "<group>"; };
+		1E1CE4331835623100398962 /* tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tours.png; sourceTree = "<group>"; };
+		1E1CE4341835623100398962 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
+		1E1CE4371835623100398962 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		1E1CE4381835623100398962 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		1E1CE4391835623100398962 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
+		1E1CE43A1835623100398962 /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		1E1CE43B1835623100398962 /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
+		1E1CE43C1835623100398962 /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		1E1CE43D1835623100398962 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
+		1E1CE43E1835623100398962 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
+		1E1CE43F1835623100398962 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		1E1CE4401835623100398962 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		1E1CE4421835623100398962 /* retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina.png; sourceTree = "<group>"; };
+		1E1CE4431835623100398962 /* retina4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina4inch.png; sourceTree = "<group>"; };
+		1E1CE4441835623100398962 /* bg-mainmenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-mainmenu.jpg"; sourceTree = "<group>"; };
+		1E1CE4451835623100398962 /* bg-menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu.jpg"; sourceTree = "<group>"; };
+		1E1CE4461835623100398962 /* bg-menu@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-menu@2x.jpg"; sourceTree = "<group>"; };
+		1E1CE4471835623100398962 /* btn-aroundme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme.png"; sourceTree = "<group>"; };
+		1E1CE4481835623100398962 /* btn-aroundme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-aroundme@2x.png"; sourceTree = "<group>"; };
+		1E1CE4491835623100398962 /* btn-back-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back-map.png"; sourceTree = "<group>"; };
+		1E1CE44A1835623100398962 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back.png"; sourceTree = "<group>"; };
+		1E1CE44B1835623100398962 /* btn-backtomap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-backtomap.png"; sourceTree = "<group>"; };
+		1E1CE44C1835623100398962 /* btn-cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-cards.png"; sourceTree = "<group>"; };
+		1E1CE44D1835623100398962 /* btn-explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore.png"; sourceTree = "<group>"; };
+		1E1CE44E1835623100398962 /* btn-explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-explore@2x.png"; sourceTree = "<group>"; };
+		1E1CE44F1835623100398962 /* btn-intro-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-intro-go.png"; sourceTree = "<group>"; };
+		1E1CE4501835623100398962 /* btn-mainmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-mainmenu.png"; sourceTree = "<group>"; };
+		1E1CE4511835623100398962 /* btn-myprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile.png"; sourceTree = "<group>"; };
+		1E1CE4521835623100398962 /* btn-myprofile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-myprofile@2x.png"; sourceTree = "<group>"; };
+		1E1CE4531835623100398962 /* btn-planatrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip.png"; sourceTree = "<group>"; };
+		1E1CE4541835623100398962 /* btn-planatrip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-planatrip@2x.png"; sourceTree = "<group>"; };
+		1E1CE4551835623100398962 /* btn-savedspots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots.png"; sourceTree = "<group>"; };
+		1E1CE4561835623100398962 /* btn-savedspots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-savedspots@2x.png"; sourceTree = "<group>"; };
+		1E1CE4571835623100398962 /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
+		1E1CE4581835623100398962 /* btn-single-address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address@2x.png"; sourceTree = "<group>"; };
+		1E1CE4591835623100398962 /* btn-single-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-bg.png"; sourceTree = "<group>"; };
+		1E1CE45A1835623100398962 /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
+		1E1CE45B1835623100398962 /* btn-single-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail@2x.png"; sourceTree = "<group>"; };
+		1E1CE45C1835623100398962 /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
+		1E1CE45D1835623100398962 /* btn-single-phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone@2x.png"; sourceTree = "<group>"; };
+		1E1CE45E1835623100398962 /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
+		1E1CE45F1835623100398962 /* btn-single-www@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www@2x.png"; sourceTree = "<group>"; };
+		1E1CE4601835623100398962 /* btn-tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours.png"; sourceTree = "<group>"; };
+		1E1CE4611835623100398962 /* btn-tours@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tours@2x.png"; sourceTree = "<group>"; };
+		1E1CE4621835623100398962 /* btnbga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbga.png; sourceTree = "<group>"; };
+		1E1CE4631835623100398962 /* btnbgb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbgb.png; sourceTree = "<group>"; };
+		1E1CE4651835623100398962 /* btn-singleview-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-address.png"; sourceTree = "<group>"; };
+		1E1CE4661835623100398962 /* btn-singleview-email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-email.png"; sourceTree = "<group>"; };
+		1E1CE4671835623100398962 /* btn-singleview-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-facebook.png"; sourceTree = "<group>"; };
+		1E1CE4681835623100398962 /* btn-singleview-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-phone.png"; sourceTree = "<group>"; };
+		1E1CE4691835623100398962 /* btn-singleview-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-twitter.png"; sourceTree = "<group>"; };
+		1E1CE46A1835623100398962 /* btn-singleview-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-www.png"; sourceTree = "<group>"; };
+		1E1CE46C1835623100398962 /* btn-singleview-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-address.png"; sourceTree = "<group>"; };
+		1E1CE46D1835623100398962 /* btn-singleview-email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-email.png"; sourceTree = "<group>"; };
+		1E1CE46E1835623100398962 /* btn-singleview-fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-fb.png"; sourceTree = "<group>"; };
+		1E1CE46F1835623100398962 /* btn-singleview-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-phone.png"; sourceTree = "<group>"; };
+		1E1CE4701835623100398962 /* btn-singleview-savespot-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active.png"; sourceTree = "<group>"; };
+		1E1CE4711835623100398962 /* btn-singleview-savespot-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot-active@2x.png"; sourceTree = "<group>"; };
+		1E1CE4721835623100398962 /* btn-singleview-savespot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot.png"; sourceTree = "<group>"; };
+		1E1CE4731835623100398962 /* btn-singleview-savespot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-savespot@2x.png"; sourceTree = "<group>"; };
+		1E1CE4741835623100398962 /* btn-singleview-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-twitter.png"; sourceTree = "<group>"; };
+		1E1CE4751835623100398962 /* btn-singleview-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-singleview-www.png"; sourceTree = "<group>"; };
+		1E1CE4761835623100398962 /* feedback-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback-placeholder.png"; sourceTree = "<group>"; };
+		1E1CE4771835623100398962 /* guidedtours-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guidedtours-placeholder.png"; sourceTree = "<group>"; };
+		1E1CE4791835623100398962 /* btn-single-address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-address.png"; sourceTree = "<group>"; };
+		1E1CE47A1835623100398962 /* btn-single-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-mail.png"; sourceTree = "<group>"; };
+		1E1CE47B1835623100398962 /* btn-single-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-phone.png"; sourceTree = "<group>"; };
+		1E1CE47C1835623100398962 /* btn-single-www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-single-www.png"; sourceTree = "<group>"; };
+		1E1CE47D1835623100398962 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		1E1CE47E1835623100398962 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		1E1CE47F1835623100398962 /* planatrip-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planatrip-placeholder.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,11 +521,11 @@
 			children = (
 				12D7860C182C22BF00C0FD09 /* fonts */,
 				126E7FF218060C0400E7BFE0 /* data */,
-				12F1D1521834D63C005D1D9B /* img */,
 				12AEC88B17C3DC2E0001C5CD /* Iowa Counties */,
 				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
 				12AEC88417C3DC2E0001C5CD /* Frameworks */,
 				12AEC88317C3DC2E0001C5CD /* Products */,
+				1E1CE3DD1835623100398962 /* img */,
 			);
 			sourceTree = "<group>";
 		};
@@ -632,192 +672,220 @@
 			name = screens;
 			sourceTree = "<group>";
 		};
-		12F1D1521834D63C005D1D9B /* img */ = {
+		1E1CE3DD1835623100398962 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D1531834D63C005D1D9B /* btn-intro-go.png */,
-				12F1D1541834D63C005D1D9B /* Default-568h@2x.png */,
-				12F1D1551834D63C005D1D9B /* Default.png */,
-				12F1D1561834D63C005D1D9B /* Default@2x.png */,
-				12F1D1571834D63C005D1D9B /* details.png */,
-				12F1D1581834D63C005D1D9B /* details2.png */,
-				12F1D1591834D63C005D1D9B /* intro_bg.mov */,
-				12F1D15A1834D63C005D1D9B /* justadded.png */,
-				12F1D15B1834D63C005D1D9B /* loading.png */,
-				12F1D15C1834D63C005D1D9B /* markers */,
-				12F1D1911834D63C005D1D9B /* menu-findspots.png */,
-				12F1D1921834D63C005D1D9B /* menu-findspots@2x.png */,
-				12F1D1931834D63C005D1D9B /* menu-savedspots.png */,
-				12F1D1941834D63C005D1D9B /* menu-savedspots@2x.png */,
-				12F1D1951834D63C005D1D9B /* menu-top-img.png */,
-				12F1D1961834D63C005D1D9B /* menu-top-img@2x.png */,
-				12F1D1971834D63C005D1D9B /* menu.png */,
-				12F1D1981834D63C005D1D9B /* topbar-bg.png */,
-				12F1D1991834D63C005D1D9B /* topbar-bg@2x.png */,
-				12F1D19A1834D63C005D1D9B /* tours.png */,
-				12F1D19B1834D63C005D1D9B /* transparent.png */,
-				12F1D19C1834D63C005D1D9B /* ui */,
+				1E1CE3DE1835623100398962 /* btn-intro-go.png */,
+				1E1CE3DF1835623100398962 /* Default-568h@2x.png */,
+				1E1CE3E01835623100398962 /* Default.png */,
+				1E1CE3E11835623100398962 /* Default@2x.png */,
+				1E1CE3E21835623100398962 /* details.png */,
+				1E1CE3E31835623100398962 /* details2.png */,
+				1E1CE3E41835623100398962 /* filter-bycity.png */,
+				1E1CE3E51835623100398962 /* filter-bycounty.png */,
+				1E1CE3E61835623100398962 /* filter-bypopularity.png */,
+				1E1CE3E71835623100398962 /* filter-byproximity.png */,
+				1E1CE3E81835623100398962 /* filter-byrecent.png */,
+				1E1CE3E91835623100398962 /* filter-bytype.png */,
+				1E1CE3EA1835623100398962 /* filterbtn-bycity.png */,
+				1E1CE3EB1835623100398962 /* filterbtn-bycounty.png */,
+				1E1CE3EC1835623100398962 /* filterbtn-bypopularity.png */,
+				1E1CE3ED1835623100398962 /* filterbtn-byproximity.png */,
+				1E1CE3EE1835623100398962 /* filterbtn-byrecent.png */,
+				1E1CE3EF1835623100398962 /* filterbtn-bytype.png */,
+				1E1CE3F01835623100398962 /* intro_bg.mov */,
+				1E1CE3F11835623100398962 /* justadded.png */,
+				1E1CE3F21835623100398962 /* loading.png */,
+				1E1CE3F31835623100398962 /* markers */,
+				1E1CE4281835623100398962 /* menu-bg.png */,
+				1E1CE4291835623100398962 /* menu-bg@2x.png */,
+				1E1CE42A1835623100398962 /* menu-findspots.png */,
+				1E1CE42B1835623100398962 /* menu-findspots@2x.png */,
+				1E1CE42C1835623100398962 /* menu-savedspots.png */,
+				1E1CE42D1835623100398962 /* menu-savedspots@2x.png */,
+				1E1CE42E1835623100398962 /* menu-top-img.png */,
+				1E1CE42F1835623100398962 /* menu-top-img@2x.png */,
+				1E1CE4301835623100398962 /* menu.png */,
+				1E1CE4311835623100398962 /* topbar-bg.png */,
+				1E1CE4321835623100398962 /* topbar-bg@2x.png */,
+				1E1CE4331835623100398962 /* tours.png */,
+				1E1CE4341835623100398962 /* transparent.png */,
+				1E1CE4351835623100398962 /* ui */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		12F1D15C1834D63C005D1D9B /* markers */ = {
+		1E1CE3F31835623100398962 /* markers */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D15D1834D63C005D1D9B /* marker-amphitheater.png */,
-				12F1D15E1834D63C005D1D9B /* marker-amphitheater@2x.png */,
-				12F1D15F1834D63C005D1D9B /* marker-art.png */,
-				12F1D1601834D63C005D1D9B /* marker-art@2x.png */,
-				12F1D1611834D63C005D1D9B /* marker-arts_council.png */,
-				12F1D1621834D63C005D1D9B /* marker-arts_council@2x.png */,
-				12F1D1631834D63C005D1D9B /* marker-barn.png */,
-				12F1D1641834D63C005D1D9B /* marker-barn@2x.png */,
-				12F1D1651834D63C005D1D9B /* marker-botany.png */,
-				12F1D1661834D63C005D1D9B /* marker-botany@2x.png */,
-				12F1D1671834D63C005D1D9B /* marker-cultural_district.png */,
-				12F1D1681834D63C005D1D9B /* marker-cultural_district@2x.png */,
-				12F1D1691834D63C005D1D9B /* marker-famous_iowan.png */,
-				12F1D16A1834D63C005D1D9B /* marker-famous_iowan@2x.png */,
-				12F1D16B1834D63C005D1D9B /* marker-historic_site.png */,
-				12F1D16C1834D63C005D1D9B /* marker-historic_site@2x.png */,
-				12F1D16D1834D63C005D1D9B /* marker-historical_society.png */,
-				12F1D16E1834D63C005D1D9B /* marker-historical_society@2x.png */,
-				12F1D16F1834D63C005D1D9B /* marker-iowa_award.png */,
-				12F1D1701834D63C005D1D9B /* marker-iowa_award@2x.png */,
-				12F1D1711834D63C005D1D9B /* marker-iowa_great_place.png */,
-				12F1D1721834D63C005D1D9B /* marker-iowa_great_place@2x.png */,
-				12F1D1731834D63C005D1D9B /* marker-local_government.png */,
-				12F1D1741834D63C005D1D9B /* marker-local_government@2x.png */,
-				12F1D1751834D63C005D1D9B /* marker-local_landmark.png */,
-				12F1D1761834D63C005D1D9B /* marker-local_landmark@2x.png */,
-				12F1D1771834D63C005D1D9B /* marker-medal_of_honor.png */,
-				12F1D1781834D63C005D1D9B /* marker-medal_of_honor@2x.png */,
-				12F1D1791834D63C005D1D9B /* marker-movie.png */,
-				12F1D17A1834D63C005D1D9B /* marker-movie@2x.png */,
-				12F1D17B1834D63C005D1D9B /* marker-museum.png */,
-				12F1D17C1834D63C005D1D9B /* marker-museum@2x.png */,
-				12F1D17D1834D63C005D1D9B /* marker-national_historic_landmark.png */,
-				12F1D17E1834D63C005D1D9B /* marker-national_historic_landmark@2x.png */,
-				12F1D17F1834D63C005D1D9B /* marker-national_historical_register.png */,
-				12F1D1801834D63C005D1D9B /* marker-national_historical_register@2x.png */,
-				12F1D1811834D63C005D1D9B /* marker-performance.png */,
-				12F1D1821834D63C005D1D9B /* marker-performance@2x.png */,
-				12F1D1831834D63C005D1D9B /* marker-riverwalk.png */,
-				12F1D1841834D63C005D1D9B /* marker-riverwalk@2x.png */,
-				12F1D1851834D63C005D1D9B /* marker-scenic_byway.png */,
-				12F1D1861834D63C005D1D9B /* marker-scenic_byway@2x.png */,
-				12F1D1871834D63C005D1D9B /* marker-science.png */,
-				12F1D1881834D63C005D1D9B /* marker-science@2x.png */,
-				12F1D1891834D63C005D1D9B /* marker-theater.png */,
-				12F1D18A1834D63C005D1D9B /* marker-theater@2x.png */,
-				12F1D18B1834D63C005D1D9B /* marker-underground_railroad.png */,
-				12F1D18C1834D63C005D1D9B /* marker-underground_railroad@2x.png */,
-				12F1D18D1834D63C005D1D9B /* marker-university.png */,
-				12F1D18E1834D63C005D1D9B /* marker-university@2x.png */,
-				12F1D18F1834D63C005D1D9B /* marker-zoo.png */,
-				12F1D1901834D63C005D1D9B /* marker-zoo@2x.png */,
+				1E1CE3F41835623100398962 /* marker-amphitheater.png */,
+				1E1CE3F51835623100398962 /* marker-amphitheater@2x.png */,
+				1E1CE3F61835623100398962 /* marker-art.png */,
+				1E1CE3F71835623100398962 /* marker-art@2x.png */,
+				1E1CE3F81835623100398962 /* marker-arts_council.png */,
+				1E1CE3F91835623100398962 /* marker-arts_council@2x.png */,
+				1E1CE3FA1835623100398962 /* marker-barn.png */,
+				1E1CE3FB1835623100398962 /* marker-barn@2x.png */,
+				1E1CE3FC1835623100398962 /* marker-botany.png */,
+				1E1CE3FD1835623100398962 /* marker-botany@2x.png */,
+				1E1CE3FE1835623100398962 /* marker-cultural_district.png */,
+				1E1CE3FF1835623100398962 /* marker-cultural_district@2x.png */,
+				1E1CE4001835623100398962 /* marker-famous_iowan.png */,
+				1E1CE4011835623100398962 /* marker-famous_iowan@2x.png */,
+				1E1CE4021835623100398962 /* marker-historic_site.png */,
+				1E1CE4031835623100398962 /* marker-historic_site@2x.png */,
+				1E1CE4041835623100398962 /* marker-historical_society.png */,
+				1E1CE4051835623100398962 /* marker-historical_society@2x.png */,
+				1E1CE4061835623100398962 /* marker-iowa_award.png */,
+				1E1CE4071835623100398962 /* marker-iowa_award@2x.png */,
+				1E1CE4081835623100398962 /* marker-iowa_great_place.png */,
+				1E1CE4091835623100398962 /* marker-iowa_great_place@2x.png */,
+				1E1CE40A1835623100398962 /* marker-local_government.png */,
+				1E1CE40B1835623100398962 /* marker-local_government@2x.png */,
+				1E1CE40C1835623100398962 /* marker-local_landmark.png */,
+				1E1CE40D1835623100398962 /* marker-local_landmark@2x.png */,
+				1E1CE40E1835623100398962 /* marker-medal_of_honor.png */,
+				1E1CE40F1835623100398962 /* marker-medal_of_honor@2x.png */,
+				1E1CE4101835623100398962 /* marker-movie.png */,
+				1E1CE4111835623100398962 /* marker-movie@2x.png */,
+				1E1CE4121835623100398962 /* marker-museum.png */,
+				1E1CE4131835623100398962 /* marker-museum@2x.png */,
+				1E1CE4141835623100398962 /* marker-national_historic_landmark.png */,
+				1E1CE4151835623100398962 /* marker-national_historic_landmark@2x.png */,
+				1E1CE4161835623100398962 /* marker-national_historical_register.png */,
+				1E1CE4171835623100398962 /* marker-national_historical_register@2x.png */,
+				1E1CE4181835623100398962 /* marker-performance.png */,
+				1E1CE4191835623100398962 /* marker-performance@2x.png */,
+				1E1CE41A1835623100398962 /* marker-riverwalk.png */,
+				1E1CE41B1835623100398962 /* marker-riverwalk@2x.png */,
+				1E1CE41C1835623100398962 /* marker-scenic_byway.png */,
+				1E1CE41D1835623100398962 /* marker-scenic_byway@2x.png */,
+				1E1CE41E1835623100398962 /* marker-science.png */,
+				1E1CE41F1835623100398962 /* marker-science@2x.png */,
+				1E1CE4201835623100398962 /* marker-theater.png */,
+				1E1CE4211835623100398962 /* marker-theater@2x.png */,
+				1E1CE4221835623100398962 /* marker-underground_railroad.png */,
+				1E1CE4231835623100398962 /* marker-underground_railroad@2x.png */,
+				1E1CE4241835623100398962 /* marker-university.png */,
+				1E1CE4251835623100398962 /* marker-university@2x.png */,
+				1E1CE4261835623100398962 /* marker-zoo.png */,
+				1E1CE4271835623100398962 /* marker-zoo@2x.png */,
 			);
 			path = markers;
 			sourceTree = "<group>";
 		};
-		12F1D19C1834D63C005D1D9B /* ui */ = {
+		1E1CE4351835623100398962 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D19D1834D63C005D1D9B /* app-icons */,
-				12F1D1AB1834D63C005D1D9B /* bg-mainmenu.jpg */,
-				12F1D1AC1834D63C005D1D9B /* bg-menu.jpg */,
-				12F1D1AD1834D63C005D1D9B /* bg-menu@2x.jpg */,
-				12F1D1AE1834D63C005D1D9B /* btn-aroundme.png */,
-				12F1D1AF1834D63C005D1D9B /* btn-aroundme@2x.png */,
-				12F1D1B01834D63C005D1D9B /* btn-back-map.png */,
-				12F1D1B11834D63C005D1D9B /* btn-back.png */,
-				12F1D1B21834D63C005D1D9B /* btn-backtomap.png */,
-				12F1D1B31834D63C005D1D9B /* btn-cards.png */,
-				12F1D1B41834D63C005D1D9B /* btn-explore.png */,
-				12F1D1B51834D63C005D1D9B /* btn-explore@2x.png */,
-				12F1D1B61834D63C005D1D9B /* btn-intro-go.png */,
-				12F1D1B71834D63C005D1D9B /* btn-mainmenu.png */,
-				12F1D1B81834D63C005D1D9B /* btn-myprofile.png */,
-				12F1D1B91834D63C005D1D9B /* btn-myprofile@2x.png */,
-				12F1D1BA1834D63C005D1D9B /* btn-planatrip.png */,
-				12F1D1BB1834D63C005D1D9B /* btn-planatrip@2x.png */,
-				12F1D1BC1834D63C005D1D9B /* btn-savedspots.png */,
-				12F1D1BD1834D63C005D1D9B /* btn-savedspots@2x.png */,
-				12F1D1BE1834D63C005D1D9B /* btn-single-address.png */,
-				12F1D1BF1834D63C005D1D9B /* btn-single-address@2x.png */,
-				12F1D1C01834D63C005D1D9B /* btn-single-bg.png */,
-				12F1D1C11834D63C005D1D9B /* btn-single-mail.png */,
-				12F1D1C21834D63C005D1D9B /* btn-single-mail@2x.png */,
-				12F1D1C31834D63C005D1D9B /* btn-single-phone.png */,
-				12F1D1C41834D63C005D1D9B /* btn-single-phone@2x.png */,
-				12F1D1C51834D63C005D1D9B /* btn-single-www.png */,
-				12F1D1C61834D63C005D1D9B /* btn-single-www@2x.png */,
-				12F1D1C71834D63C005D1D9B /* btn-tours.png */,
-				12F1D1C81834D63C005D1D9B /* btn-tours@2x.png */,
-				12F1D1C91834D63C005D1D9B /* btnbga.png */,
-				12F1D1CA1834D63C005D1D9B /* btnbgb.png */,
-				12F1D1CB1834D63C005D1D9B /* btns-singleview */,
-				12F1D1D61834D63C005D1D9B /* feedback-placeholder.png */,
-				12F1D1D71834D63C005D1D9B /* guidedtours-placeholder.png */,
-				12F1D1D81834D63C005D1D9B /* half */,
-				12F1D1DD1834D63C005D1D9B /* loading.png */,
-				12F1D1DE1834D63C005D1D9B /* logo.png */,
-				12F1D1DF1834D63C005D1D9B /* planatrip-placeholder.png */,
+				1E1CE4361835623100398962 /* app-icons */,
+				1E1CE4441835623100398962 /* bg-mainmenu.jpg */,
+				1E1CE4451835623100398962 /* bg-menu.jpg */,
+				1E1CE4461835623100398962 /* bg-menu@2x.jpg */,
+				1E1CE4471835623100398962 /* btn-aroundme.png */,
+				1E1CE4481835623100398962 /* btn-aroundme@2x.png */,
+				1E1CE4491835623100398962 /* btn-back-map.png */,
+				1E1CE44A1835623100398962 /* btn-back.png */,
+				1E1CE44B1835623100398962 /* btn-backtomap.png */,
+				1E1CE44C1835623100398962 /* btn-cards.png */,
+				1E1CE44D1835623100398962 /* btn-explore.png */,
+				1E1CE44E1835623100398962 /* btn-explore@2x.png */,
+				1E1CE44F1835623100398962 /* btn-intro-go.png */,
+				1E1CE4501835623100398962 /* btn-mainmenu.png */,
+				1E1CE4511835623100398962 /* btn-myprofile.png */,
+				1E1CE4521835623100398962 /* btn-myprofile@2x.png */,
+				1E1CE4531835623100398962 /* btn-planatrip.png */,
+				1E1CE4541835623100398962 /* btn-planatrip@2x.png */,
+				1E1CE4551835623100398962 /* btn-savedspots.png */,
+				1E1CE4561835623100398962 /* btn-savedspots@2x.png */,
+				1E1CE4571835623100398962 /* btn-single-address.png */,
+				1E1CE4581835623100398962 /* btn-single-address@2x.png */,
+				1E1CE4591835623100398962 /* btn-single-bg.png */,
+				1E1CE45A1835623100398962 /* btn-single-mail.png */,
+				1E1CE45B1835623100398962 /* btn-single-mail@2x.png */,
+				1E1CE45C1835623100398962 /* btn-single-phone.png */,
+				1E1CE45D1835623100398962 /* btn-single-phone@2x.png */,
+				1E1CE45E1835623100398962 /* btn-single-www.png */,
+				1E1CE45F1835623100398962 /* btn-single-www@2x.png */,
+				1E1CE4601835623100398962 /* btn-tours.png */,
+				1E1CE4611835623100398962 /* btn-tours@2x.png */,
+				1E1CE4621835623100398962 /* btnbga.png */,
+				1E1CE4631835623100398962 /* btnbgb.png */,
+				1E1CE4641835623100398962 /* btns */,
+				1E1CE46B1835623100398962 /* btns-singleview */,
+				1E1CE4761835623100398962 /* feedback-placeholder.png */,
+				1E1CE4771835623100398962 /* guidedtours-placeholder.png */,
+				1E1CE4781835623100398962 /* half */,
+				1E1CE47D1835623100398962 /* loading.png */,
+				1E1CE47E1835623100398962 /* logo.png */,
+				1E1CE47F1835623100398962 /* planatrip-placeholder.png */,
 			);
 			path = ui;
 			sourceTree = "<group>";
 		};
-		12F1D19D1834D63C005D1D9B /* app-icons */ = {
+		1E1CE4361835623100398962 /* app-icons */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D19E1834D63C005D1D9B /* AppIcon29x29.png */,
-				12F1D19F1834D63C005D1D9B /* AppIcon29x29@2x.png */,
-				12F1D1A01834D63C005D1D9B /* AppIcon40x40.png */,
-				12F1D1A11834D63C005D1D9B /* AppIcon40x40@2x.png */,
-				12F1D1A21834D63C005D1D9B /* AppIcon60x60.png */,
-				12F1D1A31834D63C005D1D9B /* AppIcon60x60@2x.png */,
-				12F1D1A41834D63C005D1D9B /* AppIcon76x76.png */,
-				12F1D1A51834D63C005D1D9B /* AppIcon76x76@2x.png */,
-				12F1D1A61834D63C005D1D9B /* iTunesArtwork.png */,
-				12F1D1A71834D63C005D1D9B /* iTunesArtwork@2x.png */,
-				12F1D1A81834D63C005D1D9B /* launch-images */,
+				1E1CE4371835623100398962 /* AppIcon29x29.png */,
+				1E1CE4381835623100398962 /* AppIcon29x29@2x.png */,
+				1E1CE4391835623100398962 /* AppIcon40x40.png */,
+				1E1CE43A1835623100398962 /* AppIcon40x40@2x.png */,
+				1E1CE43B1835623100398962 /* AppIcon60x60.png */,
+				1E1CE43C1835623100398962 /* AppIcon60x60@2x.png */,
+				1E1CE43D1835623100398962 /* AppIcon76x76.png */,
+				1E1CE43E1835623100398962 /* AppIcon76x76@2x.png */,
+				1E1CE43F1835623100398962 /* iTunesArtwork.png */,
+				1E1CE4401835623100398962 /* iTunesArtwork@2x.png */,
+				1E1CE4411835623100398962 /* launch-images */,
 			);
 			path = "app-icons";
 			sourceTree = "<group>";
 		};
-		12F1D1A81834D63C005D1D9B /* launch-images */ = {
+		1E1CE4411835623100398962 /* launch-images */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D1A91834D63C005D1D9B /* retina.png */,
-				12F1D1AA1834D63C005D1D9B /* retina4inch.png */,
+				1E1CE4421835623100398962 /* retina.png */,
+				1E1CE4431835623100398962 /* retina4inch.png */,
 			);
 			path = "launch-images";
 			sourceTree = "<group>";
 		};
-		12F1D1CB1834D63C005D1D9B /* btns-singleview */ = {
+		1E1CE4641835623100398962 /* btns */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D1CC1834D63C005D1D9B /* btn-singleview-address.png */,
-				12F1D1CD1834D63C005D1D9B /* btn-singleview-email.png */,
-				12F1D1CE1834D63C005D1D9B /* btn-singleview-fb.png */,
-				12F1D1CF1834D63C005D1D9B /* btn-singleview-phone.png */,
-				12F1D1D01834D63C005D1D9B /* btn-singleview-savespot-active.png */,
-				12F1D1D11834D63C005D1D9B /* btn-singleview-savespot-active@2x.png */,
-				12F1D1D21834D63C005D1D9B /* btn-singleview-savespot.png */,
-				12F1D1D31834D63C005D1D9B /* btn-singleview-savespot@2x.png */,
-				12F1D1D41834D63C005D1D9B /* btn-singleview-twitter.png */,
-				12F1D1D51834D63C005D1D9B /* btn-singleview-www.png */,
+				1E1CE4651835623100398962 /* btn-singleview-address.png */,
+				1E1CE4661835623100398962 /* btn-singleview-email.png */,
+				1E1CE4671835623100398962 /* btn-singleview-facebook.png */,
+				1E1CE4681835623100398962 /* btn-singleview-phone.png */,
+				1E1CE4691835623100398962 /* btn-singleview-twitter.png */,
+				1E1CE46A1835623100398962 /* btn-singleview-www.png */,
+			);
+			path = btns;
+			sourceTree = "<group>";
+		};
+		1E1CE46B1835623100398962 /* btns-singleview */ = {
+			isa = PBXGroup;
+			children = (
+				1E1CE46C1835623100398962 /* btn-singleview-address.png */,
+				1E1CE46D1835623100398962 /* btn-singleview-email.png */,
+				1E1CE46E1835623100398962 /* btn-singleview-fb.png */,
+				1E1CE46F1835623100398962 /* btn-singleview-phone.png */,
+				1E1CE4701835623100398962 /* btn-singleview-savespot-active.png */,
+				1E1CE4711835623100398962 /* btn-singleview-savespot-active@2x.png */,
+				1E1CE4721835623100398962 /* btn-singleview-savespot.png */,
+				1E1CE4731835623100398962 /* btn-singleview-savespot@2x.png */,
+				1E1CE4741835623100398962 /* btn-singleview-twitter.png */,
+				1E1CE4751835623100398962 /* btn-singleview-www.png */,
 			);
 			path = "btns-singleview";
 			sourceTree = "<group>";
 		};
-		12F1D1D81834D63C005D1D9B /* half */ = {
+		1E1CE4781835623100398962 /* half */ = {
 			isa = PBXGroup;
 			children = (
-				12F1D1D91834D63C005D1D9B /* btn-single-address.png */,
-				12F1D1DA1834D63C005D1D9B /* btn-single-mail.png */,
-				12F1D1DB1834D63C005D1D9B /* btn-single-phone.png */,
-				12F1D1DC1834D63C005D1D9B /* btn-single-www.png */,
+				1E1CE4791835623100398962 /* btn-single-address.png */,
+				1E1CE47A1835623100398962 /* btn-single-mail.png */,
+				1E1CE47B1835623100398962 /* btn-single-phone.png */,
+				1E1CE47C1835623100398962 /* btn-single-www.png */,
 			);
 			path = half;
 			sourceTree = "<group>";
@@ -878,30 +946,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12F1D2211834D63C005D1D9B /* menu-top-img.png in Resources */,
-				12F1D2231834D63C005D1D9B /* menu.png in Resources */,
-				12F1D1EE1834D63C005D1D9B /* marker-arts_council@2x.png in Resources */,
-				12F1D2271834D63C005D1D9B /* transparent.png in Resources */,
-				12F1D23B1834D63C005D1D9B /* btn-backtomap.png in Resources */,
-				12F1D2591834D63C005D1D9B /* btn-singleview-savespot-active@2x.png in Resources */,
-				12F1D1F71834D63C005D1D9B /* marker-historic_site.png in Resources */,
-				12F1D2221834D63C005D1D9B /* menu-top-img@2x.png in Resources */,
-				12F1D25A1834D63C005D1D9B /* btn-singleview-savespot.png in Resources */,
-				12F1D2411834D63C005D1D9B /* btn-myprofile.png in Resources */,
-				12F1D2301834D63C005D1D9B /* iTunesArtwork.png in Resources */,
-				12F1D25C1834D63C005D1D9B /* btn-singleview-twitter.png in Resources */,
-				12F1D1F01834D63C005D1D9B /* marker-barn@2x.png in Resources */,
-				12F1D1E41834D63C005D1D9B /* details.png in Resources */,
-				12F1D23F1834D63C005D1D9B /* btn-intro-go.png in Resources */,
+				1E1CE50B1835623100398962 /* btn-singleview-phone.png in Resources */,
+				1E1CE4B51835623100398962 /* marker-national_historic_landmark.png in Resources */,
+				1E1CE4AE1835623100398962 /* marker-local_landmark@2x.png in Resources */,
+				1E1CE49F1835623100398962 /* marker-cultural_district.png in Resources */,
+				1E1CE4A11835623100398962 /* marker-famous_iowan.png in Resources */,
+				1E1CE4B11835623100398962 /* marker-movie.png in Resources */,
+				1E1CE4AA1835623100398962 /* marker-iowa_great_place@2x.png in Resources */,
+				1E1CE49A1835623100398962 /* marker-arts_council@2x.png in Resources */,
+				1E1CE4CE1835623100398962 /* menu-savedspots@2x.png in Resources */,
+				1E1CE49E1835623100398962 /* marker-botany@2x.png in Resources */,
+				1E1CE4BD1835623100398962 /* marker-scenic_byway.png in Resources */,
+				1E1CE4B31835623100398962 /* marker-museum.png in Resources */,
+				1E1CE5061835623100398962 /* btn-singleview-twitter.png in Resources */,
+				1E1CE4991835623100398962 /* marker-arts_council.png in Resources */,
+				1E1CE4BC1835623100398962 /* marker-riverwalk@2x.png in Resources */,
+				1E1CE4E51835623100398962 /* btn-aroundme.png in Resources */,
+				1E1CE4AB1835623100398962 /* marker-local_government.png in Resources */,
+				1E1CE4961835623100398962 /* marker-amphitheater@2x.png in Resources */,
+				1E1CE5151835623100398962 /* btn-single-mail.png in Resources */,
+				1E1CE4D01835623100398962 /* menu-top-img@2x.png in Resources */,
+				1E1CE4941835623100398962 /* loading.png in Resources */,
+				1E1CE4841835623100398962 /* details.png in Resources */,
+				1E1CE4E91835623100398962 /* btn-backtomap.png in Resources */,
+				1E1CE4881835623100398962 /* filter-bypopularity.png in Resources */,
+				1E1CE4CF1835623100398962 /* menu-top-img.png in Resources */,
+				1E1CE4D11835623100398962 /* menu.png in Resources */,
+				1E1CE4E71835623100398962 /* btn-back-map.png in Resources */,
+				1E1CE4BB1835623100398962 /* marker-riverwalk.png in Resources */,
+				1E1CE4F51835623100398962 /* btn-single-address.png in Resources */,
+				1E1CE4B61835623100398962 /* marker-national_historic_landmark@2x.png in Resources */,
+				1E1CE4FD1835623100398962 /* btn-single-www@2x.png in Resources */,
+				1E1CE48E1835623100398962 /* filterbtn-bypopularity.png in Resources */,
+				1E1CE50F1835623100398962 /* btn-singleview-savespot@2x.png in Resources */,
 				12D78619182C22BF00C0FD09 /* Gotham-BoldItalic.ttf in Resources */,
-				12F1D24C1834D63C005D1D9B /* btn-single-phone.png in Resources */,
-				12F1D2321834D63C005D1D9B /* retina.png in Resources */,
-				12F1D21C1834D63C005D1D9B /* marker-zoo@2x.png in Resources */,
-				12F1D1F61834D63C005D1D9B /* marker-famous_iowan@2x.png in Resources */,
-				12F1D2351834D63C005D1D9B /* bg-menu.jpg in Resources */,
-				12F1D1E21834D63C005D1D9B /* Default.png in Resources */,
-				12F1D2331834D63C005D1D9B /* retina4inch.png in Resources */,
-				12F1D2531834D63C005D1D9B /* btnbgb.png in Resources */,
+				1E1CE4A51835623100398962 /* marker-historical_society.png in Resources */,
+				1E1CE4821835623100398962 /* Default.png in Resources */,
+				1E1CE4D51835623100398962 /* transparent.png in Resources */,
+				1E1CE5071835623100398962 /* btn-singleview-www.png in Resources */,
+				1E1CE4DE1835623100398962 /* iTunesArtwork.png in Resources */,
+				1E1CE5191835623100398962 /* logo.png in Resources */,
 				12C12E6A182B643600CF5ABE /* Cards.storyboard in Resources */,
 				12F1D22D1834D63C005D1D9B /* AppIcon60x60@2x.png in Resources */,
 				12F1D1FE1834D63C005D1D9B /* marker-iowa_great_place@2x.png in Resources */,
@@ -916,119 +1000,128 @@
 				12F1D2651834D63C005D1D9B /* logo.png in Resources */,
 				12F1D2281834D63C005D1D9B /* AppIcon29x29.png in Resources */,
 				123DA02218348CDE006A1D73 /* DetailView.xib in Resources */,
-				12F1D2421834D63C005D1D9B /* btn-myprofile@2x.png in Resources */,
-				12F1D1E01834D63C005D1D9B /* btn-intro-go.png in Resources */,
-				12F1D24E1834D63C005D1D9B /* btn-single-www.png in Resources */,
-				12F1D20E1834D63C005D1D9B /* marker-performance@2x.png in Resources */,
-				12F1D20C1834D63C005D1D9B /* marker-national_historical_register@2x.png in Resources */,
-				12F1D2131834D63C005D1D9B /* marker-science.png in Resources */,
+				1E1CE4CC1835623100398962 /* menu-findspots@2x.png in Resources */,
+				1E1CE4801835623100398962 /* btn-intro-go.png in Resources */,
+				1E1CE5121835623100398962 /* feedback-placeholder.png in Resources */,
+				1E1CE4F31835623100398962 /* btn-savedspots.png in Resources */,
+				1E1CE4AF1835623100398962 /* marker-medal_of_honor.png in Resources */,
 				12D78618182C22BF00C0FD09 /* Gotham-Bold.ttf in Resources */,
+				1E1CE4C81835623100398962 /* marker-zoo@2x.png in Resources */,
 				12D7861E182C22BF00C0FD09 /* Gotham-XLightItalic.ttf in Resources */,
-				12F1D25E1834D63C005D1D9B /* feedback-placeholder.png in Resources */,
-				12F1D1EC1834D63C005D1D9B /* marker-art@2x.png in Resources */,
-				12F1D2091834D63C005D1D9B /* marker-national_historic_landmark.png in Resources */,
+				1E1CE4981835623100398962 /* marker-art@2x.png in Resources */,
+				1E1CE4921835623100398962 /* intro_bg.mov in Resources */,
+				1E1CE4C41835623100398962 /* marker-underground_railroad@2x.png in Resources */,
+				1E1CE4C21835623100398962 /* marker-theater@2x.png in Resources */,
+				1E1CE4A71835623100398962 /* marker-iowa_award.png in Resources */,
+				1E1CE4D41835623100398962 /* tours.png in Resources */,
 				12AEC89017C3DC2E0001C5CD /* InfoPlist.strings in Resources */,
-				12F1D2611834D63C005D1D9B /* btn-single-mail.png in Resources */,
-				12F1D2041834D63C005D1D9B /* marker-medal_of_honor@2x.png in Resources */,
-				12F1D2661834D63C005D1D9B /* planatrip-placeholder.png in Resources */,
-				12F1D2191834D63C005D1D9B /* marker-university.png in Resources */,
+				1E1CE4E81835623100398962 /* btn-back.png in Resources */,
+				1E1CE4DA1835623100398962 /* AppIcon60x60.png in Resources */,
+				1E1CE4D21835623100398962 /* topbar-bg.png in Resources */,
 				12AEC89F17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard in Resources */,
-				12F1D2501834D63C005D1D9B /* btn-tours.png in Resources */,
-				12F1D22E1834D63C005D1D9B /* AppIcon76x76.png in Resources */,
-				12F1D20D1834D63C005D1D9B /* marker-performance.png in Resources */,
-				12F1D1E11834D63C005D1D9B /* Default-568h@2x.png in Resources */,
-				12F1D2641834D63C005D1D9B /* loading.png in Resources */,
+				1E1CE5001835623100398962 /* btnbga.png in Resources */,
+				1E1CE4891835623100398962 /* filter-byproximity.png in Resources */,
+				1E1CE4F01835623100398962 /* btn-myprofile@2x.png in Resources */,
+				1E1CE4CD1835623100398962 /* menu-savedspots.png in Resources */,
+				1E1CE4C61835623100398962 /* marker-university@2x.png in Resources */,
+				1E1CE5021835623100398962 /* btn-singleview-address.png in Resources */,
+				1E1CE4DF1835623100398962 /* iTunesArtwork@2x.png in Resources */,
+				1E1CE4A21835623100398962 /* marker-famous_iowan@2x.png in Resources */,
+				1E1CE4D91835623100398962 /* AppIcon40x40@2x.png in Resources */,
+				1E1CE5051835623100398962 /* btn-singleview-phone.png in Resources */,
+				1E1CE4BA1835623100398962 /* marker-performance@2x.png in Resources */,
+				1E1CE4D31835623100398962 /* topbar-bg@2x.png in Resources */,
+				1E1CE4FB1835623100398962 /* btn-single-phone@2x.png in Resources */,
+				1E1CE4C91835623100398962 /* menu-bg.png in Resources */,
+				1E1CE48B1835623100398962 /* filter-bytype.png in Resources */,
+				1E1CE48F1835623100398962 /* filterbtn-byproximity.png in Resources */,
+				1E1CE4931835623100398962 /* justadded.png in Resources */,
+				1E1CE4EA1835623100398962 /* btn-cards.png in Resources */,
+				1E1CE4B21835623100398962 /* marker-movie@2x.png in Resources */,
+				1E1CE4811835623100398962 /* Default-568h@2x.png in Resources */,
+				1E1CE4971835623100398962 /* marker-art.png in Resources */,
+				1E1CE4F71835623100398962 /* btn-single-bg.png in Resources */,
 				12D7861D182C22BF00C0FD09 /* Gotham-XLight.ttf in Resources */,
-				12F1D22A1834D63C005D1D9B /* AppIcon40x40.png in Resources */,
-				12F1D2441834D63C005D1D9B /* btn-planatrip@2x.png in Resources */,
-				12F1D2451834D63C005D1D9B /* btn-savedspots.png in Resources */,
-				12F1D1E81834D63C005D1D9B /* loading.png in Resources */,
+				1E1CE4E41835623100398962 /* bg-menu@2x.jpg in Resources */,
+				1E1CE49D1835623100398962 /* marker-botany.png in Resources */,
+				1E1CE4B01835623100398962 /* marker-medal_of_honor@2x.png in Resources */,
+				1E1CE4F21835623100398962 /* btn-planatrip@2x.png in Resources */,
+				1E1CE5101835623100398962 /* btn-singleview-twitter.png in Resources */,
+				1E1CE4F81835623100398962 /* btn-single-mail.png in Resources */,
 				12D78617182C22BF00C0FD09 /* Gotham-BlackItalic.ttf in Resources */,
-				12F1D2201834D63C005D1D9B /* menu-savedspots@2x.png in Resources */,
-				12F1D20F1834D63C005D1D9B /* marker-riverwalk.png in Resources */,
-				12F1D2601834D63C005D1D9B /* btn-single-address.png in Resources */,
-				12F1D1E51834D63C005D1D9B /* details2.png in Resources */,
-				12F1D1FD1834D63C005D1D9B /* marker-iowa_great_place.png in Resources */,
-				12F1D1F11834D63C005D1D9B /* marker-botany.png in Resources */,
-				12F1D2251834D63C005D1D9B /* topbar-bg@2x.png in Resources */,
-				12F1D1FA1834D63C005D1D9B /* marker-historical_society@2x.png in Resources */,
-				12F1D25B1834D63C005D1D9B /* btn-singleview-savespot@2x.png in Resources */,
-				12F1D2241834D63C005D1D9B /* topbar-bg.png in Resources */,
-				12F1D2311834D63C005D1D9B /* iTunesArtwork@2x.png in Resources */,
-				12F1D1E61834D63C005D1D9B /* intro_bg.mov in Resources */,
-				12F1D2021834D63C005D1D9B /* marker-local_landmark@2x.png in Resources */,
-				12F1D23D1834D63C005D1D9B /* btn-explore.png in Resources */,
+				1E1CE4F91835623100398962 /* btn-single-mail@2x.png in Resources */,
+				1E1CE4DB1835623100398962 /* AppIcon60x60@2x.png in Resources */,
+				1E1CE4EB1835623100398962 /* btn-explore.png in Resources */,
+				1E1CE4B91835623100398962 /* marker-performance.png in Resources */,
+				1E1CE4A31835623100398962 /* marker-historic_site.png in Resources */,
+				1E1CE4A41835623100398962 /* marker-historic_site@2x.png in Resources */,
+				1E1CE4951835623100398962 /* marker-amphitheater.png in Resources */,
+				1E1CE4871835623100398962 /* filter-bycounty.png in Resources */,
+				1E1CE4BF1835623100398962 /* marker-science.png in Resources */,
+				1E1CE4851835623100398962 /* details2.png in Resources */,
+				1E1CE48C1835623100398962 /* filterbtn-bycity.png in Resources */,
+				1E1CE5161835623100398962 /* btn-single-phone.png in Resources */,
+				1E1CE4E31835623100398962 /* bg-menu.jpg in Resources */,
+				1E1CE4DC1835623100398962 /* AppIcon76x76.png in Resources */,
+				1E1CE4B81835623100398962 /* marker-national_historical_register@2x.png in Resources */,
+				1E1CE50D1835623100398962 /* btn-singleview-savespot-active@2x.png in Resources */,
 				12D7861B182C22BF00C0FD09 /* Gotham-BookItalic.ttf in Resources */,
-				12F1D2401834D63C005D1D9B /* btn-mainmenu.png in Resources */,
-				12F1D2121834D63C005D1D9B /* marker-scenic_byway@2x.png in Resources */,
-				12F1D2381834D63C005D1D9B /* btn-aroundme@2x.png in Resources */,
-				12F1D1F81834D63C005D1D9B /* marker-historic_site@2x.png in Resources */,
-				12F1D2491834D63C005D1D9B /* btn-single-bg.png in Resources */,
-				12F1D24A1834D63C005D1D9B /* btn-single-mail.png in Resources */,
-				12F1D2151834D63C005D1D9B /* marker-theater.png in Resources */,
-				12F1D1EF1834D63C005D1D9B /* marker-barn.png in Resources */,
-				12F1D2541834D63C005D1D9B /* btn-singleview-address.png in Resources */,
-				12F1D1F31834D63C005D1D9B /* marker-cultural_district.png in Resources */,
-				12F1D2031834D63C005D1D9B /* marker-medal_of_honor.png in Resources */,
-				12F1D1E71834D63C005D1D9B /* justadded.png in Resources */,
-				12F1D22B1834D63C005D1D9B /* AppIcon40x40@2x.png in Resources */,
-				12F1D25F1834D63C005D1D9B /* guidedtours-placeholder.png in Resources */,
-				12F1D2481834D63C005D1D9B /* btn-single-address@2x.png in Resources */,
+				1E1CE4E01835623100398962 /* retina.png in Resources */,
+				1E1CE4F41835623100398962 /* btn-savedspots@2x.png in Resources */,
+				1E1CE5011835623100398962 /* btnbgb.png in Resources */,
+				1E1CE4861835623100398962 /* filter-bycity.png in Resources */,
+				1E1CE4F61835623100398962 /* btn-single-address@2x.png in Resources */,
+				1E1CE5091835623100398962 /* btn-singleview-email.png in Resources */,
+				1E1CE48D1835623100398962 /* filterbtn-bycounty.png in Resources */,
+				1E1CE48A1835623100398962 /* filter-byrecent.png in Resources */,
+				1E1CE49B1835623100398962 /* marker-barn.png in Resources */,
 				12D7861A182C22BF00C0FD09 /* Gotham-Book.ttf in Resources */,
+				1E1CE4EC1835623100398962 /* btn-explore@2x.png in Resources */,
+				1E1CE5131835623100398962 /* guidedtours-placeholder.png in Resources */,
 				12D78616182C22BF00C0FD09 /* Gotham-Black.ttf in Resources */,
-				12F1D21B1834D63C005D1D9B /* marker-zoo.png in Resources */,
 				123DA01D18347DBA006A1D73 /* ContextList.xib in Resources */,
-				12F1D2071834D63C005D1D9B /* marker-museum.png in Resources */,
-				12F1D2631834D63C005D1D9B /* btn-single-www.png in Resources */,
-				12F1D2141834D63C005D1D9B /* marker-science@2x.png in Resources */,
-				12F1D2361834D63C005D1D9B /* bg-menu@2x.jpg in Resources */,
-				12F1D1E31834D63C005D1D9B /* Default@2x.png in Resources */,
-				12F1D1F51834D63C005D1D9B /* marker-famous_iowan.png in Resources */,
-				12F1D1FC1834D63C005D1D9B /* marker-iowa_award@2x.png in Resources */,
-				12F1D2391834D63C005D1D9B /* btn-back-map.png in Resources */,
-				12F1D2561834D63C005D1D9B /* btn-singleview-fb.png in Resources */,
-				12F1D2461834D63C005D1D9B /* btn-savedspots@2x.png in Resources */,
-				12F1D2471834D63C005D1D9B /* btn-single-address.png in Resources */,
-				12F1D2261834D63C005D1D9B /* tours.png in Resources */,
-				12F1D1EA1834D63C005D1D9B /* marker-amphitheater@2x.png in Resources */,
-				12F1D23C1834D63C005D1D9B /* btn-cards.png in Resources */,
-				12F1D21E1834D63C005D1D9B /* menu-findspots@2x.png in Resources */,
-				12F1D21F1834D63C005D1D9B /* menu-savedspots.png in Resources */,
-				12F1D20A1834D63C005D1D9B /* marker-national_historic_landmark@2x.png in Resources */,
-				12F1D2181834D63C005D1D9B /* marker-underground_railroad@2x.png in Resources */,
-				12F1D23A1834D63C005D1D9B /* btn-back.png in Resources */,
-				12F1D2521834D63C005D1D9B /* btnbga.png in Resources */,
-				12F1D21D1834D63C005D1D9B /* menu-findspots.png in Resources */,
-				12F1D2431834D63C005D1D9B /* btn-planatrip.png in Resources */,
-				12F1D24D1834D63C005D1D9B /* btn-single-phone@2x.png in Resources */,
-				12F1D22F1834D63C005D1D9B /* AppIcon76x76@2x.png in Resources */,
-				12F1D1FB1834D63C005D1D9B /* marker-iowa_award.png in Resources */,
-				12F1D1EB1834D63C005D1D9B /* marker-art.png in Resources */,
-				12F1D2081834D63C005D1D9B /* marker-museum@2x.png in Resources */,
-				12F1D1F91834D63C005D1D9B /* marker-historical_society.png in Resources */,
-				12F1D2621834D63C005D1D9B /* btn-single-phone.png in Resources */,
-				12F1D2001834D63C005D1D9B /* marker-local_government@2x.png in Resources */,
-				12F1D2011834D63C005D1D9B /* marker-local_landmark.png in Resources */,
-				12F1D22C1834D63C005D1D9B /* AppIcon60x60.png in Resources */,
-				12F1D2051834D63C005D1D9B /* marker-movie.png in Resources */,
-				12F1D2341834D63C005D1D9B /* bg-mainmenu.jpg in Resources */,
-				12F1D24F1834D63C005D1D9B /* btn-single-www@2x.png in Resources */,
-				12F1D2551834D63C005D1D9B /* btn-singleview-email.png in Resources */,
+				1E1CE4901835623100398962 /* filterbtn-byrecent.png in Resources */,
+				1E1CE4C11835623100398962 /* marker-theater.png in Resources */,
+				1E1CE4FF1835623100398962 /* btn-tours@2x.png in Resources */,
+				1E1CE4B41835623100398962 /* marker-museum@2x.png in Resources */,
+				1E1CE4FE1835623100398962 /* btn-tours.png in Resources */,
+				1E1CE5181835623100398962 /* loading.png in Resources */,
+				1E1CE4E21835623100398962 /* bg-mainmenu.jpg in Resources */,
+				1E1CE4D61835623100398962 /* AppIcon29x29.png in Resources */,
+				1E1CE4F11835623100398962 /* btn-planatrip.png in Resources */,
+				1E1CE5081835623100398962 /* btn-singleview-address.png in Resources */,
+				1E1CE4A91835623100398962 /* marker-iowa_great_place.png in Resources */,
+				1E1CE5141835623100398962 /* btn-single-address.png in Resources */,
+				1E1CE4AD1835623100398962 /* marker-local_landmark.png in Resources */,
+				1E1CE51A1835623100398962 /* planatrip-placeholder.png in Resources */,
+				1E1CE4FC1835623100398962 /* btn-single-www.png in Resources */,
+				1E1CE4DD1835623100398962 /* AppIcon76x76@2x.png in Resources */,
+				1E1CE4831835623100398962 /* Default@2x.png in Resources */,
+				1E1CE50C1835623100398962 /* btn-singleview-savespot-active.png in Resources */,
+				1E1CE5171835623100398962 /* btn-single-www.png in Resources */,
+				1E1CE4CA1835623100398962 /* menu-bg@2x.png in Resources */,
+				1E1CE4C31835623100398962 /* marker-underground_railroad.png in Resources */,
+				1E1CE4FA1835623100398962 /* btn-single-phone.png in Resources */,
+				1E1CE4911835623100398962 /* filterbtn-bytype.png in Resources */,
+				1E1CE4AC1835623100398962 /* marker-local_government@2x.png in Resources */,
+				1E1CE4A81835623100398962 /* marker-iowa_award@2x.png in Resources */,
+				1E1CE4EF1835623100398962 /* btn-myprofile.png in Resources */,
+				1E1CE5041835623100398962 /* btn-singleview-facebook.png in Resources */,
+				1E1CE50E1835623100398962 /* btn-singleview-savespot.png in Resources */,
+				1E1CE4CB1835623100398962 /* menu-findspots.png in Resources */,
+				1E1CE4A01835623100398962 /* marker-cultural_district@2x.png in Resources */,
+				1E1CE49C1835623100398962 /* marker-barn@2x.png in Resources */,
+				1E1CE5111835623100398962 /* btn-singleview-www.png in Resources */,
+				1E1CE4C51835623100398962 /* marker-university.png in Resources */,
+				1E1CE4C01835623100398962 /* marker-science@2x.png in Resources */,
+				1E1CE4C71835623100398962 /* marker-zoo.png in Resources */,
 				121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */,
-				12F1D1F41834D63C005D1D9B /* marker-cultural_district@2x.png in Resources */,
-				12F1D2101834D63C005D1D9B /* marker-riverwalk@2x.png in Resources */,
+				1E1CE4A61835623100398962 /* marker-historical_society@2x.png in Resources */,
+				1E1CE50A1835623100398962 /* btn-singleview-fb.png in Resources */,
+				1E1CE4B71835623100398962 /* marker-national_historical_register.png in Resources */,
+				1E1CE4D71835623100398962 /* AppIcon29x29@2x.png in Resources */,
+				1E1CE4E61835623100398962 /* btn-aroundme@2x.png in Resources */,
 				12D7861C182C22BF00C0FD09 /* Gotham-Light.ttf in Resources */,
-				12F1D2581834D63C005D1D9B /* btn-singleview-savespot-active.png in Resources */,
-				12F1D25D1834D63C005D1D9B /* btn-singleview-www.png in Resources */,
-				12F1D1E91834D63C005D1D9B /* marker-amphitheater.png in Resources */,
-				12F1D21A1834D63C005D1D9B /* marker-university@2x.png in Resources */,
-				12F1D2061834D63C005D1D9B /* marker-movie@2x.png in Resources */,
-				12F1D1F21834D63C005D1D9B /* marker-botany@2x.png in Resources */,
-				12F1D2571834D63C005D1D9B /* btn-singleview-phone.png in Resources */,
-				12F1D24B1834D63C005D1D9B /* btn-single-mail@2x.png in Resources */,
-				12F1D1FF1834D63C005D1D9B /* marker-local_government.png in Resources */,
-				12F1D2511834D63C005D1D9B /* btn-tours@2x.png in Resources */,
-				12F1D23E1834D63C005D1D9B /* btn-explore@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

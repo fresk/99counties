@@ -12,9 +12,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Utils.h"
 #import "AppContext.h"
-#import "ContextList.h"
+#import "ContextMenu.h"
 
 @interface MapViewController ()
+
+@property (strong, atomic) ContextMenu* context_menu;
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet GMSMapView *map_view;
@@ -112,11 +114,15 @@
     
     [self fitBounds];
     [self initImagePager];
-    [self init_context_list];
+    [self init_context_menu];
 }
 
 
 - (void) viewDidAppear:(BOOL)animated {
+    
+    //[self.context_menu set_hidden_state];
+    //self.context_menu.is_showing = FALSE;
+    
     if (self.selectedLocationID == nil){
         comingFromListView = FALSE;
         //[ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
@@ -146,74 +152,27 @@
 
 
 
--(void) init_context_list {
+-(void) init_context_menu {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"ContextMenu" bundle:nil];
+    self.context_menu = [sb instantiateViewControllerWithIdentifier:@"ContextMenu"];
+    
+    [self addChildViewController:self.context_menu];
+    [self.view addSubview:self.context_menu.view];
+    
+    [self.context_menu set_hidden_state ];
+    /*
     self.context_tab.frame = CGRectMake(280,40,40,40);
     self.go_back_button.enabled = TRUE;
     self.go_back_button.alpha = 1.0;
     self.context_backdrop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menu-bg"]];
     self.context_backdrop.hidden = TRUE;
-    self.context_list = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
-    self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    [self addChildViewController:self.context_list];
+    self.context_menu = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
+    self.context_menu.view.frame = CGRectOffset(self.view.frame, 320, 0);
+    [self addChildViewController:self.context_menu];
     [self.view addSubview:self.context_backdrop];
-    [self.view addSubview:self.context_list.view];
-}
-
-
-
-
-- (IBAction)show_context_list_btn:(id)sender {
-    if (self.go_back_button.enabled){
-        [self show_context_list];
-    }
-    else {
-        [self hide_context_list];
-    }
-}
-
--(void) show_context_list {
-    ContextList* ctx_list = (ContextList*) self.context_list;
-    [ctx_list setResults: [self get_visible_locations]];
-
-    self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    
-    //eased animations
-    [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab.frame = CGRectMake(10,25,40,40);
-        self.context_list.view.frame = CGRectOffset(self.view.frame, 60, 0);
-    }];
-    
-    //linear animation
-    self.go_back_button.enabled = FALSE;
-    self.go_back_button.alpha = 1.0;
-    self.context_backdrop.hidden = FALSE;
-    self.context_backdrop.alpha = 0.0;
-    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveLinear
-                     animations:^(void){
-                         self.context_backdrop.alpha = 1.0;
-                         self.go_back_button.alpha = 0.0;
-                     }
-                     completion:^(BOOL finished) {}];
-}
-
-
--(void) hide_context_list {
-    //eased animations
-    [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab.frame = CGRectMake(280,25,40,40);
-        self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    }];
-
-    //linear animations
-    self.go_back_button.enabled = TRUE;
-    self.context_backdrop.hidden = TRUE;
-    [UIView animateWithDuration:1.0 delay:0.0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^(void){
-                         self.go_back_button.alpha = 1.0;
-                         self.context_backdrop.alpha = 0.0;
-                     }
-                     completion:^(BOOL finished) {}];
+    [self.view addSubview:self.context_menu.view];
+     */
 }
 
 
@@ -250,7 +209,8 @@
     ctx.selected_location = location;
     GMSMarker* selected_marker = [self getMarkerForLocationID:[location objectForKey:@"id"]];
     [self gotoDetailsForMarker:selected_marker animated:TRUE];
-    [self hide_context_list];
+    //[self hide_context_menu];
+    self.context_menu.is_showing = FALSE;
 
 }
 
@@ -355,12 +315,14 @@
 
 -(void)setResults: (NSArray*) results
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        ContextList* ctx_list = (ContextList*) self.context_list;
+    /*
+     dispatch_async(dispatch_get_main_queue(), ^{
+        ContextList* ctx_list = (ContextList*) self.context_menu;
         [ctx_list setResults: results];
     
     });
-    
+    */
+     
     NSDictionary* item;
     for (item in results){
         dispatch_async(dispatch_get_main_queue(), ^{

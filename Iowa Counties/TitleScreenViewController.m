@@ -21,8 +21,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        self.logo.alpha = 0.0;
+        self.skip_btn.alpha = 0.0;
+        
     }
+    
+    
     return self;
 }
 
@@ -30,6 +35,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+ 
+    
+    self.logo.alpha = 0.0;
+    self.skip_btn.alpha = 0.0;
+    
     
     
 	NSURL *theMovieURL = nil;
@@ -72,24 +82,35 @@
     [self presentModalViewController: mainMenuViewController animated:YES];
 
     
+    
 }
 
-
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    self.logo.alpha = 0.0;
-}
 
 
 - (void) viewDidAppear:(BOOL)animated
 {
     self.logo.alpha = 0.0;
+    self.skip_btn.alpha = 0.0;
+    
     [UIView animateWithDuration:2.0 delay:3.0 options: UIViewAnimationOptionCurveLinear animations:^{
         self.logo.alpha = 1.0;
+        self.skip_btn.alpha = 1.0;
     } completion:^(BOOL finished) {
 
+        
+        [UIView animateWithDuration:1.0 delay:9.0 options: UIViewAnimationOptionCurveLinear animations:^{
+            self.logo.alpha = 0.0;
+            self.skip_btn.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            
+        }];
+        
+        
+        
     }];
+    
+    
+
     
     
 }

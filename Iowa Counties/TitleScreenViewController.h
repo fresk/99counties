@@ -11,5 +11,6 @@
 @interface TitleScreenViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *bg_view;
 @property (strong, nonatomic) IBOutlet UIImageView *logo;
+@property (strong, nonatomic) IBOutlet UIView *skip_btn;
 
 @end

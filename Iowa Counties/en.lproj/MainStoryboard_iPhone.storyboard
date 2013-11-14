@@ -49,6 +49,7 @@
                     <connections>
                         <outlet property="bg_view" destination="k3V-kG-AiN" id="utd-tQ-JQ9"/>
                         <outlet property="logo" destination="5vx-tg-aip" id="mXs-bT-8Dx"/>
+                        <outlet property="skip_btn" destination="X5n-4B-ZgY" id="c95-cC-vs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5C-tk-tk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,28 +76,6 @@
                                         <rect key="frame" x="0.0" y="-66" width="320" height="616"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzX-WO-hLE">
-                                        <rect key="frame" x="160" y="315" width="160" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-planatrip.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="8Q7-gu-I0s" kind="modal" modalTransitionStyle="crossDissolve" id="Zvl-D0-1j4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chg-wd-PO3">
-                                        <rect key="frame" x="0.0" y="315" width="160" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-tours.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="U48-U2-ZcZ" kind="modal" modalTransitionStyle="crossDissolve" id="vOv-QZ-8kr"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEp-kd-GoD">
                                         <rect key="frame" x="0.0" y="62" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -109,7 +88,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
-                                        <rect key="frame" x="0.0" y="175" width="320" height="112.99999251626535"/>
+                                        <rect key="frame" x="0.0" y="175" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="menu-savedspots.png">
@@ -709,7 +688,7 @@
                         <viewControllerLayoutGuide type="top" id="Qki-4R-1uM"/>
                         <viewControllerLayoutGuide type="bottom" id="KNC-ew-yEV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fUZ-2m-DR6">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="fUZ-2m-DR6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -818,23 +797,12 @@
                                     <action selector="button_back_pressed:" destination="QpN-i5-N3V" eventType="touchUpInside" id="dzd-TU-LZx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nop-Iy-Bic">
-                                <rect key="frame" x="270" y="25" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="btn-mainmenu.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="show_context_list_btn:" destination="QpN-i5-N3V" eventType="touchUpInside" id="ybn-ZZ-TAS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="tQP-Lr-QZ6"/>
                     <connections>
                         <outlet property="background_layer" destination="ag6-LV-xvk" id="EzR-rw-XU3"/>
-                        <outlet property="context_tab" destination="nop-Iy-Bic" id="DBp-dk-kYG"/>
                         <outlet property="detailViewTapRecognizer" destination="Iho-1y-urs" id="DME-l0-XBl"/>
                         <outlet property="detail_text" destination="sD6-Wb-xns" id="22r-Dm-HcU"/>
                         <outlet property="detail_view" destination="X11-1E-kEG" id="Vma-Ph-NY7"/>
@@ -1002,9 +970,7 @@
         <image name="btn-backtomap.png" width="256" height="256"/>
         <image name="btn-intro-go.png" width="300" height="150"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-planatrip.png" width="150" height="150"/>
         <image name="btn-singleview-savespot.png" width="100" height="100"/>
-        <image name="btn-tours.png" width="150" height="150"/>
         <image name="guidedtours-placeholder.png" width="640" height="1484"/>
         <image name="logo.png" width="640" height="400"/>
         <image name="marker-barn.png" width="64" height="64"/>

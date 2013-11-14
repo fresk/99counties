@@ -8,16 +8,16 @@
         <!--Context Menu-->
         <scene sceneID="up9-57-mmr">
             <objects>
-                <viewController storyboardIdentifier="context_menu" id="tze-Bt-FLS" customClass="ContextMenu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContextMenu" id="tze-Bt-FLS" customClass="ContextMenu" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tkb-hY-T4Y"/>
                         <viewControllerLayoutGuide type="bottom" id="CB0-ao-oF0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hfv-ex-eSr">
+                    <view key="view" autoresizesSubviews="NO" contentMode="top" id="hfv-ex-eSr" customClass="LayerView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pq-XH-1Ky">
+                            <view autoresizesSubviews="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="top" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pq-XH-1Ky">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,21 +27,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="fbx-j4-7BZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterHeaderCell" rowHeight="120" id="fbx-j4-7BZ">
                                         <rect key="frame" x="0.0" y="22" width="260" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbx-j4-7BZ" id="bBe-Sc-3hB">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgI-mv-mHz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filter-byproximity.png" translatesAutoresizingMaskIntoConstraints="NO" id="bgI-mv-mHz">
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="J6d-1u-RWM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="J6d-1u-RWM">
                                         <rect key="frame" x="0.0" y="142" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J6d-1u-RWM" id="R5y-ba-EIO">
@@ -60,19 +60,22 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-0R-HN1">
-                                <rect key="frame" x="10" y="40" width="40" height="40"/>
+                                <rect key="frame" x="10" y="25" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn-mainmenu.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tab_btn_pressed:" destination="tze-Bt-FLS" eventType="touchUpInside" id="BIu-BI-Sar"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backdrop" destination="hfv-ex-eSr" id="Xjg-td-zsA"/>
+                        <outlet property="backdrop" destination="5Pq-XH-1Ky" id="4UC-0g-3Zb"/>
                         <outlet property="context_tab_btn" destination="QKr-0R-HN1" id="XSz-db-EnF"/>
-                        <outlet property="table_view" destination="Zfg-zr-zh3" id="pVQ-cM-cJv"/>
+                        <outlet property="table_view" destination="Zfg-zr-zh3" id="sXj-h1-6VM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdw-1Z-eH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,6 +85,7 @@
     </scenes>
     <resources>
         <image name="btn-mainmenu.png" width="128" height="128"/>
+        <image name="filter-byproximity.png" width="480" height="240"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -147,14 +147,15 @@
 
 
 -(void) init_context_list {
+    self.context_tab.frame = CGRectMake(280,40,40,40);
     self.go_back_button.enabled = TRUE;
     self.go_back_button.alpha = 1.0;
-    
+    self.context_backdrop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menu-bg"]];
+    self.context_backdrop.hidden = TRUE;
     self.context_list = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
-    self.context_tab.frame = CGRectMake(280,40,40,40);
     self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    
     [self addChildViewController:self.context_list];
+    [self.view addSubview:self.context_backdrop];
     [self.view addSubview:self.context_list.view];
 }
 
@@ -170,54 +171,49 @@
     }
 }
 
-
 -(void) show_context_list {
-    NSMutableArray* visible_locations = [[NSMutableArray alloc] init];
-    GMSProjection* projection = self.map_view.projection;
-    for(int i=0; i<[self.map_view.markers count]; i++){
-        GMSMarker* m = [self.map_view.markers objectAtIndex:i];
-        if ([projection containsCoordinate: m.position]){
-            [visible_locations addObject: m.userData];
-        }
-    }
     ContextList* ctx_list = (ContextList*) self.context_list;
-    [ctx_list setResults: visible_locations];
+    [ctx_list setResults: [self get_visible_locations]];
 
     self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    self.go_back_button.enabled = FALSE;
+    
+    //eased animations
     [UIView animateWithDuration:1.0 animations:^(void){
         self.context_tab.frame = CGRectMake(10,25,40,40);
         self.context_list.view.frame = CGRectOffset(self.view.frame, 60, 0);
     }];
     
-    [UIView animateWithDuration:1.0 delay:0.0
-                        options:UIViewAnimationOptionCurveLinear
+    //linear animation
+    self.go_back_button.enabled = FALSE;
+    self.go_back_button.alpha = 1.0;
+    self.context_backdrop.hidden = FALSE;
+    self.context_backdrop.alpha = 0.0;
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveLinear
                      animations:^(void){
+                         self.context_backdrop.alpha = 1.0;
                          self.go_back_button.alpha = 0.0;
                      }
-                     completion:^(BOOL finished) {
-                         
-                     }];
-    
+                     completion:^(BOOL finished) {}];
 }
 
 
 -(void) hide_context_list {
-    
+    //eased animations
     [UIView animateWithDuration:1.0 animations:^(void){
         self.context_tab.frame = CGRectMake(280,25,40,40);
         self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
     }];
-    
+
+    //linear animations
     self.go_back_button.enabled = TRUE;
+    self.context_backdrop.hidden = TRUE;
     [UIView animateWithDuration:1.0 delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^(void){
                          self.go_back_button.alpha = 1.0;
+                         self.context_backdrop.alpha = 0.0;
                      }
-                     completion:^(BOOL finished) {
- 
-                     }];
+                     completion:^(BOOL finished) {}];
 }
 
 
@@ -234,6 +230,21 @@
 
 }
 
+
+
+
+
+-(NSArray*) get_visible_locations {
+    NSMutableArray* visible_locations = [[NSMutableArray alloc] init];
+    GMSProjection* projection = self.map_view.projection;
+    for(int i=0; i<[self.map_view.markers count]; i++){
+        GMSMarker* m = [self.map_view.markers objectAtIndex:i];
+        if ([projection containsCoordinate: m.position]){
+            [visible_locations addObject: m.userData];
+        }
+    }
+    return visible_locations;
+}
 
 -(void)select_location: (NSDictionary*) location {
     ctx.selected_location = location;

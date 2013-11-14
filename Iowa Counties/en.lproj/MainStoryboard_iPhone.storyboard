@@ -1010,7 +1010,7 @@
         <image name="marker-barn.png" width="64" height="64"/>
         <image name="menu-findspots.png" width="320" height="113"/>
         <image name="menu-savedspots.png" width="320" height="113"/>
-        <image name="topbar-bg.png" width="640" height="124"/>
+        <image name="topbar-bg.png" width="320" height="62"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

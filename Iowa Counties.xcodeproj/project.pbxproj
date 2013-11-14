@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		121079801835605600D1F4E7 /* ContextList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1210797F1835605600D1F4E7 /* ContextList.storyboard */; };
+		12107983183565B000D1F4E7 /* ContextMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 12107982183565B000D1F4E7 /* ContextMenu.m */; };
+		12107985183565E700D1F4E7 /* ContextMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12107984183565E700D1F4E7 /* ContextMenu.storyboard */; };
 		121F92471803431700B47AD5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F92461803431700B47AD5 /* GoogleMaps.framework */; };
 		121F92491803433400B47AD5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F92481803433400B47AD5 /* GoogleMaps.bundle */; };
 		121F9259180370E100B47AD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F9258180370E100B47AD5 /* SDWebImage.framework */; };
@@ -228,7 +229,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1210797F1835605600D1F4E7 /* ContextList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContextList.storyboard; sourceTree = "<group>"; };
+		12107981183565B000D1F4E7 /* ContextMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextMenu.h; sourceTree = "<group>"; };
+		12107982183565B000D1F4E7 /* ContextMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMenu.m; sourceTree = "<group>"; };
+		12107984183565E700D1F4E7 /* ContextMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContextMenu.storyboard; sourceTree = "<group>"; };
 		121F92461803431700B47AD5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Iowa Counties/GoogleMaps.framework"; sourceTree = "<group>"; };
 		121F92481803433400B47AD5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Iowa Counties/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		121F9258180370E100B47AD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Iowa Counties/SDWebImage.framework"; sourceTree = "<group>"; };
@@ -667,7 +670,9 @@
 				123DA01E18348CDE006A1D73 /* DetailView.h */,
 				123DA02018348CDE006A1D73 /* DetailView.xib */,
 				123DA01F18348CDE006A1D73 /* DetailView.m */,
-				1210797F1835605600D1F4E7 /* ContextList.storyboard */,
+				12107981183565B000D1F4E7 /* ContextMenu.h */,
+				12107982183565B000D1F4E7 /* ContextMenu.m */,
+				12107984183565E700D1F4E7 /* ContextMenu.storyboard */,
 			);
 			name = screens;
 			sourceTree = "<group>";
@@ -954,6 +959,7 @@
 				1E1CE4B11835623100398962 /* marker-movie.png in Resources */,
 				1E1CE4AA1835623100398962 /* marker-iowa_great_place@2x.png in Resources */,
 				1E1CE49A1835623100398962 /* marker-arts_council@2x.png in Resources */,
+				12107985183565E700D1F4E7 /* ContextMenu.storyboard in Resources */,
 				1E1CE4CE1835623100398962 /* menu-savedspots@2x.png in Resources */,
 				1E1CE49E1835623100398962 /* marker-botany@2x.png in Resources */,
 				1E1CE4BD1835623100398962 /* marker-scenic_byway.png in Resources */,
@@ -987,18 +993,12 @@
 				1E1CE4DE1835623100398962 /* iTunesArtwork.png in Resources */,
 				1E1CE5191835623100398962 /* logo.png in Resources */,
 				12C12E6A182B643600CF5ABE /* Cards.storyboard in Resources */,
-				12F1D22D1834D63C005D1D9B /* AppIcon60x60@2x.png in Resources */,
-				12F1D1FE1834D63C005D1D9B /* marker-iowa_great_place@2x.png in Resources */,
-				12F1D20B1834D63C005D1D9B /* marker-national_historical_register.png in Resources */,
-				12F1D2171834D63C005D1D9B /* marker-underground_railroad.png in Resources */,
-				12F1D2111834D63C005D1D9B /* marker-scenic_byway.png in Resources */,
-				12F1D2291834D63C005D1D9B /* AppIcon29x29@2x.png in Resources */,
-				12F1D2371834D63C005D1D9B /* btn-aroundme.png in Resources */,
-				12F1D1ED1834D63C005D1D9B /* marker-arts_council.png in Resources */,
-				121079801835605600D1F4E7 /* ContextList.storyboard in Resources */,
-				12F1D2161834D63C005D1D9B /* marker-theater@2x.png in Resources */,
-				12F1D2651834D63C005D1D9B /* logo.png in Resources */,
-				12F1D2281834D63C005D1D9B /* AppIcon29x29.png in Resources */,
+				1E1CE4E11835623100398962 /* retina4inch.png in Resources */,
+				1E1CE5031835623100398962 /* btn-singleview-email.png in Resources */,
+				1E1CE4EE1835623100398962 /* btn-mainmenu.png in Resources */,
+				1E1CE4ED1835623100398962 /* btn-intro-go.png in Resources */,
+				1E1CE4D81835623100398962 /* AppIcon40x40.png in Resources */,
+				1E1CE4BE1835623100398962 /* marker-scenic_byway@2x.png in Resources */,
 				123DA02218348CDE006A1D73 /* DetailView.xib in Resources */,
 				1E1CE4CC1835623100398962 /* menu-findspots@2x.png in Resources */,
 				1E1CE4801835623100398962 /* btn-intro-go.png in Resources */,
@@ -1138,6 +1138,7 @@
 				12AEC89217C3DC2E0001C5CD /* main.m in Sources */,
 				12F1B6E1182AE4D9006A221C /* FavoritesTableViewController.m in Sources */,
 				12C12E6D182B755600CF5ABE /* CardScreen.m in Sources */,
+				12107983183565B000D1F4E7 /* ContextMenu.m in Sources */,
 				126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */,
 				12D78621182C265100C0FD09 /* MSLabel.m in Sources */,
 				127042B1182046790049FEC5 /* MDDirectionService.m in Sources */,

@@ -140,7 +140,10 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         map.selectedLocationID = [location objectForKey:@"id"];
         GMSMarker* marker = [map addLocation:location];
+        [map fitBounds];
+        
         [map gotoDetailsForMarker:marker animated:FALSE];
+
 
     });
 

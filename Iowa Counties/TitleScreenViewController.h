@@ -10,5 +10,6 @@
 
 @interface TitleScreenViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *bg_view;
+@property (strong, nonatomic) IBOutlet UIImageView *logo;
 
 @end

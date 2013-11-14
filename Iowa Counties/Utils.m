@@ -23,8 +23,12 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
     NSLog(@"read Error: %@", err ) ;
+    if (err)
+        return nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&err];
     NSLog(@"json Error: %@", err ) ;
+    if (err)
+        return nil;
     return json;
 }
 
@@ -48,6 +52,9 @@
 
 @end
 
+
+
+/*
 @implementation UIButton (CustomFont)
 
 - (NSString *)fontName {
@@ -56,6 +63,14 @@
 
 - (void)setFontName:(NSString *)fontName {
     self.titleLabel.font = [UIFont fontWithName:fontName size:self.titleLabel.font.pointSize];
+}
+
+- (NSInteger)fontSize {
+    return self.titleLabel.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.titleLabel.font = [UIFont fontWithName: self.fontName size: fontSize];
 }
 
 @end
@@ -72,6 +87,15 @@
     self.font = [UIFont fontWithName:fontName size:self.font.pointSize];
 }
 
+- (NSInteger)fontSize {
+    return self.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.font = [UIFont fontWithName: self.fontName size: fontSize];
+}
+
+
 @end
 
 
@@ -86,9 +110,18 @@
     self.font = [UIFont fontWithName:fontName size:self.font.pointSize];
 }
 
+- (NSInteger)fontSize {
+    return self.font.pointSize;
+}
+
+- (void)setFontSize:(NSInteger)fontSize {
+    self.font = [UIFont fontWithName:[self fontName] size:self.fontSize];
+}
 @end
 
 
+
+*/
 
 @implementation NSDictionary (NSURL)
 

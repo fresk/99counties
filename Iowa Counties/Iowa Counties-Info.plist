@@ -38,11 +38,11 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>fonts/HelveticaNeueLTStd-Th.otf</string>
-		<string>fonts/HelveticaNeueLTStd-Roman.otf</string>
-		<string>fonts/HelveticaNeueLTStd-Lt.otf</string>
-		<string>fonts/HelveticaNeueLTStd-Bd.otf</string>
-		<string>fonts/HelveticaNeueLTStd-Blk.otf</string>
+		<string>Gotham-Book.ttf</string>
+		<string>Gotham-BoldItalic.ttfGotham-Bold.otfGotham-Book.otfGotham-Light.otfGotham-Medium.otf</string>
+		<string>Gotham-Light.ttf</string>
+		<string>Gotham-Black.ttf</string>
+		<string>Gotham-Bold.ttf</string>
 	</array>
 	<key>UILaunchImageFile</key>
 	<string>Default</string>
@@ -97,6 +97,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

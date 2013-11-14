@@ -15,7 +15,7 @@
 + (UIImage *) imageWithView:(UIView *)view;
 @end
 
-
+/*
 @interface UIButton (CustomFont)
 @property (nonatomic, copy) NSString* fontName;
 @end
@@ -27,6 +27,8 @@
 @interface UITextField (CustomFont)
 @property (nonatomic, copy) NSString* fontName;
 @end
+ 
+ */
 
 @interface NSDictionary (NSURL)
 - (NSString*) getAsQueryParams;
@@ -35,4 +37,9 @@
 
 @interface NSURL (QueryParams)
 + (NSURL*) URLWithPath: (NSString*) path andParams: (NSDictionary*) params;
+@end
+
+
+@interface MyImageView : UIView
+@property (nonatomic, assign) UIImage *image;
 @end

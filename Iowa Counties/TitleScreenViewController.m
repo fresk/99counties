@@ -36,7 +36,7 @@
 	NSBundle *bundle = [NSBundle mainBundle];
 	if (bundle)
 	{
-		NSString *moviePath = [bundle pathForResource:@"intro_bg" ofType:@"m4v"];
+		NSString *moviePath = [bundle pathForResource:@"intro_bg" ofType:@"mov"];
 		if (moviePath)
 		{
 			theMovieURL = [NSURL fileURLWithPath:moviePath];
@@ -54,13 +54,51 @@
     
     [self.player play];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieFinishedCallBack:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)movieFinishedCallBack:(NSNotification *) aNotification {
+    MPMoviePlayerController *player = [aNotification object];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
+    [player stop];
+    
+    
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    UIViewController *mainMenuViewController = [storyBoard instantiateViewControllerWithIdentifier:@"main_menu"];
+    mainMenuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController: mainMenuViewController animated:YES];
+
+    
 }
+
+
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    self.logo.alpha = 0.0;
+}
+
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    self.logo.alpha = 0.0;
+    [UIView animateWithDuration:2.0 delay:3.0 options: UIViewAnimationOptionCurveLinear animations:^{
+        self.logo.alpha = 1.0;
+    } completion:^(BOOL finished) {
+
+    }];
+    
+    
+}
+
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self.player stop];
+}
+
+
 
 @end

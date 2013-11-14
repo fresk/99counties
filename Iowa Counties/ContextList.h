@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
 
 @interface ContextList : UITableViewController
 
 @property BOOL isHidden;
+
+@property (strong, atomic) MapViewController* parent_controller;
 
 
 -(void)setResults: (NSArray*) results;

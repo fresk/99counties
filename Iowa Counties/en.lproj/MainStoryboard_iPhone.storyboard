@@ -34,7 +34,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="3nL-DT-2ha" kind="modal" id="Pca-AS-CO3"/>
+                                            <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="crossDissolve" id="Pca-AS-CO3"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-tg-aip">
@@ -75,17 +75,8 @@
                                         <rect key="frame" x="0.0" y="-66" width="320" height="616"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-6E-dpI">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" image="btn-explore.png"/>
-                                        <connections>
-                                            <segue destination="Woe-Cd-8bf" kind="modal" modalTransitionStyle="flipHorizontal" id="NYI-pP-PkX"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzX-WO-hLE">
-                                        <rect key="frame" x="160" y="166" width="160" height="166"/>
+                                        <rect key="frame" x="160" y="315" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="btn-planatrip.png">
@@ -96,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chg-wd-PO3">
-                                        <rect key="frame" x="0.0" y="166" width="160" height="166"/>
+                                        <rect key="frame" x="0.0" y="315" width="160" height="166"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="btn-tours.png">
@@ -106,23 +97,11 @@
                                             <segue destination="U48-U2-ZcZ" kind="modal" modalTransitionStyle="crossDissolve" id="vOv-QZ-8kr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MG-H6-IPy">
-                                        <rect key="frame" x="160" y="332.00000017881393" width="160" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-myprofile.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="gotoCardScreen:" destination="3nL-DT-2ha" eventType="touchUpInside" id="MuW-Qv-01x"/>
-                                            <segue destination="Q3M-lL-kBd" kind="modal" modalTransitionStyle="crossDissolve" id="wdN-cy-6Ih"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEp-kd-GoD">
-                                        <rect key="frame" x="160" y="0.0" width="160" height="166"/>
+                                        <rect key="frame" x="0.0" y="62" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-aroundme.png">
+                                        <state key="normal" image="menu-findspots.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -130,10 +109,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
-                                        <rect key="frame" x="0.0" y="332" width="160" height="168"/>
+                                        <rect key="frame" x="0.0" y="175" width="320" height="112.99999100421232"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="btn-savedspots.png">
+                                        <state key="normal" image="menu-savedspots.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -742,6 +721,10 @@
                                     <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
                                 </accessibility>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topbar-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Yz-cl-3pE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egU-av-IRz">
                                 <rect key="frame" x="260" y="515" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -826,7 +809,7 @@
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n25-i4-ES0">
-                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <rect key="frame" x="20" y="25" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn-back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -836,7 +819,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nop-Iy-Bic">
-                                <rect key="frame" x="280" y="40" width="40" height="40"/>
+                                <rect key="frame" x="270" y="25" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="btn-mainmenu.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -856,6 +839,7 @@
                         <outlet property="detail_text" destination="sD6-Wb-xns" id="22r-Dm-HcU"/>
                         <outlet property="detail_view" destination="X11-1E-kEG" id="Vma-Ph-NY7"/>
                         <outlet property="favoriteButton" destination="sKo-RL-0Pd" id="xKr-Yg-dYK"/>
+                        <outlet property="go_back_button" destination="n25-i4-ES0" id="ACZ-2T-x4F"/>
                         <outlet property="map_view" destination="okY-dV-lDk" id="DAS-Xn-3P3"/>
                         <outlet property="pageControl" destination="Mfu-Xh-kAw" id="j1k-Yt-URU"/>
                         <outlet property="scrollView" destination="HFi-UF-EbV" id="PUs-VT-9Ek"/>
@@ -1013,21 +997,20 @@
     <resources>
         <image name="AppIcon29x29.png" width="29" height="29"/>
         <image name="Default.png" width="320" height="480"/>
-        <image name="bg-menu.jpg" width="640" height="1136"/>
-        <image name="btn-aroundme.png" width="150" height="150"/>
+        <image name="bg-menu.jpg" width="320" height="568"/>
         <image name="btn-back.png" width="128" height="128"/>
         <image name="btn-backtomap.png" width="256" height="256"/>
-        <image name="btn-explore.png" width="150" height="150"/>
         <image name="btn-intro-go.png" width="300" height="150"/>
         <image name="btn-mainmenu.png" width="128" height="128"/>
-        <image name="btn-myprofile.png" width="150" height="150"/>
         <image name="btn-planatrip.png" width="150" height="150"/>
-        <image name="btn-savedspots.png" width="150" height="150"/>
         <image name="btn-singleview-savespot.png" width="100" height="100"/>
         <image name="btn-tours.png" width="150" height="150"/>
         <image name="guidedtours-placeholder.png" width="640" height="1484"/>
         <image name="logo.png" width="640" height="400"/>
         <image name="marker-barn.png" width="64" height="64"/>
+        <image name="menu-findspots.png" width="320" height="113"/>
+        <image name="menu-savedspots.png" width="320" height="113"/>
+        <image name="topbar-bg.png" width="640" height="124"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1035,8 +1018,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SdS-3f-o6S"/>
-        <segue reference="Pca-AS-CO3"/>
         <segue reference="0he-SZ-SFh"/>
+        <segue reference="Pca-AS-CO3"/>
+        <segue reference="VKH-m3-mLl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -54,6 +54,23 @@
     
     [self.player play];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieFinishedCallBack:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+    
+}
+
+- (void)movieFinishedCallBack:(NSNotification *) aNotification {
+    MPMoviePlayerController *player = [aNotification object];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
+    [player stop];
+    
+    
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    UIViewController *mainMenuViewController = [storyBoard instantiateViewControllerWithIdentifier:@"main_menu"];
+    mainMenuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController: mainMenuViewController animated:YES];
+
     
 }
 

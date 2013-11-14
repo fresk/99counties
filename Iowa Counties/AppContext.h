@@ -13,6 +13,10 @@
 @interface AppContext : NSObject <CLLocationManagerDelegate>
 
 @property(atomic, strong) NSString* appName;
+
+@property(atomic, strong) NSDictionary* selected_location;
+@property(atomic, strong) NSDictionary* filtered_list;
+
 @property(atomic, strong) CLLocationManager* locationManager;
 @property(atomic, strong) NSDictionary* categories;
 @property(atomic, strong) NSArray* cities;
@@ -22,9 +26,11 @@
 
 
 
-
-
 + (id)instance;
+
+
+
+
 
 
 

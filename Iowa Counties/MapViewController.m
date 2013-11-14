@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Utils.h"
 #import "AppContext.h"
-
+#import "ContextList.h"
 
 @interface MapViewController ()
 
@@ -146,18 +146,15 @@
 
 
 
-
-
-
-
-
-
-
-
 -(void) init_context_list {
+    self.go_back_button.enabled = TRUE;
+    self.go_back_button.alpha = 1.0;
+    
     self.context_list = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
     self.context_tab.frame = CGRectMake(280,40,40,40);
     self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
+
+    [self addChildViewController:self.context_list];
     [self.view addSubview:self.context_list.view];
 }
 
@@ -165,7 +162,7 @@
 
 
 - (IBAction)show_context_list_btn:(id)sender {
-    if (self.context_list.view.frame.origin.x > 310){
+    if (self.go_back_button.enabled){
         [self show_context_list];
     }
     else {
@@ -183,24 +180,68 @@
             [visible_locations addObject: m.userData];
         }
     }
-    [self.context_list setResults: visible_locations];
+    ContextList* ctx_list = (ContextList*) self.context_list;
+    [ctx_list setResults: visible_locations];
 
-    
-    
+    self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
+    self.go_back_button.enabled = FALSE;
     [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab.frame = CGRectMake(0,40,40,40);
-        self.context_list.view.frame = CGRectOffset(self.view.frame, 40, 0);
+        self.context_tab.frame = CGRectMake(10,25,40,40);
+        self.context_list.view.frame = CGRectOffset(self.view.frame, 60, 0);
     }];
+    
+    [UIView animateWithDuration:1.0 delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^(void){
+                         self.go_back_button.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
 }
 
 
 -(void) hide_context_list {
+    
     [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab.frame = CGRectMake(280,40,40,40);
+        self.context_tab.frame = CGRectMake(280,25,40,40);
         self.context_list.view.frame = CGRectOffset(self.view.frame, 320, 0);
     }];
+    
+    self.go_back_button.enabled = TRUE;
+    [UIView animateWithDuration:1.0 delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^(void){
+                         self.go_back_button.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished) {
+ 
+                     }];
 }
 
+
+
+-(GMSMarker*) getMarkerForLocationID: (NSString*) lid
+{
+    for(int i=0; i<[self.map_view.markers count]; i++){
+        GMSMarker* m = [self.map_view.markers objectAtIndex:i];
+        if ([lid isEqualToString: [m.userData objectForKey:@"id"]]){
+            return m;
+        }
+    }
+    return nil;
+
+}
+
+
+-(void)select_location: (NSDictionary*) location {
+    ctx.selected_location = location;
+    GMSMarker* selected_marker = [self getMarkerForLocationID:[location objectForKey:@"id"]];
+    [self gotoDetailsForMarker:selected_marker animated:TRUE];
+    [self hide_context_list];
+
+}
 
 
 
@@ -304,7 +345,8 @@
 -(void)setResults: (NSArray*) results
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.context_list setResults: results];
+        ContextList* ctx_list = (ContextList*) self.context_list;
+        [ctx_list setResults: results];
     
     });
     
@@ -809,8 +851,8 @@
     */
     
 
-    //NSString* urlString = [NSString stringWithFormat:@"http://findyouriowa.com/render/location/%@", [location objectForKey:@"id"]];
-    NSString* urlString = [NSString stringWithFormat:@"http://localhost:8000/render/location/%@", [location objectForKey:@"id"]];
+    NSString* urlString = [NSString stringWithFormat:@"http://findyouriowa.com/render/location/%@", [location objectForKey:@"id"]];
+    //NSString* urlString = [NSString stringWithFormat:@"http://localhost:8000/render/location/%@", [location objectForKey:@"id"]];
     [self.detail_text loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     self.detail_text.userInteractionEnabled = NO;
     self.detail_text.opaque = NO;

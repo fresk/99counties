@@ -61,6 +61,7 @@
     [self.player.view setFrame:self.bg_view.frame];  // player's frame must match parent's
     
     [self.bg_view addSubview: self.player.view];
+    [self.view bringSubviewToFront: self.skip_btn];
     
     [self.player play];
     
@@ -73,18 +74,25 @@
     MPMoviePlayerController *player = [aNotification object];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
     [player stop];
-    
-    
+    [self goto_main_menu];
+}
+
+
+
+-(void) goto_main_menu {
     UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     UIViewController *mainMenuViewController = [storyBoard instantiateViewControllerWithIdentifier:@"main_menu"];
     mainMenuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentModalViewController: mainMenuViewController animated:YES];
-
-    
-    
 }
 
+
+- (IBAction)skip_button_pushed:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:self.player];
+    [self.player stop];
+    [self goto_main_menu];
+}
 
 
 - (void) viewDidAppear:(BOOL)animated
@@ -104,22 +112,20 @@
         } completion:^(BOOL finished) {
             
         }];
-        
-        
-        
-    }];
-    
-    
 
-    
-    
+    }];
 }
 
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void) viewWillDisappear:(BOOL)animated {
     [self.player stop];
 }
 
+- (IBAction)viewTapped:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:self.player];
+    [self.player stop];
+    [self goto_main_menu];
+}
 
 
 @end

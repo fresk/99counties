@@ -151,6 +151,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
         endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
     }
     
+    NSLog(@"requesting: %@", endpoint);
     httpResponseHandler responseHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
         //NSLog(@"GOT RESPONSE: %d", data count);
         NSError *err;
@@ -158,8 +159,8 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
             NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
         if (err != nil){
-            //NSString* json_str = [NSString stringWithUTF8String:data.bytes];
-            //NSLog(@"\n\nData: %@\n\n Json parsing error: %@", json_str, err);
+            NSString* json_str = [NSString stringWithUTF8String:data.bytes];
+            NSLog(@"\n\nData: %@\n\n Json parsing error: %@", json_str, err);
         }
         blockComplete(result);
     };

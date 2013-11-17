@@ -27,24 +27,28 @@
                                 <rect key="frame" x="-4" y="0.0" width="327" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-4B-ZgY">
-                                        <rect key="frame" x="7" y="376" width="320" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="btn-intro-go.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="3nL-DT-2ha" kind="modal" modalTransitionStyle="crossDissolve" id="Pca-AS-CO3"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-tg-aip">
                                         <rect key="frame" x="2" y="71" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                             </view>
+                            <button contentMode="left" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-4B-ZgY">
+                                <rect key="frame" x="0.0" y="349" width="320" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="btn-intro-go.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skip_button_pushed:" destination="CI9-qF-1c4" eventType="touchUpInside" id="7Jo-Vg-Cpu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.01006578575" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5bB-8m-wKM" appends="YES" id="lep-g3-vC8"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="bg_view" destination="k3V-kG-AiN" id="utd-tQ-JQ9"/>
@@ -53,6 +57,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5C-tk-tk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5bB-8m-wKM">
+                    <connections>
+                        <action selector="viewTapped:" destination="CI9-qF-1c4" id="9mC-og-C1C"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1529" y="-905"/>
         </scene>
@@ -88,7 +97,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
-                                        <rect key="frame" x="0.0" y="175" width="320" height="113"/>
+                                        <rect key="frame" x="0.0" y="174.99999694292455" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="menu-savedspots.png">
@@ -984,8 +993,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="y7l-G5-beW"/>
         <segue reference="0he-SZ-SFh"/>
-        <segue reference="Pca-AS-CO3"/>
         <segue reference="VKH-m3-mLl"/>
     </inferredMetricsTieBreakers>
 </document>

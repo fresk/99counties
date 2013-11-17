@@ -15,14 +15,24 @@
 @property(strong, atomic) NSString* selectedLocationID;
 
 @property (strong, nonatomic) IBOutlet UIButton *go_back_button;
--(void) hide_context_list;
+
+-(void)setResults: (NSArray*) results;
+
+-(void) gotoLocationandNearby;
+
+-(CLLocationCoordinate2D) get_current_location;
 
 -(void)select_location: (NSDictionary*) location;
 
+- (GMSMarker*) addLocation: (NSDictionary*) location;
+
+- (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated;
+
 -(NSArray*) get_visible_locations;
 
-- (GMSMarker*) addLocation: (NSDictionary*) location;
-- (void) gotoDetailsForMarker: (GMSMarker*) marker animated: (BOOL) animated;
 - (void) fitBounds;
+
+-(void) hide_context_list;
+
 
 @end

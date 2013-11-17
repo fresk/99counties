@@ -75,9 +75,15 @@
     
     NSMutableArray* _photoFramesForTop;
     NSMutableArray* _photoFramesForCenter;
+    
+    CLLocationCoordinate2D here;
 }
 
 
+
+-(CLLocationCoordinate2D) get_current_location{
+    return here;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -118,19 +124,26 @@
 }
 
 
+
+-(void) gotoLocationandNearby{
+    comingFromListView = FALSE;
+    //[ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = 50.0f; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
+    [locationManager startUpdatingLocation];
+
+}
+
+
 - (void) viewDidAppear:(BOOL)animated {
     
     //[self.context_menu set_hidden_state];
     //self.context_menu.is_showing = FALSE;
     
     if (self.selectedLocationID == nil){
-        comingFromListView = FALSE;
-        //[ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
-        locationManager = [[CLLocationManager alloc] init];
-        locationManager.delegate = self;
-        locationManager.distanceFilter = 50.0f; // whenever we move
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
-        [locationManager startUpdatingLocation];
+        [self gotoLocationandNearby];
     }
     else {
         comingFromListView = TRUE;
@@ -322,7 +335,11 @@
     
     });
     */
-     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.selectedLocationID = nil;
+        [self.map_view clear];
+    });
+    
     NSDictionary* item;
     for (item in results){
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -422,7 +439,7 @@
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
-    CLLocationCoordinate2D here =  newLocation.coordinate;
+    here =  newLocation.coordinate;
     //NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
     
     GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];

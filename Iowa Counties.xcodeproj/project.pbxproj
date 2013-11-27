@@ -575,6 +575,7 @@
 			children = (
 				123DA01118347D17006A1D73 /* views */,
 				12AEC89D17C3DC2E0001C5CD /* MainStoryboard_iPhone.storyboard */,
+				12107984183565E700D1F4E7 /* ContextMenu.storyboard */,
 				12E2E656182B26960087F06A /* screens */,
 				126E7FF81806146E00E7BFE0 /* AppContext.h */,
 				126E7FF91806146E00E7BFE0 /* AppContext.m */,
@@ -672,7 +673,6 @@
 				123DA01F18348CDE006A1D73 /* DetailView.m */,
 				12107981183565B000D1F4E7 /* ContextMenu.h */,
 				12107982183565B000D1F4E7 /* ContextMenu.m */,
-				12107984183565E700D1F4E7 /* ContextMenu.storyboard */,
 			);
 			name = screens;
 			sourceTree = "<group>";

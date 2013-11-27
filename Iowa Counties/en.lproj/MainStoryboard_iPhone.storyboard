@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="6sN-pi-cig"/>
                         <viewControllerLayoutGuide type="bottom" id="8LA-B3-IIs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vdd-US-dX7">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="vdd-US-dX7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -33,14 +33,13 @@
                                     </imageView>
                                 </subviews>
                             </view>
-                            <button contentMode="left" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-4B-ZgY">
+                            <button autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-4B-ZgY">
                                 <rect key="frame" x="0.0" y="349" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="btn-intro-go.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="btn-intro-go.png"/>
                                 <connections>
-                                    <action selector="skip_button_pushed:" destination="CI9-qF-1c4" eventType="touchUpInside" id="7Jo-Vg-Cpu"/>
+                                    <action selector="skip_button_pushed:" destination="CI9-qF-1c4" eventType="touchUpInside" id="ZGZ-Wa-QHB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,7 +52,7 @@
                     <connections>
                         <outlet property="bg_view" destination="k3V-kG-AiN" id="utd-tQ-JQ9"/>
                         <outlet property="logo" destination="5vx-tg-aip" id="mXs-bT-8Dx"/>
-                        <outlet property="skip_btn" destination="X5n-4B-ZgY" id="c95-cC-vs2"/>
+                        <outlet property="skip_btn" destination="X5n-4B-ZgY" id="4d2-Hw-Zrm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5C-tk-tk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,7 +96,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-t6-2TK">
-                                        <rect key="frame" x="0.0" y="174.99999694292455" width="320" height="113"/>
+                                        <rect key="frame" x="0.0" y="174.99999100421232" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="menu-savedspots.png">

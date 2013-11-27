@@ -37,8 +37,8 @@
 	// Do any additional setup after loading the view.
  
     
-    self.logo.alpha = 0.0;
-    self.skip_btn.alpha = 0.0;
+    self.logo.alpha = 0.01;
+    self.skip_btn.alpha = 0.01;
     
     
     
@@ -97,8 +97,8 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    self.logo.alpha = 0.0;
-    self.skip_btn.alpha = 0.0;
+    self.logo.alpha = 0.01;
+    self.skip_btn.alpha = 0.01;
     
     [UIView animateWithDuration:2.0 delay:3.0 options: UIViewAnimationOptionCurveLinear animations:^{
         self.logo.alpha = 1.0;
@@ -107,8 +107,8 @@
 
         
         [UIView animateWithDuration:1.0 delay:9.0 options: UIViewAnimationOptionCurveLinear animations:^{
-            self.logo.alpha = 0.0;
-            self.skip_btn.alpha = 0.0;
+            self.logo.alpha = 0.01;
+            self.skip_btn.alpha = 0.01;
         } completion:^(BOOL finished) {
             
         }];

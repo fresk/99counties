@@ -41,6 +41,8 @@
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
     self.table_view.dataSource = self;
     self.table_view.delegate = self;
+    [self hideFilterButtons ];
+    
     
     self.view.hidden = TRUE;
     ctx = [AppContext instance];
@@ -48,6 +50,30 @@
 
 }
 
+
+
+-(void) hideFilterButtons {
+
+    self.btn_city.alpha      = 0;
+    self.btn_new.alpha       = 0;
+    self.btn_county.alpha    = 0;
+    self.btn_popular.alpha   = 0;
+    self.btn_proximity.alpha = 0;
+    self.btn_type.alpha      = 0;
+
+}
+
+
+-(void) showFilterButtons {
+    
+    self.btn_city.alpha      = 1.0;
+    self.btn_county.alpha      = 1.0;
+    self.btn_new.alpha       = 1.0;
+    self.btn_popular.alpha   = 1.0;
+    self.btn_proximity.alpha = 1.0;
+    self.btn_type.alpha      = 1.0;
+    
+}
 
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -63,6 +89,8 @@
     self.table_view.frame = CGRectMake(320, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
     self.backdrop.hidden = TRUE;
+    
+    [self hideFilterButtons ];
     
     self.btn_city.frame      = CGRectMake(280,self.btn_city.frame.origin.y, 40,40);
     self.btn_county.frame    = CGRectMake(280,self.btn_county.frame.origin.y, 40,40);
@@ -101,6 +129,7 @@
     self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
     self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
     self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
+    [self hideFilterButtons ];
 
     
     //eased animations
@@ -114,7 +143,7 @@
         self.btn_popular.frame   = CGRectMake(10,self.btn_popular.frame.origin.y, 40,40);
         self.btn_proximity.frame = CGRectMake(10,self.btn_proximity.frame.origin.y, 40,40);
         self.btn_type.frame      = CGRectMake(10,self.btn_type.frame.origin.y, 40,40);
-
+        [self showFilterButtons];
         
         
     }];
@@ -140,6 +169,8 @@
     self.backdrop.hidden = FALSE;
     self.backdrop.alpha = 0.8;
     
+    [self showFilterButtons];
+    
     self.btn_city.frame      = CGRectMake(10,self.btn_city.frame.origin.y, 40,40);
     self.btn_county.frame    = CGRectMake(10,self.btn_county.frame.origin.y, 40,40);
     self.btn_new.frame       = CGRectMake(10,self.btn_new.frame.origin.y, 40,40);
@@ -159,6 +190,8 @@
         self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
         self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
         self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
+        
+        [self hideFilterButtons];
     }];
     
     //linear animations

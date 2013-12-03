@@ -8,16 +8,23 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 #import <Foundation/Foundation.h>
+
 #import "FilterResultsController.h"
+
+
+
+
 
 @interface AppContext : NSObject <CLLocationManagerDelegate>
 
+
+
 @property(atomic, strong) NSString* appName;
 
+@property(atomic, strong) CLLocationManager* locationManager;
 @property(atomic, strong) NSDictionary* selected_location;
 @property(atomic, strong) NSDictionary* filtered_list;
 
-@property(atomic, strong) CLLocationManager* locationManager;
 @property(atomic, strong) NSDictionary* categories;
 @property(atomic, strong) NSArray* cities;
 @property(atomic, strong) NSDictionary* counties;
@@ -25,22 +32,24 @@
 @property(atomic, strong) NSString* favorites_fname;
 
 
+@property(atomic, strong) NSDictionary* categoryNames;
+
 
 + (id)instance;
 
+- (CLLocationCoordinate2D) currentLocation;
+- (BOOL) knowsLocation;
+- (BOOL) locationEnabled;
+- (BOOL) saveFavorites;
 
-
-
-
-
+- (NSArray*) getLocationsByProximity: (CLLocationCoordinate2D) location;
+- (NSArray*) getLocationsByCategory: (NSString*) category;
+- (NSArray*) getLocationsByCity: (NSString*) city;
+- (NSArray*) getLocationsByPopularity;
+- (NSArray*) getRandomLocations: (int) limit;
 
 - (UIImage*) markerForCategory: (NSArray*) category;
 - (UIImage*) markerForCategoryID: (NSString*) category;
-
-
--(CLLocationCoordinate2D) getCurrentLocation;
-- (void) updateUserLocation;
-- (BOOL) saveFavorites;
 
 
 typedef void (^fetchComplete)(NSDictionary* data);

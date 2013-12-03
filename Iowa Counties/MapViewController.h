@@ -10,7 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 
-@interface MapViewController : UIViewController <GMSMapViewDelegate, UIScrollViewDelegate, CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <GMSMapViewDelegate, UIScrollViewDelegate, CLLocationManagerDelegate, UIWebViewDelegate>
 
 @property(strong, atomic) NSString* selectedLocationID;
 

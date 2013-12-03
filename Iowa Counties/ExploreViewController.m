@@ -84,7 +84,7 @@
     else if ([segue.identifier isEqualToString:@"showProximity"]){
         FilterResultsController* target = [segue destinationViewController];
         target.loadingIndicator.hidden = FALSE;
-        CLLocationCoordinate2D cloc = [ctx getCurrentLocation];
+        CLLocationCoordinate2D cloc = [ctx currentLocation];
         [ctx fetchResources:@"/nearby"
                   withParams:@{
                               @"lat": [NSNumber numberWithDouble: cloc.latitude],

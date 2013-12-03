@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "CategoryListViewCell.h"
+#import "SelectTypeGenius.h"
 
 @interface ContextMenu ()
 
@@ -24,26 +25,24 @@
     
     NSString* list_mode ;
     
+    NSArray* filter_buttons;
+    
+    
+    
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.btn_city.frame      = CGRectMake(280,self.btn_city.frame.origin.y, 40,40);
-    self.btn_county.frame    = CGRectMake(280,self.btn_county.frame.origin.y, 40,40);
-    self.btn_new.frame       = CGRectMake(280,self.btn_new.frame.origin.y, 40,40);
-    self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
-    self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
-    self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
+    
+    
     self.context_tab_btn.frame  = CGRectMake(280,25,40,40);
     self.table_view.frame       = CGRectMake(320, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
     self.table_view.dataSource = self;
     self.table_view.delegate = self;
-    [self hideFilterButtons ];
-    
-    
+    [self hideFilterButtons];
+
     self.view.hidden = TRUE;
     ctx = [AppContext instance];
     list_mode = @"locations";
@@ -51,54 +50,71 @@
 }
 
 
-
--(void) hideFilterButtons {
-
-    self.btn_city.alpha      = 0;
-    self.btn_new.alpha       = 0;
-    self.btn_county.alpha    = 0;
-    self.btn_popular.alpha   = 0;
-    self.btn_proximity.alpha = 0;
-    self.btn_type.alpha      = 0;
-
-}
-
-
--(void) showFilterButtons {
-    
-    self.btn_city.alpha      = 1.0;
-    self.btn_county.alpha      = 1.0;
-    self.btn_new.alpha       = 1.0;
-    self.btn_popular.alpha   = 1.0;
-    self.btn_proximity.alpha = 1.0;
-    self.btn_type.alpha      = 1.0;
-    
-}
-
-
 -(void) viewDidAppear:(BOOL)animated {
     [self set_hidden_state ];
     self.view.hidden = FALSE;
     map_view_ctrl = (MapViewController*) self.parentViewController;
+    
 }
+
+
+
+-(void) hideFilterButtons {
+    filter_buttons = [[NSArray alloc] initWithObjects: self.btn_city, self.btn_proximity, self.btn_type, nil];
+    
+    for (UIView* btn in filter_buttons) {
+        btn.alpha = 0;
+        btn.frame = CGRectMake(280,btn.frame.origin.y, 40,40);
+    }
+    
+    self.context_tab_btn.frame = CGRectMake(280,25,40,40);
+    self.context_tab_btn_close.frame  = CGRectMake(280,25,40,40);
+
+    self.context_tab_btn.alpha = 1.0;
+    self.context_tab_btn_close.alpha = 0.0;
+    
+    self.context_tab_btn.userInteractionEnabled = TRUE;
+    self.context_tab_btn_close.userInteractionEnabled = FALSE;
+    
+    self.table_view.frame = CGRectMake(320, 0, 260, 568);
+    self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
+}
+
+
+-(void) showFilterButtons {
+    filter_buttons = [[NSArray alloc] initWithObjects: self.btn_city, self.btn_proximity, self.btn_type, nil];
+    
+    for (UIView* btn in filter_buttons) {
+        btn.alpha = 0.7;
+        btn.frame = CGRectMake(10,btn.frame.origin.y, 40,40);
+    }
+    
+    self.context_tab_btn.frame = CGRectMake(10,25,40,40);
+    self.context_tab_btn_close.frame  = CGRectMake(10,25,40,40);
+    
+    self.context_tab_btn.alpha = 0.0;
+    self.context_tab_btn_close.alpha = 1.0;
+    
+ 
+    self.context_tab_btn.userInteractionEnabled = FALSE;
+    self.context_tab_btn_close.userInteractionEnabled = TRUE;
+
+    self.table_view.frame = CGRectMake(60, 0, 260, 568);
+    self.filter_header_image.frame = CGRectMake(60, 0, 260, 120);
+}
+
+
 
 
 -(void) set_hidden_state {
-
-    self.context_tab_btn.frame = CGRectMake(280,25,40,40);
+    //self.context_tab_btn.imageView.image = [UIImage imageNamed:@"filterbtn-main"];
     self.table_view.frame = CGRectMake(320, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
     self.backdrop.hidden = TRUE;
-    
     [self hideFilterButtons ];
-    
-    self.btn_city.frame      = CGRectMake(280,self.btn_city.frame.origin.y, 40,40);
-    self.btn_county.frame    = CGRectMake(280,self.btn_county.frame.origin.y, 40,40);
-    self.btn_new.frame       = CGRectMake(280,self.btn_new.frame.origin.y, 40,40);
-    self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
-    self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
-    self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
 }
+
+
 
 
 
@@ -118,44 +134,41 @@
     
     //MapViewController* map_view_ctrl = (MapViewController*) self.parentViewController;
     [self setResults: [map_view_ctrl get_visible_locations]];
-    
-    self.context_tab_btn.frame = CGRectMake(280,25,40,40);
-    self.table_view.frame = CGRectMake(320, 0, 260, 568);
-    self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
-    
-    self.btn_city.frame      = CGRectMake(280,self.btn_city.frame.origin.y, 40,40);
-    self.btn_county.frame    = CGRectMake(280,self.btn_county.frame.origin.y, 40,40);
-    self.btn_new.frame       = CGRectMake(280,self.btn_new.frame.origin.y, 40,40);
-    self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
-    self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
-    self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
     [self hideFilterButtons ];
-
+    
+    self.backdrop.hidden = FALSE;
+    self.context_tab_btn.hidden = FALSE;
+    self.context_tab_btn_close.hidden = FALSE;
+    self.context_tab_btn.userInteractionEnabled = FALSE;
+    self.context_tab_btn_close.userInteractionEnabled = FALSE;
     
     //eased animations
     [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab_btn.frame = CGRectMake(10,25,40,40);
-        self.table_view.frame = CGRectMake(60, 0, 260, 568);
-        self.filter_header_image.frame = CGRectMake(60, 0, 260, 120);
-        self.btn_city.frame      = CGRectMake(10,self.btn_city.frame.origin.y, 40,40);
-        self.btn_county.frame    = CGRectMake(10,self.btn_county.frame.origin.y, 40,40);
-        self.btn_new.frame       = CGRectMake(10,self.btn_new.frame.origin.y, 40,40);
-        self.btn_popular.frame   = CGRectMake(10,self.btn_popular.frame.origin.y, 40,40);
-        self.btn_proximity.frame = CGRectMake(10,self.btn_proximity.frame.origin.y, 40,40);
-        self.btn_type.frame      = CGRectMake(10,self.btn_type.frame.origin.y, 40,40);
         [self showFilterButtons];
-        
-        
     }];
     
+    
+    [UIView animateWithDuration:1.0 delay:0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^(void){
+                         [self showFilterButtons];
+                     }
+                     completion:^(BOOL finished) {
+
+                     }];
+    
+
     //linear animation
-    self.backdrop.hidden = FALSE;
     self.backdrop.alpha = 0.0;
     [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveLinear
                      animations:^(void){
-                         self.backdrop.alpha = 0.8;
+                         self.backdrop.alpha = 1.0;
                      }
-                     completion:^(BOOL finished) {}];
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
+
 };
 
 
@@ -163,159 +176,127 @@
     _is_showing = FALSE;
     NSLog(@"hiding");
     
-    self.context_tab_btn.frame = CGRectMake(10,25,40,40);
-    self.table_view.frame = CGRectMake(60, 0, 260, 568);
-    self.filter_header_image.frame = CGRectMake(60, 0, 260, 120);
-    self.backdrop.hidden = FALSE;
-    self.backdrop.alpha = 0.8;
-    
     [self showFilterButtons];
-    
-    self.btn_city.frame      = CGRectMake(10,self.btn_city.frame.origin.y, 40,40);
-    self.btn_county.frame    = CGRectMake(10,self.btn_county.frame.origin.y, 40,40);
-    self.btn_new.frame       = CGRectMake(10,self.btn_new.frame.origin.y, 40,40);
-    self.btn_popular.frame   = CGRectMake(10,self.btn_popular.frame.origin.y, 40,40);
-    self.btn_proximity.frame = CGRectMake(10,self.btn_proximity.frame.origin.y, 40,40);
-    self.btn_type.frame      = CGRectMake(10,self.btn_type.frame.origin.y, 40,40);
+
+
+    self.backdrop.hidden = FALSE;
+    self.context_tab_btn.hidden = FALSE;
+    self.context_tab_btn_close.hidden = FALSE;
+    self.context_tab_btn.userInteractionEnabled = FALSE;
+    self.context_tab_btn_close.userInteractionEnabled = FALSE;
     
     //eased animations
-    [UIView animateWithDuration:1.0 animations:^(void){
-        self.context_tab_btn.frame = CGRectMake(280,25,40,40);
-        self.table_view.frame = CGRectMake(320, 0, 260, 568);
-        self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
-        
-        self.btn_city.frame      = CGRectMake(280,self.btn_city.frame.origin.y, 40,40);
-        self.btn_county.frame    = CGRectMake(280,self.btn_county.frame.origin.y, 40,40);
-        self.btn_new.frame       = CGRectMake(280,self.btn_new.frame.origin.y, 40,40);
-        self.btn_popular.frame   = CGRectMake(280,self.btn_popular.frame.origin.y, 40,40);
-        self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
-        self.btn_type.frame      = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
-        
-        [self hideFilterButtons];
-    }];
-    
+
+    [UIView animateWithDuration:1.0 delay:0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^(void){
+                         [self hideFilterButtons];
+                     }
+                     completion:^(BOOL finished) {
+                         self.context_tab_btn.hidden = FALSE;
+                         self.context_tab_btn.alpha =1.0;
+                         self.context_tab_btn_close.hidden = TRUE;
+                         self.context_tab_btn_close.alpha = 0.0;
+                         self.context_tab_btn.userInteractionEnabled = TRUE;
+                         self.context_tab_btn_close.userInteractionEnabled = FALSE;
+                         [self hideFilterButtons];
+                     }];
+    [self hideFilterButtons];
     //linear animations
+    self.backdrop.alpha = 1.0;
     [UIView animateWithDuration:1.0 delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^(void){
-                         self.backdrop.alpha = 0.0;
+                            self.backdrop.alpha = 0.0;
                      }
                      completion:^(BOOL finished) {
                          self.backdrop.hidden = TRUE;
                      }];
+    
+
 };
+
+- (IBAction)tab_btn_pressed:(id)sender {
+    self.is_showing = !self.is_showing;
+}
+
+- (IBAction)tab_btn_close_pressed:(id)sender {
+    self.is_showing = !self.is_showing;
+}
+
+
+
+
+
+
+- (void)selectCategory: (NSString*) category_id {
+
+}
+
 
 
 
 - (void) setResults: (NSArray*) results {
     NSLog(@"setting results");
     list_mode = @"locations";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if ([results count] > 0 ){
-            location_list = [results copy];
-            [self.table_view reloadData];
-
-        }
-    });
+    //dispatch_async(dispatch_get_main_queue(), ^{
+    if ([results count] > 0 ){
+        location_list = results;
+        [self.table_view reloadData];
+        [map_view_ctrl setResults: results];
+    }
     
 }
 
+
+- (void) overwriteResults: (NSArray*) results {
+    NSLog(@"setting results");
+    list_mode = @"locations";
+    //dispatch_async(dispatch_get_main_queue(), ^{
+    if ([results count] > 0 ){
+        location_list = results;
+        [self.table_view reloadData];
+        //[map_view_ctrl setResults: results];
+    }
+    
+}
 
 
 - (void) setGroups: (NSArray*) results {
     NSLog(@"setting results");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if ([results count] > 0 ){
-            group_list = [results copy];
-            [self.table_view reloadData];
-        }
-    });
+    //dispatch_async(dispatch_get_main_queue(), ^{
+    if ([results count] > 0 ){
+        group_list = [results copy];
+        [self.table_view reloadData];
+    }
+    //});
     
 }
 
 
 
-- (IBAction)tab_btn_pressed:(id)sender {
-    self.is_showing = !self.is_showing;
-}
 
 
-- (IBAction)filter_proximity:(id)sender {
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-byproximity"];
-    [map_view_ctrl gotoLocationandNearby];
+
+
+
+
+-(void) fadeHeaderImageTo:(NSString*) newHeader {
     
-    CLLocationCoordinate2D cloc = [map_view_ctrl get_current_location];
-    [ctx fetchResources:@"/nearby"
-             withParams:@{
-                          @"lat": [NSNumber numberWithDouble: cloc.latitude],
-                          @"lng": [NSNumber numberWithDouble: cloc.longitude]
-                          }
-            setResultOn: self];
-    
-}
-
-
-- (IBAction)filter_popular:(id)sender {
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-bypopularity"];
-    [ctx fetchResource:@"/popular/" withParams:nil onComplete:^(NSDictionary* data){
-        
-        [self setResults: [data objectForKey:@"result"]];
-        [map_view_ctrl setResults:[data objectForKey:@"result"]];
-    }];
+    UIImage * toImage = [UIImage imageNamed:newHeader];
+    [UIView transitionWithView:self.filter_header_image
+                      duration:0.5f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.filter_header_image.image = toImage;
+                    } completion:nil];
     
 }
 
 
-- (IBAction)filter_newest:(id)sender {
-    
-    NSLog(@"FILTER BY NEWEST");
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-byrecent"];
-    [ctx fetchResource:@"/recent/" withParams:nil onComplete:^(NSDictionary* data){
-        
-        [self setResults: [data objectForKey:@"result"]];
-        [map_view_ctrl setResults:[data objectForKey:@"result"]];
-    }];
-    
+-(NSArray*) getFilterButtons{
+    return [[NSArray alloc] initWithObjects: self.btn_city, self.btn_proximity, self.btn_type, nil];
 }
-
-
-- (IBAction)filter_type:(id)sender {
-    list_mode = @"category";
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-bytype"];
-    NSArray* categories = [[ctx.categories allValues]
-                           sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
-                               NSString* key1 = [item1 objectForKey:@"name"];
-                               NSString* key2 = [item2 objectForKey:@"name"];
-                               return [key1 compare:key2];
-                           }];
-    [self setGroups: categories];
-}
-
-
-- (IBAction)filter_city:(id)sender {
-
-    list_mode = @"city";
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-bycity"];
-    NSArray* cities = [ctx.cities sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
-        NSString* key1 = [item1 objectForKey:@"name"];
-        NSString* key2 = [item2 objectForKey:@"name"];
-        return [key1 compare:key2];
-    }];
-    [self setGroups: cities];
-    
-}
-
-
-- (IBAction)filter_county:(id)sender {
-    
-    list_mode = @"county";
-    self.filter_header_image.image = [UIImage imageNamed:@"filter-bycounty"];
-    NSArray* counties = [[ctx.counties allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    [self setGroups: counties];
-}
-
-
-
 
 
 
@@ -327,7 +308,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
-
+    
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0)
         return 1;
@@ -363,7 +344,7 @@
     if ([list_mode isEqualToString:@"county"]){
         NSString* county = [group_list objectAtIndex: idx];
         UITableViewCell* cell = [self.table_view dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
-        //cell.textLabel.text = [[ctx.counties objectForKey: county] objectForKey:@"name"];
+        cell.textLabel.text = [[ctx.counties objectForKey: county] objectForKey:@"name"];
         return cell;
     }
     return nil;
@@ -382,7 +363,7 @@
     if ([list_mode isEqualToString:@"locations"]){
         NSInteger idx = [indexPath row];
         NSDictionary* location = [location_list objectAtIndex:idx];
-        UITableViewCell * cell = [self.table_view dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
+        UITableViewCell * cell = [self.table_view dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
         cell.textLabel.text = [location objectForKey:@"name"];
         //cell.markerImage.image = [ctx markerForCategory:[location objectForKey:@"category"]];
         return cell;
@@ -409,21 +390,27 @@
     }
     
     if ([list_mode isEqualToString:@"category"]){
-        NSDictionary* cat = [group_list objectAtIndex:idx];
-        NSString* cat_id = [cat objectForKey:@"id"];
-        [ctx fetchResource:@"/locations" withParams:@{@"category":cat_id} onComplete:^(NSDictionary *data) {
-            [self setResults: [data objectForKey:@"result"]];
-        }];
+        NSString* cat = [[group_list objectAtIndex:idx] objectForKey:@"id"];
+        [self setResults: [ctx getLocationsByCategory: cat ]];
+        NSString* filter_img = [NSString stringWithFormat:@"filter-header-%@", cat];
+        [self fadeHeaderImageTo:filter_img];
+        //[ctx fetchResource:@"/locations" withParams:@{@"category":cat_id} onComplete:^(NSDictionary *data) {
+        //    [self setResults: [data objectForKey:@"result"]];
+        //}];
     }
     
     if ([list_mode isEqualToString:@"city"]){
-        NSDictionary* city = [group_list objectAtIndex:idx];
-        [ctx fetchResource:@"/locations" withParams:@{@"city":[city objectForKey:@"name"]} onComplete:^(NSDictionary *data) {
+        NSString* city = [[group_list objectAtIndex:idx] objectForKey:@"name"];
+        NSLog(@"SELECTED CITY: %@", city);
+        [self setResults:[ctx getLocationsByCity:city ]];
+        
+        /*[ctx fetchResource:@"/locations" withParams:@{@"city":[city objectForKey:@"name"]} onComplete:^(NSDictionary *data) {
             [self setResults: [data objectForKey:@"result"]];
         }];
+         */
     }
     
-    
+    /*
     if ([list_mode isEqualToString:@"county"]){
         NSString* county_id = [group_list objectAtIndex:idx];
         NSString* county_name = [[ctx.counties objectForKey:county_id] objectForKey:@"name"];
@@ -431,6 +418,7 @@
             [self setResults: [data objectForKey:@"result"]];
         }];
     }
+     */
     
 }
 
@@ -444,6 +432,89 @@
     return 44.0;
     
 }
+
+
+
+
+
+
+
+
+
+
+- (IBAction)filter_type:(id)sender {
+    list_mode = @"category";
+    //self.filter_header_image.image = [UIImage imageNamed:@"filter-bytype"];
+    //[self fadeHeaderImageTo: @"filter-bytype"];
+    NSArray* categories = [[ctx.categories allValues]
+                           sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
+                               NSString* key1 = [item1 objectForKey:@"name"];
+                               NSString* key2 = [item2 objectForKey:@"name"];
+                               return [key1 compare:key2];
+                           }];
+    //[self setGroups: categories];
+    
+    filter_buttons = [self getFilterButtons];
+    for (UIView* btn in filter_buttons) {
+        btn.alpha = 0.7;
+    }
+    self.btn_type.alpha = 1.0;
+    
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"genius" bundle:nil];
+    UIViewController* type_selection_view = [sb instantiateViewControllerWithIdentifier:@"TypeSelection"];
+    [self addChildViewController:type_selection_view];
+    [self.overlay addSubview:type_selection_view.view];
+    
+    type_selection_view.view.alpha = 0.0;
+    [UIView animateWithDuration:0.8
+                     animations:^{type_selection_view.view.alpha = 1.0;}
+                     completion:^(BOOL finished){}];
+    
+}
+
+- (IBAction)filter_city:(id)sender {
+    
+    list_mode = @"city";
+    //self.filter_header_image.image = [UIImage imageNamed:@"filter-bycity"];
+    [self fadeHeaderImageTo: @"filter-bycity"];
+    NSArray* cities = [ctx.cities sortedArrayUsingComparator:^(NSDictionary* item1, NSDictionary* item2){
+        NSString* key1 = [item1 objectForKey:@"name"];
+        NSString* key2 = [item2 objectForKey:@"name"];
+        return [key1 compare:key2];
+    }];
+    [self setGroups: cities];
+    
+    filter_buttons = [self getFilterButtons];
+    for (UIView* btn in filter_buttons) {
+        btn.alpha = 0.7;
+    }
+    self.btn_city.alpha = 1.0;
+    
+}
+
+- (IBAction)filter_proximity:(id)sender {
+    //self.filter_header_image.image = [UIImage imageNamed:@"filter-byproximity"];
+    [self fadeHeaderImageTo: @"filter-byproximity"];
+    
+    [map_view_ctrl gotoLocationandNearby];
+    
+    filter_buttons = [self getFilterButtons];
+    for (UIView* btn in filter_buttons) {
+        btn.alpha = 0.7;
+    }
+    self.btn_proximity.alpha = 1.0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

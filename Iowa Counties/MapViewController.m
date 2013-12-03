@@ -42,9 +42,6 @@
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *backgroundViewPinchRecognizer;
 @property (strong, nonatomic) UIImageView* snapshot;
 
-
-
-
 @end
 
 
@@ -53,95 +50,75 @@
 
 {
     AppContext* ctx;
-    CLLocationManager *locationManager;
-    
-    CGFloat _prior_zoom_level;
-    GMSCameraPosition* _prior_camera_pos;
-
-    GMSCoordinateBounds * _valid_bounds;
-    CLLocationCoordinate2D _last_valid_center;
-    
-    NSMutableData *_response_data;
-    NSDictionary* markersByLocationID;
-    
-    BOOL showingOnlyBackgroundImage;
-    BOOL comingFromListView;
-    
-    UIImage* _placehodler_image;
     
     NSDictionary* _selected_location;
+    
+    GMSCoordinateBounds * _valid_bounds;
+    
+    CLLocationCoordinate2D _last_valid_center;
+    
+    CGFloat _prior_zoom_level;
+    
+    GMSCameraPosition* _prior_camera_pos;
+    
+    BOOL showingOnlyBackgroundImage;
+    
+    BOOL comingFromListView;
+
+    NSDictionary* markersByLocationID;
+    
+    UIImage* _placehodler_image;
     
     UIImageView* _map_cover;
     
     NSMutableArray* _photoFramesForTop;
+    
     NSMutableArray* _photoFramesForCenter;
     
-    CLLocationCoordinate2D here;
+    //NSMutableData *_response_data;
 }
 
 
 
--(CLLocationCoordinate2D) get_current_location{
-    return here;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     ctx = [AppContext instance];
-    //NSLog(@"app name: %@", ctx.appName);
-    //NSLog(@"app categories: %@", ctx.locationCategories)
+    
+    CLLocationCoordinate2D NE = CLLocationCoordinate2DMake(43.33, -90.5);
+    CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.20, -96.39);
+    _valid_bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
+                                                         coordinate:  SW];
     
     self.map_view.delegate = self;
-    //self.map_view.mapType = kGMSTypeNormal;
-    //self.map_view.mapType = kGMSTypeTerrain;
-    //self.map_view.mapType = kGMSTypeSatellite;
+    self.detail_view.delegate = self;
+
     self.map_view.mapType = kGMSTypeHybrid;
     self.map_view.buildingsEnabled = YES;
     self.map_view.indoorEnabled = YES;
     self.map_view.myLocationEnabled = YES;
     self.map_view.settings.tiltGestures = NO;
     self.map_view.settings.rotateGestures = NO;
-    
-    self.detail_view.delegate = self;
-
-    
     self.map_view.settings.myLocationButton = NO;
     self.map_view.settings.compassButton = NO;
+    
     
     self.detail_view.hidden = YES;
     showingOnlyBackgroundImage = FALSE;
     
-    CLLocationCoordinate2D NE = CLLocationCoordinate2DMake(43.33, -90.5);
-    CLLocationCoordinate2D SW = CLLocationCoordinate2DMake(40.20, -96.39);
-    _valid_bounds = [[GMSCoordinateBounds alloc] initWithCoordinate: NE
-                                                  coordinate:  SW];
-
-    
     [self fitBounds];
     [self initImagePager];
     [self init_context_menu];
+    [self gotoLocationandNearby];
 }
 
-
-
--(void) gotoLocationandNearby{
-    comingFromListView = FALSE;
-    //[ctx fetchResources:@"/locations/" withParams:nil setResultOn: self];
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = 50.0f; // whenever we move
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
-    [locationManager startUpdatingLocation];
-
-}
 
 
 - (void) viewDidAppear:(BOOL)animated {
-    
     //[self.context_menu set_hidden_state];
     //self.context_menu.is_showing = FALSE;
-    
+    /*
     if (self.selectedLocationID == nil){
         [self gotoLocationandNearby];
     }
@@ -152,42 +129,53 @@
         [self navigationController].navigationBarHidden = TRUE;
         
     }
-    
+     */
 }
-
-
 
 - (void) viewWillDisappear:(BOOL)animated {
     self.selectedLocationID = nil;
 }
 
 
-
-
-
 -(void) init_context_menu {
-    
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"ContextMenu" bundle:nil];
     self.context_menu = [sb instantiateViewControllerWithIdentifier:@"ContextMenu"];
-    
     [self addChildViewController:self.context_menu];
     [self.view addSubview:self.context_menu.view];
-    
     [self.context_menu set_hidden_state ];
-    /*
-    self.context_tab.frame = CGRectMake(280,40,40,40);
-    self.go_back_button.enabled = TRUE;
-    self.go_back_button.alpha = 1.0;
-    self.context_backdrop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menu-bg"]];
-    self.context_backdrop.hidden = TRUE;
-    self.context_menu = [[ContextList alloc] initWithNibName:@"ContextList" bundle:nil];
-    self.context_menu.view.frame = CGRectOffset(self.view.frame, 320, 0);
-    [self addChildViewController:self.context_menu];
-    [self.view addSubview:self.context_backdrop];
-    [self.view addSubview:self.context_menu.view];
-     */
 }
 
+
+
+
+
+
+
+
+
+
+-(void) gotoLocationandNearby{
+    comingFromListView = FALSE;
+    
+    if([ctx knowsLocation]){
+        GMSCameraUpdate *update = [GMSCameraUpdate setTarget: [ctx currentLocation] zoom:12];
+        [self.map_view animateWithCameraUpdate:update];
+        
+        NSArray* results = [ctx getLocationsByProximity: [ctx currentLocation]];
+        [self setResults: results];
+        [self.context_menu overwriteResults:results];
+    }else {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to determine location:" message:@"Don't panic! We'll just find you a 100 random places instead." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    
+        NSArray* results = [ctx getRandomLocations:100];
+        [self setResults: results];
+        [self.context_menu overwriteResults:results];
+    }
+    
+    
+}
 
 
 -(GMSMarker*) getMarkerForLocationID: (NSString*) lid
@@ -203,9 +191,6 @@
 }
 
 
-
-
-
 -(NSArray*) get_visible_locations {
     NSMutableArray* visible_locations = [[NSMutableArray alloc] init];
     GMSProjection* projection = self.map_view.projection;
@@ -217,6 +202,7 @@
     }
     return visible_locations;
 }
+
 
 -(void)select_location: (NSDictionary*) location {
     ctx.selected_location = location;
@@ -328,6 +314,10 @@
 
 -(void)setResults: (NSArray*) results
 {
+    
+
+    
+    
     /*
      dispatch_async(dispatch_get_main_queue(), ^{
         ContextList* ctx_list = (ContextList*) self.context_menu;
@@ -335,28 +325,28 @@
     
     });
     */
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.selectedLocationID = nil;
-        [self.map_view clear];
-    });
+    //dispatch_async(dispatch_get_main_queue(), ^{
+    self.selectedLocationID = nil;
+    [self.map_view clear];
+    //});
     
     NSDictionary* item;
     for (item in results){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //NSLog(@"ADDING MARKER: %@", item);
-            [self addLocation: item];
-        });
+        [self addLocation: item];
     }
 }
 
 
 - (GMSMarker*) addLocation: (NSDictionary*) location {
-    NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
-    NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
-    NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lng, lat];
-    CLLocationCoordinate2D position = [self loadGeoCoordinate: geo_str];
+    //NSString* lat = [[location objectForKey:@"location"] objectForKey:@"coordinates"][0] ;
+    //NSString* lng = [[location objectForKey:@"location"] objectForKey:@"coordinates"][1];
+    //NSString* geo_str = [NSString stringWithFormat:@"(%@, %@)", lng, lat];
+    //CLLocationCoordinate2D position = [self loadGeoCoordinate: geo_str];
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(
+                                            [[location objectForKey:@"lat"] doubleValue],
+                                            [[location objectForKey:@"lng"] doubleValue]);
     GMSMarker *marker = [GMSMarker markerWithPosition: position];
-    marker.icon = [ctx markerForCategory:[location objectForKey:@"category"]];
+    marker.icon = [ctx markerForCategory:[location objectForKey:@"category"] ];
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
     [marker setAppearAnimation: kGMSMarkerAnimationPop];
@@ -432,29 +422,6 @@
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:t zoom: zoom];
     [mapView setCamera:camera];
-}
-
-
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation
-{
-    here =  newLocation.coordinate;
-    //NSLog(@" GOT POSITION  %f  %f ", here.latitude, here.longitude);
-    
-    GMSCameraUpdate *update = [GMSCameraUpdate setTarget: here zoom:12];
-    [self.map_view animateWithCameraUpdate:update];
-    [manager stopUpdatingLocation];
-    
-    CLLocationCoordinate2D cloc = newLocation.coordinate;
-    [ctx fetchResources:@"/nearby"
-             withParams:@{
-                          @"lat": [NSNumber numberWithDouble: cloc.latitude],
-                          @"lng": [NSNumber numberWithDouble: cloc.longitude]
-                          }
-            setResultOn: self];
-
-    
 }
 
 
@@ -705,6 +672,8 @@
     self.detail_view.frame = CGRectOffset(self.view.frame, 0, 600);
     self.map_view.padding = UIEdgeInsetsMake(0, 0, 0, 0);
     
+    [self.detail_view setContentOffset:CGPointMake(0,0) animated:FALSE];
+    
     
     [UIView animateWithDuration:1.0 delay: 0.0 options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -846,30 +815,38 @@
     [self.detail_text loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     self.detail_text.userInteractionEnabled = NO;
     self.detail_text.opaque = NO;
+    self.detail_text.delegate = self;
     self.detail_text.backgroundColor = [UIColor clearColor];
     //[self.detail_text loadHTMLString: embedHTML baseURL: nil];
-    NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
-                         @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.height, document.body.clientHeight)"] integerValue];
+
     
     //CGRect tf = self.detail_title.frame;
     //CGRect f = self.detail_text.frame;
     //self.detail_text.frame = CGRectMake(f.origin.x, f.origin.y + tf.size.height -50, f.size.width, height+200);
-    
-    [self.detail_text sizeToFit];
-    /*
-    CGRect tf = self.detail_title.frame;
-    CGRect f = self.detail_text.frame;
-    self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
-    */
-    // DETAIL VIEW CONTENT SIZE
-    CGRect f = self.detail_text.frame;
-    CGFloat content_height = f.origin.y + f.size.height;
-    CGSize content_size = CGSizeMake(320.0, content_height);
-    self.detail_view.contentSize = content_size;
-    
 
+    /*
+     CGRect tf = self.detail_title.frame;
+     CGRect f = self.detail_text.frame;
+     self.detail_text.frame = CGRectOffset(self.detail_text.frame, 0, tf.size.height -50);
+     */
+    // DETAIL VIEW CONTENT SIZE
 }
 
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"Done Loading");
+    if (webView == self.detail_text){
+        NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
+                             @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.height, document.body.clientHeight)"] integerValue];
+        
+        [self.detail_text sizeToFit];
+        CGRect f = self.detail_text.frame;
+        CGFloat content_height = f.origin.y + f.size.height;
+        CGSize content_size = CGSizeMake(320.0, content_height);
+        self.detail_view.contentSize = content_size;
+    }
+
+}
 
 
 

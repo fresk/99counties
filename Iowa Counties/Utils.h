@@ -43,3 +43,12 @@
 @interface MyImageView : UIView
 @property (nonatomic, assign) UIImage *image;
 @end
+
+
+
+@interface UIColor (UIColor_PXExtensions)
++ (UIColor*)pxColorWithHexValue:(NSString*)hexValue;
+@end
+
+
+

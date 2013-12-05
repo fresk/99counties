@@ -394,6 +394,8 @@
         return;
     }
     
+   [self.search_bar resignFirstResponder];
+    
     NSInteger idx = [indexPath row];
     
     if ([list_mode isEqualToString:@"locations"]){
@@ -423,6 +425,8 @@
          */
     }
     
+
+    
     /*
     if ([list_mode isEqualToString:@"county"]){
         NSString* county_id = [group_list objectAtIndex:idx];
@@ -443,7 +447,6 @@
         return 150.0;
     }
     return 44.0;
-    
 }
 
 
@@ -461,7 +464,6 @@
         _search_bar_active = FALSE;
         
     }
-    
     
     list_mode = @"category";
     //self.filter_header_image.image = [UIImage imageNamed:@"filter-bytype"];
@@ -501,7 +503,6 @@
 
 -(void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     _search_bar_active = TRUE;
-
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -513,7 +514,6 @@
     if(_search_bar_active){
         [self.search_bar resignFirstResponder];
         _search_bar_active = FALSE;
-    
     }
 }
 

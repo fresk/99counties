@@ -125,9 +125,7 @@
     else {
         comingFromListView = TRUE;
         self.map_view.padding = UIEdgeInsetsMake(100, 0, 330.0, 0);
-        
         [self navigationController].navigationBarHidden = TRUE;
-        
     }
      */
 }
@@ -239,7 +237,7 @@
     }
     else {
         [self hideDetailsOverlay];
-    
+
     }
     
 }
@@ -251,6 +249,7 @@
 
 - (IBAction)button_hide_pressed:(id)sender {
     [self hideDetailsOverlay];
+    
 }
 
 - (IBAction)backgroundImageScrollViewTapped:(id)sender {
@@ -675,7 +674,7 @@
     
     [self.detail_view setContentOffset:CGPointMake(0,0) animated:FALSE];
     
-    
+    self.map_view.settings.myLocationButton = FALSE;
     [UIView animateWithDuration:1.0 delay: 0.0 options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.detail_view.frame = CGRectOffset(self.view.frame, 0, 0);
@@ -683,6 +682,7 @@
                      }
                      completion:^(BOOL finished){
                          [self updateDetailPageContentSize];
+                         
                      }];
 }
 
@@ -699,6 +699,7 @@
                          self.detail_view.hidden = TRUE;
                          self.background_layer.hidden = TRUE;
                         [self flyBackToMap];
+                         self.map_view.settings.myLocationButton = TRUE;
                      }];
 }
 

@@ -27,15 +27,17 @@
     
     NSArray* filter_buttons;
     
+    UIView* _child_menu;
     
+    BOOL _search_bar_active;
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    _search_bar_active = FALSE;
+    _child_menu = nil;
     self.context_tab_btn.frame  = CGRectMake(280,25,40,40);
     self.table_view.frame       = CGRectMake(320, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
@@ -60,47 +62,54 @@
 
 
 -(void) hideFilterButtons {
-    filter_buttons = [[NSArray alloc] initWithObjects: self.btn_city, self.btn_proximity, self.btn_type, nil];
-    
-    for (UIView* btn in filter_buttons) {
-        btn.alpha = 0;
-        btn.frame = CGRectMake(280,btn.frame.origin.y, 40,40);
-    }
+    self.btn_proximity.frame = CGRectMake(280,self.btn_proximity.frame.origin.y, 40,40);
+    self.btn_type.frame = CGRectMake(280,self.btn_type.frame.origin.y, 40,40);
     
     self.context_tab_btn.frame = CGRectMake(280,25,40,40);
     self.context_tab_btn_close.frame  = CGRectMake(280,25,40,40);
 
     self.context_tab_btn.alpha = 1.0;
     self.context_tab_btn_close.alpha = 0.0;
+    self.btn_proximity.alpha = 0.0;
+    self.btn_type.alpha = 0.0;
     
     self.context_tab_btn.userInteractionEnabled = TRUE;
     self.context_tab_btn_close.userInteractionEnabled = FALSE;
     
     self.table_view.frame = CGRectMake(320, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(320, 0, 260, 120);
+    self.search_bar.frame = CGRectMake(320, self.search_bar.frame.origin.y, self.search_bar.frame.size.width, self.search_bar.frame.size.height);
 }
 
 
 -(void) showFilterButtons {
-    filter_buttons = [[NSArray alloc] initWithObjects: self.btn_city, self.btn_proximity, self.btn_type, nil];
+    filter_buttons = [[NSArray alloc] initWithObjects: self.btn_proximity, self.btn_type, nil];
     
     for (UIView* btn in filter_buttons) {
         btn.alpha = 0.7;
         btn.frame = CGRectMake(10,btn.frame.origin.y, 40,40);
     }
     
+    
+    self.btn_proximity.frame = CGRectMake(10,self.btn_proximity.frame.origin.y, 40,40);
+    self.btn_type.frame = CGRectMake(10,self.btn_type.frame.origin.y, 40,40);
+    
+    
     self.context_tab_btn.frame = CGRectMake(10,25,40,40);
     self.context_tab_btn_close.frame  = CGRectMake(10,25,40,40);
     
     self.context_tab_btn.alpha = 0.0;
     self.context_tab_btn_close.alpha = 1.0;
-    
+    self.btn_proximity.alpha = 1.0;
+    self.btn_type.alpha = 1.0;
+
  
     self.context_tab_btn.userInteractionEnabled = FALSE;
     self.context_tab_btn_close.userInteractionEnabled = TRUE;
 
     self.table_view.frame = CGRectMake(60, 0, 260, 568);
     self.filter_header_image.frame = CGRectMake(60, 0, 260, 120);
+    self.search_bar.frame = CGRectMake(60, self.search_bar.frame.origin.y, self.search_bar.frame.size.width, self.search_bar.frame.size.height);
 }
 
 
@@ -119,7 +128,7 @@
 
 
 -(void)setIs_showing:(BOOL)is_showing {
-    NSLog(@"SETTING FROM %d  to  %d", _is_showing, is_showing);
+    //NSLog(@"SETTING FROM %d  to  %d", _is_showing, is_showing);
     if(!is_showing)
         [self hide_menu];
     else if (is_showing)
@@ -130,7 +139,7 @@
 
 -(void) show_menu {
     _is_showing = TRUE;
-    NSLog(@"showing");
+    //NSLog(@"showing");
     
     //MapViewController* map_view_ctrl = (MapViewController*) self.parentViewController;
     [self setResults: [map_view_ctrl get_visible_locations]];
@@ -174,7 +183,7 @@
 
 -(void) hide_menu {
     _is_showing = FALSE;
-    NSLog(@"hiding");
+    //NSLog(@"hiding");
     
     [self showFilterButtons];
 
@@ -200,6 +209,7 @@
                          self.context_tab_btn.userInteractionEnabled = TRUE;
                          self.context_tab_btn_close.userInteractionEnabled = FALSE;
                          [self hideFilterButtons];
+
                      }];
     [self hideFilterButtons];
     //linear animations
@@ -213,6 +223,9 @@
                          self.backdrop.hidden = TRUE;
                      }];
     
+    for (UIView* c in self.overlay.subviews) {
+        [c removeFromSuperview];
+    }
 
 };
 
@@ -237,7 +250,7 @@
 
 
 - (void) setResults: (NSArray*) results {
-    NSLog(@"setting results");
+    //NSLog(@"setting results");
     list_mode = @"locations";
     //dispatch_async(dispatch_get_main_queue(), ^{
     if ([results count] > 0 ){
@@ -250,7 +263,7 @@
 
 
 - (void) overwriteResults: (NSArray*) results {
-    NSLog(@"setting results");
+    //NSLog(@"setting results");
     list_mode = @"locations";
     //dispatch_async(dispatch_get_main_queue(), ^{
     if ([results count] > 0 ){
@@ -263,7 +276,7 @@
 
 
 - (void) setGroups: (NSArray*) results {
-    NSLog(@"setting results");
+    //NSLog(@"setting results");
     //dispatch_async(dispatch_get_main_queue(), ^{
     if ([results count] > 0 ){
         group_list = [results copy];
@@ -376,7 +389,7 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"ROW SELECTED: %d: %d", [indexPath section], [indexPath row] );
+    //NSLog(@"ROW SELECTED: %d: %d", [indexPath section], [indexPath row] );
     if ([indexPath section] == 0){
         return;
     }
@@ -401,7 +414,7 @@
     
     if ([list_mode isEqualToString:@"city"]){
         NSString* city = [[group_list objectAtIndex:idx] objectForKey:@"name"];
-        NSLog(@"SELECTED CITY: %@", city);
+        //NSLog(@"SELECTED CITY: %@", city);
         [self setResults:[ctx getLocationsByCity:city ]];
         
         /*[ctx fetchResource:@"/locations" withParams:@{@"city":[city objectForKey:@"name"]} onComplete:^(NSDictionary *data) {
@@ -427,7 +440,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath section] == 0 && [indexPath row] == 0){
-        return 120.0;
+        return 150.0;
     }
     return 44.0;
     
@@ -443,6 +456,13 @@
 
 
 - (IBAction)filter_type:(id)sender {
+    if(_search_bar_active){
+        [self.search_bar resignFirstResponder];
+        _search_bar_active = FALSE;
+        
+    }
+    
+    
     list_mode = @"category";
     //self.filter_header_image.image = [UIImage imageNamed:@"filter-bytype"];
     //[self fadeHeaderImageTo: @"filter-bytype"];
@@ -461,7 +481,7 @@
     self.btn_type.alpha = 1.0;
     
     
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"genius" bundle:nil];
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"ContextMenu" bundle:nil];
     UIViewController* type_selection_view = [sb instantiateViewControllerWithIdentifier:@"TypeSelection"];
     [self addChildViewController:type_selection_view];
     [self.overlay addSubview:type_selection_view.view];
@@ -472,6 +492,57 @@
                      completion:^(BOOL finished){}];
     
 }
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+
+
+}
+
+
+-(void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    _search_bar_active = TRUE;
+
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSArray* results = [ctx getLocationsBySearch:self.search_bar.text];
+    [self setResults: results];
+}
+
+- (IBAction)tap_on_context_menu:(id)sender {
+    if(_search_bar_active){
+        [self.search_bar resignFirstResponder];
+        _search_bar_active = FALSE;
+    
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSArray* results = [ctx getLocationsBySearch:self.search_bar.text];
+    [self setResults: results];
+    [self.search_bar resignFirstResponder];
+}
+
+- (IBAction)filter_location:(id)sender {
+    
+
+        [self.search_bar resignFirstResponder];
+        _search_bar_active = FALSE;
+
+    for (UIView* c in self.overlay.subviews) {
+        [c removeFromSuperview];
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 - (IBAction)filter_city:(id)sender {
     

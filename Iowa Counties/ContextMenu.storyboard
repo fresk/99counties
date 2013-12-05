@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tze-Bt-FLS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3028" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tze-Bt-FLS">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -91,6 +91,18 @@
                                 <rect key="frame" x="60" y="0.0" width="260" height="120"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="search" translucent="NO" scopeBarBackgroundImage="- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar" translatesAutoresizingMaskIntoConstraints="NO" id="EES-U5-Kd8">
+                                <rect key="frame" x="60" y="112" width="260" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="tze-Bt-FLS" id="TKI-P7-XEt"/>
+                                </connections>
+                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-0R-HN1">
                                 <rect key="frame" x="10" y="25" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,6 +129,9 @@
                                 <state key="normal" image="filterbtn-byproximity.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="filter_location:" destination="tze-Bt-FLS" eventType="touchUpInside" id="LZr-Hw-rL4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggA-SZ-mvw">
                                 <rect key="frame" x="10" y="169" width="40" height="40"/>
@@ -129,8 +144,12 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJK-Bc-qpy" customClass="LayerView">
-                                <rect key="frame" x="0.0" y="0.0" width="325" height="568"/>
+                                <rect key="frame" x="60" y="0.0" width="267" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mZt-ck-YeL" appends="YES" id="JNT-Fm-ODq"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -143,15 +162,107 @@
                         <outlet property="context_tab_btn_close" destination="QEK-nV-Pdw" id="CwY-Cr-2cN"/>
                         <outlet property="filter_header_image" destination="A7K-vT-E94" id="8UK-9k-GyF"/>
                         <outlet property="overlay" destination="tJK-Bc-qpy" id="uBp-6t-yBY"/>
+                        <outlet property="search_bar" destination="EES-U5-Kd8" id="6SW-EP-UtY"/>
                         <outlet property="table_view" destination="Zfg-zr-zh3" id="sXj-h1-6VM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdw-1Z-eH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" id="mZt-ck-YeL">
+                    <connections>
+                        <action selector="tap_on_context_menu:" destination="tze-Bt-FLS" id="eF9-yH-YfY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="97" y="40"/>
         </scene>
+        <!--Select By Location View Controller-->
+        <scene sceneID="lhr-T8-OLg">
+            <objects>
+                <viewController storyboardIdentifier="LocationSelection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gqq-k6-fRf" customClass="SelectByLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K8G-s1-uAU"/>
+                        <viewControllerLayoutGuide type="bottom" id="dt8-Xs-GvC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="acg-In-OzD" customClass="LayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-Zk-UNz">
+                                <rect key="frame" x="60" y="0.0" width="260" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypeSelection" textLabel="uI2-Zu-6iX" style="IBUITableViewCellStyleDefault" id="BQo-Bj-LrY">
+                                        <rect key="frame" x="0.0" y="22" width="260" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BQo-Bj-LrY" id="bYP-rw-2Cx">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uI2-Zu-6iX">
+                                                    <rect key="frame" x="15" y="0.0" width="230" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="MI6-Zk-UNz" id="it6-yG-II7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPV-QS-dz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="40"/>
+        </scene>
+        <!--Select Type Genius-->
+        <scene sceneID="zSz-P8-0Ly">
+            <objects>
+                <viewController storyboardIdentifier="TypeSelection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ekf-hz-UB7" customClass="SelectTypeGenius" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j5w-3e-dYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="TGs-UI-0ue"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ooi-ca-4AJ" customClass="LayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dfh-jG-IBq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypeSelection" rowHeight="120" id="xqa-qj-RdX">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xqa-qj-RdX" id="3cP-LL-czn">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dfh-jG-IBq" id="U8O-pT-bVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35p-gr-088" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="17"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar" width="640" height="400"/>
         <image name="filter-currentview.png" width="480" height="240"/>
         <image name="filterbtn-byproximity.png" width="128" height="128"/>
         <image name="filterbtn-bytype.png" width="128" height="128"/>

@@ -100,7 +100,7 @@
     self.map_view.myLocationEnabled = YES;
     self.map_view.settings.tiltGestures = NO;
     self.map_view.settings.rotateGestures = NO;
-    self.map_view.settings.myLocationButton = NO;
+    self.map_view.settings.myLocationButton = YES;
     self.map_view.settings.compassButton = NO;
     
     
@@ -158,7 +158,7 @@
     comingFromListView = FALSE;
     
     if([ctx knowsLocation]){
-        GMSCameraUpdate *update = [GMSCameraUpdate setTarget: [ctx currentLocation] zoom:12];
+        GMSCameraUpdate *update = [GMSCameraUpdate setTarget: [ctx currentLocation] zoom:10];
         [self.map_view animateWithCameraUpdate:update];
         
         NSArray* results = [ctx getLocationsByProximity: [ctx currentLocation]];
@@ -350,6 +350,7 @@
     marker.userData = location;
     marker.title = [location objectForKey:@"name"] ;
     [marker setAppearAnimation: kGMSMarkerAnimationPop];
+
     marker.map = self.map_view;
     return marker;
     //[markersByLocationID setValue:marker forKey: location_id];
@@ -499,7 +500,7 @@
         }
     }
     
-    NSLog(@"IMAGES: %@", self.imageUrls);
+    //NSLog(@"IMAGES: %@", self.imageUrls);
     
     int numberOfPages = [self.imageUrls count];
     
@@ -834,7 +835,7 @@
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"Done Loading");
+    //NSLog(@"Done Loading");
     if (webView == self.detail_text){
         NSInteger height = [[self.detail_text stringByEvaluatingJavaScriptFromString:
                              @" Math.max(document.body.scrollHeight, document.body.offsetHeight, document.height, document.body.clientHeight)"] integerValue];

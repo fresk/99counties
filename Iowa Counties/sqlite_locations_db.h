@@ -63,7 +63,7 @@ NSDictionary* locationFromSqlRow(sqlite3_stmt* stmt){
                            @"category": [[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 6)] componentsSeparatedByString:@","],
                            @"popularity": [NSNumber numberWithDouble:sqlite3_column_double(stmt, 7)]
                            };
-    NSLog(@"DICT: %@", dict);
+    //NSLog(@"DICT: %@", dict);
     return dict;
 }
 

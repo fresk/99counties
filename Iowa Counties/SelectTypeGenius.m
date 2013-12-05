@@ -69,11 +69,13 @@
     NSDictionary* cat = [categories objectAtIndex: [indexPath row]];
     NSString* color = [[ctx.categoryNames objectForKey: [cat objectForKey:@"id"]] objectForKey:@"color"];
     NSString* name =  [[ctx.categoryNames objectForKey: [cat objectForKey:@"id"]] objectForKey:@"name"];
-    cell.textLabel.text = name;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%d)", name, [[cat objectForKey:@"num_entries"] integerValue ]];
     cell.backgroundColor = [UIColor pxColorWithHexValue:color];
 
     // Configure the cell...
     cell.textLabel.textColor = [UIColor colorWithWhite:1 alpha:1];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
     
     return cell;
 }
@@ -81,7 +83,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary* cat = [categories objectAtIndex: [indexPath row]];
-    NSLog(@"selected category: %@", [cat objectForKey:@"id"]);
+    //NSLog(@"selected category: %@", [cat objectForKey:@"id"]);
     [parent_menu setResults:[ctx getLocationsByCategory:[cat objectForKey:@"id"]]];
 
      

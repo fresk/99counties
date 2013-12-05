@@ -42,6 +42,7 @@
 - (BOOL) locationEnabled;
 - (BOOL) saveFavorites;
 
+- (NSArray*) getLocationsBySearch: (NSString*) search_term;
 - (NSArray*) getLocationsByProximity: (CLLocationCoordinate2D) location;
 - (NSArray*) getLocationsByCategory: (NSString*) category;
 - (NSArray*) getLocationsByCity: (NSString*) city;

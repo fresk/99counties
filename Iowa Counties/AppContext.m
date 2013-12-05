@@ -55,7 +55,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
     self.favorites = [NSMutableDictionary dictionaryWithContentsOfFile:self.favorites_fname];
     if (self.favorites == nil){
         //first start
-        NSLog(@"creating blank favorites list");
+        //NSLog(@"creating blank favorites list");
         self.favorites = [[NSMutableDictionary alloc] init];
         [self saveFavorites];
     }
@@ -82,9 +82,10 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
 }
 
 -(void) initCities {
-    [self fetchResource:@"/cities/" withParams: nil onComplete:^(NSDictionary *data) {
-        self.cities = [data objectForKey:@"result"];
-    }];
+    //[self fetchResource:@"/cities/" withParams: nil onComplete:^(NSDictionary *data) {
+        //self.cities = [data objectForKey:@"result"];
+        self.cities = [[Utils loadJsonFile:@"cities"] objectForKey:@"result"];
+    //}];
 }
 
 
@@ -120,7 +121,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"CONTEXT UPDATE: location");
+    //NSLog(@"CONTEXT UPDATE: location");
     _knowsLocation = TRUE;
     _currentLocation =  newLocation.coordinate;    
 }
@@ -130,7 +131,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
     
     NSString *errorString;
     
-    NSLog(@"Your Location: %@",[error localizedDescription]);
+    //NSLog(@"Your Location: %@",[error localizedDescription]);
     switch([error code]) {
         case kCLErrorDenied:
             //Access denied by user
@@ -161,14 +162,14 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
 - (UIImage*) markerForCategory: (NSArray*) category {
     NSString* fname = [NSString stringWithFormat:@"marker-%@.png", category[0]];
     UIImage* img =  [UIImage imageNamed: fname];
-    //NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
+    ////NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
     return img;
 }
 
 - (UIImage*) markerForCategoryID: (NSString*) category {
     NSString* fname = [NSString stringWithFormat:@"marker-%@.png", category];
     UIImage* img =  [UIImage imageNamed: fname];
-    //NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
+    ////NSLog(@"LOAD IMAGE:  %@ (%f, %f)", fname, img.size.width, img.size.height);
     return img;
 }
 
@@ -177,6 +178,26 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
 
 
 
+- (NSArray*) getLocationsBySearch: (NSString*) search_text {
+    sqlite3* db = open_locations_db();
+    sqlite3_stmt* sql_stmt;
+    NSMutableArray* results = [[NSMutableArray alloc] init];
+    
+    NSString *sql_query = [NSString stringWithFormat:
+                           @"SELECT id, lat, lng, name, city, images, categories, popularity, last_update FROM locations WHERE locations.search_text MATCH '%@' ", search_text, search_text ];
+    if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        sqlite3_close(db);
+        return results;
+    }
+    while(sqlite3_step(sql_stmt) == SQLITE_ROW){
+        NSDictionary* location = locationFromSqlRow(sql_stmt);
+        [results addObject:location];
+    }
+    sqlite3_finalize(sql_stmt);
+    sqlite3_close(db);
+    return results;
+}
 
 
 
@@ -191,7 +212,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
                            location.latitude ,location.longitude ];
     
     if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
-        NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
         sqlite3_close(db);
         return results;
     }
@@ -217,7 +238,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
                            @"SELECT locations.id, locations.lat, locations.lng, locations.name, locations.city, locations.images, locations.categories, locations.popularity, locations.last_update from (location_categories left join locations on locations.id = location_categories.location_id)  WHERE category_id == \"%@\"" , category ];
     
     if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
-        NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
         sqlite3_close(db);
         return results;
     }
@@ -240,7 +261,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
     NSString *sql_query = [NSString stringWithFormat:
                            @"SELECT id, lat, lng, name, city, images, categories, popularity, last_update FROM locations WHERE locations.city == \"%@\"", city ];
     if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
-        NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
         sqlite3_close(db);
         return results;
     }
@@ -261,7 +282,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
     
     NSString *sql_query = @"SELECT id, lat, lng, name, city, images, categories, popularity, last_update FROM locations ORDER BY popularity DESC;";
     if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
-        NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
         sqlite3_close(db);
         return results;
     }
@@ -286,7 +307,7 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
     NSString *sql_query = [NSString stringWithFormat:
         @"SELECT id, lat, lng, name, city, images, categories, popularity, last_update FROM locations ORDER BY RANDOM() LIMIT %d;", limit];
     if (sqlite3_prepare_v2(db, [sql_query UTF8String], -1, &sql_stmt, NULL) != SQLITE_OK){
-        NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
+        //NSLog(@"Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db));
         sqlite3_close(db);
         return results;
     }
@@ -327,9 +348,9 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
         endpoint = [NSString stringWithFormat:@"http://findyouriowa.com/api/%@", path];
     }
     
-    NSLog(@"requesting: %@", endpoint);
+    //NSLog(@"requesting: %@", endpoint);
     httpResponseHandler responseHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
-        //NSLog(@"GOT RESPONSE: %d", data count);
+        ////NSLog(@"GOT RESPONSE: %d", data count);
         NSError *err;
         if (err != nil)
             NSLog(@"URLRequest callback error {{loadLocationsWhere: Matches: intoTable:}}: %@", err);

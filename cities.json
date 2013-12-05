@@ -1,0 +1,1261 @@
+
+{
+    "ok": 1.0,
+    "result": [
+               {
+               "id": "lynnville",
+               "name": "Lynnville",
+               "num_entries": 1
+               },
+               {
+               "id": "kellogg",
+               "name": "Kellogg",
+               "num_entries": 1
+               },
+               {
+               "id": "gladbrook",
+               "name": "Gladbrook",
+               "num_entries": 1
+               },
+               {
+               "id": "dysart",
+               "name": "Dysart",
+               "num_entries": 1
+               },
+               {
+               "id": "boone",
+               "name": "Boone",
+               "num_entries": 3
+               },
+               {
+               "id": "riceville",
+               "name": "Riceville",
+               "num_entries": 1
+               },
+               {
+               "id": "parkersburg",
+               "name": "Parkersburg",
+               "num_entries": 1
+               },
+               {
+               "id": "osage",
+               "name": "Osage",
+               "num_entries": 2
+               },
+               {
+               "id": "northwood",
+               "name": "Northwood",
+               "num_entries": 1
+               },
+               {
+               "id": "morrison",
+               "name": "Morrison",
+               "num_entries": 1
+               },
+               {
+               "id": "lake-mills",
+               "name": "Lake Mills",
+               "num_entries": 2
+               },
+               {
+               "id": "fort-dodge",
+               "name": "Fort Dodge",
+               "num_entries": 4
+               },
+               {
+               "id": "conrad",
+               "name": "Conrad",
+               "num_entries": 1
+               },
+               {
+               "id": "beaman",
+               "name": "Beaman",
+               "num_entries": 1
+               },
+               {
+               "id": "stanton",
+               "name": "Stanton",
+               "num_entries": 1
+               },
+               {
+               "id": "ackley",
+               "name": "Ackley",
+               "num_entries": 1
+               },
+               {
+               "id": "prescott",
+               "name": "Prescott",
+               "num_entries": 1
+               },
+               {
+               "id": "malvern",
+               "name": "Malvern",
+               "num_entries": 1
+               },
+               {
+               "id": "lorimor",
+               "name": "Lorimor",
+               "num_entries": 1
+               },
+               {
+               "id": "orient",
+               "name": "Orient",
+               "num_entries": 1
+               },
+               {
+               "id": "greenfield",
+               "name": "Greenfield",
+               "num_entries": 2
+               },
+               {
+               "id": "ellston",
+               "name": "Ellston",
+               "num_entries": 1
+               },
+               {
+               "id": "diagonal",
+               "name": "Diagonal",
+               "num_entries": 1
+               },
+               {
+               "id": "creston",
+               "name": "Creston",
+               "num_entries": 3
+               },
+               {
+               "id": "walnut",
+               "name": "Walnut",
+               "num_entries": 2
+               },
+               {
+               "id": "dows",
+               "name": "Dows",
+               "num_entries": 4
+               },
+               {
+               "id": "pisgah",
+               "name": "Pisgah",
+               "num_entries": 1
+               },
+               {
+               "id": "moorhead",
+               "name": "Moorhead",
+               "num_entries": 2
+               },
+               {
+               "id": "missouri-valley",
+               "name": "Missouri Valley",
+               "num_entries": 6
+               },
+               {
+               "id": "manning",
+               "name": "Manning",
+               "num_entries": 1
+               },
+               {
+               "id": "logan",
+               "name": "Logan",
+               "num_entries": 1
+               },
+               {
+               "id": "kiron",
+               "name": "Kiron",
+               "num_entries": 1
+               },
+               {
+               "id": "kimballton",
+               "name": "Kimballton",
+               "num_entries": 1
+               },
+               {
+               "id": "perry",
+               "name": "Perry",
+               "num_entries": 1
+               },
+               {
+               "id": "honey-creek",
+               "name": "Honey Creek",
+               "num_entries": 1
+               },
+               {
+               "id": "griswold",
+               "name": "Griswold",
+               "num_entries": 3
+               },
+               {
+               "id": "elk-horn",
+               "name": "Elk Horn",
+               "num_entries": 4
+               },
+               {
+               "id": "dunlap",
+               "name": "Dunlap",
+               "num_entries": 1
+               },
+               {
+               "id": "polk-city",
+               "name": "Polk City",
+               "num_entries": 1
+               },
+               {
+               "id": "dow-city",
+               "name": "Dow City",
+               "num_entries": 1
+               },
+               {
+               "id": "denison",
+               "name": "Denison",
+               "num_entries": 2
+               },
+               {
+               "id": "eldora",
+               "name": "Eldora",
+               "num_entries": 4
+               },
+               {
+               "id": "avoca",
+               "name": "Avoca",
+               "num_entries": 2
+               },
+               {
+               "id": "exira",
+               "name": "Exira",
+               "num_entries": 1
+               },
+               {
+               "id": "west-bend",
+               "name": "West Bend",
+               "num_entries": 2
+               },
+               {
+               "id": "shelby",
+               "name": "Shelby",
+               "num_entries": 1
+               },
+               {
+               "id": "storm-lake",
+               "name": "Storm Lake",
+               "num_entries": 5
+               },
+               {
+               "id": "rock-rapids",
+               "name": "Rock Rapids",
+               "num_entries": 1
+               },
+               {
+               "id": "arnolds-park",
+               "name": "Arnolds Park",
+               "num_entries": 5
+               },
+               {
+               "id": "lytton",
+               "name": "Lytton",
+               "num_entries": 1
+               },
+               {
+               "id": "lake-view",
+               "name": "Lake View",
+               "num_entries": 1
+               },
+               {
+               "id": "hawarden",
+               "name": "Hawarden",
+               "num_entries": 1
+               },
+               {
+               "id": "george",
+               "name": "George",
+               "num_entries": 1
+               },
+               {
+               "id": "hampton",
+               "name": "Hampton",
+               "num_entries": 1
+               },
+               {
+               "id": "emmetsburg",
+               "name": "Emmetsburg",
+               "num_entries": 1
+               },
+               {
+               "id": "adel",
+               "name": "Adel",
+               "num_entries": 1
+               },
+               {
+               "id": "humboldt",
+               "name": "Humboldt",
+               "num_entries": 1
+               },
+               {
+               "id": "rockford",
+               "name": "Rockford",
+               "num_entries": 1
+               },
+               {
+               "id": "dougherty",
+               "name": "Dougherty",
+               "num_entries": 1
+               },
+               {
+               "id": "ashton",
+               "name": "Ashton",
+               "num_entries": 1
+               },
+               {
+               "id": "johnston",
+               "name": "Johnston",
+               "num_entries": 2
+               },
+               {
+               "id": "ankeny",
+               "name": "Ankeny",
+               "num_entries": 2
+               },
+               {
+               "id": "bettendorf",
+               "name": "Bettendorf",
+               "num_entries": 1
+               },
+               {
+               "id": "long-grove",
+               "name": "Long Grove",
+               "num_entries": 1
+               },
+               {
+               "id": "cascade",
+               "name": "Cascade",
+               "num_entries": 2
+               },
+               {
+               "id": "bellevue",
+               "name": "Bellevue",
+               "num_entries": 1
+               },
+               {
+               "id": "wilton",
+               "name": "Wilton",
+               "num_entries": 1
+               },
+               {
+               "id": "washington",
+               "name": "Washington",
+               "num_entries": 2
+               },
+               {
+               "id": "pomeroy",
+               "name": "Pomeroy",
+               "num_entries": 1
+               },
+               {
+               "id": "riverside",
+               "name": "Riverside",
+               "num_entries": 1
+               },
+               {
+               "id": "marion",
+               "name": "Marion",
+               "num_entries": 2
+               },
+               {
+               "id": "lone-tree",
+               "name": "Lone Tree",
+               "num_entries": 1
+               },
+               {
+               "id": "kalona",
+               "name": "Kalona",
+               "num_entries": 3
+               },
+               {
+               "id": "belmond",
+               "name": "Belmond",
+               "num_entries": 2
+               },
+               {
+               "id": "oakland",
+               "name": "Oakland",
+               "num_entries": 1
+               },
+               {
+               "id": "coralville",
+               "name": "Coralville",
+               "num_entries": 4
+               },
+               {
+               "id": "eagle-grove",
+               "name": "Eagle Grove",
+               "num_entries": 1
+               },
+               {
+               "id": "toddville",
+               "name": "Toddville",
+               "num_entries": 1
+               },
+               {
+               "id": "west-union",
+               "name": "West Union",
+               "num_entries": 1
+               },
+               {
+               "id": "strawberry-point",
+               "name": "Strawberry Point",
+               "num_entries": 1
+               },
+               {
+               "id": "norway",
+               "name": "Norway",
+               "num_entries": 1
+               },
+               {
+               "id": "waukon",
+               "name": "Waukon",
+               "num_entries": 3
+               },
+               {
+               "id": "manchester",
+               "name": "Manchester",
+               "num_entries": 1
+               },
+               {
+               "id": "panora",
+               "name": "Panora",
+               "num_entries": 1
+               },
+               {
+               "id": "grinnell",
+               "name": "Grinnell",
+               "num_entries": 4
+               },
+               {
+               "id": "guttenberg",
+               "name": "Guttenberg",
+               "num_entries": 1
+               },
+               {
+               "id": "clarion",
+               "name": "Clarion",
+               "num_entries": 3
+               },
+               {
+               "id": "decorah",
+               "name": "Decorah",
+               "num_entries": 2
+               },
+               {
+               "id": "west-des-moines",
+               "name": "West Des Moines",
+               "num_entries": 15
+               },
+               {
+               "id": "clermont",
+               "name": "Clermont",
+               "num_entries": 1
+               },
+               {
+               "id": "dyersville",
+               "name": "Dyersville",
+               "num_entries": 3
+               },
+               {
+               "id": "sigourney",
+               "name": "Sigourney",
+               "num_entries": 1
+               },
+               {
+               "id": "garnavillo",
+               "name": "Garnavillo",
+               "num_entries": 1
+               },
+               {
+               "id": "cresco",
+               "name": "Cresco",
+               "num_entries": 1
+               },
+               {
+               "id": "pella",
+               "name": "Pella",
+               "num_entries": 5
+               },
+               {
+               "id": "winterset",
+               "name": "Winterset",
+               "num_entries": 3
+               },
+               {
+               "id": "clarinda",
+               "name": "Clarinda",
+               "num_entries": 4
+               },
+               {
+               "id": "wayland",
+               "name": "Wayland",
+               "num_entries": 1
+               },
+               {
+               "id": "ottumwa",
+               "name": "Ottumwa",
+               "num_entries": 2
+               },
+               {
+               "id": "osceola",
+               "name": "Osceola",
+               "num_entries": 1
+               },
+               {
+               "id": "lamoni",
+               "name": "Lamoni",
+               "num_entries": 1
+               },
+               {
+               "id": "sac-city",
+               "name": "Sac City",
+               "num_entries": 2
+               },
+               {
+               "id": "urbandale",
+               "name": "Urbandale",
+               "num_entries": 3
+               },
+               {
+               "id": "anamosa",
+               "name": "Anamosa",
+               "num_entries": 3
+               },
+               {
+               "id": "fayette",
+               "name": "Fayette",
+               "num_entries": 1
+               },
+               {
+               "id": "lucas",
+               "name": "Lucas",
+               "num_entries": 1
+               },
+               {
+               "id": "middle-amana",
+               "name": "Middle Amana",
+               "num_entries": 1
+               },
+               {
+               "id": "harpers-ferry",
+               "name": "Harpers Ferry",
+               "num_entries": 1
+               },
+               {
+               "id": "corydon",
+               "name": "Corydon",
+               "num_entries": 1
+               },
+               {
+               "id": "centerville",
+               "name": "Centerville",
+               "num_entries": 1
+               },
+               {
+               "id": "west-point",
+               "name": "West Point",
+               "num_entries": 1
+               },
+               {
+               "id": "allerton",
+               "name": "Allerton",
+               "num_entries": 1
+               },
+               {
+               "id": "le-mars",
+               "name": "Le Mars",
+               "num_entries": 2
+               },
+               {
+               "id": "independence",
+               "name": "Independence",
+               "num_entries": 4
+               },
+               {
+               "id": "spillville",
+               "name": "Spillville",
+               "num_entries": 1
+               },
+               {
+               "id": "chariton",
+               "name": "Chariton",
+               "num_entries": 1
+               },
+               {
+               "id": "van-meter",
+               "name": "Van Meter",
+               "num_entries": 1
+               },
+               {
+               "id": "traer",
+               "name": "Traer",
+               "num_entries": 2
+               },
+               {
+               "id": "bedford",
+               "name": "Bedford",
+               "num_entries": 1
+               },
+               {
+               "id": "toledo",
+               "name": "Toledo",
+               "num_entries": 1
+               },
+               {
+               "id": "st-charles",
+               "name": "St. Charles",
+               "num_entries": 1
+               },
+               {
+               "id": "audubon",
+               "name": "Audubon",
+               "num_entries": 1
+               },
+               {
+               "id": "camanche",
+               "name": "Camanche",
+               "num_entries": 1
+               },
+               {
+               "id": "muscatine",
+               "name": "Muscatine",
+               "num_entries": 3
+               },
+               {
+               "id": "story-city",
+               "name": "Story City",
+               "num_entries": 2
+               },
+               {
+               "id": "carlisle",
+               "name": "Carlisle",
+               "num_entries": 2
+               },
+               {
+               "id": "madrid",
+               "name": "Madrid",
+               "num_entries": 1
+               },
+               {
+               "id": "hazleton",
+               "name": "Hazleton",
+               "num_entries": 1
+               },
+               {
+               "id": "britt",
+               "name": "Britt",
+               "num_entries": 3
+               },
+               {
+               "id": "hopkinton",
+               "name": "Hopkinton",
+               "num_entries": 1
+               },
+               {
+               "id": "coon-rapids",
+               "name": "Coon Rapids",
+               "num_entries": 1
+               },
+               {
+               "id": "maquoketa",
+               "name": "Maquoketa",
+               "num_entries": 6
+               },
+               {
+               "id": "glenwood",
+               "name": "Glenwood",
+               "num_entries": 1
+               },
+               {
+               "id": "melcher-dallas",
+               "name": "Melcher-Dallas",
+               "num_entries": 1
+               },
+               {
+               "id": "jolley",
+               "name": "Jolley",
+               "num_entries": 1
+               },
+               {
+               "id": "walcott",
+               "name": "Walcott",
+               "num_entries": 1
+               },
+               {
+               "id": "sheldon",
+               "name": "Sheldon",
+               "num_entries": 2
+               },
+               {
+               "id": "clive",
+               "name": "Clive",
+               "num_entries": 4
+               },
+               {
+               "id": "tabor",
+               "name": "Tabor",
+               "num_entries": 1
+               },
+               {
+               "id": "lime-springs",
+               "name": "Lime Springs",
+               "num_entries": 1
+               },
+               {
+               "id": "carroll",
+               "name": "Carroll",
+               "num_entries": 4
+               },
+               {
+               "id": "nashua",
+               "name": "Nashua",
+               "num_entries": 2
+               },
+               {
+               "id": "clear-lake",
+               "name": "Clear Lake",
+               "num_entries": 6
+               },
+               {
+               "id": "cedar-falls",
+               "name": "Cedar Falls",
+               "num_entries": 8
+               },
+               {
+               "id": "newton",
+               "name": "Newton",
+               "num_entries": 1
+               },
+               {
+               "id": "homestead",
+               "name": "Homestead",
+               "num_entries": 2
+               },
+               {
+               "id": "salem",
+               "name": "Salem",
+               "num_entries": 1
+               },
+               {
+               "id": "macedonia",
+               "name": "Macedonia",
+               "num_entries": 2
+               },
+               {
+               "id": "harlan",
+               "name": "Harlan",
+               "num_entries": 1
+               },
+               {
+               "id": "davenport",
+               "name": "Davenport",
+               "num_entries": 5
+               },
+               {
+               "id": "leon",
+               "name": "Leon",
+               "num_entries": 1
+               },
+               {
+               "id": "glidden",
+               "name": "Glidden",
+               "num_entries": 1
+               },
+               {
+               "id": "mount-pleasant",
+               "name": "Mount Pleasant",
+               "num_entries": 3
+               },
+               {
+               "id": "keokuk",
+               "name": "Keokuk",
+               "num_entries": 4
+               },
+               {
+               "id": "peterson",
+               "name": "Peterson",
+               "num_entries": 3
+               },
+               {
+               "id": "menlo",
+               "name": "Menlo",
+               "num_entries": 1
+               },
+               {
+               "id": "sioux-city",
+               "name": "Sioux City",
+               "num_entries": 11
+               },
+               {
+               "id": "rock-island",
+               "name": "Rock Island",
+               "num_entries": 3
+               },
+               {
+               "id": "donnellson",
+               "name": "Donnellson",
+               "num_entries": 1
+               },
+               {
+               "id": "shenandoah",
+               "name": "Shenandoah",
+               "num_entries": 3
+               },
+               {
+               "id": "spencer",
+               "name": "Spencer",
+               "num_entries": 2
+               },
+               {
+               "id": "colfax",
+               "name": "Colfax",
+               "num_entries": 1
+               },
+               {
+               "id": "lake-city",
+               "name": "Lake City",
+               "num_entries": 1
+               },
+               {
+               "id": "marquette",
+               "name": "Marquette",
+               "num_entries": 1
+               },
+               {
+               "id": "knoxville-iowa",
+               "name": "Knoxville, Iowa",
+               "num_entries": 1
+               },
+               {
+               "id": "indianola",
+               "name": "Indianola",
+               "num_entries": 2
+               },
+               {
+               "id": "new-vienna",
+               "name": "New Vienna",
+               "num_entries": 1
+               },
+               {
+               "id": "algona",
+               "name": "Algona",
+               "num_entries": 3
+               },
+               {
+               "id": "maxwell",
+               "name": "Maxwell",
+               "num_entries": 1
+               },
+               {
+               "id": "woodward",
+               "name": "Woodward",
+               "num_entries": 1
+               },
+               {
+               "id": "south-amana",
+               "name": "South Amana",
+               "num_entries": 2
+               },
+               {
+               "id": "le-claire",
+               "name": "Le Claire",
+               "num_entries": 5
+               },
+               {
+               "id": "red-oak",
+               "name": "Red Oak",
+               "num_entries": 5
+               },
+               {
+               "id": "hastings",
+               "name": "Hastings",
+               "num_entries": 1
+               },
+               {
+               "id": "mcgregor",
+               "name": "McGregor",
+               "num_entries": 2
+               },
+               {
+               "id": "correctionville",
+               "name": "Correctionville",
+               "num_entries": 1
+               },
+               {
+               "id": "winfield",
+               "name": "Winfield",
+               "num_entries": 1
+               },
+               {
+               "id": "prairie-city",
+               "name": "Prairie City",
+               "num_entries": 1
+               },
+               {
+               "id": "marengo",
+               "name": "Marengo",
+               "num_entries": 2
+               },
+               {
+               "id": "elkader",
+               "name": "Elkader",
+               "num_entries": 4
+               },
+               {
+               "id": "lockridge",
+               "name": "Lockridge",
+               "num_entries": 1
+               },
+               {
+               "id": "st-donatus",
+               "name": "St. Donatus",
+               "num_entries": 1
+               },
+               {
+               "id": "ames",
+               "name": "Ames",
+               "num_entries": 6
+               },
+               {
+               "id": "villisca",
+               "name": "Villisca",
+               "num_entries": 2
+               },
+               {
+               "id": "sabula",
+               "name": "Sabula",
+               "num_entries": 1
+               },
+               {
+               "id": "haverhill",
+               "name": "Haverhill",
+               "num_entries": 1
+               },
+               {
+               "id": "bonaparte",
+               "name": "Bonaparte",
+               "num_entries": 2
+               },
+               {
+               "id": "franklin",
+               "name": "Franklin",
+               "num_entries": 1
+               },
+               {
+               "id": "corning",
+               "name": "Corning",
+               "num_entries": 4
+               },
+               {
+               "id": "tama",
+               "name": "Tama",
+               "num_entries": 1
+               },
+               {
+               "id": "sutherland",
+               "name": "Sutherland",
+               "num_entries": 1
+               },
+               {
+               "id": "webster-city",
+               "name": "Webster City",
+               "num_entries": 1
+               },
+               {
+               "id": "columbus-junction",
+               "name": "Columbus Junction",
+               "num_entries": 2
+               },
+               {
+               "id": "waverly",
+               "name": "Waverly",
+               "num_entries": 1
+               },
+               {
+               "id": "fonda",
+               "name": "Fonda",
+               "num_entries": 1
+               },
+               {
+               "id": "amana",
+               "name": "Amana",
+               "num_entries": 9
+               },
+               {
+               "id": "monticello",
+               "name": "Monticello",
+               "num_entries": 1
+               },
+               {
+               "id": "keosauqua",
+               "name": "Keosauqua",
+               "num_entries": 6
+               },
+               {
+               "id": "charles-city",
+               "name": "Charles City",
+               "num_entries": 3
+               },
+               {
+               "id": "dubuque",
+               "name": "Dubuque",
+               "num_entries": 15
+               },
+               {
+               "id": "odebolt",
+               "name": "Odebolt",
+               "num_entries": 3
+               },
+               {
+               "id": "donahue",
+               "name": "Donahue",
+               "num_entries": 1
+               },
+               {
+               "id": "sergeant-bluff",
+               "name": "Sergeant Bluff",
+               "num_entries": 1
+               },
+               {
+               "id": "jefferson",
+               "name": "Jefferson",
+               "num_entries": 4
+               },
+               {
+               "id": "clinton",
+               "name": "Clinton",
+               "num_entries": 7
+               },
+               {
+               "id": "mason-city",
+               "name": "Mason City",
+               "num_entries": 7
+               },
+               {
+               "id": "state-center",
+               "name": "State Center",
+               "num_entries": 1
+               },
+               {
+               "id": "forest-city",
+               "name": "Forest City",
+               "num_entries": 3
+               },
+               {
+               "id": "cedar-rapids",
+               "name": "Cedar Rapids",
+               "num_entries": 11
+               },
+               {
+               "id": "iowa-falls",
+               "name": "Iowa Falls",
+               "num_entries": 4
+               }, 
+               {
+               "id": "new-london", 
+               "name": "New London", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "okoboji", 
+               "name": "Okoboji", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "stockport", 
+               "name": "Stockport", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "oelwein", 
+               "name": "Oelwein", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "fort-atkinson", 
+               "name": "Fort Atkinson", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "sidney", 
+               "name": "Sidney", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "fredericksburg", 
+               "name": "Fredericksburg", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "fort-madison", 
+               "name": "Fort Madison", 
+               "num_entries": 4
+               }, 
+               {
+               "id": "eldon", 
+               "name": "Eldon", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "lansing", 
+               "name": "Lansing", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "", 
+               "name": "", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "north-liberty", 
+               "name": "North Liberty", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "council-bluffs", 
+               "name": "Council Bluffs", 
+               "num_entries": 11
+               }, 
+               {
+               "id": "onawa", 
+               "name": "Onawa", 
+               "num_entries": 3
+               }, 
+               {
+               "id": "cherokee", 
+               "name": "Cherokee", 
+               "num_entries": 3
+               }, 
+               {
+               "id": "tipton", 
+               "name": "Tipton", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "fairfield", 
+               "name": "Fairfield", 
+               "num_entries": 3
+               }, 
+               {
+               "id": "armstrong", 
+               "name": "Armstrong", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "oskaloosa", 
+               "name": "Oskaloosa", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "orange-city", 
+               "name": "Orange City", 
+               "num_entries": 3
+               }, 
+               {
+               "id": "burlington", 
+               "name": "Burlington", 
+               "num_entries": 8
+               }, 
+               {
+               "id": "burr-oak", 
+               "name": "Burr Oak", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "wall-lake", 
+               "name": "Wall Lake", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "estherville", 
+               "name": "Estherville", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "sibley", 
+               "name": "Sibley", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "elgin", 
+               "name": "Elgin", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "la-porte-city", 
+               "name": "La Porte City", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "marshalltown", 
+               "name": "Marshalltown", 
+               "num_entries": 5
+               }, 
+               {
+               "id": "bloomfield", 
+               "name": "Bloomfield", 
+               "num_entries": 4
+               }, 
+               {
+               "id": "larchwood", 
+               "name": "Larchwood", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "lewis", 
+               "name": "Lewis", 
+               "num_entries": 2
+               }, 
+               {
+               "id": "williams", 
+               "name": "Williams", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "waterloo", 
+               "name": "Waterloo", 
+               "num_entries": 7
+               }, 
+               {
+               "id": "iowa-city", 
+               "name": "Iowa City", 
+               "num_entries": 9
+               }, 
+               {
+               "id": "des-moines", 
+               "name": "Des Moines", 
+               "num_entries": 109
+               }, 
+               {
+               "id": "lowden", 
+               "name": "Lowden", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "new-hampton", 
+               "name": "New Hampton", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "geneva", 
+               "name": "Geneva", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "west-branch", 
+               "name": "West Branch", 
+               "num_entries": 3
+               }, 
+               {
+               "id": "milford", 
+               "name": "Milford", 
+               "num_entries": 1
+               }, 
+               {
+               "id": "wapello", 
+               "name": "Wapello", 
+               "num_entries": 3
+               }
+               ]
+}

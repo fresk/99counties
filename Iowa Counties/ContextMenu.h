@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "LayerView.h"
 
-@interface ContextMenu : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ContextMenu : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic) BOOL is_showing;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *search_bar;
 
 @property (strong, nonatomic) IBOutlet UITableView *table_view;
 @property (strong, nonatomic) IBOutlet UIButton *context_tab_btn;

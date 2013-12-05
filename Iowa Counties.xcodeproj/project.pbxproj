@@ -184,6 +184,8 @@
 		123DA01D18347DBA006A1D73 /* ContextList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123DA01B18347DBA006A1D73 /* ContextList.xib */; };
 		123DA02118348CDE006A1D73 /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DA01F18348CDE006A1D73 /* DetailView.m */; };
 		123DA02218348CDE006A1D73 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123DA02018348CDE006A1D73 /* DetailView.xib */; };
+		1247A4C718505A1F00DAF20E /* SelectByLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1247A4C618505A1F00DAF20E /* SelectByLocationViewController.m */; };
+		1247A4C918505B8F00DAF20E /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 1247A4C818505B8F00DAF20E /* cities.json */; };
 		125B194B184D0E2600A6BF13 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 125B194A184D0E2600A6BF13 /* libsqlite3.dylib */; };
 		125B194D184D220800A6BF13 /* locations.db in Resources */ = {isa = PBXBuildFile; fileRef = 125B194C184D220800A6BF13 /* locations.db */; };
 		126E7FFA1806146E00E7BFE0 /* AppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 126E7FF91806146E00E7BFE0 /* AppContext.m */; };
@@ -424,6 +426,9 @@
 		123DA01E18348CDE006A1D73 /* DetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
 		123DA01F18348CDE006A1D73 /* DetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
 		123DA02018348CDE006A1D73 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		1247A4C518505A1F00DAF20E /* SelectByLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectByLocationViewController.h; sourceTree = "<group>"; };
+		1247A4C618505A1F00DAF20E /* SelectByLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectByLocationViewController.m; sourceTree = "<group>"; };
+		1247A4C818505B8F00DAF20E /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		125B194A184D0E2600A6BF13 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		125B194C184D220800A6BF13 /* locations.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = locations.db; path = data/locations.db; sourceTree = "<group>"; };
 		126E7FF218060C0400E7BFE0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
@@ -783,6 +788,7 @@
 		12AEC87917C3DC2E0001C5CD = {
 			isa = PBXGroup;
 			children = (
+				1247A4C818505B8F00DAF20E /* cities.json */,
 				125B194C184D220800A6BF13 /* locations.db */,
 				12D7860C182C22BF00C0FD09 /* fonts */,
 				126E7FF218060C0400E7BFE0 /* data */,
@@ -851,6 +857,8 @@
 				12AEC88C17C3DC2E0001C5CD /* Supporting Files */,
 				123DA01118347D17006A1D73 /* views */,
 				12E2E656182B26960087F06A /* screens */,
+				1247A4C518505A1F00DAF20E /* SelectByLocationViewController.h */,
+				1247A4C618505A1F00DAF20E /* SelectByLocationViewController.m */,
 				121E1466184E61A7002829BD /* SelectTypeGenius.h */,
 				121E1467184E61A7002829BD /* SelectTypeGenius.m */,
 			);
@@ -993,6 +1001,7 @@
 				121E13D2184E4CCD002829BD /* filter-header-science.png in Resources */,
 				121E1406184E4CCD002829BD /* marker-scenic_byway.png in Resources */,
 				12107985183565E700D1F4E7 /* ContextMenu.storyboard in Resources */,
+				1247A4C918505B8F00DAF20E /* cities.json in Resources */,
 				121E1448184E4CCD002829BD /* btn-tours@2x.png in Resources */,
 				121E13E1184E4CCD002829BD /* marker-art@2x.png in Resources */,
 				121E1435184E4CCD002829BD /* btn-explore@2x.png in Resources */,
@@ -1204,6 +1213,7 @@
 				122C45AF1829CCED006750AE /* TitleScreenViewController.m in Sources */,
 				12A7C1D8181347BF00D3DE53 /* CityListController.m in Sources */,
 				12F073B218071ADE00CDB785 /* CategoryListViewCell.m in Sources */,
+				1247A4C718505A1F00DAF20E /* SelectByLocationViewController.m in Sources */,
 				12DAA2681829FE850063F023 /* TilingView.m in Sources */,
 				12FA8BAE180F06FF003166FA /* ExploreViewController.m in Sources */,
 				12D571E417F1F4AA00E4DD2D /* LayerView.m in Sources */,

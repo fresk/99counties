@@ -394,7 +394,7 @@
         return;
     }
     
-   [self.search_bar resignFirstResponder];
+    [self.search_bar resignFirstResponder];
     
     NSInteger idx = [indexPath row];
     

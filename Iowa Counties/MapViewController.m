@@ -526,6 +526,11 @@
             
             [photo setImageWithURL:photo_url placeholderImage:_placehodler_image
                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                             if (image == nil){
+                                 
+                                 image = [UIImage imageNamed:@"loading.png"];
+                             }
+                             
                              
                              CGFloat scale =  320/image.size.width;
                              CGFloat scaled_height = image.size.height * scale;
